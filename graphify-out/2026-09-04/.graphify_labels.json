@@ -49,5 +49,6 @@
   "47": "components.d.ts",
   "48": "resolve-version.js",
   "49": "GloSim 0.0.1-pre-1",
-  "50": "bump-version.js"
+  "50": "bump-version.js",
+  "51": "backend/server.js"
 }

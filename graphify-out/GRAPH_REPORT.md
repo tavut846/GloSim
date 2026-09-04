@@ -1,16 +1,16 @@
 # Graph Report - GloSim  (2026-09-04)
 
 ## Corpus Check
-- 82 files · ~46,720 words
+- 83 files · ~48,887 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 515 nodes · 777 edges · 52 communities (46 shown, 6 thin omitted)
+- 536 nodes · 839 edges · 52 communities (46 shown, 6 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `cec52931`
+- Built from commit: `e2b32a24`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -34,7 +34,7 @@
 - workflows/graphify.md
 - database.js
 - server.js
-- backend/package.json
+- glosim-deploy.sh
 - components.d.ts
 - resolve-version.js
 - GloSim 0.0.1-pre-1
@@ -99,8 +99,8 @@ Cohesion: 0.08
 Nodes (23): compilerOptions, allowImportingTsExtensions, isolatedModules, jsx, lib, module, moduleResolution, noEmit (+15 more)
 
 ### Community 7 - "dependencies"
-Cohesion: 0.07
-Nodes (29): ajv, dependencies, ajv, better-sqlite3, date-fns, date-fns-tz, dotenv, pg (+21 more)
+Cohesion: 0.05
+Nodes (43): ajv, dependencies, ajv, better-sqlite3, date-fns, date-fns-tz, dotenv, pg (+35 more)
 
 ### Community 8 - "scripts"
 Cohesion: 0.06
@@ -108,7 +108,7 @@ Nodes (31): concurrently, description, devDependencies, concurrently, date-fns, 
 
 ### Community 10 - "GloSim (Global Simulation Conference)"
 Cohesion: 0.07
-Nodes (26): 10. Automated Versioning & Pre-Release Pipeline, 1. Code Directory Structure (Repository Code), 1. Versioning Specification, 2. Artifact Code Structure (Deployment Package), 2. Automated Release Notes Generation, 3. Local Version Management Commands, 3. Project Structure & Technical Capabilities, 4. Quickstart Guide (Local Development) (+18 more)
+Nodes (28): 10. Automated Versioning & Pre-Release Pipeline, 1. Code Directory Structure (Repository Code), 1. Versioning Specification, 2. Artifact Code Structure (Deployment Package), 2. Automated Release Notes Generation, 3. Local Version Management Commands, 3. Project Structure & Technical Capabilities, 4. Quickstart Guide (Local Development) (+20 more)
 
 ### Community 11 - "Global Simulation Conference — Design System"
 Cohesion: 0.22
@@ -123,12 +123,12 @@ Cohesion: 0.38
 Nodes (4): seedData, seedDatabase(), bootstrap(), { seedDatabase }
 
 ### Community 14 - "2. Deploying on VPS (Step-by-Step)"
-Cohesion: 0.22
-Nodes (8): 1. Directory Structure in Deployment Package, 2. Deploying on VPS (Step-by-Step), 3. GitHub Actions Continuous Integration, GloSim Deployment & VPS Architecture Guide, Step 1: Download & Extract Prebuilt Artifact, Step 2: (Optional) Configure `.env`, Step 3: Launch Containers, Step 4: Verify Deployment
+Cohesion: 0.20
+Nodes (9): 1. Directory Structure in Deployment Package, 2. Deploying on VPS (Step-by-Step), 3. GitHub Actions Continuous Integration, GloSim Deployment & VPS Architecture Guide, Step 1: Download & Extract Prebuilt Artifact, Step 2: (Recommended) Run GloSim Management Tool, Step 3: (Optional) Configure External PostgreSQL, Step 4: Launch Containers (Direct Command) (+1 more)
 
-### Community 46 - "backend/package.json"
-Cohesion: 0.13
-Nodes (14): description, license, name, overrides, ajv, better-sqlite3, sharp, private (+6 more)
+### Community 46 - "glosim-deploy.sh"
+Cohesion: 0.39
+Nodes (14): add_glosim_command(), check_docker(), deploy_services(), error(), info(), remove_logs(), glosim-deploy.sh script, show_menu() (+6 more)
 
 ### Community 47 - "components.d.ts"
 Cohesion: 0.22
@@ -147,19 +147,17 @@ Cohesion: 0.40
 Nodes (4): filesToUpdate, fs, path, rootDir
 
 ## Knowledge Gaps
-- **211 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+206 more)
+- **214 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+209 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `backend/package.json`?**
-  _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `createRuntime()` (e.g. with `adoptParsed()` and `dcUpdate()`) actually correct?**
   _`createRuntime()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `path`, `path`, `dotenv` to the rest of the system?**
-  _211 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _214 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `App.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.09044289044289044 - nodes in this community are weakly interconnected._
 - **Should `support.js` be split into smaller, more focused modules?**
@@ -168,3 +166,5 @@ _Questions this graph is uniquely positioned to answer:_
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Should `ImageSlot` be split into smaller, more focused modules?**
   _Cohesion score 0.1319073083778966 - nodes in this community are weakly interconnected._
+- **Should `frontend/package.json` be split into smaller, more focused modules?**
+  _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._

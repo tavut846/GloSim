@@ -78,6 +78,7 @@ jobs:
 
           # Copy Docker deployment files from docker/ directly into bundle root
           cp docker/* bundle/
+          chmod +x bundle/glosim-deploy.sh || true
 
           # Copy env template, release notes, and default deploy .env (with SQLite default storage)
           cp .env.example bundle/.env.example

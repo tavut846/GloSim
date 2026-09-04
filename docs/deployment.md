@@ -11,8 +11,9 @@ When you download and unzip `glosim.zip` on your VPS, all deployment files are c
 ```
 glosim-deploy/
 ├── docker-compose.yml        # Multi-container orchestration (Backend + Frontend)
-├── Dockerfile.backend        # Lightweight Node runtime
+├── Dockerfile.backend        # Lightweight Node 20 Slim runtime
 ├── Dockerfile.frontend       # Lightweight Nginx runner
+├── glosim-deploy.sh          # Interactive deployment & management CLI tool
 ├── nginx.conf                # Nginx SPA & Gzip configuration
 ├── .env                      # Pre-configured production config (defaults to SQLite)
 ├── .env.example              # Environment template
@@ -39,7 +40,21 @@ unzip glosim.zip -d /opt/glosim
 cd /opt/glosim
 ```
 
-### Step 2: (Optional) Configure `.env`
+### Step 2: (Recommended) Run GloSim Management Tool
+The artifact includes `glosim-deploy.sh` for one-stop management.
+```bash
+./glosim-deploy.sh
+```
+
+You can select:
+- `1) Add 'glosim' command to VPS`: Creates a system-wide `/usr/local/bin/glosim` shortcut so you can manage GloSim from anywhere simply by typing `glosim`.
+- `2) Deploy / Start GloSim`: Automatically verifies `.env`, sets up SQLite storage, and launches containers via Docker Compose.
+- `3) Uninstall GloSim`: Tears down containers while strictly preserving your database (`backend/.tmp/data.db`) and uploaded media.
+- `4) Clear Container Logs`: Safely truncates container log streams and cleans up temporary log files to reclaim disk space.
+- `5) Update GloSim`: Automatically downloads and applies the latest Pre-Release from GitHub (`tavut846/GloSim`) with automatic database backup and restore.
+- `6) View Platform Status`: Displays version, database engine, container health, ports, and external access endpoints.
+
+### Step 3: (Optional) Configure External PostgreSQL
 By default, `.env` is already configured with **SQLite storage** for zero-configuration startup!
 
 If you want to use your external PostgreSQL database instead, edit `.env`:
@@ -62,14 +77,14 @@ DATABASE_SSL=false
 > [!TIP]
 > If your PostgreSQL is running directly on the VPS host, `host.docker.internal` allows Docker containers to securely connect directly to your host's PostgreSQL on port 5432.
 
-### Step 3: Launch Containers
-From the project root:
+### Step 4: Launch Containers (Direct Command)
+If you prefer direct Docker CLI commands without the interactive menu:
 ```bash
 docker compose up -d --build
 ```
 
-### Step 4: Verify Deployment
-- **Frontend Web App**: `http://your-vps-ip:80`
+### Step 5: Verify Deployment
+- **Frontend Web App**: `http://your-vps-ip:5173` (or port 80 if configured)
 - **Strapi Backend API & Admin**: `http://your-vps-ip:1337/admin`
 
 ---

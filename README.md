@@ -76,9 +76,10 @@ GloSim/
 │   └── vite.config.ts                # Vite 5 build configuration
 │
 ├── docker/                           # Production Docker Deployment Assets
-│   ├── Dockerfile.backend            # Lightweight Node 20 Alpine production runtime
+│   ├── Dockerfile.backend            # Lightweight Node 20 Slim production runtime
 │   ├── Dockerfile.frontend           # Lightweight Nginx Alpine web server for SPA
 │   ├── docker-compose.yml            # Multi-container orchestration (Backend + Frontend)
+│   ├── glosim-deploy.sh              # Interactive management & deployment CLI tool
 │   └── nginx.conf                    # Nginx reverse proxy, SPA routing (`try_files`), Gzip compression
 │
 ├── docs/                             # Architecture & Deployment Documentation
@@ -101,10 +102,11 @@ GloSim/
 When downloaded from GitHub Actions or the GitHub **Pre-Release** page (`glosim.zip`), the package is pre-assembled for zero-friction VPS deployment. All container orchestration files are positioned at the root level:
 
 ```
-glosim-deploy/
+glosim/
 ├── docker-compose.yml                # Multi-container orchestration (Backend + Frontend services)
 ├── Dockerfile.backend                # Lightweight production runtime container for Strapi
 ├── Dockerfile.frontend               # Nginx Alpine web server container for static SPA assets
+├── glosim-deploy.sh                  # Interactive management & deployment CLI tool
 ├── nginx.conf                        # Production Nginx SPA routing & Gzip compression config
 ├── .env                              # Pre-configured production config (ready with SQLite storage)
 ├── .env.example                      # Environment variables reference template
@@ -217,13 +219,40 @@ unzip glosim.zip -d /opt/glosim
 cd /opt/glosim
 ```
 
-### Step 2: (Optional) Configure Environment
-The prebuilt bundle includes a `.env` file pre-configured for **SQLite** out-of-the-box:
+### Step 2: Run GloSim Deployment Tool (Interactive Menu)
+The bundle includes an interactive management tool `glosim-deploy.sh` directly in the root directory:
 ```bash
-nano .env
+./glosim-deploy.sh
 ```
 
-If connecting to an existing external PostgreSQL database, update the database settings:
+You can also install the global `glosim` shortcut so you can manage your deployment from anywhere on the VPS:
+- **Option 1**: Select `1) Add 'glosim' command to VPS` in the menu.
+- From then on, simply type `glosim` in any terminal!
+
+### Interactive Menu Capabilities:
+```text
+====================================================
+        GloSim Management & Deployment Tool        
+        Repository: https://github.com/tavut846/GloSim
+====================================================
+ 1) Add 'glosim' command to VPS (access from anywhere)
+ 2) Deploy / Start GloSim (docker compose up -d --build)
+ 3) Uninstall GloSim (database & uploaded media preserved)
+ 4) Clear Container Logs
+ 5) Update GloSim (Latest Pre-Release or Git Pull)
+ 6) View Platform & Container Status
+ 0) Exit
+====================================================
+```
+
+### Or Launch Directly with Docker Compose:
+If you prefer raw Docker commands:
+```bash
+docker compose up -d --build
+```
+
+### Step 3: (Optional) Configure External PostgreSQL
+The prebuilt bundle includes a `.env` file pre-configured for **SQLite** out-of-the-box (`backend/.tmp/data.db`). If you want to connect to an external PostgreSQL database instead, edit `.env`:
 ```env
 DATABASE_CLIENT=postgres
 DATABASE_HOST=host.docker.internal   # Or your PostgreSQL host IP
@@ -232,12 +261,6 @@ DATABASE_NAME=glosim_db
 DATABASE_USERNAME=glosim_user
 DATABASE_PASSWORD=your_secure_postgres_password
 DATABASE_SSL=false
-```
-
-### Step 3: Launch Containers
-From the bundle directory:
-```bash
-docker compose up -d --build
 ```
 
 ### Step 4: Verify Deployment
