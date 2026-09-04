@@ -26,6 +26,9 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+          cache-dependency-path: |
+            frontend/package-lock.json
+            backend/package-lock.json
 
       # 1. Resolve Version, Compute Pre-Release Tag, and Generate Release Notes
       - name: Resolve Version & Generate Release Notes
@@ -35,20 +38,18 @@ jobs:
           node scripts/resolve-version.js
 
       # 2. Install & Build Frontend
-      - name: Install Frontend Dependencies
-        run: npm ci --prefix frontend
-
-      - name: Build Frontend Artifact
-        run: npm run build --prefix frontend
+      - name: Install & Build Frontend
+        run: |
+          npm ci --prefer-offline --prefix frontend
+          npm run build --prefix frontend
         env:
           VITE_STRAPI_URL: ${{ vars.VITE_STRAPI_URL || 'http://localhost:1337' }}
 
       # 3. Install & Build Backend (Strapi)
-      - name: Install Backend Dependencies
-        run: npm install --legacy-peer-deps --prefix backend
-
-      - name: Build Backend Admin Panel
-        run: npm run build --prefix backend
+      - name: Install & Build Backend Admin Panel
+        run: |
+          npm ci --legacy-peer-deps --prefer-offline --prefix backend || npm install --legacy-peer-deps --prefer-offline --prefix backend
+          npm run build --prefix backend
         env:
           NODE_ENV: production
 
@@ -59,17 +60,17 @@ jobs:
           # Pre-install ARM64 platform binaries into node_modules so artifact runs seamlessly on ARM64 & x64 hosts
           npm install --prefix backend --os=linux --cpu=arm64 --libc=glibc --no-save @img/sharp-linux-arm64@0.33.5 @img/sharp-libvips-linux-arm64@1.0.4 || true
 
-      # 5. Assemble Deployment Bundle (All Docker files in root folder)
+      # 5. Assemble Deployment Bundle (Move prebuilt assets instantly with mv)
       - name: Prepare Deployment Artifact Directory
         run: |
-          mkdir -p bundle/frontend/dist
           mkdir -p bundle/backend/.tmp
 
-          # Copy prebuilt frontend assets
-          cp -r frontend/dist/* bundle/frontend/dist/
+          # Move prebuilt frontend assets (instant inode move)
+          mkdir -p bundle/frontend
+          mv frontend/dist bundle/frontend/dist
 
-          # Copy prebuilt backend application & production node_modules
-          cp -r backend/node_modules bundle/backend/
+          # Move production node_modules & prebuilt backend files (instant inode move instead of slow cp -r)
+          mv backend/node_modules bundle/backend/
           cp -r backend/build bundle/backend/ || true
           cp -r backend/dist bundle/backend/ || true
           cp -r backend/config bundle/backend/
@@ -96,21 +97,20 @@ jobs:
           cp README.md bundle/
           cp RELEASE_NOTES.md bundle/ || true
 
-      # 6. Upload GitHub Actions Artifact (Folder uploaded directly as 'glosim' - downloads as glosim.zip without zip-in-zip)
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: glosim
-          path: bundle/
-          retention-days: 30
-
-      # 7. Package Zip Archive for Pre-Release Asset (Preserve symlinks with -y)
-      - name: Package Zip for Pre-Release
-        if: (github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')) || github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/')
+      # 6. Package Zip Archive First (Preserve symlinks with -y)
+      - name: Package Zip for Deployment & Pre-Release
         run: |
           cd bundle
           zip -ry ../glosim.zip .
           cd ..
+
+      # 7. Upload GitHub Actions Artifact (Fast single zip upload in <10s instead of 10+ mins)
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: glosim
+          path: glosim.zip
+          retention-days: 30
 
       # 8. Upload Artifact to GitHub Pre-Release with Auto-Version & Release Notes
       - name: Publish Pre-Release

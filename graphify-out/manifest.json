@@ -486,9 +486,9 @@
     "semantic_hash": ""
   },
   ".github/workflows/build-deploy-artifact.yml": {
-    "mtime": 1788508572.8951187,
-    "seen": 1788508613.5049386,
-    "ast_hash": "32410f339617fbf0423a0cb5e8311a14",
+    "mtime": 1788508804.9931147,
+    "seen": 1788508838.6315908,
+    "ast_hash": "74c375b42f6d76da62ee9e131bb606dc",
     "semantic_hash": ""
   },
   "backend/.strapi-updater.json": {
