@@ -420,9 +420,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1788499334.0329635,
-    "seen": 1788499382.3635862,
-    "ast_hash": "aca609d3ba6b28b47c7246a2e8d0c161",
+    "mtime": 1788499624.4076438,
+    "seen": 1788499671.6525545,
+    "ast_hash": "cadb51b0d7b8e2afe43edc494a1b2e09",
     "semantic_hash": ""
   },
   "_ds/glosim-d2271487-a9b5-4f2b-9d18-ac11ca4f8f1d/readme.md": {
@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "docs/deployment.md": {
-    "mtime": 1788499344.6371608,
-    "seen": 1788499382.3636184,
-    "ast_hash": "f143c28d2064f2365fe439a7a988fe6e",
+    "mtime": 1788499640.622821,
+    "seen": 1788499671.6525838,
+    "ast_hash": "c56f21bd7c01ae7abffb0b3025a017d1",
     "semantic_hash": ""
   },
   "docs/plan.md": {
@@ -486,9 +486,9 @@
     "semantic_hash": ""
   },
   ".github/workflows/build-deploy-artifact.yml": {
-    "mtime": 1788499324.389536,
-    "seen": 1788499382.3635826,
-    "ast_hash": "5fb92f72802f0463f0266c9d6691344c",
+    "mtime": 1788499613.5353854,
+    "seen": 1788499671.6525505,
+    "ast_hash": "8184516c4d9461034f225f8435d89b5f",
     "semantic_hash": ""
   },
   "backend/.strapi-updater.json": {
@@ -521,10 +521,10 @@
     "ast_hash": "e39a182fd281d482102b3321298c483b",
     "semantic_hash": ""
   },
-  "docker-compose.yml": {
-    "mtime": 1788499295.0995157,
-    "seen": 1788499382.3636143,
-    "ast_hash": "5641145f20fa03ca4933f72f55f240cd",
+  "docker/docker-compose.yml": {
+    "mtime": 1788500682.955348,
+    "seen": 1788500746.5565834,
+    "ast_hash": "263fad30dee19e3cb1f0417e63c0cb57",
     "semantic_hash": ""
   }
 }

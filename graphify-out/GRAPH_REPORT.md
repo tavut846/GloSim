@@ -1,16 +1,16 @@
 # Graph Report - GloSim  (2026-09-04)
 
 ## Corpus Check
-- 78 files · ~43,087 words
+- 78 files · ~45,099 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 467 nodes · 733 edges · 48 communities (43 shown, 5 thin omitted)
+- 482 nodes · 748 edges · 48 communities (43 shown, 5 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6691bfb0`
+- Built from commit: `1950d91a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -24,7 +24,7 @@
 - compilerOptions
 - dependencies
 - scripts
-- 2. Quickstart Guide (Local Development)
+- GloSim (Global Simulation Conference)
 - Global Simulation Conference — Design System
 - compilerOptions
 - index.js
@@ -47,7 +47,7 @@
 7. `ApiService` - 12 edges
 8. `Conference` - 12 edges
 9. `scripts` - 10 edges
-10. `Website Design Plan` - 10 edges
+10. `GloSim (Global Simulation Conference)` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `CountdownBannerProps` --references--> `Conference`  [EXTRACTED]
@@ -102,9 +102,9 @@ Nodes (29): ajv, dependencies, ajv, better-sqlite3, date-fns, date-fns-tz, doten
 Cohesion: 0.07
 Nodes (29): concurrently, description, devDependencies, concurrently, date-fns, date-fns-tz, date-fns, date-fns-tz (+21 more)
 
-### Community 10 - "2. Quickstart Guide (Local Development)"
-Cohesion: 0.25
-Nodes (7): 1. Project Directory Structure, 2. Quickstart Guide (Local Development), 3. Production VPS Deployment (Prebuilt Artifacts), GloSim (Global Simulation Conference), Step 1: Install Dependencies, Step 2: Run Frontend Development Server, Step 3: Run Strapi CMS Backend (SQLite)
+### Community 10 - "GloSim (Global Simulation Conference)"
+Cohesion: 0.09
+Nodes (22): 1. Code Directory Structure (Repository Code), 2. Artifact Code Structure (Deployment Package), 3. Project Structure & Technical Capabilities, 4. Quickstart Guide (Local Development), 5. Production VPS Deployment (Prebuilt Artifacts), 6. Environment Variables Reference, 7. Content Management & Admin Workflow, 8. API Reference & Internationalization Querying (+14 more)
 
 ### Community 11 - "Global Simulation Conference — Design System"
 Cohesion: 0.22
@@ -131,7 +131,7 @@ Cohesion: 0.22
 Nodes (8): Components, ConferenceAgendaItem, ConferenceSpeakerItem, HomeHighlightItem, Shared, SharedNavItem, SharedSocialLink, @strapi/types
 
 ## Knowledge Gaps
-- **174 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+169 more)
+- **186 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+181 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -143,7 +143,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 7 inferred relationships involving `createRuntime()` (e.g. with `adoptParsed()` and `dcUpdate()`) actually correct?**
   _`createRuntime()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `path`, `path`, `dotenv` to the rest of the system?**
-  _174 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _186 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `App.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.09044289044289044 - nodes in this community are weakly interconnected._
 - **Should `support.js` be split into smaller, more focused modules?**

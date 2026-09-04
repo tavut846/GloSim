@@ -2797,7 +2797,7 @@
       "node_kind": "heading",
       "norm_label": "2. quickstart guide (local development)",
       "source_file": "README.md",
-      "source_location": "L43"
+      "source_location": "L44"
     },
     {
       "id": "readme_3_production_vps_deployment_prebuilt_artifacts",
@@ -2809,7 +2809,7 @@
       "node_kind": "heading",
       "norm_label": "3. production vps deployment (prebuilt artifacts)",
       "source_file": "README.md",
-      "source_location": "L67"
+      "source_location": "L68"
     },
     {
       "id": "readme_glosim_global_simulation_conference",
@@ -2833,7 +2833,7 @@
       "node_kind": "heading",
       "norm_label": "step 1: install dependencies",
       "source_file": "README.md",
-      "source_location": "L45"
+      "source_location": "L46"
     },
     {
       "id": "readme_step_2_run_frontend_development_server",
@@ -2845,7 +2845,7 @@
       "node_kind": "heading",
       "norm_label": "step 2: run frontend development server",
       "source_file": "README.md",
-      "source_location": "L50"
+      "source_location": "L51"
     },
     {
       "id": "readme_step_3_run_strapi_cms_backend_sqlite",
@@ -2857,7 +2857,7 @@
       "node_kind": "heading",
       "norm_label": "step 3: run strapi cms backend (sqlite)",
       "source_file": "README.md",
-      "source_location": "L56"
+      "source_location": "L57"
     },
     {
       "id": "ds_glosim_d2271487_a9b5_4f2b_9d18_ac11ca4f8f1d_readme",
@@ -13222,7 +13222,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -13233,7 +13233,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L50",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -13244,7 +13244,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L56",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -13255,7 +13255,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L43",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -13266,7 +13266,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L67",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -13917,5 +13917,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "08beb44eefbf6d77b56a2254612845f5c3c0f38c"
+  "built_at_commit": "6691bfb0e21e95228b5b33129c9db641fa88d237"
 }

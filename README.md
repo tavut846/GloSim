@@ -1,80 +1,306 @@
 # GloSim (Global Simulation Conference)
 
 > **Bilingual Multi-Page Academic Conference Platform & Headless CMS**  
-> Chinese (简体中文) & English (English) · Strapi Headless CMS · React / Vite Frontend
+> Chinese (简体中文) & English (English) · Strapi Headless CMS · React / Vite Frontend · Docker VPS Deployment
 
 ---
 
-## 1. Project Directory Structure
+## 1. Code Directory Structure (Repository Code)
+
+The development repository is organized as an npm workspace containing the Strapi backend CMS, the React frontend application, containerization definitions, and CI/CD pipelines:
 
 ```
 GloSim/
-├── backend/                      # Strapi CMS (Backend API & Admin Dashboard)
-│   ├── config/                   # Dynamic database (SQLite / PostgreSQL), plugins, CORS
-│   ├── src/                      # 7 Localized Content Types & Auto-bootstrap
-│   └── package.json
-│
-├── frontend/                     # Modern Bilingual Frontend Web Application
-│   ├── src/                      # 5 Core Pages, UI components, Strapi REST client
-│   ├── index.html
-│   └── package.json
-│
-├── docker/                       # Docker & VPS Deployment Files (moved to root in build artifact)
-│   ├── Dockerfile.backend        # Lightweight prebuilt backend runtime
-│   ├── Dockerfile.frontend       # Lightweight prebuilt Nginx web server
-│   ├── docker-compose.yml        # Multi-container orchestration (Backend + Frontend)
-│   └── nginx.conf                # Nginx SPA and Gzip configuration
-│
-├── .github/                      # CI/CD Workflows
+├── .github/
 │   └── workflows/
-│       └── build-deploy-artifact.yml # Builds prebuilt bundle & publishes Pre-Release
+│       └── build-deploy-artifact.yml # Automated CI/CD: builds frontend/backend, packages bundle, publishes Pre-Release
 │
-├── docs/                         # Specifications & Guides
-│   ├── plan.md                   # Product requirement & information architecture plan
-│   └── deployment.md             # Single VPS Deployment & Database guide
+├── backend/                          # Strapi v4 Headless CMS (Node.js 20)
+│   ├── config/                       # Server, database (SQLite/PostgreSQL dynamic switch), admin, plugins, CORS
+│   │   ├── admin.js
+│   │   ├── api.js
+│   │   ├── database.js               # Dynamic DB resolver (SQLite for dev, PostgreSQL for production)
+│   │   ├── middlewares.js            # Security, CORS, logger, body parser middleware
+│   │   ├── plugins.js                # i18n and Users-Permissions configuration
+│   │   └── server.js
+│   ├── src/
+│   │   ├── api/                      # 7 Localized Content-Types (Single & Collection Types)
+│   │   │   ├── conference/           # Conference event data, schedule dates, registration config
+│   │   │   ├── global/               # Global site settings (bilingual site title, ICP record, contact, nav)
+│   │   │   ├── home-page/            # Homepage hero carousel, stats, call-to-actions
+│   │   │   ├── leader/               # Academic committee leaders, chairs, biographies, avatars
+│   │   │   ├── member-institution/   # Participating universities and research institution directory
+│   │   │   ├── notice/               # Conference announcements, call for papers, news updates
+│   │   │   └── org-overview/         # Organization overview, mission, bylaws, leadership structure
+│   │   ├── components/               # Repeatable Strapi UI Components
+│   │   │   ├── conference/           # agenda-item, speaker-item
+│   │   │   ├── home/                 # highlight-item
+│   │   │   └── shared/               # nav-item, social-link
+│   │   ├── bootstrap-seed.js         # Automated idempotent DB seed (bilingual content & public permissions)
+│   │   └── index.js                  # Strapi lifecycle bootstrap hook
+│   ├── database/                     # Migrations & database schemas
+│   ├── public/                       # Uploaded conference assets & media files
+│   └── package.json                  # Backend dependencies & Strapi scripts
 │
-├── design_prototypes/            # Preserved prototype reference HTML files
-├── package.json                  # Root workspace runner
-├── .env.example                  # Unified environment template
-└── README.md
+├── frontend/                         # Modern React 18 Single Page Application (SPA)
+│   ├── public/                       # Static public assets (favicons, logos)
+│   ├── src/
+│   │   ├── components/               # Reusable UI & Layout Components
+│   │   │   ├── CountdownBanner.tsx   # Live conference countdown banner with days/hours/mins/secs
+│   │   │   ├── Footer.tsx            # Bilingual footer with dynamic nav links, copyright, ICP info
+│   │   │   ├── Header.tsx            # Responsive navigation bar with language switcher & mobile menu
+│   │   │   ├── RegisterModal.tsx     # Conference attendee registration modal with form validation
+│   │   │   └── VideoModal.tsx        # Video player modal for keynote & conference previews
+│   │   ├── pages/                    # 5 Core Conference Pages
+│   │   │   ├── AboutPage.tsx         # Organization overview, committee members & institution list
+│   │   │   ├── CallForPapersPage.tsx # CFP topics, submission timeline, formatting requirements
+│   │   │   ├── HomePage.tsx          # Hero carousel, event highlights, countdown, latest notices
+│   │   │   ├── PastConferencesPage.tsx # Archive of past conference proceedings & galleries
+│   │   │   └── SchedulePage.tsx      # Multi-day conference schedule, tracks, and keynote sessions
+│   │   ├── locales/                  # Bilingual Translation Dictionaries
+│   │   │   ├── en.ts                 # English locale dictionary
+│   │   │   └── zh.ts                 # Simplified Chinese locale dictionary
+│   │   ├── services/
+│   │   │   └── api.ts                # Centralized REST client with automatic fallback to static dictionaries
+│   │   ├── styles/
+│   │   │   ├── index.css             # Glassmorphism effects, responsive resets, utilities
+│   │   │   └── tokens.css            # Design tokens (colors, typography, spacing, shadows)
+│   │   ├── types/
+│   │   │   └── index.ts              # Full TypeScript definitions for Strapi models & UI props
+│   │   ├── App.tsx                   # Root component with client-side routing & locale state
+│   │   ├── main.tsx                  # React DOM entry point
+│   │   └── vite-env.d.ts             # Vite environment type definitions
+│   ├── index.html                    # Single-page application HTML entry
+│   ├── tsconfig.json                 # TypeScript compiler configuration
+│   └── vite.config.ts                # Vite 5 build configuration
+│
+├── docker/                           # Production Docker Deployment Assets
+│   ├── Dockerfile.backend            # Lightweight Node 20 Alpine production runtime
+│   ├── Dockerfile.frontend           # Lightweight Nginx Alpine web server for SPA
+│   ├── docker-compose.yml            # Multi-container orchestration (Backend + Frontend)
+│   └── nginx.conf                    # Nginx reverse proxy, SPA routing (`try_files`), Gzip compression
+│
+├── docs/                             # Architecture & Deployment Documentation
+│   ├── deployment.md                 # VPS Deployment & external PostgreSQL guide
+│   └── plan.md                       # Product requirement & information architecture plan
+│
+├── .env.example                      # Unified environment variable template
+├── package.json                      # Root workspace configuration & concurrent dev runners
+└── README.md                         # Project documentation
 ```
 
 ---
 
-## 2. Quickstart Guide (Local Development)
+## 2. Artifact Code Structure (Deployment Package)
+
+When downloaded from GitHub Actions or the GitHub **Pre-Release** page (`glosim.zip`), the package is pre-assembled for zero-friction VPS deployment. All container orchestration files are positioned at the root level:
+
+```
+glosim-deploy/
+├── docker-compose.yml                # Multi-container orchestration (Backend + Frontend services)
+├── Dockerfile.backend                # Lightweight production runtime container for Strapi
+├── Dockerfile.frontend               # Nginx Alpine web server container for static SPA assets
+├── nginx.conf                        # Production Nginx SPA routing & Gzip compression config
+├── .env                              # Pre-configured production config (ready with SQLite storage)
+├── .env.example                      # Environment variables reference template
+├── README.md                         # Deployment quickstart documentation
+│
+├── backend/                          # Prebuilt Strapi CMS Backend
+│   ├── build/                        # Compiled Strapi Admin Dashboard static bundle
+│   ├── config/                       # Production database, server, plugin, and security configs
+│   ├── node_modules/                 # Production-only dependencies (pruned via `npm prune --production`)
+│   ├── public/                       # Uploaded conference media & assets directory
+│   ├── src/                          # Content-type schemas, component definitions, and seed scripts
+│   ├── .tmp/                         # SQLite database storage directory (persisted volume)
+│   └── package.json                  # Runtime package metadata
+│
+└── frontend/                         # Prebuilt React Frontend
+    └── dist/                         # Optimized HTML, CSS, and JS static bundle
+        ├── assets/                   # Minified and hashed JavaScript & CSS bundles
+        └── index.html                # Production SPA entry point
+```
+
+---
+
+## 3. Project Structure & Technical Capabilities
+
+### Backend (Node.js & Strapi CMS Headless Architecture)
+
+- **Solid Node.js & Strapi Core**: Headless CMS v4 architecture running on Node.js 20 LTS; asynchronous lifecycle hooks, unified middleware execution, and modular plugin extensions.
+- **Content Modeling & Architecture**: 7 localized content types (Collection & Single Types) including `Conference`, `Global`, `HomePage`, `Leader`, `MemberInstitution`, `Notice`, and `OrgOverview`; coupled with reusable components (`AgendaItem`, `SpeakerItem`, `HomeHighlight`, `NavItem`, `SocialLink`).
+- **Dual-Engine Persistence & Dynamic Switching**: Support for zero-configuration SQLite (`better-sqlite3`) for lightweight deployments and high-concurrency PostgreSQL (`pg`) for production database clusters; dynamic runtime resolution via environment variables.
+- **Security, Access Control & API Design**: Granular Role-Based Access Control (RBAC) via `@strapi/plugin-users-permissions` with public read endpoints; centralized API token handling, CORS whitelist policy, and cryptographic secret hashing (`APP_KEYS`, `JWT_SECRET`, `API_TOKEN_SALT`).
+- **Automated Seeding & Idempotence**: Automated bootstrap engine (`bootstrap-seed.js`) that provisions initial bilingual conference data and grants public API permissions on first startup without duplicate overhead.
+- **Practical Projects & Modules**:
+  - *Conference Management Module*: Bilingual conference metadata, registration dates, interactive agenda timeline, and keynote speaker directories.
+  - *Organization & Leadership Module*: Academic leadership roster, executive committee bios, and member institution directory.
+  - *Notices & Announcement Service*: Categorized academic notices, CFP deadline tracking, and document attachment distribution.
+  - *Global Configuration Service*: Multi-language site metadata, ICP filing numbers, contact information, and dynamic navigation hierarchy.
+
+### Frontend (React + TypeScript Modern SPA)
+
+- **Modern React & TypeScript Foundation**: React 18 functional components, React Hooks (`useState`, `useEffect`, `useMemo`), strict TypeScript type definitions (`src/types/index.ts`), and Vite 5 rapid build tooling.
+- **Bilingual Internationalization (i18n)**: Seamless English (`en`) and Simplified Chinese (`zh`) dual-locale state management, typed translation dictionaries (`locales/zh.ts`, `locales/en.ts`), and live fallback synchronization with Strapi localized API responses.
+- **Design System & Visual Aesthetics**: Custom tokenized CSS system (`tokens.css`, `index.css`), modern responsive glassmorphism aesthetic, sleek gradients, accessibility-compliant typography, and Lucide React icon integration.
+- **Component Architecture & Interactive UI**: Decoupled presentation components (`Header`, `Footer`, `CountdownBanner`, `RegisterModal`, `VideoModal`), reactive countdown timers, modal overlays, tabbed schedule filters, and responsive mobile navigation drawers.
+- **Resilient Data Fetching & API Service Layer**: Centralized `ApiService` client with graceful offline fallback to static locale dictionaries when backend is disconnected.
+- **Practical Projects & Modules**:
+  - *Conference Portal Home Page*: Hero carousel, dynamic registration CTA, countdown banner, and highlights grid.
+  - *Interactive Schedule & Agenda Viewer*: Multi-day session tracks, time slots, and speaker spotlight modal.
+  - *Academic Organization & Governance Page*: Leadership team grid, organizational mission, and member institution directory.
+  - *Call for Papers (CFP) & Author Submission Portal*: Topics list, key submission dates, and paper formatting guidelines.
+  - *Past Conferences Archive*: Historical conference timelines, past proceedings, and event archives.
+
+### DevOps & Infrastructure (Docker & CI/CD Pipeline)
+
+- **Multi-Container Containerization**: Docker Compose orchestration uniting backend API and frontend web server under isolated bridge networks (`glosim-network`).
+- **Production Web Server & Reverse Proxy**: Lightweight Nginx Alpine web server for frontend SPA routing (`try_files $uri $uri/ /index.html;`), asset caching, and Gzip compression.
+- **Automated GitHub Actions CI/CD**: Matrix build pipeline (`.github/workflows/build-deploy-artifact.yml`) compiling frontend assets, building Strapi admin panels, pruning `devDependencies` (`npm prune --production`), assembling zero-friction deployable bundles, and publishing pre-release archives (`glosim.zip`).
+- **Practical Projects & Modules**:
+  - *Zero-Friction Single-VPS Deployment Suite*: One-step `docker compose up -d --build` with out-of-the-box SQLite or host PostgreSQL integration via `host.docker.internal`.
+  - *Automated Build & Release Pipeline*: Automated ZIP bundling without nested archives, GitHub Pre-Release asset distribution.
+
+---
+
+## 4. Quickstart Guide (Local Development)
+
+### Prerequisites
+- **Node.js**: v18 or v20 LTS
+- **npm**: v9 or higher
 
 ### Step 1: Install Dependencies
+Install all workspace dependencies from the root directory:
 ```bash
 npm install
 ```
 
-### Step 2: Run Frontend Development Server
-```bash
-npm run dev:frontend
-```
-- **Frontend URL**: http://localhost:5173
+### Step 2: Start Development Servers
 
-### Step 3: Run Strapi CMS Backend (SQLite)
-```bash
-npm run dev:backend
-```
-- **Strapi Admin Panel**: http://localhost:1337/admin
-- **Strapi API Base**: http://localhost:1337/api
+You can start both frontend and backend concurrently, or launch them individually:
 
-Or run full-stack debug in VS Code by pressing **`F5`**!
+#### Option A: Run Both Concurrently (Recommended)
+```bash
+npm run dev:all
+```
+
+#### Option B: Run Individually
+- **Frontend Server**:
+  ```bash
+  npm run dev:frontend
+  ```
+  Accessible at: **http://localhost:5173**
+
+- **Strapi CMS Backend**:
+  ```bash
+  npm run dev:backend
+  ```
+  - Admin Panel: **http://localhost:1337/admin**
+  - REST API Base: **http://localhost:1337/api**
+
+> [!TIP]
+> You can also press **`F5`** in VS Code to launch the full-stack debug configuration!
 
 ---
 
-## 3. Production VPS Deployment (Prebuilt Artifacts)
+## 5. Production VPS Deployment (Prebuilt Artifacts)
 
-1. Download the prebuilt artifact (`glosim.zip`) directly from the latest GitHub **Pre-Release** or Actions artifact.
-2. Extract the bundle on your VPS:
-   ```bash
-   unzip glosim.zip -d /opt/glosim
-   cd /opt/glosim
-   ```
-3. The bundle includes `.env` ready with **SQLite storage** by default! (To connect to external PostgreSQL instead, set `DATABASE_CLIENT=postgres` and your database credentials in `.env`).
-4. Launch containers (Docker files are conveniently in the root of the unzipped artifact):
-   ```bash
-   docker compose up -d --build
-   ```
+### Step 1: Download & Extract Prebuilt Bundle
+Download `glosim.zip` directly from the latest GitHub **Pre-Release** or Actions artifact:
+```bash
+unzip glosim.zip -d /opt/glosim
+cd /opt/glosim
+```
+
+### Step 2: (Optional) Configure Environment
+The prebuilt bundle includes a `.env` file pre-configured for **SQLite** out-of-the-box:
+```bash
+nano .env
+```
+
+If connecting to an existing external PostgreSQL database, update the database settings:
+```env
+DATABASE_CLIENT=postgres
+DATABASE_HOST=host.docker.internal   # Or your PostgreSQL host IP
+DATABASE_PORT=5432
+DATABASE_NAME=glosim_db
+DATABASE_USERNAME=glosim_user
+DATABASE_PASSWORD=your_secure_postgres_password
+DATABASE_SSL=false
+```
+
+### Step 3: Launch Containers
+From the bundle directory:
+```bash
+docker compose up -d --build
+```
+
+### Step 4: Verify Deployment
+- **Frontend Web Application**: `http://your-vps-ip:5173` (or port `80` if configured)
+- **Strapi Admin Panel**: `http://your-vps-ip:1337/admin`
+- **Strapi Healthcheck / API**: `http://your-vps-ip:1337/api/conferences`
+
+---
+
+## 6. Environment Variables Reference
+
+| Variable | Default Value | Description |
+| :--- | :--- | :--- |
+| `FRONTEND_PORT` | `5173` | Host port exposed for the frontend Nginx web server |
+| `VITE_STRAPI_URL` | `http://localhost:1337` | Strapi API base URL for frontend data fetching |
+| `VITE_SITE_TITLE` | `Global Simulation Conference` | Default site title |
+| `HOST` | `0.0.0.0` | Strapi server host binding |
+| `PORT` / `BACKEND_PORT` | `1337` | Strapi HTTP service port |
+| `APP_KEYS` | *(Auto-generated keys)* | Strapi cookie signing and session encryption keys |
+| `API_TOKEN_SALT` | *(Auto-generated salt)* | Salt used for Strapi API authentication tokens |
+| `ADMIN_JWT_SECRET` | *(Auto-generated secret)* | Secret used to sign admin panel JWT tokens |
+| `JWT_SECRET` | *(Auto-generated secret)* | Secret used to sign end-user / API JWT tokens |
+| `DATABASE_CLIENT` | `sqlite` | Database engine: `sqlite` or `postgres` |
+| `DATABASE_FILENAME` | `.tmp/data.db` | File path for SQLite database |
+| `DATABASE_HOST` | `host.docker.internal` | PostgreSQL server host (used when `DATABASE_CLIENT=postgres`) |
+| `DATABASE_PORT` | `5432` | PostgreSQL port |
+| `DATABASE_NAME` | `glosim_db` | PostgreSQL database name |
+| `DATABASE_USERNAME` | `glosim_admin` | PostgreSQL username |
+| `DATABASE_PASSWORD` | `glosim_secret_pwd` | PostgreSQL password |
+| `DATABASE_SSL` | `false` | Enable SSL for PostgreSQL connection |
+
+---
+
+## 7. Content Management & Admin Workflow
+
+1. Navigate to `http://your-domain-or-ip:1337/admin`.
+2. On first visit, register the primary Administrator account.
+3. Access the **Content Manager** to edit localized conference records:
+   - **Switching Locales**: Use the locale selector dropdown in the top-right corner to toggle between **Chinese (zh)** and **English (en)**.
+   - **Publishing Changes**: Always click **Save** and then **Publish** to make changes visible to the public API and frontend.
+4. Access the **Media Library** to upload conference schedules, speaker headshots, organization logos, and CFP documents.
+
+---
+
+## 8. API Reference & Internationalization Querying
+
+All endpoints support Strapi's standard i18n filtering. Append `?locale=zh` or `?locale=en` to retrieve language-specific content:
+
+| Endpoint | Method | Supported Locales | Description |
+| :--- | :--- | :--- | :--- |
+| `/api/global` | `GET` | `zh`, `en` | Site-wide settings, contact info, ICP, navigation links |
+| `/api/home-page` | `GET` | `zh`, `en` | Homepage hero banners, statistics, and highlights |
+| `/api/conferences` | `GET` | `zh`, `en` | Conference dates, agenda timeline, keynote speakers |
+| `/api/org-overview` | `GET` | `zh`, `en` | Organization introduction, mission, bylaws |
+| `/api/leaders` | `GET` | `zh`, `en` | Committee leadership profiles and academic titles |
+| `/api/member-institutions` | `GET` | `zh`, `en` | Member universities and institutional partners |
+| `/api/notices` | `GET` | `zh`, `en` | Conference announcements, news, CFP submissions |
+
+---
+
+## 9. Available NPM Workspace Scripts
+
+| Command | Working Directory | Description |
+| :--- | :--- | :--- |
+| `npm run dev:all` | Root | Starts both frontend and backend concurrently |
+| `npm run dev:frontend` | Root (`frontend`) | Starts Vite development server at `http://localhost:5173` |
+| `npm run dev:backend` | Root (`backend`) | Starts Strapi development server at `http://localhost:1337` |
+| `npm run build` | Root (All workspaces) | Compiles production builds for both frontend and backend |
+| `npm run build:frontend` | Root (`frontend`) | Runs `tsc && vite build` to generate `frontend/dist` |
+| `npm run build:backend` | Root (`backend`) | Runs `strapi build` to compile the admin dashboard |
+| `npm run start:frontend` | Root (`frontend`) | Previews the compiled frontend bundle locally |
+| `npm run start:backend` | Root (`backend`) | Runs `strapi start` for production backend execution |
