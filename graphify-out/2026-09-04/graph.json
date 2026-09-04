@@ -2797,7 +2797,7 @@
       "node_kind": "heading",
       "norm_label": "10. automated versioning & pre-release pipeline",
       "source_file": "README.md",
-      "source_location": "L354"
+      "source_location": "L342"
     },
     {
       "id": "readme_1_code_directory_structure_repository_code",
@@ -2821,7 +2821,7 @@
       "node_kind": "heading",
       "norm_label": "1. versioning specification",
       "source_file": "README.md",
-      "source_location": "L358"
+      "source_location": "L346"
     },
     {
       "id": "readme_2_artifact_code_structure_deployment_package",
@@ -2845,7 +2845,7 @@
       "node_kind": "heading",
       "norm_label": "2. automated release notes generation",
       "source_file": "README.md",
-      "source_location": "L365"
+      "source_location": "L353"
     },
     {
       "id": "readme_3_local_version_management_commands",
@@ -2857,7 +2857,7 @@
       "node_kind": "heading",
       "norm_label": "3. local version management commands",
       "source_file": "README.md",
-      "source_location": "L374"
+      "source_location": "L362"
     },
     {
       "id": "readme_3_project_structure_technical_capabilities",
@@ -2869,7 +2869,7 @@
       "node_kind": "heading",
       "norm_label": "3. project structure & technical capabilities",
       "source_file": "README.md",
-      "source_location": "L133"
+      "source_location": "L132"
     },
     {
       "id": "readme_4_quickstart_guide_local_development",
@@ -2881,7 +2881,7 @@
       "node_kind": "heading",
       "norm_label": "4. quickstart guide (local development)",
       "source_file": "README.md",
-      "source_location": "L173"
+      "source_location": "L172"
     },
     {
       "id": "readme_5_production_vps_deployment_prebuilt_artifacts",
@@ -2893,7 +2893,7 @@
       "node_kind": "heading",
       "norm_label": "5. production vps deployment (prebuilt artifacts)",
       "source_file": "README.md",
-      "source_location": "L213"
+      "source_location": "L212"
     },
     {
       "id": "readme_6_environment_variables_reference",
@@ -2905,7 +2905,7 @@
       "node_kind": "heading",
       "norm_label": "6. environment variables reference",
       "source_file": "README.md",
-      "source_location": "L286"
+      "source_location": "L274"
     },
     {
       "id": "readme_7_content_management_admin_workflow",
@@ -2917,7 +2917,7 @@
       "node_kind": "heading",
       "norm_label": "7. content management & admin workflow",
       "source_file": "README.md",
-      "source_location": "L310"
+      "source_location": "L298"
     },
     {
       "id": "readme_8_api_reference_internationalization_querying",
@@ -2929,7 +2929,7 @@
       "node_kind": "heading",
       "norm_label": "8. api reference & internationalization querying",
       "source_file": "README.md",
-      "source_location": "L321"
+      "source_location": "L309"
     },
     {
       "id": "readme_9_available_npm_workspace_scripts",
@@ -2941,7 +2941,7 @@
       "node_kind": "heading",
       "norm_label": "9. available npm workspace scripts",
       "source_file": "README.md",
-      "source_location": "L337"
+      "source_location": "L325"
     },
     {
       "id": "readme_backend_node_js_strapi_cms_headless_architecture",
@@ -2953,7 +2953,7 @@
       "node_kind": "heading",
       "norm_label": "backend (node.js & strapi cms headless architecture)",
       "source_file": "README.md",
-      "source_location": "L135"
+      "source_location": "L134"
     },
     {
       "id": "readme_devops_infrastructure_docker_ci_cd_pipeline",
@@ -2965,7 +2965,7 @@
       "node_kind": "heading",
       "norm_label": "devops & infrastructure (docker & ci/cd pipeline)",
       "source_file": "README.md",
-      "source_location": "L162"
+      "source_location": "L161"
     },
     {
       "id": "readme_frontend_react_typescript_modern_spa",
@@ -2977,7 +2977,7 @@
       "node_kind": "heading",
       "norm_label": "frontend (react + typescript modern spa)",
       "source_file": "README.md",
-      "source_location": "L148"
+      "source_location": "L147"
     },
     {
       "id": "readme_glosim_global_simulation_conference",
@@ -2992,18 +2992,6 @@
       "source_location": "L1"
     },
     {
-      "id": "readme_interactive_menu_capabilities",
-      "label": "Interactive Menu Capabilities:",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "GloSim (Global Simulation Conference)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "interactive menu capabilities:",
-      "source_file": "README.md",
-      "source_location": "L245"
-    },
-    {
       "id": "readme_one_command_deploy_pre_release_version",
       "label": "\ud83d\ude80 One-Command Deploy (Pre-Release Version)",
       "_origin": "ast",
@@ -3013,7 +3001,7 @@
       "node_kind": "heading",
       "norm_label": "\ud83d\ude80 one-command deploy (pre-release version)",
       "source_file": "README.md",
-      "source_location": "L215"
+      "source_location": "L214"
     },
     {
       "id": "readme_option_a_run_both_concurrently_recommended",
@@ -3025,7 +3013,7 @@
       "node_kind": "heading",
       "norm_label": "option a: run both concurrently (recommended)",
       "source_file": "README.md",
-      "source_location": "L189"
+      "source_location": "L188"
     },
     {
       "id": "readme_option_b_run_individually",
@@ -3037,19 +3025,7 @@
       "node_kind": "heading",
       "norm_label": "option b: run individually",
       "source_file": "README.md",
-      "source_location": "L194"
-    },
-    {
-      "id": "readme_or_launch_directly_with_docker_compose",
-      "label": "Or Launch Directly with Docker Compose:",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "GloSim (Global Simulation Conference)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "or launch directly with docker compose:",
-      "source_file": "README.md",
-      "source_location": "L261"
+      "source_location": "L193"
     },
     {
       "id": "readme_prerequisites",
@@ -3061,7 +3037,7 @@
       "node_kind": "heading",
       "norm_label": "prerequisites",
       "source_file": "README.md",
-      "source_location": "L175"
+      "source_location": "L174"
     },
     {
       "id": "readme_step_1_install_dependencies",
@@ -3073,7 +3049,7 @@
       "node_kind": "heading",
       "norm_label": "step 1: install dependencies",
       "source_file": "README.md",
-      "source_location": "L179"
+      "source_location": "L178"
     },
     {
       "id": "readme_step_1_manual_download_extract_prebuilt_bundle_alternative",
@@ -3085,19 +3061,19 @@
       "node_kind": "heading",
       "norm_label": "step 1: manual download & extract prebuilt bundle (alternative)",
       "source_file": "README.md",
-      "source_location": "L228"
+      "source_location": "L242"
     },
     {
-      "id": "readme_step_2_run_glosim_deployment_tool_interactive_menu",
-      "label": "Step 2: Run GloSim Deployment Tool (Interactive Menu)",
+      "id": "readme_step_2_launch_containers",
+      "label": "Step 2: Launch Containers",
       "_origin": "ast",
       "community": 10,
       "community_name": "GloSim (Global Simulation Conference)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "step 2: run glosim deployment tool (interactive menu)",
+      "norm_label": "step 2: launch containers",
       "source_file": "README.md",
-      "source_location": "L235"
+      "source_location": "L249"
     },
     {
       "id": "readme_step_2_start_development_servers",
@@ -3109,7 +3085,7 @@
       "node_kind": "heading",
       "norm_label": "step 2: start development servers",
       "source_file": "README.md",
-      "source_location": "L185"
+      "source_location": "L184"
     },
     {
       "id": "readme_step_3_optional_configure_external_postgresql",
@@ -3121,7 +3097,7 @@
       "node_kind": "heading",
       "norm_label": "step 3: (optional) configure external postgresql",
       "source_file": "README.md",
-      "source_location": "L267"
+      "source_location": "L255"
     },
     {
       "id": "readme_step_4_verify_deployment",
@@ -3133,7 +3109,7 @@
       "node_kind": "heading",
       "norm_label": "step 4: verify deployment",
       "source_file": "README.md",
-      "source_location": "L279"
+      "source_location": "L267"
     },
     {
       "id": "ds_glosim_d2271487_a9b5_4f2b_9d18_ac11ca4f8f1d_readme",
@@ -3420,7 +3396,7 @@
       "node_kind": "heading",
       "norm_label": "2. deploying on vps (step-by-step)",
       "source_file": "docs/deployment.md",
-      "source_location": "L34"
+      "source_location": "L33"
     },
     {
       "id": "docs_deployment_3_github_actions_continuous_integration",
@@ -3432,7 +3408,7 @@
       "node_kind": "heading",
       "norm_label": "3. github actions continuous integration",
       "source_file": "docs/deployment.md",
-      "source_location": "L104"
+      "source_location": "L101"
     },
     {
       "id": "docs_deployment_alternative_manual_download_extraction",
@@ -3444,7 +3420,7 @@
       "node_kind": "heading",
       "norm_label": "alternative: manual download & extraction",
       "source_file": "docs/deployment.md",
-      "source_location": "L48"
+      "source_location": "L53"
     },
     {
       "id": "docs_deployment_glosim_deployment_vps_architecture_guide",
@@ -3468,19 +3444,19 @@
       "node_kind": "heading",
       "norm_label": "\ud83d\ude80 one-command instant deploy (recommended)",
       "source_file": "docs/deployment.md",
-      "source_location": "L36"
+      "source_location": "L35"
     },
     {
-      "id": "docs_deployment_step_2_recommended_run_glosim_management_tool",
-      "label": "Step 2: (Recommended) Run GloSim Management Tool",
+      "id": "docs_deployment_step_2_launch_containers",
+      "label": "Step 2: Launch Containers",
       "_origin": "ast",
       "community": 14,
       "community_name": "2. Deploying on VPS (Step-by-Step)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "step 2: (recommended) run glosim management tool",
+      "norm_label": "step 2: launch containers",
       "source_file": "docs/deployment.md",
-      "source_location": "L55"
+      "source_location": "L60"
     },
     {
       "id": "docs_deployment_step_3_optional_configure_external_postgresql",
@@ -3492,7 +3468,7 @@
       "node_kind": "heading",
       "norm_label": "step 3: (optional) configure external postgresql",
       "source_file": "docs/deployment.md",
-      "source_location": "L69"
+      "source_location": "L66"
     },
     {
       "id": "docs_deployment_step_4_launch_containers_direct_command",
@@ -3504,7 +3480,7 @@
       "node_kind": "heading",
       "norm_label": "step 4: launch containers (direct command)",
       "source_file": "docs/deployment.md",
-      "source_location": "L92"
+      "source_location": "L89"
     },
     {
       "id": "docs_deployment_step_5_verify_deployment",
@@ -3516,7 +3492,7 @@
       "node_kind": "heading",
       "norm_label": "step 5: verify deployment",
       "source_file": "docs/deployment.md",
-      "source_location": "L98"
+      "source_location": "L95"
     },
     {
       "id": "frontend_src_vite_env_d",
@@ -4361,7 +4337,7 @@
       },
       "norm_label": "add_glosim_command()",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L142"
+      "source_location": "L141"
     },
     {
       "id": "docker_glosim_deploy_check_docker",
@@ -4376,7 +4352,7 @@
       },
       "norm_label": "check_docker()",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L103"
+      "source_location": "L102"
     },
     {
       "id": "docker_glosim_deploy_deploy_services",
@@ -4391,7 +4367,7 @@
       },
       "norm_label": "deploy_services()",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L174"
+      "source_location": "L179"
     },
     {
       "id": "docker_glosim_deploy_download_and_extract_release",
@@ -4436,7 +4412,7 @@
       },
       "norm_label": "get_compose_cmd()",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L90"
+      "source_location": "L89"
     },
     {
       "id": "docker_glosim_deploy_get_server_ip",
@@ -4451,7 +4427,7 @@
       },
       "norm_label": "get_server_ip()",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L119"
+      "source_location": "L118"
     },
     {
       "id": "docker_glosim_deploy_get_version",
@@ -4466,7 +4442,7 @@
       },
       "norm_label": "get_version()",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L129"
+      "source_location": "L128"
     },
     {
       "id": "docker_glosim_deploy_info",
@@ -4496,7 +4472,7 @@
       },
       "norm_label": "remove_logs()",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L267"
+      "source_location": "L272"
     },
     {
       "id": "docker_glosim_deploy_sh__entry",
@@ -4526,7 +4502,7 @@
       },
       "norm_label": "show_menu()",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L454"
+      "source_location": "L459"
     },
     {
       "id": "docker_glosim_deploy_show_status",
@@ -4541,7 +4517,7 @@
       },
       "norm_label": "show_status()",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L390"
+      "source_location": "L395"
     },
     {
       "id": "docker_glosim_deploy_success",
@@ -4586,7 +4562,7 @@
       },
       "norm_label": "uninstall_services()",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L223"
+      "source_location": "L228"
     },
     {
       "id": "docker_glosim_deploy_update_services",
@@ -4601,7 +4577,7 @@
       },
       "norm_label": "update_services()",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L295"
+      "source_location": "L300"
     },
     {
       "id": "docker_glosim_deploy_warn",
@@ -8562,19 +8538,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L143",
-      "weight": 1.0
-    },
-    {
-      "source": "docker_glosim_deploy_add_glosim_command",
-      "target": "docker_glosim_deploy_error",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L150",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -8586,7 +8550,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L159",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "docker_glosim_deploy_add_glosim_command",
+      "target": "docker_glosim_deploy_error",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "docker/glosim-deploy.sh",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -8598,7 +8574,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L167",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
@@ -8610,7 +8586,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L105",
+      "source_location": "L104",
       "weight": 1.0
     },
     {
@@ -8622,7 +8598,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L175",
+      "source_location": "L180",
       "weight": 1.0
     },
     {
@@ -8634,7 +8610,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L176",
+      "source_location": "L181",
       "weight": 1.0
     },
     {
@@ -8646,7 +8622,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L180",
+      "source_location": "L185",
       "weight": 1.0
     },
     {
@@ -8658,7 +8634,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L182",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -8670,7 +8646,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L183",
+      "source_location": "L188",
       "weight": 1.0
     },
     {
@@ -8682,7 +8658,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L192",
+      "source_location": "L197",
       "weight": 1.0
     },
     {
@@ -8694,7 +8670,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L215",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -8706,7 +8682,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L217",
+      "source_location": "L222",
       "weight": 1.0
     },
     {
@@ -8754,7 +8730,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L86",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -8766,7 +8742,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L268",
+      "source_location": "L273",
       "weight": 1.0
     },
     {
@@ -8778,7 +8754,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L270",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -8790,7 +8766,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L289",
+      "source_location": "L294",
       "weight": 1.0
     },
     {
@@ -8802,7 +8778,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L494",
+      "source_location": "L499",
       "weight": 1.0
     },
     {
@@ -8814,7 +8790,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L497",
+      "source_location": "L502",
       "weight": 1.0
     },
     {
@@ -8826,7 +8802,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L500",
+      "source_location": "L505",
       "weight": 1.0
     },
     {
@@ -8838,7 +8814,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L503",
+      "source_location": "L508",
       "weight": 1.0
     },
     {
@@ -8850,7 +8826,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L506",
+      "source_location": "L511",
       "weight": 1.0
     },
     {
@@ -8862,7 +8838,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L509",
+      "source_location": "L514",
       "weight": 1.0
     },
     {
@@ -8874,7 +8850,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L512",
+      "source_location": "L517",
       "weight": 1.0
     },
     {
@@ -8886,7 +8862,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L527",
+      "source_location": "L532",
       "weight": 1.0
     },
     {
@@ -8898,7 +8874,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L475",
+      "source_location": "L480",
       "weight": 1.0
     },
     {
@@ -8910,7 +8886,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L476",
+      "source_location": "L481",
       "weight": 1.0
     },
     {
@@ -8922,7 +8898,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L477",
+      "source_location": "L482",
       "weight": 1.0
     },
     {
@@ -8934,7 +8910,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L478",
+      "source_location": "L483",
       "weight": 1.0
     },
     {
@@ -8946,7 +8922,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L479",
+      "source_location": "L484",
       "weight": 1.0
     },
     {
@@ -8958,7 +8934,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L480",
+      "source_location": "L485",
       "weight": 1.0
     },
     {
@@ -8970,7 +8946,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L482",
+      "source_location": "L487",
       "weight": 1.0
     },
     {
@@ -8982,7 +8958,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L391",
+      "source_location": "L396",
       "weight": 1.0
     },
     {
@@ -8994,7 +8970,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L419",
+      "source_location": "L424",
       "weight": 1.0
     },
     {
@@ -9006,7 +8982,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L224",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -9018,7 +8994,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L225",
+      "source_location": "L230",
       "weight": 1.0
     },
     {
@@ -9030,7 +9006,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L233",
+      "source_location": "L238",
       "weight": 1.0
     },
     {
@@ -9042,7 +9018,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L256",
+      "source_location": "L261",
       "weight": 1.0
     },
     {
@@ -9054,7 +9030,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L296",
+      "source_location": "L301",
       "weight": 1.0
     },
     {
@@ -9066,7 +9042,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L297",
+      "source_location": "L302",
       "weight": 1.0
     },
     {
@@ -9078,7 +9054,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L307",
+      "source_location": "L312",
       "weight": 1.0
     },
     {
@@ -9090,7 +9066,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L313",
+      "source_location": "L318",
       "weight": 1.0
     },
     {
@@ -9102,7 +9078,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L344",
+      "source_location": "L349",
       "weight": 1.0
     },
     {
@@ -9114,7 +9090,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L361",
+      "source_location": "L366",
       "weight": 1.0
     },
     {
@@ -9126,7 +9102,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L362",
+      "source_location": "L367",
       "weight": 1.0
     },
     {
@@ -9138,7 +9114,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L382",
+      "source_location": "L387",
       "weight": 1.0
     },
     {
@@ -12961,7 +12937,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L36",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -12972,18 +12948,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L48",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
       "source": "docs_deployment_2_deploying_on_vps_step_by_step",
-      "target": "docs_deployment_step_2_recommended_run_glosim_management_tool",
+      "target": "docs_deployment_step_2_launch_containers",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L55",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -12994,7 +12970,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L69",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -13005,7 +12981,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L92",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -13016,7 +12992,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L98",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -13027,7 +13003,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L104",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -13038,7 +13014,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L34",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -14776,7 +14752,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L358",
+      "source_location": "L346",
       "weight": 1.0
     },
     {
@@ -14787,7 +14763,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L365",
+      "source_location": "L353",
       "weight": 1.0
     },
     {
@@ -14798,7 +14774,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L374",
+      "source_location": "L362",
       "weight": 1.0
     },
     {
@@ -14809,7 +14785,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L135",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -14820,7 +14796,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L148",
+      "source_location": "L147",
       "weight": 1.0
     },
     {
@@ -14831,7 +14807,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L162",
+      "source_location": "L161",
       "weight": 1.0
     },
     {
@@ -14842,7 +14818,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L175",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -14853,7 +14829,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L179",
+      "source_location": "L178",
       "weight": 1.0
     },
     {
@@ -14864,7 +14840,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L185",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -14875,7 +14851,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L215",
+      "source_location": "L214",
       "weight": 1.0
     },
     {
@@ -14886,40 +14862,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L228",
+      "source_location": "L242",
       "weight": 1.0
     },
     {
       "source": "readme_5_production_vps_deployment_prebuilt_artifacts",
-      "target": "readme_step_2_run_glosim_deployment_tool_interactive_menu",
+      "target": "readme_step_2_launch_containers",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L235",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_5_production_vps_deployment_prebuilt_artifacts",
-      "target": "readme_interactive_menu_capabilities",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L245",
-      "weight": 1.0
-    },
-    {
-      "source": "readme_5_production_vps_deployment_prebuilt_artifacts",
-      "target": "readme_or_launch_directly_with_docker_compose",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "L261",
+      "source_location": "L249",
       "weight": 1.0
     },
     {
@@ -14930,7 +14884,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L267",
+      "source_location": "L255",
       "weight": 1.0
     },
     {
@@ -14941,7 +14895,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L279",
+      "source_location": "L267",
       "weight": 1.0
     },
     {
@@ -14963,7 +14917,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L133",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -14974,7 +14928,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L173",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
@@ -14985,7 +14939,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L213",
+      "source_location": "L212",
       "weight": 1.0
     },
     {
@@ -14996,7 +14950,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L286",
+      "source_location": "L274",
       "weight": 1.0
     },
     {
@@ -15007,7 +14961,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L310",
+      "source_location": "L298",
       "weight": 1.0
     },
     {
@@ -15018,7 +14972,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L321",
+      "source_location": "L309",
       "weight": 1.0
     },
     {
@@ -15029,7 +14983,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L337",
+      "source_location": "L325",
       "weight": 1.0
     },
     {
@@ -15040,7 +14994,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L354",
+      "source_location": "L342",
       "weight": 1.0
     },
     {
@@ -15062,7 +15016,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L189",
+      "source_location": "L188",
       "weight": 1.0
     },
     {
@@ -15073,7 +15027,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L194",
+      "source_location": "L193",
       "weight": 1.0
     },
     {
@@ -15326,7 +15280,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L103",
+      "source_location": "L102",
       "weight": 1.0
     },
     {
@@ -15337,7 +15291,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L119",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
@@ -15348,7 +15302,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L129",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -15359,7 +15313,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L142",
+      "source_location": "L141",
       "weight": 1.0
     },
     {
@@ -15370,7 +15324,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L174",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -15381,7 +15335,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L223",
+      "source_location": "L228",
       "weight": 1.0
     },
     {
@@ -15392,7 +15346,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L267",
+      "source_location": "L272",
       "weight": 1.0
     },
     {
@@ -15403,7 +15357,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L295",
+      "source_location": "L300",
       "weight": 1.0
     },
     {
@@ -15425,7 +15379,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L390",
+      "source_location": "L395",
       "weight": 1.0
     },
     {
@@ -15480,7 +15434,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L454",
+      "source_location": "L459",
       "weight": 1.0
     },
     {
@@ -15502,7 +15456,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docker/glosim-deploy.sh",
-      "source_location": "L90",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
