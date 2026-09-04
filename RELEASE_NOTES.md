@@ -1,10 +1,11 @@
 ## GloSim 0.0.1-pre-1
 
-> **Automated Pre-Release Build** · Tag: `0.0.1-pre-1` · Commit: `e2b32a2` · Date: 2026-09-04 06:34:01 UTC
+> **Automated Pre-Release Build** · Tag: `0.0.1-pre-1` · Commit: `2b0bb5f` · Date: 2026-09-04 06:45:12 UTC
 
 ### 🚀 What's New & Feature Highlights
 
 #### ✨ New Features
+- **feat: implement project documentation, deployment workflows, and graphify output integration** (`2b0bb5f`)
 - **feat: add backend server entry point, Docker support, and CI/CD pipeline for artifact deployment** (`e2b32a2`)
 - **feat: implement versioning utilities and standardize package versions across the project** (`cec5293`)
 - **feat: implement Docker production deployment configuration for backend and frontend services** (`1950d91`)

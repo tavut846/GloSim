@@ -13,7 +13,6 @@ glosim-deploy/
 ├── docker-compose.yml        # Multi-container orchestration (Backend + Frontend)
 ├── Dockerfile.backend        # Lightweight Node 20 Slim runtime
 ├── Dockerfile.frontend       # Lightweight Nginx runner
-├── glosim-deploy.sh          # Interactive deployment & management CLI tool
 ├── nginx.conf                # Nginx SPA & Gzip configuration
 ├── .env                      # Pre-configured production config (defaults to SQLite)
 ├── .env.example              # Environment template
@@ -33,26 +32,36 @@ glosim-deploy/
 
 ## 2. Deploying on VPS (Step-by-Step)
 
-### Step 1: Download & Extract Prebuilt Artifact
+### 🚀 One-Command Instant Deploy (Recommended)
+On any fresh Linux VPS, run this single command to automatically download the latest Pre-Release, set up SQLite storage, install the global `glosim` CLI, and launch containers:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/tavut846/GloSim/main/docker/glosim-deploy.sh | bash -s deploy
+```
+
+> [!TIP]
+> After deployment completes, simply type **`glosim`** anywhere on your server to open the interactive management menu:
+> - `1) Add 'glosim' command to VPS`: Creates a system-wide `/usr/local/bin/glosim` shortcut.
+> - `2) Deploy / Start GloSim`: Runs containers via Docker Compose.
+> - `3) Uninstall GloSim`: Tears down containers while preserving your database (`backend/.tmp/data.db`) and uploaded media.
+> - `4) Clear Container Logs`: Safely truncates container log streams.
+> - `5) Update GloSim`: Automatically downloads and applies the latest Pre-Release from GitHub (`tavut846/GloSim`).
+> - `6) View Platform Status`: Displays version, database engine, container health, ports, and access URLs.
+
+---
+
+### Alternative: Manual Download & Extraction
 Download `glosim.zip` from the latest GitHub **Pre-Release** or Actions Artifact:
 ```bash
 unzip glosim.zip -d /opt/glosim
 cd /opt/glosim
 ```
 
-### Step 2: (Recommended) Run GloSim Management Tool
-The artifact includes `glosim-deploy.sh` for one-stop management.
+### Step 2: Launch Containers
+From the extracted bundle root:
 ```bash
-./glosim-deploy.sh
+docker compose up -d --build
 ```
-
-You can select:
-- `1) Add 'glosim' command to VPS`: Creates a system-wide `/usr/local/bin/glosim` shortcut so you can manage GloSim from anywhere simply by typing `glosim`.
-- `2) Deploy / Start GloSim`: Automatically verifies `.env`, sets up SQLite storage, and launches containers via Docker Compose.
-- `3) Uninstall GloSim`: Tears down containers while strictly preserving your database (`backend/.tmp/data.db`) and uploaded media.
-- `4) Clear Container Logs`: Safely truncates container log streams and cleans up temporary log files to reclaim disk space.
-- `5) Update GloSim`: Automatically downloads and applies the latest Pre-Release from GitHub (`tavut846/GloSim`) with automatic database backup and restore.
-- `6) View Platform Status`: Displays version, database engine, container health, ports, and external access endpoints.
 
 ### Step 3: (Optional) Configure External PostgreSQL
 By default, `.env` is already configured with **SQLite storage** for zero-configuration startup!

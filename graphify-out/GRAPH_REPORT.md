@@ -1,16 +1,16 @@
 # Graph Report - GloSim  (2026-09-04)
 
 ## Corpus Check
-- 83 files · ~48,887 words
+- 83 files · ~49,198 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 536 nodes · 839 edges · 52 communities (46 shown, 6 thin omitted)
+- 537 nodes · 847 edges · 52 communities (46 shown, 6 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e2b32a24`
+- Built from commit: `2b0bb5ff`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -51,7 +51,7 @@
 7. `ApiService` - 12 edges
 8. `Conference` - 12 edges
 9. `scripts` - 12 edges
-10. `GloSim (Global Simulation Conference)` - 11 edges
+10. `deploy_services()` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `CountdownBannerProps` --references--> `Conference`  [EXTRACTED]
@@ -108,7 +108,7 @@ Nodes (31): concurrently, description, devDependencies, concurrently, date-fns, 
 
 ### Community 10 - "GloSim (Global Simulation Conference)"
 Cohesion: 0.07
-Nodes (28): 10. Automated Versioning & Pre-Release Pipeline, 1. Code Directory Structure (Repository Code), 1. Versioning Specification, 2. Artifact Code Structure (Deployment Package), 2. Automated Release Notes Generation, 3. Local Version Management Commands, 3. Project Structure & Technical Capabilities, 4. Quickstart Guide (Local Development) (+20 more)
+Nodes (27): 10. Automated Versioning & Pre-Release Pipeline, 1. Code Directory Structure (Repository Code), 1. Versioning Specification, 2. Artifact Code Structure (Deployment Package), 2. Automated Release Notes Generation, 3. Local Version Management Commands, 3. Project Structure & Technical Capabilities, 4. Quickstart Guide (Local Development) (+19 more)
 
 ### Community 11 - "Global Simulation Conference — Design System"
 Cohesion: 0.22
@@ -123,12 +123,12 @@ Cohesion: 0.38
 Nodes (4): seedData, seedDatabase(), bootstrap(), { seedDatabase }
 
 ### Community 14 - "2. Deploying on VPS (Step-by-Step)"
-Cohesion: 0.20
-Nodes (9): 1. Directory Structure in Deployment Package, 2. Deploying on VPS (Step-by-Step), 3. GitHub Actions Continuous Integration, GloSim Deployment & VPS Architecture Guide, Step 1: Download & Extract Prebuilt Artifact, Step 2: (Recommended) Run GloSim Management Tool, Step 3: (Optional) Configure External PostgreSQL, Step 4: Launch Containers (Direct Command) (+1 more)
+Cohesion: 0.18
+Nodes (10): 1. Directory Structure in Deployment Package, 2. Deploying on VPS (Step-by-Step), 3. GitHub Actions Continuous Integration, Alternative: Manual Download & Extraction, GloSim Deployment & VPS Architecture Guide, 🚀 One-Command Instant Deploy (Recommended), Step 2: Launch Containers, Step 3: (Optional) Configure External PostgreSQL (+2 more)
 
 ### Community 46 - "glosim-deploy.sh"
 Cohesion: 0.39
-Nodes (14): add_glosim_command(), check_docker(), deploy_services(), error(), info(), remove_logs(), glosim-deploy.sh script, show_menu() (+6 more)
+Nodes (15): add_glosim_command(), check_docker(), deploy_services(), download_and_extract_release(), error(), info(), remove_logs(), glosim-deploy.sh script (+7 more)
 
 ### Community 47 - "components.d.ts"
 Cohesion: 0.22

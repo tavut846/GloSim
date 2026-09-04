@@ -106,7 +106,6 @@ glosim/
 ├── docker-compose.yml                # Multi-container orchestration (Backend + Frontend services)
 ├── Dockerfile.backend                # Lightweight production runtime container for Strapi
 ├── Dockerfile.frontend               # Nginx Alpine web server container for static SPA assets
-├── glosim-deploy.sh                  # Interactive management & deployment CLI tool
 ├── nginx.conf                        # Production Nginx SPA routing & Gzip compression config
 ├── .env                              # Pre-configured production config (ready with SQLite storage)
 ├── .env.example                      # Environment variables reference template
@@ -212,24 +211,17 @@ npm run dev:all
 
 ## 5. Production VPS Deployment (Prebuilt Artifacts)
 
-### Step 1: Download & Extract Prebuilt Bundle
-Download `glosim.zip` directly from the latest GitHub **Pre-Release** or Actions artifact:
+### 🚀 One-Command Deploy (Pre-Release Version)
+
+On any fresh Linux VPS (Ubuntu / Debian / CentOS / AlmaLinux), run this single command to automatically download the latest Pre-Release, set up SQLite storage, install the global `glosim` CLI, and launch all services:
+
 ```bash
-unzip glosim.zip -d /opt/glosim
-cd /opt/glosim
+curl -fsSL https://raw.githubusercontent.com/tavut846/GloSim/main/docker/glosim-deploy.sh | bash -s deploy
 ```
 
-### Step 2: Run GloSim Deployment Tool (Interactive Menu)
-The bundle includes an interactive management tool `glosim-deploy.sh` directly in the root directory:
-```bash
-./glosim-deploy.sh
-```
+> [!TIP]
+> After deployment completes, simply type **`glosim`** anywhere on your server to open the interactive management menu, check container status, view logs, or update to newer releases!
 
-You can also install the global `glosim` shortcut so you can manage your deployment from anywhere on the VPS:
-- **Option 1**: Select `1) Add 'glosim' command to VPS` in the menu.
-- From then on, simply type `glosim` in any terminal!
-
-### Interactive Menu Capabilities:
 ```text
 ====================================================
         GloSim Management & Deployment Tool        
@@ -245,8 +237,17 @@ You can also install the global `glosim` shortcut so you can manage your deploym
 ====================================================
 ```
 
-### Or Launch Directly with Docker Compose:
-If you prefer raw Docker commands:
+---
+
+### Step 1: Manual Download & Extract Prebuilt Bundle (Alternative)
+If you prefer manual installation without the 1-command installer, download `glosim.zip` from GitHub **Pre-Releases**:
+```bash
+unzip glosim.zip -d /opt/glosim
+cd /opt/glosim
+```
+
+### Step 2: Launch Containers
+From the extracted bundle directory:
 ```bash
 docker compose up -d --build
 ```

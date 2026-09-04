@@ -76,9 +76,11 @@ jobs:
           cp backend/package.json bundle/backend/
           cp backend/server.js bundle/backend/
 
-          # Copy Docker deployment files from docker/ directly into bundle root
-          cp docker/* bundle/
-          chmod +x bundle/glosim-deploy.sh || true
+          # Copy Docker deployment files from docker/ directly into bundle root (excluding standalone glosim-deploy.sh)
+          cp docker/docker-compose.yml bundle/
+          cp docker/Dockerfile.backend bundle/
+          cp docker/Dockerfile.frontend bundle/
+          cp docker/nginx.conf bundle/
 
           # Copy env template, release notes, and default deploy .env (with SQLite default storage)
           cp .env.example bundle/.env.example

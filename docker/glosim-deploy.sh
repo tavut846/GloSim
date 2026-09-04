@@ -8,7 +8,22 @@
 set -e
 
 # Resolve script root directory
-PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ -n "${BASH_SOURCE[0]}" ] && [ -f "${BASH_SOURCE[0]}" ]; then
+  PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" 2>/dev/null && pwd)"
+else
+  PROJECT_DIR="/opt/glosim"
+fi
+
+# If invoked in an empty directory or outside a GloSim installation, default to /opt/glosim
+if [ ! -f "$PROJECT_DIR/docker-compose.yml" ]; then
+  if [ -d "/opt/glosim" ] && [ -f "/opt/glosim/docker-compose.yml" ]; then
+    PROJECT_DIR="/opt/glosim"
+  elif [ "$PROJECT_DIR" = "/tmp" ] || [ "$PROJECT_DIR" = "$HOME" ] || [ "$PROJECT_DIR" = "/root" ]; then
+    PROJECT_DIR="/opt/glosim"
+  fi
+fi
+
+mkdir -p "$PROJECT_DIR"
 cd "$PROJECT_DIR"
 
 # ANSI Colors
@@ -26,6 +41,49 @@ success() { echo -e "${GREEN}[SUCCESS]${RESET} $1"; }
 warn() { echo -e "${YELLOW}[WARN]${RESET} $1"; }
 error() { echo -e "${RED}[ERROR]${RESET} $1"; }
 title() { echo -e "\n${BOLD}${BLUE}=== $1 ===${RESET}"; }
+
+# Download and extract latest release package from GitHub
+download_and_extract_release() {
+  info "Querying latest release from GitHub API (tavut846/GloSim)..."
+  local api_url="https://api.github.com/repos/tavut846/GloSim/releases"
+  local release_json
+  release_json=$(curl -sSL -H "Accept: application/vnd.github+json" "$api_url" || true)
+
+  if [ -z "$release_json" ] || echo "$release_json" | grep -q "Not Found"; then
+    error "Unable to fetch release information from GitHub."
+    return 1
+  fi
+
+  local download_url
+  download_url=$(echo "$release_json" | grep -o 'https://[^"]*glosim\.zip' | head -n1 || true)
+  local tag_name
+  tag_name=$(echo "$release_json" | grep -o '"tag_name": *"[^"]*"' | head -n1 | cut -d'"' -f4 || true)
+
+  if [ -z "$download_url" ]; then
+    error "No glosim.zip asset found in latest releases."
+    return 1
+  fi
+
+  info "Found release: ${BOLD}$tag_name${RESET}"
+  info "Downloading release package from $download_url..."
+
+  local tmp_zip="/tmp/glosim_release.zip"
+  rm -f "$tmp_zip"
+  curl -fSL "$download_url" -o "$tmp_zip"
+
+  info "Extracting bundle into $PROJECT_DIR..."
+  if ! command -v unzip >/dev/null 2>&1; then
+    warn "unzip command not found. Installing unzip..."
+    if command -v apt-get >/dev/null 2>&1; then
+      apt-get update && apt-get install -y unzip
+    elif command -v yum >/dev/null 2>&1; then
+      yum install -y unzip
+    fi
+  fi
+  unzip -o "$tmp_zip" -d "$PROJECT_DIR"
+  rm -f "$tmp_zip"
+  success "Downloaded and extracted GloSim $tag_name."
+}
 
 # Detect Docker Compose Command (v2 plugin or standalone v1)
 get_compose_cmd() {
@@ -85,7 +143,13 @@ add_glosim_command() {
   local target_bin="/usr/local/bin/glosim"
   local script_path="$PROJECT_DIR/glosim-deploy.sh"
 
-  chmod +x "$script_path"
+  # If glosim-deploy.sh is not present in PROJECT_DIR (e.g. run via curl pipe), save a copy locally
+  if [ ! -f "$script_path" ]; then
+    info "Saving glosim-deploy.sh to $PROJECT_DIR..."
+    curl -fsSL https://raw.githubusercontent.com/tavut846/GloSim/main/docker/glosim-deploy.sh -o "$script_path" 2>/dev/null || true
+  fi
+
+  chmod +x "$script_path" 2>/dev/null || true
 
   if [ "$EUID" -ne 0 ] && ! command -v sudo >/dev/null 2>&1; then
     error "Root or sudo privileges are required to create $target_bin."
@@ -115,6 +179,14 @@ EOF"
 deploy_services() {
   title "Deploying GloSim Services"
   check_docker || return 1
+
+  # If docker-compose.yml does not exist in PROJECT_DIR, auto-download release
+  if [ ! -f "docker-compose.yml" ]; then
+    info "GloSim deployment files not found in $PROJECT_DIR."
+    info "Automatically fetching latest pre-release from GitHub..."
+    download_and_extract_release || return 1
+    add_glosim_command 2>/dev/null || true
+  fi
 
   # Ensure .env exists
   if [ ! -f ".env" ]; then
@@ -273,26 +345,10 @@ update_services() {
       [ -f ".env" ] && cp .env "$backup_dir/"
       [ -d "backend/.tmp" ] && cp -r backend/.tmp "$backup_dir/"
 
-      # 2. Download bundle
-      local tmp_zip="/tmp/glosim_update.zip"
-      rm -f "$tmp_zip"
-      info "Downloading release package..."
-      curl -fSL "$download_url" -o "$tmp_zip"
+      # 2. Download and extract new bundle
+      download_and_extract_release || return 1
 
-      # 3. Unpack bundle
-      info "Extracting new version over $PROJECT_DIR..."
-      if ! command -v unzip >/dev/null 2>&1; then
-        warn "unzip command not found. Attempting apt/yum installation..."
-        if command -v apt-get >/dev/null 2>&1; then
-          apt-get update && apt-get install -y unzip
-        elif command -v yum >/dev/null 2>&1; then
-          yum install -y unzip
-        fi
-      fi
-      unzip -o "$tmp_zip" -d "$PROJECT_DIR"
-      rm -f "$tmp_zip"
-
-      # 4. Restore configuration and database
+      # 3. Restore configuration and database
       info "Restoring configuration and database..."
       [ -f "$backup_dir/.env" ] && cp "$backup_dir/.env" .env
       if [ -d "$backup_dir/.tmp" ]; then

@@ -45,7 +45,7 @@
   "43": "services/org-overview.js",
   "44": "vite.config.ts",
   "45": "app.js",
-  "46": "backend/package.json",
+  "46": "glosim-deploy.sh",
   "47": "components.d.ts",
   "48": "resolve-version.js",
   "49": "GloSim 0.0.1-pre-1",
