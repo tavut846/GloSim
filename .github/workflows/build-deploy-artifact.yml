@@ -52,9 +52,12 @@ jobs:
         env:
           NODE_ENV: production
 
-      # 4. Clean up backend devDependencies for production runtime
-      - name: Prune Backend DevDependencies
-        run: npm prune --production --legacy-peer-deps --prefix backend
+      # 4. Clean up backend devDependencies for production runtime & include ARM64 binaries
+      - name: Prune Backend DevDependencies & Include Multi-Arch Binaries
+        run: |
+          npm prune --production --legacy-peer-deps --prefix backend
+          # Pre-install ARM64 platform binaries into node_modules so artifact runs seamlessly on ARM64 & x64 hosts
+          npm install --prefix backend --os=linux --cpu=arm64 --libc=glibc --no-save @img/sharp-linux-arm64@0.33.5 @img/sharp-libvips-linux-arm64@1.0.4 || true
 
       # 5. Assemble Deployment Bundle (All Docker files in root folder)
       - name: Prepare Deployment Artifact Directory

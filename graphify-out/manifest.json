@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "backend/package.json": {
-    "mtime": 1788503219.1998668,
-    "seen": 1788503296.7789016,
-    "ast_hash": "9d20b525dcf1b93dee3a3f9087be2f1a",
+    "mtime": 1788508555.0071158,
+    "seen": 1788508613.5048227,
+    "ast_hash": "71a0650f684110249a656d6e42b71982",
     "semantic_hash": ""
   },
   "backend/src/api/conference/content-types/conference/schema.json": {
@@ -486,9 +486,9 @@
     "semantic_hash": ""
   },
   ".github/workflows/build-deploy-artifact.yml": {
-    "mtime": 1788505278.8449247,
-    "seen": 1788505330.8364556,
-    "ast_hash": "da8ba04b5e54af6855a9fe5cb401ba41",
+    "mtime": 1788508572.8951187,
+    "seen": 1788508613.5049386,
+    "ast_hash": "32410f339617fbf0423a0cb5e8311a14",
     "semantic_hash": ""
   },
   "backend/.strapi-updater.json": {

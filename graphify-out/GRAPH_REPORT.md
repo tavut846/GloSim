@@ -1,16 +1,16 @@
 # Graph Report - GloSim  (2026-09-04)
 
 ## Corpus Check
-- 83 files · ~49,239 words
+- 83 files · ~49,283 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 537 nodes · 847 edges · 52 communities (46 shown, 6 thin omitted)
+- 546 nodes · 856 edges · 54 communities (48 shown, 6 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c021c17c`
+- Built from commit: `d2084c87`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -40,6 +40,8 @@
 - GloSim 0.0.1-pre-1
 - bump-version.js
 - backend/server.js
+- get
+- backend/package.json
 
 ## God Nodes (most connected - your core abstractions)
 1. `ImageSlot` - 27 edges
@@ -68,15 +70,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (52 total, 6 thin omitted)
+## Communities (54 total, 6 thin omitted)
 
 ### Community 0 - "App.tsx"
 Cohesion: 0.09
 Nodes (38): App(), CountdownBanner(), CountdownBannerProps, Footer(), FooterProps, Header(), HeaderProps, RegisterModal() (+30 more)
 
 ### Community 1 - "support.js"
-Cohesion: 0.06
-Nodes (75): boot(), bundledBlob(), cdnScriptFor(), collectProps(), compileAttr(), compileTemplate(), contentKey(), createComponentFactory() (+67 more)
+Cohesion: 0.09
+Nodes (36): cdnScriptFor(), collectProps(), compileAttr(), compileTemplate(), contentKey(), cssToObj(), dcNameFromPath(), encodeCamelAttrs() (+28 more)
 
 ### Community 2 - "contentTypes.d.ts"
 Cohesion: 0.08
@@ -99,8 +101,8 @@ Cohesion: 0.08
 Nodes (23): compilerOptions, allowImportingTsExtensions, isolatedModules, jsx, lib, module, moduleResolution, noEmit (+15 more)
 
 ### Community 7 - "dependencies"
-Cohesion: 0.05
-Nodes (43): ajv, dependencies, ajv, better-sqlite3, date-fns, date-fns-tz, dotenv, pg (+35 more)
+Cohesion: 0.07
+Nodes (29): ajv, dependencies, ajv, better-sqlite3, date-fns, date-fns-tz, dotenv, pg (+21 more)
 
 ### Community 8 - "scripts"
 Cohesion: 0.06
@@ -146,25 +148,33 @@ Nodes (6): 📦 Artifact Highlights, GloSim 0.0.1-pre-1, 🔧 Maintenance & Docu
 Cohesion: 0.40
 Nodes (4): filesToUpdate, fs, path, rootDir
 
+### Community 52 - "get"
+Cohesion: 0.12
+Nodes (39): boot(), bundledBlob(), createComponentFactory(), getDC(), Dispatcher(), createExternalModules(), ensureBabel(), getError() (+31 more)
+
+### Community 53 - "backend/package.json"
+Cohesion: 0.08
+Nodes (23): description, license, name, optionalDependencies, @img/sharp-libvips-linux-arm64, @img/sharp-libvips-linux-x64, @img/sharp-linux-arm64, @img/sharp-linux-x64 (+15 more)
+
 ## Knowledge Gaps
-- **214 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+209 more)
+- **218 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+213 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
+- **Why does `dependencies` connect `dependencies` to `backend/package.json`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+- **Why does `createRuntime()` connect `get` to `support.js`?**
+  _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `createRuntime()` (e.g. with `adoptParsed()` and `dcUpdate()`) actually correct?**
   _`createRuntime()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `path`, `path`, `dotenv` to the rest of the system?**
-  _214 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _218 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `App.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.09044289044289044 - nodes in this community are weakly interconnected._
 - **Should `support.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.060678962844159315 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09435707678075855 - nodes in this community are weakly interconnected._
 - **Should `contentTypes.d.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
-- **Should `ImageSlot` be split into smaller, more focused modules?**
-  _Cohesion score 0.1319073083778966 - nodes in this community are weakly interconnected._
-- **Should `frontend/package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._

@@ -486,9 +486,9 @@
     "semantic_hash": ""
   },
   ".github/workflows/build-deploy-artifact.yml": {
-    "mtime": 1788504262.3216045,
-    "seen": 1788504336.4431124,
-    "ast_hash": "2149707ccc8079efb032dc2e978c1f34",
+    "mtime": 1788505278.8449247,
+    "seen": 1788505330.8364556,
+    "ast_hash": "da8ba04b5e54af6855a9fe5cb401ba41",
     "semantic_hash": ""
   },
   "backend/.strapi-updater.json": {
@@ -540,9 +540,9 @@
     "semantic_hash": ""
   },
   "RELEASE_NOTES.md": {
-    "mtime": 1788504312.2976778,
-    "seen": 1788504336.4431195,
-    "ast_hash": "a5b35f54781af8e9dccc8ac647aa3c8a",
+    "mtime": 1788504985.2857215,
+    "seen": 1788505030.744078,
+    "ast_hash": "353f06259091e7f3f629b5e041424a93",
     "semantic_hash": ""
   },
   "backend/server.js": {

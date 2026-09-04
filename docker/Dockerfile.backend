@@ -9,6 +9,10 @@ COPY backend/ ./
 # Copy root .env if present
 COPY .env* ./
 
+# Ensure native modules (sharp, better-sqlite3) match host architecture (e.g. linux-arm64 vs linux-x64)
+RUN node -e "require('sharp')" || npm install --no-save --legacy-peer-deps sharp
+RUN node -e "require('better-sqlite3')" || npm rebuild better-sqlite3 || true
+
 ENV NODE_ENV=production
 
 EXPOSE 1337
