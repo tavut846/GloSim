@@ -46,5 +46,8 @@
   "44": "vite.config.ts",
   "45": "app.js",
   "46": "backend/package.json",
-  "47": "components.d.ts"
+  "47": "components.d.ts",
+  "48": "resolve-version.js",
+  "49": "GloSim 0.0.1-pre-1",
+  "50": "bump-version.js"
 }

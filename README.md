@@ -84,6 +84,10 @@ GloSim/
 │   ├── deployment.md                 # VPS Deployment & external PostgreSQL guide
 │   └── plan.md                       # Product requirement & information architecture plan
 │
+├── scripts/                          # Versioning & Release Automation Scripts
+│   ├── bump-version.js               # Synchronizes version bumps across workspaces
+│   └── resolve-version.js            # Computes pre-release tags (0.0.1-pre-n) & compiles release notes
+│
 ├── .env.example                      # Unified environment variable template
 ├── package.json                      # Root workspace configuration & concurrent dev runners
 └── README.md                         # Project documentation
@@ -304,3 +308,38 @@ All endpoints support Strapi's standard i18n filtering. Append `?locale=zh` or `
 | `npm run build:backend` | Root (`backend`) | Runs `strapi build` to compile the admin dashboard |
 | `npm run start:frontend` | Root (`frontend`) | Previews the compiled frontend bundle locally |
 | `npm run start:backend` | Root (`backend`) | Runs `strapi start` for production backend execution |
+| `npm run version:bump <ver>` | Root | Synchronizes new version across all packages |
+| `npm run version:resolve` | Root | Resolves next pre-release tag & generates release notes |
+
+---
+
+## 10. Automated Versioning & Pre-Release Pipeline
+
+GloSim incorporates an automated, convention-based semantic versioning and release notes generator designed for continuous deployment:
+
+### 1. Versioning Specification
+- **Current Base Version**: Starts at `0.0.1`.
+- **Pre-Release Tag Convention**: Follows `${VERSION}-pre-${N}` (e.g. `0.0.1-pre-1`, `0.0.1-pre-2`, `0.0.1-pre-n`).
+- **Automatic `pre-n` Incrementing**: Whenever code is pushed to the main branch without a base version change in `package.json`, the CI/CD pipeline inspects existing Git tags, finds the highest `pre-n`, and automatically increments to the next tag.
+- **Version Resets**: When the base version is bumped (e.g., from `0.0.1` to `0.0.2`), the sequence restarts automatically at `0.0.2-pre-1`.
+- **Pre-Release Title**: Always published as `GloSim <version>` (e.g. `GloSim 0.0.1-pre-1`).
+
+### 2. Automated Release Notes Generation
+On each release build, the CI/CD pipeline parses commit logs between the previous tag and `HEAD` to generate structured release notes including:
+- ✨ **New Features**: Conventional commits starting with `feat:` or `feature:`
+- 🐛 **Bug Fixes**: Commits starting with `fix:`
+- ⚡ **Performance & Refactoring**: Commits starting with `perf:` or `refactor:`
+- 🔧 **Maintenance & Documentation**: Commits starting with `chore:`, `docs:`, or `ci:`
+- 📦 **Artifact Overview**: Root Docker Compose configuration, pre-configured SQLite storage, and pruned Node.js production runtime
+- ⚡ **Zero-Friction Deployment**: 1-step deployment commands directly in the release body
+
+### 3. Local Version Management Commands
+To bump the project base version across root, frontend, and backend packages simultaneously:
+```bash
+# Bump base version to 0.0.2
+npm run version:bump 0.0.2
+
+# Preview next pre-release tag and generate RELEASE_NOTES.md locally
+npm run version:resolve
+```
+

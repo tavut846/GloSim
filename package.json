@@ -1,6 +1,6 @@
 {
   "name": "glosim-workspace",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "Global Simulation Conference - Bilingual Academic Platform & Strapi CMS",
   "workspaces": [
@@ -16,7 +16,9 @@
     "build:frontend": "npm run build --workspace=frontend",
     "build:backend": "npm run build --workspace=backend",
     "start:frontend": "npm run preview --workspace=frontend",
-    "start:backend": "npm run start --workspace=backend"
+    "start:backend": "npm run start --workspace=backend",
+    "version:bump": "node scripts/bump-version.js",
+    "version:resolve": "node scripts/resolve-version.js"
   },
   "devDependencies": {
     "concurrently": "^9.1.0",

@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js 20
         uses: actions/setup-node@v4
@@ -25,7 +27,14 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      # 1. Install & Build Frontend
+      # 1. Resolve Version, Compute Pre-Release Tag, and Generate Release Notes
+      - name: Resolve Version & Generate Release Notes
+        id: versioning
+        run: |
+          git fetch --tags --force || true
+          node scripts/resolve-version.js
+
+      # 2. Install & Build Frontend
       - name: Install Frontend Dependencies
         run: npm ci --prefix frontend
 
@@ -34,7 +43,7 @@ jobs:
         env:
           VITE_STRAPI_URL: ${{ vars.VITE_STRAPI_URL || 'http://localhost:1337' }}
 
-      # 2. Install & Build Backend (Strapi)
+      # 3. Install & Build Backend (Strapi)
       - name: Install Backend Dependencies
         run: npm install --legacy-peer-deps --prefix backend
 
@@ -43,11 +52,11 @@ jobs:
         env:
           NODE_ENV: production
 
-      # 3. Clean up backend devDependencies for production runtime
+      # 4. Clean up backend devDependencies for production runtime
       - name: Prune Backend DevDependencies
         run: npm prune --production --legacy-peer-deps --prefix backend
 
-      # 4. Assemble Deployment Bundle (All Docker files in root folder)
+      # 5. Assemble Deployment Bundle (All Docker files in root folder)
       - name: Prepare Deployment Artifact Directory
         run: |
           mkdir -p bundle/frontend/dist
@@ -69,12 +78,13 @@ jobs:
           # Copy Docker deployment files from docker/ directly into bundle root
           cp docker/* bundle/
 
-          # Copy env template and default deploy .env (with SQLite default storage)
+          # Copy env template, release notes, and default deploy .env (with SQLite default storage)
           cp .env.example bundle/.env.example
           cp .env.example bundle/.env
           cp README.md bundle/
+          cp RELEASE_NOTES.md bundle/ || true
 
-      # 5. Upload GitHub Actions Artifact (Folder uploaded directly as 'glosim' - downloads as glosim.zip without zip-in-zip)
+      # 6. Upload GitHub Actions Artifact (Folder uploaded directly as 'glosim' - downloads as glosim.zip without zip-in-zip)
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -82,7 +92,7 @@ jobs:
           path: bundle/
           retention-days: 30
 
-      # 6. Package Zip Archive for Pre-Release Asset
+      # 7. Package Zip Archive for Pre-Release Asset
       - name: Package Zip for Pre-Release
         if: (github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')) || github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/')
         run: |
@@ -90,31 +100,17 @@ jobs:
           zip -r ../glosim.zip .
           cd ..
 
-      # 7. Upload Artifact to GitHub Pre-Release
+      # 8. Upload Artifact to GitHub Pre-Release with Auto-Version & Release Notes
       - name: Publish Pre-Release
         if: (github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')) || github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || 'pre-release' }}
-          name: "GloSim Pre-Release"
-          prerelease: true
-          make_latest: false
+          tag_name: ${{ steps.versioning.outputs.tag_name }}
+          name: ${{ steps.versioning.outputs.release_title }}
+          prerelease: ${{ steps.versioning.outputs.is_prerelease == 'true' }}
+          make_latest: ${{ steps.versioning.outputs.is_prerelease != 'true' }}
           files: glosim.zip
-          body: |
-            ## GloSim Pre-Release Deployment Bundle
-
-            Automated pre-release build from commit `${{ github.sha }}`.
-
-            ### What's Inside:
-            - **Root Docker Deployment**: `docker-compose.yml`, `Dockerfile.backend`, `Dockerfile.frontend`, `nginx.conf` all located in the root directory.
-            - **Pre-configured Storage**: Defaults to SQLite (`.env` pre-configured with `DATABASE_CLIENT=sqlite` and `.tmp/data.db`).
-            - **Prebuilt Frontend & Backend**: No build dependencies or devDependencies required on your server.
-
-            ### Quick Deployment:
-            ```bash
-            unzip glosim.zip -d /opt/glosim
-            cd /opt/glosim
-            docker compose up -d --build
-            ```
+          body_path: ${{ steps.versioning.outputs.notes_path }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

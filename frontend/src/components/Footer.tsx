@@ -149,8 +149,18 @@ export const Footer: React.FC<FooterProps> = ({ global, locale, onNavigate }) =>
           fontSize: '12px',
           color: '#6B7280'
         }}>
-          <div>
-            © {new Date().getFullYear()} {siteName} (GloSim). All rights reserved. Academic Non-Profit Organization.
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+            <span>© {new Date().getFullYear()} {siteName} (GloSim). All rights reserved. Academic Non-Profit Organization.</span>
+            <span style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              padding: '2px 8px',
+              borderRadius: '4px',
+              fontSize: '11px',
+              fontWeight: 500,
+              color: '#9CA3AF'
+            }}>
+              v{import.meta.env.VITE_APP_VERSION || '0.0.1'}
+            </span>
           </div>
           <div style={{ display: 'flex', gap: '16px' }}>
             <span>Privacy Policy</span>

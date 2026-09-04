@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "backend/package.json": {
-    "mtime": 1787643439.0650938,
-    "seen": 1787643667.8712995,
-    "ast_hash": "4c1b1451c38d2ea055795f97f12d9b59",
+    "mtime": 1788502817.8040934,
+    "seen": 1788503032.3391452,
+    "ast_hash": "9e3ab891561aae890b1f2f247f0b4c32",
     "semantic_hash": ""
   },
   "backend/src/api/conference/content-types/conference/schema.json": {
@@ -276,9 +276,9 @@
     "semantic_hash": ""
   },
   "frontend/package.json": {
-    "mtime": 1787622830.9783955,
-    "seen": 1787625533.3640327,
-    "ast_hash": "c22737dd26b61e6e835b12991adcc819",
+    "mtime": 1788502817.8008223,
+    "seen": 1788503032.3392787,
+    "ast_hash": "83c754ba3dbe8e96f5a08241671b35dc",
     "semantic_hash": ""
   },
   "frontend/src/App.tsx": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/Footer.tsx": {
-    "mtime": 1787625494.5849483,
-    "seen": 1787625533.3640468,
-    "ast_hash": "213deddffc958954ff78d0a61e41e756",
+    "mtime": 1788502936.2629783,
+    "seen": 1788503032.3392878,
+    "ast_hash": "e76a4674b1435cb4dfa75105856a5c12",
     "semantic_hash": ""
   },
   "frontend/src/components/Header.tsx": {
@@ -378,9 +378,9 @@
     "semantic_hash": ""
   },
   "frontend/src/vite-env.d.ts": {
-    "mtime": 1787623132.4762068,
-    "seen": 1787625533.3640919,
-    "ast_hash": "2a6d4efa2ec72dc5bccf37afd7e86c93",
+    "mtime": 1788502927.0064085,
+    "seen": 1788503032.339333,
+    "ast_hash": "2a2631b8522292bfe47300a0b1f48747",
     "semantic_hash": ""
   },
   "frontend/tsconfig.json": {
@@ -396,15 +396,15 @@
     "semantic_hash": ""
   },
   "frontend/vite.config.ts": {
-    "mtime": 1787627414.0134978,
-    "seen": 1787627463.3800652,
-    "ast_hash": "066d0cb4ece13ce35644f9dab07893dc",
+    "mtime": 1788502923.4902418,
+    "seen": 1788503032.3393424,
+    "ast_hash": "78de2a0041026426263b19bfec84e70b",
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1787643427.2902188,
-    "seen": 1787643667.8716373,
-    "ast_hash": "f979f61f470ee677cbd0862430cba332",
+    "mtime": 1788502956.9041674,
+    "seen": 1788503032.3393455,
+    "ast_hash": "f21b8d97d431d6b92dd941cf313aaed7",
     "semantic_hash": ""
   },
   ".agents/rules/graphify.md": {
@@ -420,9 +420,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1788502233.7811017,
-    "seen": 1788502255.881498,
-    "ast_hash": "c6c94eb93bd6abcf01da5981bc9ff60e",
+    "mtime": 1788503003.7604654,
+    "seen": 1788503032.339365,
+    "ast_hash": "e33590b9c5136b89ec04ec696ebc321b",
     "semantic_hash": ""
   },
   "_ds/glosim-d2271487-a9b5-4f2b-9d18-ac11ca4f8f1d/readme.md": {
@@ -486,9 +486,9 @@
     "semantic_hash": ""
   },
   ".github/workflows/build-deploy-artifact.yml": {
-    "mtime": 1788499613.5353854,
-    "seen": 1788499671.6525505,
-    "ast_hash": "8184516c4d9461034f225f8435d89b5f",
+    "mtime": 1788502970.339623,
+    "seen": 1788503032.3393626,
+    "ast_hash": "006403daec05f4c87c76747ef70432ea",
     "semantic_hash": ""
   },
   "backend/.strapi-updater.json": {
@@ -525,6 +525,24 @@
     "mtime": 1788500682.955348,
     "seen": 1788500746.5565834,
     "ast_hash": "263fad30dee19e3cb1f0417e63c0cb57",
+    "semantic_hash": ""
+  },
+  "scripts/bump-version.js": {
+    "mtime": 1788502813.363788,
+    "seen": 1788503032.3393493,
+    "ast_hash": "b337fcaecbfe5a72a750a00f391fb5c5",
+    "semantic_hash": ""
+  },
+  "scripts/resolve-version.js": {
+    "mtime": 1788502853.1342068,
+    "seen": 1788503032.3393521,
+    "ast_hash": "8791dda023b8e7c387068e04c34ccae7",
+    "semantic_hash": ""
+  },
+  "RELEASE_NOTES.md": {
+    "mtime": 1788503008.8185987,
+    "seen": 1788503032.3393676,
+    "ast_hash": "938febdfe72daa69c25fed0953d2698f",
     "semantic_hash": ""
   }
 }

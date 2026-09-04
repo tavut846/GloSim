@@ -1,16 +1,16 @@
 # Graph Report - GloSim  (2026-09-04)
 
 ## Corpus Check
-- 78 files · ~45,099 words
+- 81 files · ~46,664 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 482 nodes · 748 edges · 48 communities (43 shown, 5 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.85)
+- 513 nodes · 776 edges · 51 communities (46 shown, 5 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1950d91a`
+- Built from commit: `8351e126`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -36,6 +36,9 @@
 - server.js
 - backend/package.json
 - components.d.ts
+- resolve-version.js
+- GloSim 0.0.1-pre-1
+- bump-version.js
 
 ## God Nodes (most connected - your core abstractions)
 1. `ImageSlot` - 27 edges
@@ -46,8 +49,8 @@
 6. `boot()` - 12 edges
 7. `ApiService` - 12 edges
 8. `Conference` - 12 edges
-9. `scripts` - 10 edges
-10. `GloSim (Global Simulation Conference)` - 10 edges
+9. `scripts` - 12 edges
+10. `GloSim (Global Simulation Conference)` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `CountdownBannerProps` --references--> `Conference`  [EXTRACTED]
@@ -64,7 +67,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (48 total, 5 thin omitted)
+## Communities (51 total, 5 thin omitted)
 
 ### Community 0 - "App.tsx"
 Cohesion: 0.09
@@ -99,12 +102,12 @@ Cohesion: 0.07
 Nodes (29): ajv, dependencies, ajv, better-sqlite3, date-fns, date-fns-tz, dotenv, pg (+21 more)
 
 ### Community 8 - "scripts"
-Cohesion: 0.07
-Nodes (29): concurrently, description, devDependencies, concurrently, date-fns, date-fns-tz, date-fns, date-fns-tz (+21 more)
+Cohesion: 0.06
+Nodes (31): concurrently, description, devDependencies, concurrently, date-fns, date-fns-tz, date-fns, date-fns-tz (+23 more)
 
 ### Community 10 - "GloSim (Global Simulation Conference)"
-Cohesion: 0.09
-Nodes (22): 1. Code Directory Structure (Repository Code), 2. Artifact Code Structure (Deployment Package), 3. Project Structure & Technical Capabilities, 4. Quickstart Guide (Local Development), 5. Production VPS Deployment (Prebuilt Artifacts), 6. Environment Variables Reference, 7. Content Management & Admin Workflow, 8. API Reference & Internationalization Querying (+14 more)
+Cohesion: 0.07
+Nodes (26): 10. Automated Versioning & Pre-Release Pipeline, 1. Code Directory Structure (Repository Code), 1. Versioning Specification, 2. Artifact Code Structure (Deployment Package), 2. Automated Release Notes Generation, 3. Local Version Management Commands, 3. Project Structure & Technical Capabilities, 4. Quickstart Guide (Local Development) (+18 more)
 
 ### Community 11 - "Global Simulation Conference — Design System"
 Cohesion: 0.22
@@ -130,8 +133,20 @@ Nodes (14): description, license, name, overrides, ajv, better-sqlite3, sharp, p
 Cohesion: 0.22
 Nodes (8): Components, ConferenceAgendaItem, ConferenceSpeakerItem, HomeHighlightItem, Shared, SharedNavItem, SharedSocialLink, @strapi/types
 
+### Community 48 - "resolve-version.js"
+Cohesion: 0.15
+Nodes (11): { execSync }, features, fixes, fs, improvements, notesPath, others, path (+3 more)
+
+### Community 49 - "GloSim 0.0.1-pre-1"
+Cohesion: 0.29
+Nodes (6): 📦 Artifact Highlights, GloSim 0.0.1-pre-1, 🔧 Maintenance & Documentation, ✨ New Features, ⚡ Quick Deployment Instructions, 🚀 What's New & Feature Highlights
+
+### Community 50 - "bump-version.js"
+Cohesion: 0.40
+Nodes (4): filesToUpdate, fs, path, rootDir
+
 ## Knowledge Gaps
-- **186 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+181 more)
+- **210 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+205 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -139,11 +154,11 @@ Nodes (8): Components, ConferenceAgendaItem, ConferenceSpeakerItem, HomeHighligh
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `dependencies` to `backend/package.json`?**
-  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+  _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `createRuntime()` (e.g. with `adoptParsed()` and `dcUpdate()`) actually correct?**
   _`createRuntime()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `path`, `path`, `dotenv` to the rest of the system?**
-  _186 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _210 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `App.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.09044289044289044 - nodes in this community are weakly interconnected._
 - **Should `support.js` be split into smaller, more focused modules?**
