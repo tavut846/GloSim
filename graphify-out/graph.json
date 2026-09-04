@@ -2797,7 +2797,7 @@
       "node_kind": "heading",
       "norm_label": "10. automated versioning & pre-release pipeline",
       "source_file": "README.md",
-      "source_location": "L316"
+      "source_location": "L318"
     },
     {
       "id": "readme_1_code_directory_structure_repository_code",
@@ -2821,7 +2821,7 @@
       "node_kind": "heading",
       "norm_label": "1. versioning specification",
       "source_file": "README.md",
-      "source_location": "L320"
+      "source_location": "L322"
     },
     {
       "id": "readme_2_artifact_code_structure_deployment_package",
@@ -2833,7 +2833,7 @@
       "node_kind": "heading",
       "norm_label": "2. artifact code structure (deployment package)",
       "source_file": "README.md",
-      "source_location": "L98"
+      "source_location": "L99"
     },
     {
       "id": "readme_2_automated_release_notes_generation",
@@ -2845,7 +2845,7 @@
       "node_kind": "heading",
       "norm_label": "2. automated release notes generation",
       "source_file": "README.md",
-      "source_location": "L327"
+      "source_location": "L329"
     },
     {
       "id": "readme_3_local_version_management_commands",
@@ -2857,7 +2857,7 @@
       "node_kind": "heading",
       "norm_label": "3. local version management commands",
       "source_file": "README.md",
-      "source_location": "L336"
+      "source_location": "L338"
     },
     {
       "id": "readme_3_project_structure_technical_capabilities",
@@ -2869,7 +2869,7 @@
       "node_kind": "heading",
       "norm_label": "3. project structure & technical capabilities",
       "source_file": "README.md",
-      "source_location": "L129"
+      "source_location": "L131"
     },
     {
       "id": "readme_4_quickstart_guide_local_development",
@@ -2881,7 +2881,7 @@
       "node_kind": "heading",
       "norm_label": "4. quickstart guide (local development)",
       "source_file": "README.md",
-      "source_location": "L169"
+      "source_location": "L171"
     },
     {
       "id": "readme_5_production_vps_deployment_prebuilt_artifacts",
@@ -2893,7 +2893,7 @@
       "node_kind": "heading",
       "norm_label": "5. production vps deployment (prebuilt artifacts)",
       "source_file": "README.md",
-      "source_location": "L209"
+      "source_location": "L211"
     },
     {
       "id": "readme_6_environment_variables_reference",
@@ -2905,7 +2905,7 @@
       "node_kind": "heading",
       "norm_label": "6. environment variables reference",
       "source_file": "README.md",
-      "source_location": "L248"
+      "source_location": "L250"
     },
     {
       "id": "readme_7_content_management_admin_workflow",
@@ -2917,7 +2917,7 @@
       "node_kind": "heading",
       "norm_label": "7. content management & admin workflow",
       "source_file": "README.md",
-      "source_location": "L272"
+      "source_location": "L274"
     },
     {
       "id": "readme_8_api_reference_internationalization_querying",
@@ -2929,7 +2929,7 @@
       "node_kind": "heading",
       "norm_label": "8. api reference & internationalization querying",
       "source_file": "README.md",
-      "source_location": "L283"
+      "source_location": "L285"
     },
     {
       "id": "readme_9_available_npm_workspace_scripts",
@@ -2941,7 +2941,7 @@
       "node_kind": "heading",
       "norm_label": "9. available npm workspace scripts",
       "source_file": "README.md",
-      "source_location": "L299"
+      "source_location": "L301"
     },
     {
       "id": "readme_backend_node_js_strapi_cms_headless_architecture",
@@ -2953,7 +2953,7 @@
       "node_kind": "heading",
       "norm_label": "backend (node.js & strapi cms headless architecture)",
       "source_file": "README.md",
-      "source_location": "L131"
+      "source_location": "L133"
     },
     {
       "id": "readme_devops_infrastructure_docker_ci_cd_pipeline",
@@ -2965,7 +2965,7 @@
       "node_kind": "heading",
       "norm_label": "devops & infrastructure (docker & ci/cd pipeline)",
       "source_file": "README.md",
-      "source_location": "L158"
+      "source_location": "L160"
     },
     {
       "id": "readme_frontend_react_typescript_modern_spa",
@@ -2977,7 +2977,7 @@
       "node_kind": "heading",
       "norm_label": "frontend (react + typescript modern spa)",
       "source_file": "README.md",
-      "source_location": "L144"
+      "source_location": "L146"
     },
     {
       "id": "readme_glosim_global_simulation_conference",
@@ -3001,7 +3001,7 @@
       "node_kind": "heading",
       "norm_label": "option a: run both concurrently (recommended)",
       "source_file": "README.md",
-      "source_location": "L185"
+      "source_location": "L187"
     },
     {
       "id": "readme_option_b_run_individually",
@@ -3013,7 +3013,7 @@
       "node_kind": "heading",
       "norm_label": "option b: run individually",
       "source_file": "README.md",
-      "source_location": "L190"
+      "source_location": "L192"
     },
     {
       "id": "readme_prerequisites",
@@ -3025,7 +3025,7 @@
       "node_kind": "heading",
       "norm_label": "prerequisites",
       "source_file": "README.md",
-      "source_location": "L171"
+      "source_location": "L173"
     },
     {
       "id": "readme_step_1_download_extract_prebuilt_bundle",
@@ -3037,7 +3037,7 @@
       "node_kind": "heading",
       "norm_label": "step 1: download & extract prebuilt bundle",
       "source_file": "README.md",
-      "source_location": "L211"
+      "source_location": "L213"
     },
     {
       "id": "readme_step_1_install_dependencies",
@@ -3049,7 +3049,7 @@
       "node_kind": "heading",
       "norm_label": "step 1: install dependencies",
       "source_file": "README.md",
-      "source_location": "L175"
+      "source_location": "L177"
     },
     {
       "id": "readme_step_2_optional_configure_environment",
@@ -3061,7 +3061,7 @@
       "node_kind": "heading",
       "norm_label": "step 2: (optional) configure environment",
       "source_file": "README.md",
-      "source_location": "L218"
+      "source_location": "L220"
     },
     {
       "id": "readme_step_2_start_development_servers",
@@ -3073,7 +3073,7 @@
       "node_kind": "heading",
       "norm_label": "step 2: start development servers",
       "source_file": "README.md",
-      "source_location": "L181"
+      "source_location": "L183"
     },
     {
       "id": "readme_step_3_launch_containers",
@@ -3085,7 +3085,7 @@
       "node_kind": "heading",
       "norm_label": "step 3: launch containers",
       "source_file": "README.md",
-      "source_location": "L235"
+      "source_location": "L237"
     },
     {
       "id": "readme_step_4_verify_deployment",
@@ -3097,7 +3097,7 @@
       "node_kind": "heading",
       "norm_label": "step 4: verify deployment",
       "source_file": "README.md",
-      "source_location": "L241"
+      "source_location": "L243"
     },
     {
       "id": "ds_glosim_d2271487_a9b5_4f2b_9d18_ac11ca4f8f1d_readme",
@@ -3384,7 +3384,7 @@
       "node_kind": "heading",
       "norm_label": "2. deploying on vps (step-by-step)",
       "source_file": "docs/deployment.md",
-      "source_location": "L32"
+      "source_location": "L33"
     },
     {
       "id": "docs_deployment_3_github_actions_continuous_integration",
@@ -3396,7 +3396,7 @@
       "node_kind": "heading",
       "norm_label": "3. github actions continuous integration",
       "source_file": "docs/deployment.md",
-      "source_location": "L76"
+      "source_location": "L77"
     },
     {
       "id": "docs_deployment_glosim_deployment_vps_architecture_guide",
@@ -3420,7 +3420,7 @@
       "node_kind": "heading",
       "norm_label": "step 1: download & extract prebuilt artifact",
       "source_file": "docs/deployment.md",
-      "source_location": "L34"
+      "source_location": "L35"
     },
     {
       "id": "docs_deployment_step_2_optional_configure_env",
@@ -3432,7 +3432,7 @@
       "node_kind": "heading",
       "norm_label": "step 2: (optional) configure `.env`",
       "source_file": "docs/deployment.md",
-      "source_location": "L41"
+      "source_location": "L42"
     },
     {
       "id": "docs_deployment_step_3_launch_containers",
@@ -3444,7 +3444,7 @@
       "node_kind": "heading",
       "norm_label": "step 3: launch containers",
       "source_file": "docs/deployment.md",
-      "source_location": "L64"
+      "source_location": "L65"
     },
     {
       "id": "docs_deployment_step_4_verify_deployment",
@@ -3456,7 +3456,7 @@
       "node_kind": "heading",
       "norm_label": "step 4: verify deployment",
       "source_file": "docs/deployment.md",
-      "source_location": "L70"
+      "source_location": "L71"
     },
     {
       "id": "frontend_src_vite_env_d",
@@ -3615,12 +3615,12 @@
     },
     {
       "id": "backend_config_server",
-      "label": "server.js",
+      "label": "config/server.js",
       "_origin": "ast",
       "community": 22,
       "community_name": "server.js",
       "file_type": "code",
-      "norm_label": "server.js",
+      "norm_label": "config/server.js",
       "source_file": "backend/config/server.js",
       "source_location": "L1"
     },
@@ -4625,7 +4625,7 @@
       "node_kind": "heading",
       "norm_label": "\ud83d\udce6 artifact highlights",
       "source_file": "RELEASE_NOTES.md",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "release_notes_glosim_0_0_1_pre_1",
@@ -4649,7 +4649,7 @@
       "node_kind": "heading",
       "norm_label": "\ud83d\udd27 maintenance & documentation",
       "source_file": "RELEASE_NOTES.md",
-      "source_location": "L10"
+      "source_location": "L11"
     },
     {
       "id": "release_notes_new_features",
@@ -4673,7 +4673,7 @@
       "node_kind": "heading",
       "norm_label": "\u26a1 quick deployment instructions",
       "source_file": "RELEASE_NOTES.md",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "release_notes_what_s_new_feature_highlights",
@@ -5053,6 +5053,28 @@
       "norm_label": "rootdir",
       "source_file": "scripts/bump-version.js",
       "source_location": "L32"
+    },
+    {
+      "id": "backend_server",
+      "label": "backend/server.js",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "backend/server.js",
+      "file_type": "code",
+      "norm_label": "backend/server.js",
+      "source_file": "backend/server.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_server_strapi",
+      "label": "strapi",
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "backend/server.js",
+      "file_type": "code",
+      "norm_label": "strapi",
+      "source_file": "backend/server.js",
+      "source_location": "L1"
     },
     {
       "id": "frontend_tsconfig",
@@ -10745,6 +10767,17 @@
       "weight": 1.0
     },
     {
+      "source": "backend_server",
+      "target": "backend_server_strapi",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/server.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "backend_src_bootstrap_seed",
       "target": "backend_src_bootstrap_seed_seeddata",
       "relation": "contains",
@@ -11984,7 +12017,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -11995,7 +12028,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L41",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -12006,7 +12039,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -12017,7 +12050,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L70",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -12028,7 +12061,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -12050,7 +12083,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/deployment.md",
-      "source_location": "L76",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -13777,7 +13810,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L320",
+      "source_location": "L322",
       "weight": 1.0
     },
     {
@@ -13788,7 +13821,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L327",
+      "source_location": "L329",
       "weight": 1.0
     },
     {
@@ -13799,7 +13832,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L336",
+      "source_location": "L338",
       "weight": 1.0
     },
     {
@@ -13810,7 +13843,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L131",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -13821,7 +13854,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L144",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -13832,7 +13865,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L158",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -13843,7 +13876,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L171",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -13854,7 +13887,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L175",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -13865,7 +13898,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L181",
+      "source_location": "L183",
       "weight": 1.0
     },
     {
@@ -13876,7 +13909,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L211",
+      "source_location": "L213",
       "weight": 1.0
     },
     {
@@ -13887,7 +13920,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L218",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -13898,7 +13931,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L235",
+      "source_location": "L237",
       "weight": 1.0
     },
     {
@@ -13909,7 +13942,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L241",
+      "source_location": "L243",
       "weight": 1.0
     },
     {
@@ -13920,7 +13953,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L129",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -13931,7 +13964,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L169",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -13942,7 +13975,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L209",
+      "source_location": "L211",
       "weight": 1.0
     },
     {
@@ -13953,7 +13986,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L248",
+      "source_location": "L250",
       "weight": 1.0
     },
     {
@@ -13964,7 +13997,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L272",
+      "source_location": "L274",
       "weight": 1.0
     },
     {
@@ -13975,7 +14008,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L283",
+      "source_location": "L285",
       "weight": 1.0
     },
     {
@@ -13986,7 +14019,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L299",
+      "source_location": "L301",
       "weight": 1.0
     },
     {
@@ -13997,7 +14030,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L316",
+      "source_location": "L318",
       "weight": 1.0
     },
     {
@@ -14019,7 +14052,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L98",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -14030,7 +14063,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L185",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -14041,7 +14074,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L190",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -14063,7 +14096,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "RELEASE_NOTES.md",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -14074,7 +14107,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "RELEASE_NOTES.md",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -14096,7 +14129,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "RELEASE_NOTES.md",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -14923,5 +14956,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8351e12649eb60925b7b9b2d0ed79d0ada62a3ba"
+  "built_at_commit": "cec52931e81707d0d5f395c732bb027d8012199a"
 }

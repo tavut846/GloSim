@@ -326,7 +326,7 @@
       "file_type": "code",
       "norm_label": "importmeta",
       "source_file": "frontend/src/vite-env.d.ts",
-      "source_location": "L7"
+      "source_location": "L9"
     },
     {
       "id": "frontend_src_vite_env_d_importmetaenv",
@@ -2388,6 +2388,18 @@
       "source_location": "L259"
     },
     {
+      "id": "scripts_resolve_version_rungit",
+      "label": "runGit()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "resolve-version.js",
+      "file_type": "code",
+      "norm_label": "rungit()",
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L23"
+    },
+    {
       "id": "ds_glosim_d2271487_a9b5_4f2b_9d18_ac11ca4f8f1d_ds_bundle_agendascreen",
       "label": "AgendaScreen()",
       "_callable": true,
@@ -2776,6 +2788,18 @@
       "source_location": "L1"
     },
     {
+      "id": "readme_10_automated_versioning_pre_release_pipeline",
+      "label": "10. Automated Versioning & Pre-Release Pipeline",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "GloSim (Global Simulation Conference)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "10. automated versioning & pre-release pipeline",
+      "source_file": "README.md",
+      "source_location": "L316"
+    },
+    {
       "id": "readme_1_code_directory_structure_repository_code",
       "label": "1. Code Directory Structure (Repository Code)",
       "_origin": "ast",
@@ -2788,6 +2812,18 @@
       "source_location": "L8"
     },
     {
+      "id": "readme_1_versioning_specification",
+      "label": "1. Versioning Specification",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "GloSim (Global Simulation Conference)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. versioning specification",
+      "source_file": "README.md",
+      "source_location": "L320"
+    },
+    {
       "id": "readme_2_artifact_code_structure_deployment_package",
       "label": "2. Artifact Code Structure (Deployment Package)",
       "_origin": "ast",
@@ -2797,7 +2833,31 @@
       "node_kind": "heading",
       "norm_label": "2. artifact code structure (deployment package)",
       "source_file": "README.md",
-      "source_location": "L94"
+      "source_location": "L98"
+    },
+    {
+      "id": "readme_2_automated_release_notes_generation",
+      "label": "2. Automated Release Notes Generation",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "GloSim (Global Simulation Conference)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2. automated release notes generation",
+      "source_file": "README.md",
+      "source_location": "L327"
+    },
+    {
+      "id": "readme_3_local_version_management_commands",
+      "label": "3. Local Version Management Commands",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "GloSim (Global Simulation Conference)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3. local version management commands",
+      "source_file": "README.md",
+      "source_location": "L336"
     },
     {
       "id": "readme_3_project_structure_technical_capabilities",
@@ -2809,7 +2869,7 @@
       "node_kind": "heading",
       "norm_label": "3. project structure & technical capabilities",
       "source_file": "README.md",
-      "source_location": "L125"
+      "source_location": "L129"
     },
     {
       "id": "readme_4_quickstart_guide_local_development",
@@ -2821,7 +2881,7 @@
       "node_kind": "heading",
       "norm_label": "4. quickstart guide (local development)",
       "source_file": "README.md",
-      "source_location": "L165"
+      "source_location": "L169"
     },
     {
       "id": "readme_5_production_vps_deployment_prebuilt_artifacts",
@@ -2833,7 +2893,7 @@
       "node_kind": "heading",
       "norm_label": "5. production vps deployment (prebuilt artifacts)",
       "source_file": "README.md",
-      "source_location": "L205"
+      "source_location": "L209"
     },
     {
       "id": "readme_6_environment_variables_reference",
@@ -2845,7 +2905,7 @@
       "node_kind": "heading",
       "norm_label": "6. environment variables reference",
       "source_file": "README.md",
-      "source_location": "L244"
+      "source_location": "L248"
     },
     {
       "id": "readme_7_content_management_admin_workflow",
@@ -2857,7 +2917,7 @@
       "node_kind": "heading",
       "norm_label": "7. content management & admin workflow",
       "source_file": "README.md",
-      "source_location": "L268"
+      "source_location": "L272"
     },
     {
       "id": "readme_8_api_reference_internationalization_querying",
@@ -2869,7 +2929,7 @@
       "node_kind": "heading",
       "norm_label": "8. api reference & internationalization querying",
       "source_file": "README.md",
-      "source_location": "L279"
+      "source_location": "L283"
     },
     {
       "id": "readme_9_available_npm_workspace_scripts",
@@ -2881,7 +2941,7 @@
       "node_kind": "heading",
       "norm_label": "9. available npm workspace scripts",
       "source_file": "README.md",
-      "source_location": "L295"
+      "source_location": "L299"
     },
     {
       "id": "readme_backend_node_js_strapi_cms_headless_architecture",
@@ -2893,7 +2953,7 @@
       "node_kind": "heading",
       "norm_label": "backend (node.js & strapi cms headless architecture)",
       "source_file": "README.md",
-      "source_location": "L127"
+      "source_location": "L131"
     },
     {
       "id": "readme_devops_infrastructure_docker_ci_cd_pipeline",
@@ -2905,7 +2965,7 @@
       "node_kind": "heading",
       "norm_label": "devops & infrastructure (docker & ci/cd pipeline)",
       "source_file": "README.md",
-      "source_location": "L154"
+      "source_location": "L158"
     },
     {
       "id": "readme_frontend_react_typescript_modern_spa",
@@ -2917,7 +2977,7 @@
       "node_kind": "heading",
       "norm_label": "frontend (react + typescript modern spa)",
       "source_file": "README.md",
-      "source_location": "L140"
+      "source_location": "L144"
     },
     {
       "id": "readme_glosim_global_simulation_conference",
@@ -2941,7 +3001,7 @@
       "node_kind": "heading",
       "norm_label": "option a: run both concurrently (recommended)",
       "source_file": "README.md",
-      "source_location": "L181"
+      "source_location": "L185"
     },
     {
       "id": "readme_option_b_run_individually",
@@ -2953,7 +3013,7 @@
       "node_kind": "heading",
       "norm_label": "option b: run individually",
       "source_file": "README.md",
-      "source_location": "L186"
+      "source_location": "L190"
     },
     {
       "id": "readme_prerequisites",
@@ -2965,7 +3025,7 @@
       "node_kind": "heading",
       "norm_label": "prerequisites",
       "source_file": "README.md",
-      "source_location": "L167"
+      "source_location": "L171"
     },
     {
       "id": "readme_step_1_download_extract_prebuilt_bundle",
@@ -2977,7 +3037,7 @@
       "node_kind": "heading",
       "norm_label": "step 1: download & extract prebuilt bundle",
       "source_file": "README.md",
-      "source_location": "L207"
+      "source_location": "L211"
     },
     {
       "id": "readme_step_1_install_dependencies",
@@ -2989,7 +3049,7 @@
       "node_kind": "heading",
       "norm_label": "step 1: install dependencies",
       "source_file": "README.md",
-      "source_location": "L171"
+      "source_location": "L175"
     },
     {
       "id": "readme_step_2_optional_configure_environment",
@@ -3001,7 +3061,7 @@
       "node_kind": "heading",
       "norm_label": "step 2: (optional) configure environment",
       "source_file": "README.md",
-      "source_location": "L214"
+      "source_location": "L218"
     },
     {
       "id": "readme_step_2_start_development_servers",
@@ -3013,7 +3073,7 @@
       "node_kind": "heading",
       "norm_label": "step 2: start development servers",
       "source_file": "README.md",
-      "source_location": "L177"
+      "source_location": "L181"
     },
     {
       "id": "readme_step_3_launch_containers",
@@ -3025,7 +3085,7 @@
       "node_kind": "heading",
       "norm_label": "step 3: launch containers",
       "source_file": "README.md",
-      "source_location": "L231"
+      "source_location": "L235"
     },
     {
       "id": "readme_step_4_verify_deployment",
@@ -3037,7 +3097,7 @@
       "node_kind": "heading",
       "norm_label": "step 4: verify deployment",
       "source_file": "README.md",
-      "source_location": "L237"
+      "source_location": "L241"
     },
     {
       "id": "ds_glosim_d2271487_a9b5_4f2b_9d18_ac11ca4f8f1d_readme",
@@ -4412,6 +4472,222 @@
       "source_location": "L127"
     },
     {
+      "id": "scripts_resolve_version",
+      "label": "resolve-version.js",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "resolve-version.js",
+      "file_type": "code",
+      "norm_label": "resolve-version.js",
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_resolve_version_execsync",
+      "label": "{ execSync }",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "resolve-version.js",
+      "file_type": "code",
+      "norm_label": "{ execsync }",
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L16"
+    },
+    {
+      "id": "scripts_resolve_version_features",
+      "label": "features",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "resolve-version.js",
+      "file_type": "code",
+      "norm_label": "features",
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L99"
+    },
+    {
+      "id": "scripts_resolve_version_fixes",
+      "label": "fixes",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "resolve-version.js",
+      "file_type": "code",
+      "norm_label": "fixes",
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L100"
+    },
+    {
+      "id": "scripts_resolve_version_fs",
+      "label": "fs",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "resolve-version.js",
+      "file_type": "code",
+      "norm_label": "fs",
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L14"
+    },
+    {
+      "id": "scripts_resolve_version_improvements",
+      "label": "improvements",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "resolve-version.js",
+      "file_type": "code",
+      "norm_label": "improvements",
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L101"
+    },
+    {
+      "id": "scripts_resolve_version_notespath",
+      "label": "notesPath",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "resolve-version.js",
+      "file_type": "code",
+      "norm_label": "notespath",
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L181"
+    },
+    {
+      "id": "scripts_resolve_version_others",
+      "label": "others",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "resolve-version.js",
+      "file_type": "code",
+      "norm_label": "others",
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L102"
+    },
+    {
+      "id": "scripts_resolve_version_path",
+      "label": "path",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "resolve-version.js",
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L15"
+    },
+    {
+      "id": "scripts_resolve_version_rootdir",
+      "label": "rootDir",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "resolve-version.js",
+      "file_type": "code",
+      "norm_label": "rootdir",
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L18"
+    },
+    {
+      "id": "scripts_resolve_version_rootpkg",
+      "label": "rootPkg",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "resolve-version.js",
+      "file_type": "code",
+      "norm_label": "rootpkg",
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L20"
+    },
+    {
+      "id": "scripts_resolve_version_rootpkgpath",
+      "label": "rootPkgPath",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "resolve-version.js",
+      "file_type": "code",
+      "norm_label": "rootpkgpath",
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L19"
+    },
+    {
+      "id": "release_notes",
+      "label": "RELEASE_NOTES.md",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "GloSim 0.0.1-pre-1",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "release_notes.md",
+      "source_file": "RELEASE_NOTES.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "release_notes_artifact_highlights",
+      "label": "\ud83d\udce6 Artifact Highlights",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "GloSim 0.0.1-pre-1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\ud83d\udce6 artifact highlights",
+      "source_file": "RELEASE_NOTES.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "release_notes_glosim_0_0_1_pre_1",
+      "label": "GloSim 0.0.1-pre-1",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "GloSim 0.0.1-pre-1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "glosim 0.0.1-pre-1",
+      "source_file": "RELEASE_NOTES.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "release_notes_maintenance_documentation",
+      "label": "\ud83d\udd27 Maintenance & Documentation",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "GloSim 0.0.1-pre-1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\ud83d\udd27 maintenance & documentation",
+      "source_file": "RELEASE_NOTES.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "release_notes_new_features",
+      "label": "\u2728 New Features",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "GloSim 0.0.1-pre-1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u2728 new features",
+      "source_file": "RELEASE_NOTES.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "release_notes_quick_deployment_instructions",
+      "label": "\u26a1 Quick Deployment Instructions",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "GloSim 0.0.1-pre-1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u26a1 quick deployment instructions",
+      "source_file": "RELEASE_NOTES.md",
+      "source_location": "L20"
+    },
+    {
+      "id": "release_notes_what_s_new_feature_highlights",
+      "label": "\ud83d\ude80 What's New & Feature Highlights",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "GloSim 0.0.1-pre-1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\ud83d\ude80 what's new & feature highlights",
+      "source_file": "RELEASE_NOTES.md",
+      "source_location": "L5"
+    },
+    {
       "id": "docs_plan",
       "label": "plan.md",
       "_origin": "ast",
@@ -4722,6 +4998,61 @@
       "norm_label": "website design plan",
       "source_file": "docs/plan.md",
       "source_location": "L1"
+    },
+    {
+      "id": "scripts_bump_version",
+      "label": "bump-version.js",
+      "_origin": "ast",
+      "community": 50,
+      "community_name": "bump-version.js",
+      "file_type": "code",
+      "norm_label": "bump-version.js",
+      "source_file": "scripts/bump-version.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_bump_version_filestoupdate",
+      "label": "filesToUpdate",
+      "_origin": "ast",
+      "community": 50,
+      "community_name": "bump-version.js",
+      "file_type": "code",
+      "norm_label": "filestoupdate",
+      "source_file": "scripts/bump-version.js",
+      "source_location": "L33"
+    },
+    {
+      "id": "scripts_bump_version_fs",
+      "label": "fs",
+      "_origin": "ast",
+      "community": 50,
+      "community_name": "bump-version.js",
+      "file_type": "code",
+      "norm_label": "fs",
+      "source_file": "scripts/bump-version.js",
+      "source_location": "L15"
+    },
+    {
+      "id": "scripts_bump_version_path",
+      "label": "path",
+      "_origin": "ast",
+      "community": 50,
+      "community_name": "bump-version.js",
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "scripts/bump-version.js",
+      "source_location": "L16"
+    },
+    {
+      "id": "scripts_bump_version_rootdir",
+      "label": "rootDir",
+      "_origin": "ast",
+      "community": 50,
+      "community_name": "bump-version.js",
+      "file_type": "code",
+      "norm_label": "rootdir",
+      "source_file": "scripts/bump-version.js",
+      "source_location": "L32"
     },
     {
       "id": "frontend_tsconfig",
@@ -5337,7 +5668,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L21"
+      "source_location": "L23"
     },
     {
       "id": "package_devdependencies_concurrently",
@@ -5348,7 +5679,7 @@
       "file_type": "code",
       "norm_label": "concurrently",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L24"
     },
     {
       "id": "package_devdependencies_date_fns",
@@ -5359,7 +5690,7 @@
       "file_type": "code",
       "norm_label": "date-fns",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L25"
     },
     {
       "id": "package_devdependencies_date_fns_tz",
@@ -5370,7 +5701,7 @@
       "file_type": "code",
       "norm_label": "date-fns-tz",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L26"
     },
     {
       "id": "package_name",
@@ -5392,7 +5723,7 @@
       "file_type": "code",
       "norm_label": "overrides",
       "source_file": "package.json",
-      "source_location": "L26"
+      "source_location": "L28"
     },
     {
       "id": "package_overrides_better_sqlite3",
@@ -5403,7 +5734,7 @@
       "file_type": "code",
       "norm_label": "better-sqlite3",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L32"
     },
     {
       "id": "package_overrides_date_fns",
@@ -5414,7 +5745,7 @@
       "file_type": "code",
       "norm_label": "date-fns",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L29"
     },
     {
       "id": "package_overrides_date_fns_tz",
@@ -5425,7 +5756,7 @@
       "file_type": "code",
       "norm_label": "date-fns-tz",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L30"
     },
     {
       "id": "package_overrides_sharp",
@@ -5436,7 +5767,7 @@
       "file_type": "code",
       "norm_label": "sharp",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L31"
     },
     {
       "id": "package_private",
@@ -5560,6 +5891,28 @@
       "source_location": "L18"
     },
     {
+      "id": "package_scripts_version_bump",
+      "label": "version:bump",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "scripts",
+      "file_type": "code",
+      "norm_label": "version:bump",
+      "source_file": "package.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "package_scripts_version_resolve",
+      "label": "version:resolve",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "scripts",
+      "file_type": "code",
+      "norm_label": "version:resolve",
+      "source_file": "package.json",
+      "source_location": "L21"
+    },
+    {
       "id": "package_version",
       "label": "version",
       "_origin": "ast",
@@ -5590,7 +5943,7 @@
       "file_type": "concept",
       "norm_label": "concurrently",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L24"
     },
     {
       "id": "package_json_date_fns",
@@ -5601,7 +5954,7 @@
       "file_type": "concept",
       "norm_label": "date-fns",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L25"
     },
     {
       "id": "package_json_date_fns_tz",
@@ -5612,7 +5965,7 @@
       "file_type": "concept",
       "norm_label": "date-fns-tz",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L26"
     },
     {
       "id": "ref_backend",
@@ -9462,7 +9815,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -9474,7 +9827,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -9486,7 +9839,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -12841,7 +13194,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/vite-env.d.ts",
-      "source_location": "L7",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -13149,7 +13502,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -13160,7 +13513,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -13215,7 +13568,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -13226,7 +13579,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -13237,7 +13590,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -13248,7 +13601,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -13259,7 +13612,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -13270,7 +13623,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -13281,7 +13634,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -13384,6 +13737,28 @@
       "weight": 1.0
     },
     {
+      "source": "package_scripts",
+      "target": "package_scripts_version_bump",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_version_resolve",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
       "source": "readme",
       "target": "readme_glosim_global_simulation_conference",
       "relation": "contains",
@@ -13395,6 +13770,39 @@
       "weight": 1.0
     },
     {
+      "source": "readme_10_automated_versioning_pre_release_pipeline",
+      "target": "readme_1_versioning_specification",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L320",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_10_automated_versioning_pre_release_pipeline",
+      "target": "readme_2_automated_release_notes_generation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L327",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_10_automated_versioning_pre_release_pipeline",
+      "target": "readme_3_local_version_management_commands",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L336",
+      "weight": 1.0
+    },
+    {
       "source": "readme_3_project_structure_technical_capabilities",
       "target": "readme_backend_node_js_strapi_cms_headless_architecture",
       "relation": "contains",
@@ -13402,7 +13810,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L127",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -13413,7 +13821,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L140",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -13424,7 +13832,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L154",
+      "source_location": "L158",
       "weight": 1.0
     },
     {
@@ -13435,7 +13843,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L167",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -13446,7 +13854,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L171",
+      "source_location": "L175",
       "weight": 1.0
     },
     {
@@ -13457,7 +13865,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L177",
+      "source_location": "L181",
       "weight": 1.0
     },
     {
@@ -13468,7 +13876,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L207",
+      "source_location": "L211",
       "weight": 1.0
     },
     {
@@ -13479,7 +13887,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L214",
+      "source_location": "L218",
       "weight": 1.0
     },
     {
@@ -13490,7 +13898,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L231",
+      "source_location": "L235",
       "weight": 1.0
     },
     {
@@ -13501,7 +13909,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L237",
+      "source_location": "L241",
       "weight": 1.0
     },
     {
@@ -13512,7 +13920,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L125",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -13523,7 +13931,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L165",
+      "source_location": "L169",
       "weight": 1.0
     },
     {
@@ -13534,7 +13942,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L205",
+      "source_location": "L209",
       "weight": 1.0
     },
     {
@@ -13545,7 +13953,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L244",
+      "source_location": "L248",
       "weight": 1.0
     },
     {
@@ -13556,7 +13964,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L268",
+      "source_location": "L272",
       "weight": 1.0
     },
     {
@@ -13567,7 +13975,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L279",
+      "source_location": "L283",
       "weight": 1.0
     },
     {
@@ -13578,7 +13986,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L295",
+      "source_location": "L299",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_glosim_global_simulation_conference",
+      "target": "readme_10_automated_versioning_pre_release_pipeline",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L316",
       "weight": 1.0
     },
     {
@@ -13600,7 +14019,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L94",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -13611,7 +14030,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L181",
+      "source_location": "L185",
       "weight": 1.0
     },
     {
@@ -13622,7 +14041,249 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L186",
+      "source_location": "L190",
+      "weight": 1.0
+    },
+    {
+      "source": "release_notes",
+      "target": "release_notes_glosim_0_0_1_pre_1",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RELEASE_NOTES.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "release_notes_glosim_0_0_1_pre_1",
+      "target": "release_notes_artifact_highlights",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RELEASE_NOTES.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "release_notes_glosim_0_0_1_pre_1",
+      "target": "release_notes_quick_deployment_instructions",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RELEASE_NOTES.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "release_notes_glosim_0_0_1_pre_1",
+      "target": "release_notes_what_s_new_feature_highlights",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RELEASE_NOTES.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "release_notes_what_s_new_feature_highlights",
+      "target": "release_notes_maintenance_documentation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RELEASE_NOTES.md",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "release_notes_what_s_new_feature_highlights",
+      "target": "release_notes_new_features",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "RELEASE_NOTES.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_bump_version",
+      "target": "scripts_bump_version_fs",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/bump-version.js",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_bump_version",
+      "target": "scripts_bump_version_path",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/bump-version.js",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_bump_version",
+      "target": "scripts_bump_version_rootdir",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/bump-version.js",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_bump_version",
+      "target": "scripts_bump_version_filestoupdate",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/bump-version.js",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_resolve_version",
+      "target": "scripts_resolve_version_fixes",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_resolve_version",
+      "target": "scripts_resolve_version_improvements",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_resolve_version",
+      "target": "scripts_resolve_version_others",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_resolve_version",
+      "target": "scripts_resolve_version_fs",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_resolve_version",
+      "target": "scripts_resolve_version_path",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_resolve_version",
+      "target": "scripts_resolve_version_execsync",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_resolve_version",
+      "target": "scripts_resolve_version_rootdir",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_resolve_version",
+      "target": "scripts_resolve_version_notespath",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_resolve_version",
+      "target": "scripts_resolve_version_rootpkgpath",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_resolve_version",
+      "target": "scripts_resolve_version_rootpkg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_resolve_version",
+      "target": "scripts_resolve_version_rungit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_resolve_version",
+      "target": "scripts_resolve_version_features",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/resolve-version.js",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -14262,5 +14923,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1950d91abf264cc22883f15fe757c4190e6abafe"
+  "built_at_commit": "8351e12649eb60925b7b9b2d0ed79d0ada62a3ba"
 }

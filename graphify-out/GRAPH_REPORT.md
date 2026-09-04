@@ -1,16 +1,16 @@
 # Graph Report - GloSim  (2026-09-04)
 
 ## Corpus Check
-- 81 files · ~46,664 words
+- 82 files · ~46,720 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 513 nodes · 776 edges · 51 communities (46 shown, 5 thin omitted)
+- 515 nodes · 777 edges · 52 communities (46 shown, 6 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8351e126`
+- Built from commit: `cec52931`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -39,6 +39,7 @@
 - resolve-version.js
 - GloSim 0.0.1-pre-1
 - bump-version.js
+- backend/server.js
 
 ## God Nodes (most connected - your core abstractions)
 1. `ImageSlot` - 27 edges
@@ -67,7 +68,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (51 total, 5 thin omitted)
+## Communities (52 total, 6 thin omitted)
 
 ### Community 0 - "App.tsx"
 Cohesion: 0.09
@@ -146,9 +147,9 @@ Cohesion: 0.40
 Nodes (4): filesToUpdate, fs, path, rootDir
 
 ## Knowledge Gaps
-- **210 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+205 more)
+- **211 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+206 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -158,7 +159,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 7 inferred relationships involving `createRuntime()` (e.g. with `adoptParsed()` and `dcUpdate()`) actually correct?**
   _`createRuntime()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `path`, `path`, `dotenv` to the rest of the system?**
-  _210 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _211 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `App.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.09044289044289044 - nodes in this community are weakly interconnected._
 - **Should `support.js` be split into smaller, more focused modules?**

@@ -5,7 +5,7 @@
   "description": "Strapi Headless CMS for GloSim Academic Conference",
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
+    "start": "node server.js",
     "build": "strapi build",
     "strapi": "strapi"
   },

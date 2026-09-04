@@ -40,6 +40,7 @@ GloSim/
 │   │   └── index.js                  # Strapi lifecycle bootstrap hook
 │   ├── database/                     # Migrations & database schemas
 │   ├── public/                       # Uploaded conference assets & media files
+│   ├── server.js                     # Programmatic Strapi server entry point
 │   └── package.json                  # Backend dependencies & Strapi scripts
 │
 ├── frontend/                         # Modern React 18 Single Page Application (SPA)
@@ -116,6 +117,7 @@ glosim-deploy/
 │   ├── public/                       # Uploaded conference media & assets directory
 │   ├── src/                          # Content-type schemas, component definitions, and seed scripts
 │   ├── .tmp/                         # SQLite database storage directory (persisted volume)
+│   ├── server.js                     # Direct Node entry point (avoids symlink issues)
 │   └── package.json                  # Runtime package metadata
 │
 └── frontend/                         # Prebuilt React Frontend

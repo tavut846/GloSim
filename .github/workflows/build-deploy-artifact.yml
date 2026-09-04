@@ -74,6 +74,7 @@ jobs:
           cp -r backend/public bundle/backend/
           cp -r backend/database bundle/backend/ || true
           cp backend/package.json bundle/backend/
+          cp backend/server.js bundle/backend/
 
           # Copy Docker deployment files from docker/ directly into bundle root
           cp docker/* bundle/
@@ -92,12 +93,12 @@ jobs:
           path: bundle/
           retention-days: 30
 
-      # 7. Package Zip Archive for Pre-Release Asset
+      # 7. Package Zip Archive for Pre-Release Asset (Preserve symlinks with -y)
       - name: Package Zip for Pre-Release
         if: (github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')) || github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/')
         run: |
           cd bundle
-          zip -r ../glosim.zip .
+          zip -ry ../glosim.zip .
           cd ..
 
       # 8. Upload Artifact to GitHub Pre-Release with Auto-Version & Release Notes

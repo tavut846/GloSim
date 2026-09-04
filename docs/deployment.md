@@ -22,6 +22,7 @@ glosim-deploy/
 │   ├── config/
 │   ├── src/
 │   ├── public/
+│   ├── server.js             # Direct Node entry point (avoids symlink issues)
 │   └── .tmp/                 # SQLite database storage directory
 └── frontend/                 # Prebuilt Frontend
     └── dist/                 # Optimized HTML, CSS, JS static assets
