@@ -19,15 +19,14 @@ GloSim/
 │   ├── index.html
 │   └── package.json
 │
-├── docker/                       # Docker & VPS Deployment Files
-│   ├── Dockerfile.backend        # Lightweight prebuilt backend runtime
-│   ├── Dockerfile.frontend       # Lightweight prebuilt Nginx web server
-│   ├── docker-compose.yml        # Multi-container orchestration (Backend + Frontend)
-│   └── nginx.conf                # Nginx SPA and Gzip configuration
+├── docker-compose.yml            # Multi-container orchestration (Backend + Frontend)
+├── Dockerfile.backend            # Lightweight prebuilt backend runtime
+├── Dockerfile.frontend           # Lightweight prebuilt Nginx web server
+├── nginx.conf                    # Nginx SPA and Gzip configuration
 │
 ├── .github/                      # CI/CD Workflows
 │   └── workflows/
-│       └── build-deploy-artifact.yml # Builds & zips prebuilt deployment bundle
+│       └── build-deploy-artifact.yml # Builds prebuilt bundle & publishes Pre-Release
 │
 ├── docs/                         # Specifications & Guides
 │   ├── plan.md                   # Product requirement & information architecture plan
@@ -67,15 +66,14 @@ Or run full-stack debug in VS Code by pressing **`F5`**!
 
 ## 3. Production VPS Deployment (Prebuilt Artifacts)
 
-1. GitHub Actions automatically builds and packages the whole project on push (`glosim-deploy-bundle.zip`).
+1. Download the prebuilt artifact (`glosim-deploy-bundle.zip`) directly from the latest GitHub **Pre-Release** or Actions artifact.
 2. Extract the bundle on your VPS:
    ```bash
    unzip glosim-deploy-bundle.zip -d /opt/glosim
    cd /opt/glosim
-   cp .env.example .env
    ```
-3. Set your PostgreSQL credentials in `.env` (connect to your manually managed PostgreSQL instance via `DATABASE_HOST=host.docker.internal` or IP).
+3. The bundle includes `.env` ready with **SQLite storage** by default! (To connect to external PostgreSQL instead, set `DATABASE_CLIENT=postgres` and your database credentials in `.env`).
 4. Launch containers:
    ```bash
-   docker compose -f docker/docker-compose.yml up -d --build
+   docker compose up -d --build
    ```

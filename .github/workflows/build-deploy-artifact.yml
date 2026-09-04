@@ -3,6 +3,7 @@ name: Build & Package Deployment Artifact
 on:
   push:
     branches: [ main, master ]
+    tags: [ 'v*' ]
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
@@ -11,6 +12,8 @@ jobs:
   build-and-package:
     name: Build Prebuilt Artifacts & Docker Bundle
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Repository
@@ -44,12 +47,11 @@ jobs:
       - name: Prune Backend DevDependencies
         run: npm prune --production --legacy-peer-deps --prefix backend
 
-      # 4. Assemble Deployment Bundle
+      # 4. Assemble Deployment Bundle (All Docker files in root folder)
       - name: Prepare Deployment Artifact Directory
         run: |
           mkdir -p bundle/frontend/dist
-          mkdir -p bundle/backend
-          mkdir -p bundle/docker
+          mkdir -p bundle/backend/.tmp
 
           # Copy prebuilt frontend assets
           cp -r frontend/dist/* bundle/frontend/dist/
@@ -64,24 +66,58 @@ jobs:
           cp -r backend/database bundle/backend/ || true
           cp backend/package.json bundle/backend/
 
-          # Copy Docker deployment files
-          cp -r docker/* bundle/docker/
+          # Copy root Docker deployment files directly into bundle root
+          cp docker-compose.yml bundle/
+          cp Dockerfile.backend bundle/
+          cp Dockerfile.frontend bundle/
+          cp nginx.conf bundle/
 
-          # Copy env template and documentation
-          cp .env.example bundle/
+          # Copy env template and default deploy .env (with SQLite default storage)
+          cp .env.example bundle/.env.example
+          cp .env.example bundle/.env
           cp README.md bundle/
 
-      # 5. Zip Deployment Bundle
-      - name: Zip Deployment Bundle
+      # 5. Upload GitHub Actions Artifact (Folder uploaded directly - fixes zip-in-zip problem)
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: glosim-deploy-bundle
+          path: bundle/
+          retention-days: 30
+
+      # 6. Package Zip Archive for Pre-Release Asset
+      - name: Package Zip for Pre-Release
+        if: (github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')) || github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/')
         run: |
           cd bundle
           zip -r ../glosim-deploy-bundle.zip .
           cd ..
 
-      # 6. Upload GitHub Actions Artifact
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+      # 7. Upload Artifact to GitHub Pre-Release
+      - name: Publish Pre-Release
+        if: (github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')) || github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
         with:
-          name: glosim-deploy-bundle
-          path: glosim-deploy-bundle.zip
-          retention-days: 30
+          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || 'pre-release' }}
+          name: "GloSim Pre-Release"
+          prerelease: true
+          make_latest: false
+          files: glosim-deploy-bundle.zip
+          body: |
+            ## GloSim Pre-Release Deployment Bundle
+
+            Automated pre-release build from commit `${{ github.sha }}`.
+
+            ### What's Inside:
+            - **Root Docker Deployment**: `docker-compose.yml`, `Dockerfile.backend`, `Dockerfile.frontend`, `nginx.conf` all located in the root directory.
+            - **Pre-configured Storage**: Defaults to SQLite (`.env` pre-configured with `DATABASE_CLIENT=sqlite` and `.tmp/data.db`).
+            - **Prebuilt Frontend & Backend**: No build dependencies or devDependencies required on your server.
+
+            ### Quick Deployment:
+            ```bash
+            unzip glosim-deploy-bundle.zip -d /opt/glosim
+            cd /opt/glosim
+            docker compose up -d --build
+            ```
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

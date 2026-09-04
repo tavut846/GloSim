@@ -420,9 +420,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1788499334.0329635,
-    "seen": 1788499382.3635862,
-    "ast_hash": "aca609d3ba6b28b47c7246a2e8d0c161",
+    "mtime": 1787626962.0438466,
+    "seen": 1787626985.0060234,
+    "ast_hash": "1a8c5d2dd05a6b9be7b233b5d1938e89",
     "semantic_hash": ""
   },
   "_ds/glosim-d2271487-a9b5-4f2b-9d18-ac11ca4f8f1d/readme.md": {
@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "docs/deployment.md": {
-    "mtime": 1788499344.6371608,
-    "seen": 1788499382.3636184,
-    "ast_hash": "f143c28d2064f2365fe439a7a988fe6e",
+    "mtime": 1787626954.5218844,
+    "seen": 1787626985.0061057,
+    "ast_hash": "e99f01b77e4fda24d2f190a7c3d3e7a1",
     "semantic_hash": ""
   },
   "docs/plan.md": {
@@ -486,45 +486,45 @@
     "semantic_hash": ""
   },
   ".github/workflows/build-deploy-artifact.yml": {
-    "mtime": 1788499324.389536,
-    "seen": 1788499382.3635826,
-    "ast_hash": "5fb92f72802f0463f0266c9d6691344c",
+    "mtime": 1787626947.915677,
+    "seen": 1787626985.0060167,
+    "ast_hash": "a394e848b88ab24917693cf9e8938991",
+    "semantic_hash": ""
+  },
+  "docker/docker-compose.yml": {
+    "mtime": 1787626941.2296774,
+    "seen": 1787626985.0060987,
+    "ast_hash": "49cd8bb29b15b43222402c561e970b34",
     "semantic_hash": ""
   },
   "backend/.strapi-updater.json": {
-    "mtime": 1788493070.815029,
-    "seen": 1788499382.3632715,
-    "ast_hash": "a857ea3a3716c2eaca7664f6606aa4db",
+    "mtime": 1787643610.2392302,
+    "seen": 1787643667.8712566,
+    "ast_hash": "944c9860964f2bc3740e389df5a1e5a4",
     "semantic_hash": ""
   },
   "backend/.strapi/client/app.js": {
-    "mtime": 1788492965.3297346,
-    "seen": 1788499382.3632762,
+    "mtime": 1787643557.407492,
+    "seen": 1787643667.871265,
     "ast_hash": "b4f0f5fa3a9ca771e7f949db2689a5fd",
     "semantic_hash": ""
   },
   "backend/.strapi/client/index.html": {
-    "mtime": 1788492965.2286816,
-    "seen": 1788499382.3635929,
+    "mtime": 1787643557.3157482,
+    "seen": 1787643667.8716705,
     "ast_hash": "8d4f8a903974f41d475b82b819d9fec5",
     "semantic_hash": ""
   },
   "backend/types/generated/components.d.ts": {
-    "mtime": 1788493086.7405286,
-    "seen": 1788499382.3634136,
+    "mtime": 1787643624.8639414,
+    "seen": 1787643667.8714976,
     "ast_hash": "85d846c2f1a9e4a14fbbb43a3d6a074a",
     "semantic_hash": ""
   },
   "backend/types/generated/contentTypes.d.ts": {
-    "mtime": 1788493086.7355237,
-    "seen": 1788499382.3634167,
+    "mtime": 1787643624.8572612,
+    "seen": 1787643667.8715029,
     "ast_hash": "e39a182fd281d482102b3321298c483b",
-    "semantic_hash": ""
-  },
-  "docker-compose.yml": {
-    "mtime": 1788499295.0995157,
-    "seen": 1788499382.3636143,
-    "ast_hash": "5641145f20fa03ca4933f72f55f240cd",
     "semantic_hash": ""
   }
 }

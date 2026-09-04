@@ -6,24 +6,25 @@ This guide details how to deploy the prebuilt artifacts (from GitHub Actions) on
 
 ## 1. Directory Structure in Deployment Package
 
-When you download and unzip `glosim-deploy-bundle.zip` on your VPS, you get:
+When you download and unzip `glosim-deploy-bundle.zip` on your VPS, all deployment files are conveniently at the root:
 
 ```
 glosim-deploy/
-├── backend/                      # Prebuilt Strapi Backend & production node_modules
-│   ├── build/                    # Built Strapi Admin UI
+├── docker-compose.yml        # Multi-container orchestration (Backend + Frontend)
+├── Dockerfile.backend        # Lightweight Node runtime
+├── Dockerfile.frontend       # Lightweight Nginx runner
+├── nginx.conf                # Nginx SPA & Gzip configuration
+├── .env                      # Pre-configured production config (defaults to SQLite)
+├── .env.example              # Environment template
+├── README.md                 # Deployment quickstart
+├── backend/                  # Prebuilt Strapi Backend & production node_modules
+│   ├── build/                # Built Strapi Admin UI
 │   ├── config/
 │   ├── src/
-│   └── public/
-├── frontend/                     # Prebuilt Frontend
-│   └── dist/                     # Optimized HTML, CSS, JS static assets
-├── docker/                       # Docker deployment configurations
-│   ├── Dockerfile.backend        # Lightweight Node runtime
-│   ├── Dockerfile.frontend       # Lightweight Nginx runner
-│   ├── docker-compose.yml        # Multi-container orchestration (Backend + Frontend)
-│   └── nginx.conf                # Nginx SPA & Gzip configuration
-├── .env.example                  # Environment template
-└── .env                          # Your VPS production configuration (created from .env.example)
+│   ├── public/
+│   └── .tmp/                 # SQLite database storage directory
+└── frontend/                 # Prebuilt Frontend
+    └── dist/                 # Optimized HTML, CSS, JS static assets
 ```
 
 ---
@@ -31,31 +32,23 @@ glosim-deploy/
 ## 2. Deploying on VPS (Step-by-Step)
 
 ### Step 1: Download & Extract Prebuilt Artifact
+Download `glosim-deploy-bundle.zip` from the latest GitHub **Pre-Release** or Actions Artifact:
 ```bash
 unzip glosim-deploy-bundle.zip -d /opt/glosim
 cd /opt/glosim
 ```
 
-### Step 2: Configure `.env`
-Copy `.env.example` to `.env`:
+### Step 2: (Optional) Configure `.env`
+By default, `.env` is already configured with **SQLite storage** for zero-configuration startup!
+
+If you want to use your external PostgreSQL database instead, edit `.env`:
 ```bash
-cp .env.example .env
 nano .env
 ```
 
-Set your production values:
+And update the database settings:
 ```env
-# Frontend API endpoint
-VITE_STRAPI_URL=https://api.yourdomain.com
-
-# Backend Secrets
-APP_KEYS=randomKey1,randomKey2,randomKey3,randomKey4
-API_TOKEN_SALT=your_random_api_token_salt
-ADMIN_JWT_SECRET=your_random_admin_jwt_secret
-TRANSFER_TOKEN_SALT=your_random_transfer_token_salt
-JWT_SECRET=your_random_jwt_secret
-
-# Database - Point to your manually managed PostgreSQL
+# Database - Switch from SQLite to PostgreSQL
 DATABASE_CLIENT=postgres
 DATABASE_HOST=host.docker.internal   # Or 127.0.0.1 / your PostgreSQL server IP
 DATABASE_PORT=5432
@@ -71,7 +64,7 @@ DATABASE_SSL=false
 ### Step 3: Launch Containers
 From the project root:
 ```bash
-docker compose -f docker/docker-compose.yml up -d --build
+docker compose up -d --build
 ```
 
 ### Step 4: Verify Deployment
@@ -84,5 +77,6 @@ docker compose -f docker/docker-compose.yml up -d --build
 
 The GitHub Actions workflow at [`.github/workflows/build-deploy-artifact.yml`](../.github/workflows/build-deploy-artifact.yml) automatically:
 1. Builds both frontend and backend on every push.
-2. Packages production node_modules, built admin UI, static web bundle, and Docker files.
-3. Produces a downloadable `glosim-deploy-bundle.zip` ready for one-click upload to your VPS.
+2. Packages production node_modules, built admin UI, static web bundle, and Docker files in the root folder.
+3. Uploads the folder directly to GitHub Actions Artifacts (no zip-in-zip when downloading).
+4. Publishes `glosim-deploy-bundle.zip` to GitHub **Pre-Releases** for immediate 1-click download.

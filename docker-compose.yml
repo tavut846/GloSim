@@ -4,16 +4,17 @@ services:
   # Strapi Headless CMS Backend
   backend:
     build:
-      context: ..
-      dockerfile: docker/Dockerfile.backend
+      context: .
+      dockerfile: Dockerfile.backend
     container_name: glosim-backend
     restart: unless-stopped
     env_file:
-      - ../.env
+      - .env
     environment:
       NODE_ENV: production
-      # To connect to host-installed PostgreSQL, use DATABASE_HOST=host.docker.internal
       DATABASE_CLIENT: ${DATABASE_CLIENT:-sqlite}
+      DATABASE_FILENAME: ${DATABASE_FILENAME:-.tmp/data.db}
+      # To connect to host-installed PostgreSQL, set DATABASE_CLIENT=postgres in .env
       DATABASE_HOST: ${DATABASE_HOST:-host.docker.internal}
       DATABASE_PORT: ${DATABASE_PORT:-5432}
       DATABASE_NAME: ${DATABASE_NAME:-glosim_db}
@@ -22,7 +23,7 @@ services:
       DATABASE_SSL: ${DATABASE_SSL:-false}
     volumes:
       - strapi_uploads:/opt/app/public/uploads
-      - ../backend/.tmp:/opt/app/.tmp
+      - ./backend/.tmp:/opt/app/.tmp
     ports:
       - "${BACKEND_PORT:-1337}:1337"
     extra_hosts:
@@ -33,8 +34,8 @@ services:
   # Web Frontend
   frontend:
     build:
-      context: ..
-      dockerfile: docker/Dockerfile.frontend
+      context: .
+      dockerfile: Dockerfile.frontend
     container_name: glosim-frontend
     restart: unless-stopped
     ports:
