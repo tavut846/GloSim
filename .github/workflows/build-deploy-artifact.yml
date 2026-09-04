@@ -1,0 +1,87 @@
+name: Build & Package Deployment Artifact
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-and-package:
+    name: Build Prebuilt Artifacts & Docker Bundle
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      # 1. Install & Build Frontend
+      - name: Install Frontend Dependencies
+        run: npm ci --prefix frontend
+
+      - name: Build Frontend Artifact
+        run: npm run build --prefix frontend
+        env:
+          VITE_STRAPI_URL: ${{ vars.VITE_STRAPI_URL || 'http://localhost:1337' }}
+
+      # 2. Install & Build Backend (Strapi)
+      - name: Install Backend Dependencies
+        run: npm install --legacy-peer-deps --prefix backend
+
+      - name: Build Backend Admin Panel
+        run: npm run build --prefix backend
+        env:
+          NODE_ENV: production
+
+      # 3. Clean up backend devDependencies for production runtime
+      - name: Prune Backend DevDependencies
+        run: npm prune --production --legacy-peer-deps --prefix backend
+
+      # 4. Assemble Deployment Bundle
+      - name: Prepare Deployment Artifact Directory
+        run: |
+          mkdir -p bundle/frontend/dist
+          mkdir -p bundle/backend
+          mkdir -p bundle/docker
+
+          # Copy prebuilt frontend assets
+          cp -r frontend/dist/* bundle/frontend/dist/
+
+          # Copy prebuilt backend application & production node_modules
+          cp -r backend/node_modules bundle/backend/
+          cp -r backend/build bundle/backend/ || true
+          cp -r backend/dist bundle/backend/ || true
+          cp -r backend/config bundle/backend/
+          cp -r backend/src bundle/backend/
+          cp -r backend/public bundle/backend/
+          cp -r backend/database bundle/backend/ || true
+          cp backend/package.json bundle/backend/
+
+          # Copy Docker deployment files
+          cp -r docker/* bundle/docker/
+
+          # Copy env template and documentation
+          cp .env.example bundle/
+          cp README.md bundle/
+
+      # 5. Zip Deployment Bundle
+      - name: Zip Deployment Bundle
+        run: |
+          cd bundle
+          zip -r ../glosim-deploy-bundle.zip .
+          cd ..
+
+      # 6. Upload GitHub Actions Artifact
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: glosim-deploy-bundle
+          path: glosim-deploy-bundle.zip
+          retention-days: 30

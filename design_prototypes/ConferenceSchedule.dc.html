@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="./_ds/glosim-d2271487-a9b5-4f2b-9d18-ac11ca4f8f1d/styles.css"/>
+  <script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.js"></script>
+  <style>
+    body{margin:0;background:var(--limestone);}
+    a{color:var(--symposium-blue);}
+    a:hover{color:var(--symposium-blue-hover);}
+  </style>
+</helmet>
+
+<div style="min-height:100vh;padding:40px 0;display:flex;justify-content:center;font-family:var(--font-sans);">
+<div style="width:{{pageWidth}}px;max-width:{{pageWidth}}px;background:var(--white);box-shadow:{{frameShadow}};border-radius:{{frameRadius}};overflow:hidden;position:relative;">
+
+<header style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:{{navPad}};border-bottom:1px solid var(--border-default);background:var(--white);font-family:{{fontFamily}};">
+  <a href="Homepage.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <div style="width:36px;height:36px;border-radius:var(--radius-sm);background:var(--symposium-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;">IF</div>
+    <span style="font-weight:var(--weight-bold);font-size:16px;color:var(--ink-900);white-space:nowrap;">{{c.orgShort}}</span>
+  </a>
+  <nav style="display:{{navRowDisplay}};gap:28px;align-items:center;">
+    <sc-for list="{{c.navItems}}" as="item" hint-placeholder-count="5">
+      <a href="{{item.href}}" style="font-size:var(--text-body-md);color:var(--ink-900);text-decoration:none;font-weight:var(--weight-medium);">{{item.label}}</a>
+    </sc-for>
+  </nav>
+  <div style="display:{{navRowDisplay}};align-items:center;gap:12px;">
+    <div style="display:flex;gap:2px;background:var(--limestone);border-radius:var(--radius-pill);padding:3px;">
+      <button onClick="{{setLangEn}}" style="{{langEnStyle}}">EN</button>
+      <button onClick="{{setLangZh}}" style="{{langZhStyle}}">中文</button>
+    </div>
+  </div>
+  <button style="display:{{hamburgerDisplay}};background:none;border:none;cursor:pointer;padding:4px;" onClick="{{toggleMobileMenu}}">
+    <i data-lucide="{{hamburgerIconName}}" style="width:24px;height:24px;color:var(--ink-900);"></i>
+  </button>
+</header>
+
+<sc-if value="{{mobileMenuOpenAndMobile}}" hint-placeholder-val="{{false}}">
+  <div style="position:absolute;top:60px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border-default);z-index:49;padding:16px 20px 20px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-raised);">
+    <sc-for list="{{c.navItems}}" as="item" hint-placeholder-count="5">
+      <a href="{{item.href}}" style="font-size:15px;color:var(--ink-900);text-decoration:none;font-weight:500;">{{item.label}}</a>
+    </sc-for>
+    <div style="display:flex;gap:2px;background:var(--limestone);border-radius:999px;padding:3px;width:fit-content;margin-top:4px;">
+      <button onClick="{{setLangEn}}" style="{{langEnStyle}}">EN</button>
+      <button onClick="{{setLangZh}}" style="{{langZhStyle}}">中文</button>
+    </div>
+  </div>
+</sc-if>
+
+<section style="padding:{{heroPadV}} {{sectionPadH}} {{sectionPadV}};background:var(--limestone);font-family:{{fontFamily}};">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span style="font-size:var(--text-label-caps);text-transform:uppercase;letter-spacing:var(--tracking-caps);color:var(--symposium-blue);font-weight:600;">{{c.pageEyebrow}}</span>
+    <h1 style="font-size:{{h1Size}};font-weight:var(--weight-extrabold);line-height:var(--leading-tight);color:var(--ink-900);margin:12px 0 12px;">{{c.pageTitle}}</h1>
+    <p style="font-size:var(--text-body-lg);color:var(--slate-600);line-height:var(--leading-body);margin:0;max-width:640px;">{{c.pageSubtitle}}</p>
+  </div>
+</section>
+
+<section style="padding:20px {{sectionPadH}};background:var(--symposium-blue);font-family:{{fontFamily}};">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:{{bannerFlexDir}};justify-content:space-between;align-items:center;gap:16px;color:#fff;">
+    <div style="display:flex;align-items:center;gap:10px;"><i data-lucide="calendar-days" style="width:18px;height:18px;"></i><span style="font-size:var(--text-body-md);">{{c.bannerDates}}</span></div>
+    <div style="display:flex;align-items:center;gap:10px;"><i data-lucide="map-pin" style="width:18px;height:18px;"></i><span style="font-size:var(--text-body-md);">{{c.bannerLocation}}</span></div>
+  </div>
+</section>
+
+<section style="padding:{{sectionPadV}} {{sectionPadH}} {{sectionPadVEnd}};background:var(--white);font-family:{{fontFamily}};">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;border-bottom:1px solid var(--border-default);padding-bottom:0;">
+      <sc-for list="{{c.days}}" as="d" hint-placeholder-count="5">
+        <button onClick="{{d.onSelect}}" style="{{d.tabStyle}}">{{d.tabLabel}}</button>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <sc-for list="{{activeSessions}}" as="s" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:{{sessionDir}};gap:16px;align-items:flex-start;background:var(--limestone);border:1px solid var(--border-default);border-radius:var(--radius-md);padding:18px 22px;">
+          <div style="min-width:130px;font-family:var(--font-mono);font-size:14px;color:var(--symposium-blue);font-weight:700;flex-shrink:0;">{{s.time}}</div>
+          <div style="flex:1;min-width:0;">
+            <h4 style="margin:0 0 4px;font-size:var(--text-body-lg);color:var(--ink-900);font-weight:var(--weight-semibold);">{{s.title}}</h4>
+            <span style="font-size:var(--text-body-sm);color:var(--slate-600);">{{s.location}}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--ink-900);color:var(--slate-400);padding:56px {{sectionPadH}} 28px;font-family:{{fontFamily}};">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:{{footerFlexDir}};justify-content:space-between;gap:32px;">
+    <div style="max-width:360px;">
+      <div style="color:#fff;font-weight:700;font-size:16px;margin-bottom:12px;">{{c.orgFull}}</div>
+      <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;font-size:14px;">
+        <i data-lucide="map-pin" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;"></i>
+        <span>{{c.footerAddress}}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:14px;">
+        <i data-lucide="mail" style="width:16px;height:16px;flex-shrink:0;"></i>
+        <span>{{c.footerEmail}}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:14px;">
+        <i data-lucide="phone" style="width:16px;height:16px;flex-shrink:0;"></i>
+        <span>{{c.footerPhone}}</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:flex-start;">
+      <a href="#" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--slate-600);display:flex;align-items:center;justify-content:center;color:var(--slate-400);"><i data-lucide="linkedin" style="width:16px;height:16px;"></i></a>
+      <a href="#" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--slate-600);display:flex;align-items:center;justify-content:center;color:var(--slate-400);"><i data-lucide="twitter" style="width:16px;height:16px;"></i></a>
+      <a href="#" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--slate-600);display:flex;align-items:center;justify-content:center;color:var(--slate-400);"><i data-lucide="youtube" style="width:16px;height:16px;"></i></a>
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:32px auto 0;border-top:1px solid rgba(255,255,255,0.12);padding-top:18px;font-size:13px;color:var(--slate-600);">{{c.copyright}}</div>
+</footer>
+
+</div>
+</div>
+
+<div style="position:fixed;bottom:20px;right:20px;display:flex;gap:2px;background:var(--ink-900);border-radius:var(--radius-pill);padding:3px;box-shadow:var(--shadow-raised);z-index:100;">
+  <button onClick="{{setDesktop}}" style="{{viewportDesktopStyle}}">Desktop</button>
+  <button onClick="{{setMobile}}" style="{{viewportMobileStyle}}">Mobile</button>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CONTENT = {
+  en: {
+    orgShort: 'IFSS', orgFull: 'International Federation for Simulation Science',
+    navItems: [
+      {label:'Home', href:'Homepage.dc.html'},{label:'Organization', href:'Organization.dc.html'},
+      {label:'Conference Schedule', href:'ConferenceSchedule.dc.html'},{label:'Call for Papers', href:'CallForPapers.dc.html'},
+      {label:'Past Conferences', href:'PastConferences.dc.html'}
+    ],
+    pageEyebrow: 'Conference Schedule', pageTitle: 'Conference Schedule',
+    pageSubtitle: '2027 World Congress on Simulation Science — five days of plenary sessions, technical tracks, and society meetings.',
+    bannerDates: '12–16 October 2027', bannerLocation: 'Marina Bay Convention Centre, Singapore',
+    dayLabels: ['Day 1 · 12 Oct','Day 2 · 13 Oct','Day 3 · 14 Oct','Day 4 · 15 Oct','Day 5 · 16 Oct'],
+    sessions: [
+      [
+        {time:'09:00–10:00', title:'Registration Opens', location:'Main Lobby'},
+        {time:'10:30–12:00', title:'Opening Ceremony & Welcome Address', location:'Grand Hall'},
+        {time:'14:00–15:30', title:'Plenary Keynote: Digital Twins at Scale', location:'Grand Hall'},
+        {time:'16:00–17:30', title:'Track Sessions Begin', location:'Rooms A–D'}
+      ],
+      [
+        {time:'09:00–10:30', title:'Track A: Agent-Based Modeling', location:'Room A'},
+        {time:'09:00–10:30', title:'Track B: Simulation for Public Policy', location:'Room B'},
+        {time:'11:00–12:30', title:'Track C: Computational Methods', location:'Room C'},
+        {time:'14:00–15:30', title:'Poster Session', location:'Exhibition Hall'}
+      ],
+      [
+        {time:'09:00–10:30', title:'Track D: Healthcare Simulation', location:'Room A'},
+        {time:'11:00–12:30', title:'Track E: Environmental & Climate Modeling', location:'Room B'},
+        {time:'14:00–17:00', title:'Regional Society Meetings', location:'Rooms E–F'}
+      ],
+      [
+        {time:'09:00–10:30', title:'Track F: Education & Training Simulation', location:'Room A'},
+        {time:'11:00–12:30', title:'Plenary Keynote: Simulation for Public Policy', location:'Grand Hall'},
+        {time:'19:00–21:00', title:'Federation Awards Dinner', location:'Riverside Ballroom'}
+      ],
+      [
+        {time:'09:00–11:00', title:'Closing Plenary & Federation General Assembly', location:'Grand Hall'},
+        {time:'11:30–12:30', title:'Closing Remarks & Next Congress Announcement', location:'Grand Hall'}
+      ]
+    ],
+    footerAddress: 'Federation Secretariat · 12 Rue de Genève · 1201 Geneva · Switzerland',
+    footerEmail: 'info@ifss.org', footerPhone: '+41 22 555 0134',
+    copyright: '© 2027 International Federation for Simulation Science'
+  },
+  zh: {
+    orgShort: 'IFSS', orgFull: '国际仿真科学联合会',
+    navItems: [
+      {label:'首页', href:'Homepage.dc.html'},{label:'组织机构', href:'Organization.dc.html'},
+      {label:'会议日程', href:'ConferenceSchedule.dc.html'},{label:'征稿启事', href:'CallForPapers.dc.html'},
+      {label:'历届会议', href:'PastConferences.dc.html'}
+    ],
+    pageEyebrow: '会议日程', pageTitle: '会议日程',
+    pageSubtitle: '2027年仿真科学世界大会——为期五天的大会报告、技术分组会议与学会会议。',
+    bannerDates: '2027年10月12日–16日', bannerLocation: '新加坡滨海湾会议中心',
+    dayLabels: ['第一天 · 10月12日','第二天 · 10月13日','第三天 · 10月14日','第四天 · 10月15日','第五天 · 10月16日'],
+    sessions: [
+      [
+        {time:'09:00–10:00', title:'注册开始', location:'主大厅'},
+        {time:'10:30–12:00', title:'开幕式与欢迎致辞', location:'大礼堂'},
+        {time:'14:00–15:30', title:'大会报告：大规模数字孪生', location:'大礼堂'},
+        {time:'16:00–17:30', title:'分组会议开始', location:'A–D会议室'}
+      ],
+      [
+        {time:'09:00–10:30', title:'分组A：基于主体建模', location:'A会议室'},
+        {time:'09:00–10:30', title:'分组B：公共政策仿真', location:'B会议室'},
+        {time:'11:00–12:30', title:'分组C：计算方法', location:'C会议室'},
+        {time:'14:00–15:30', title:'海报展示', location:'展览厅'}
+      ],
+      [
+        {time:'09:00–10:30', title:'分组D：医疗健康仿真', location:'A会议室'},
+        {time:'11:00–12:30', title:'分组E：环境与气候建模', location:'B会议室'},
+        {time:'14:00–17:00', title:'区域学会会议', location:'E–F会议室'}
+      ],
+      [
+        {time:'09:00–10:30', title:'分组F：教育与培训仿真', location:'A会议室'},
+        {time:'11:00–12:30', title:'大会报告：公共政策仿真', location:'大礼堂'},
+        {time:'19:00–21:00', title:'联合会颁奖晚宴', location:'河畔宴会厅'}
+      ],
+      [
+        {time:'09:00–11:00', title:'闭幕大会与联合会全体大会', location:'大礼堂'},
+        {time:'11:30–12:30', title:'闭幕致辞与下届大会公布', location:'大礼堂'}
+      ]
+    ],
+    footerAddress: '联合会秘书处 · 日内瓦Rue de Genève 12号 · 1201 · 瑞士',
+    footerEmail: 'info@ifss.org', footerPhone: '+41 22 555 0134',
+    copyright: '© 2027 国际仿真科学联合会'
+  }
+};
+
+class Component extends DCLogic {
+  state = { lang: 'en', viewport: 'desktop', mobileMenuOpen: false, activeDay: 0 };
+
+  componentDidMount() { this._icons(); }
+  componentDidUpdate() { this._icons(); }
+  _icons() { if (window.lucide) window.lucide.createIcons(); }
+
+  renderVals() {
+    const lang = this.state.lang;
+    const isMobile = this.state.viewport === 'mobile';
+    const c = CONTENT[lang];
+    const activeDay = this.state.activeDay;
+
+    const pillBtn = (active) => ({
+      background: active ? '#fff' : 'transparent', color: active ? 'var(--symposium-blue)' : 'var(--ink-700)',
+      border: 'none', borderRadius: 'var(--radius-pill)', padding: '6px 14px', fontSize: '13px', fontWeight: 600, cursor: 'pointer'
+    });
+    const viewportBtn = (active) => ({
+      background: active ? 'var(--symposium-blue)' : 'transparent', color: '#fff', border: 'none',
+      borderRadius: 'var(--radius-pill)', padding: '7px 14px', fontSize: '12px', fontWeight: 600, cursor: 'pointer'
+    });
+    const tabStyle = (active) => ({
+      background: 'transparent', border: 'none', cursor: 'pointer',
+      padding: '10px 4px', marginRight: '24px', fontSize: '14px',
+      fontWeight: active ? 700 : 500,
+      color: active ? 'var(--symposium-blue)' : 'var(--slate-600)',
+      borderBottom: active ? '2px solid var(--symposium-blue)' : '2px solid transparent'
+    });
+
+    const days = c.dayLabels.map((label, i) => ({
+      tabLabel: label, tabStyle: tabStyle(i === activeDay),
+      onSelect: () => this.setState({ activeDay: i })
+    }));
+
+    return {
+      c, lang, isMobile,
+      activeSessions: c.sessions[activeDay],
+      days,
+      pageWidth: isMobile ? 390 : 1440,
+      frameShadow: isMobile ? 'var(--shadow-raised)' : 'none',
+      frameRadius: isMobile ? 'var(--radius-lg)' : '0',
+      fontFamily: lang === 'zh' ? '"PingFang SC","Source Han Sans SC","Microsoft YaHei",var(--font-sans)' : 'var(--font-sans)',
+      navPad: isMobile ? '14px 16px' : '18px 48px',
+      sectionPadH: isMobile ? '20px' : '64px',
+      sectionPadV: isMobile ? '40px' : '80px',
+      sectionPadVEnd: isMobile ? '40px' : '80px',
+      heroPadV: isMobile ? '32px' : '64px',
+      h1Size: isMobile ? '2rem' : 'var(--text-h1)',
+      bannerFlexDir: isMobile ? 'column' : 'row',
+      sessionDir: isMobile ? 'column' : 'row',
+      footerFlexDir: isMobile ? 'column' : 'row',
+      navRowDisplay: isMobile ? 'none' : 'flex',
+      hamburgerDisplay: isMobile ? 'flex' : 'none',
+      hamburgerIconName: this.state.mobileMenuOpen ? 'x' : 'menu',
+      mobileMenuOpenAndMobile: isMobile && this.state.mobileMenuOpen,
+      langEnStyle: pillBtn(lang === 'en'),
+      langZhStyle: pillBtn(lang === 'zh'),
+      viewportDesktopStyle: viewportBtn(!isMobile),
+      viewportMobileStyle: viewportBtn(isMobile),
+      setLangEn: () => this.setState({ lang: 'en' }),
+      setLangZh: () => this.setState({ lang: 'zh' }),
+      toggleMobileMenu: () => this.setState(s => ({ mobileMenuOpen: !s.mobileMenuOpen })),
+      setDesktop: () => this.setState({ viewport: 'desktop', mobileMenuOpen: false }),
+      setMobile: () => this.setState({ viewport: 'mobile' })
+    };
+  }
+}
+
+</script>
+</body>
+</html>

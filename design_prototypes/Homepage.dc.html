@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="./_ds/glosim-d2271487-a9b5-4f2b-9d18-ac11ca4f8f1d/styles.css"/>
+  <script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    body{margin:0;background:var(--limestone);}
+    a{color:var(--symposium-blue);}
+    a:hover{color:var(--symposium-blue-hover);}
+  </style>
+</helmet>
+
+<div style="min-height:100vh;padding:40px 0;display:flex;justifyContent:center;fontFamily:var(--font-sans);">
+<div style="width:{{pageWidth}}px;max-width:{{pageWidth}}px;background:var(--white);boxShadow:{{frameShadow}};borderRadius:{{frameRadius}};overflow:hidden;position:relative;">
+
+<header style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:{{navPad}};border-bottom:1px solid var(--border-default);background:var(--white);font-family:{{fontFamily}};">
+  <div style="display:flex;align-items:center;gap:10px;">
+    <div style="width:36px;height:36px;border-radius:var(--radius-sm);background:var(--symposium-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;">IF</div>
+    <span style="font-weight:var(--weight-bold);font-size:16px;color:var(--ink-900);white-space:nowrap;">{{c.orgShort}}</span>
+  </div>
+  <nav style="display:{{navRowDisplay}};gap:28px;align-items:center;">
+    <sc-for list="{{c.navItems}}" as="item" hint-placeholder-count="5">
+      <a href="{{item.href}}" style="font-size:var(--text-body-md);color:var(--ink-900);text-decoration:none;font-weight:var(--weight-medium);">{{item.label}}</a>
+    </sc-for>
+  </nav>
+  <div style="display:{{navRowDisplay}};align-items:center;gap:12px;">
+    <div style="display:flex;gap:2px;background:var(--limestone);border-radius:var(--radius-pill);padding:3px;">
+      <button onClick="{{setLangEn}}" style="{{langEnStyle}}">EN</button>
+      <button onClick="{{setLangZh}}" style="{{langZhStyle}}">中文</button>
+    </div>
+  </div>
+  <button style="display:{{hamburgerDisplay}};background:none;border:none;cursor:pointer;padding:4px;" onClick="{{toggleMobileMenu}}">
+    <i data-lucide="{{hamburgerIconName}}" style="width:24px;height:24px;color:var(--ink-900);"></i>
+  </button>
+</header>
+
+<sc-if value="{{mobileMenuOpenAndMobile}}" hint-placeholder-val="{{false}}">
+  <div style="position:absolute;top:60px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border-default);z-index:49;padding:16px 20px 20px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-raised);">
+    <sc-for list="{{c.navItems}}" as="item" hint-placeholder-count="5">
+      <a href="{{item.href}}" style="font-size:15px;color:var(--ink-900);text-decoration:none;font-weight:500;">{{item.label}}</a>
+    </sc-for>
+    <div style="display:flex;gap:2px;background:var(--limestone);border-radius:999px;padding:3px;width:fit-content;margin-top:4px;">
+      <button onClick="{{setLangEn}}" style="{{langEnStyle}}">EN</button>
+      <button onClick="{{setLangZh}}" style="{{langZhStyle}}">中文</button>
+    </div>
+  </div>
+</sc-if>
+
+<section style="padding:{{heroPadV}} {{sectionPadH}};background:var(--limestone);font-family:{{fontFamily}};">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:{{heroFlexDir}};gap:40px;align-items:center;">
+    <div style="flex:1;min-width:0;">
+      <span style="font-size:var(--text-label-caps);text-transform:uppercase;letter-spacing:var(--tracking-caps);color:var(--symposium-blue);font-weight:600;">{{c.heroEyebrow}}</span>
+      <h1 style="font-size:{{heroTitleSize}};font-weight:var(--weight-extrabold);line-height:var(--leading-tight);color:var(--ink-900);margin:12px 0 16px;">{{c.heroTitle}}</h1>
+      <p style="font-size:var(--text-body-lg);color:var(--slate-600);line-height:var(--leading-body);margin:0 0 14px;">{{c.heroSubtitle}}</p>
+      <p style="font-size:var(--text-body-sm);color:var(--symposium-blue);font-style:italic;margin:0 0 28px;">{{c.heroTagline}}</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <button style="background:var(--symposium-blue);color:#fff;border:none;border-radius:var(--radius-sm);padding:13px 24px;font-weight:600;cursor:pointer;font-size:var(--text-body-md);">{{c.heroCta1}}</button>
+        <button style="background:transparent;color:var(--symposium-blue);border:1px solid var(--symposium-blue);border-radius:var(--radius-sm);padding:13px 24px;font-weight:600;cursor:pointer;font-size:var(--text-body-md);">{{c.heroCta2}}</button>
+      </div>
+    </div>
+    <div style="flex:1;min-width:0;width:100%;">
+      <image-slot id="hero-key-visual" shape="rounded" radius="12" placeholder="Key visual — congress hall or delegates" style="width:100%;aspect-ratio:4/3;"></image-slot>
+    </div>
+  </div>
+</section>
+
+<section style="padding:28px {{sectionPadH}};background:var(--symposium-blue);font-family:{{fontFamily}};">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:{{bannerFlexDir}};justify-content:space-between;align-items:center;gap:20px;">
+    <div>
+      <span style="font-size:var(--text-label-caps);text-transform:uppercase;letter-spacing:var(--tracking-caps);color:rgba(255,255,255,0.75);font-weight:600;">{{c.bannerEyebrow}}</span>
+      <h3 style="margin:8px 0 4px;font-size:var(--text-h3);color:#fff;font-weight:var(--weight-bold);">{{c.bannerTitle}}</h3>
+      <span style="font-size:var(--text-body-sm);color:rgba(255,255,255,0.8);">{{c.bannerDate}}</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <div style="font-size:2.5rem;font-weight:800;color:#fff;line-height:1;">{{daysLeft}}</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.75);text-transform:uppercase;letter-spacing:0.06em;margin-top:4px;">{{c.bannerCountdownLabel}}</div>
+      </div>
+      <div style="display:flex;gap:10px;">
+        <button style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.6);border-radius:var(--radius-sm);padding:11px 20px;font-weight:600;cursor:pointer;font-size:14px;">{{c.heroCta1}}</button>
+        <button style="background:var(--warm-accent);color:#fff;border:none;border-radius:var(--radius-sm);padding:11px 20px;font-weight:600;cursor:pointer;font-size:14px;">{{c.heroCta2}}</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:{{sectionPadV}} {{sectionPadH}};background:var(--white);font-family:{{fontFamily}};">
+  <div style="max-width:760px;margin:0 auto;text-align:left;">
+    <h2 style="font-size:var(--text-h2);font-weight:var(--weight-bold);color:var(--ink-900);margin:0 0 16px;">{{c.orgIntroTitle}}</h2>
+    <p style="font-size:var(--text-body-lg);color:var(--ink-700);line-height:var(--leading-body);margin:0 0 16px;">{{c.orgIntroBody}}</p>
+    <a href="#" style="color:var(--symposium-blue);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">{{c.orgIntroLink}}<i data-lucide="arrow-right" style="width:16px;height:16px;"></i></a>
+  </div>
+</section>
+
+<section style="padding:{{sectionPadV}} {{sectionPadH}};background:var(--limestone);font-family:{{fontFamily}};">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:{{videoFlexDir}};gap:32px;">
+    <div style="flex:1;min-width:0;">
+      <div style="position:relative;border-radius:var(--radius-md);overflow:hidden;cursor:pointer;">
+        <image-slot id="video-about-thumb" shape="rect" placeholder="About Us video thumbnail" style="width:100%;aspect-ratio:16/9;"></image-slot>
+        <div style="position:absolute;inset:0;background:rgba(10,10,10,0.35);display:flex;align-items:center;justify-content:center;pointer-events:none;">
+          <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;">
+            <i data-lucide="play" style="width:26px;height:26px;color:var(--symposium-blue);"></i>
+          </div>
+        </div>
+      </div>
+      <h4 style="margin:14px 0 4px;font-size:var(--text-h4);color:var(--ink-900);">{{c.videoAboutTitle}}</h4>
+      <p style="margin:0;color:var(--slate-600);font-size:var(--text-body-sm);">{{c.videoAboutCaption}}</p>
+    </div>
+    <div style="flex:1;min-width:0;">
+      <div style="position:relative;border-radius:var(--radius-md);overflow:hidden;cursor:pointer;">
+        <image-slot id="video-chair-thumb" shape="rect" placeholder="Chairman's welcome speech thumbnail" style="width:100%;aspect-ratio:16/9;"></image-slot>
+        <div style="position:absolute;inset:0;background:rgba(10,10,10,0.35);display:flex;align-items:center;justify-content:center;pointer-events:none;">
+          <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;">
+            <i data-lucide="play" style="width:26px;height:26px;color:var(--symposium-blue);"></i>
+          </div>
+        </div>
+      </div>
+      <h4 style="margin:14px 0 4px;font-size:var(--text-h4);color:var(--ink-900);">{{c.videoChairTitle}}</h4>
+      <p style="margin:0;color:var(--ink-900);font-size:var(--text-body-sm);font-weight:600;">{{c.videoChairName}}</p>
+      <p style="margin:2px 0 0;color:var(--slate-600);font-size:var(--text-body-sm);">{{c.videoChairRole}}</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:{{sectionPadV}} {{sectionPadH}};background:var(--white);border-top:1px solid var(--border-default);border-bottom:1px solid var(--border-default);font-family:{{fontFamily}};">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:{{statsGridCols}};gap:24px;">
+    <sc-for list="{{c.stats}}" as="stat" hint-placeholder-count="4">
+      <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <i data-lucide="{{stat.icon}}" style="width:26px;height:26px;color:var(--symposium-blue);"></i>
+        <span style="font-size:2.1rem;font-weight:800;color:var(--ink-900);">{{stat.value}}</span>
+        <span style="font-size:13px;color:var(--slate-600);text-transform:uppercase;letter-spacing:0.06em;text-align:center;">{{stat.label}}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="padding:{{sectionPadV}} {{sectionPadH}};background:var(--limestone);font-family:{{fontFamily}};">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:var(--text-h2);font-weight:var(--weight-bold);color:var(--ink-900);margin:0 0 24px;">{{c.updatesTitle}}</h2>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <sc-for list="{{c.updates}}" as="u" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:{{updateItemDir}};gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--border-default);border-radius:var(--radius-md);padding:18px 22px;box-shadow:var(--shadow-card);">
+          <div style="min-width:100px;font-size:13px;color:var(--slate-600);font-family:var(--font-mono);flex-shrink:0;">{{u.date}}</div>
+          <div style="flex:1;min-width:0;">
+            <span style="font-size:12px;font-weight:600;color:var(--symposium-blue);text-transform:uppercase;letter-spacing:0.04em;">{{u.tag}}</span>
+            <h4 style="margin:5px 0 6px;font-size:var(--text-body-lg);color:var(--ink-900);font-weight:var(--weight-semibold);">{{u.title}}</h4>
+            <p style="margin:0;color:var(--slate-600);font-size:var(--text-body-sm);line-height:var(--leading-body);">{{u.excerpt}}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="padding:{{sectionPadV}} {{sectionPadH}} {{sectionPadVEnd}};background:var(--white);font-family:{{fontFamily}};">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 style="font-size:var(--text-h2);font-weight:var(--weight-bold);color:var(--ink-900);margin:0 0 24px;">{{c.pastTitle}}</h2>
+    <div style="display:flex;gap:18px;overflow-x:auto;padding-bottom:10px;">
+      <sc-for list="{{c.pastConfs}}" as="pc" hint-placeholder-count="4">
+        <div style="min-width:240px;flex:0 0 240px;border:1px solid var(--border-default);border-radius:var(--radius-md);overflow:hidden;background:#fff;box-shadow:var(--shadow-card);">
+          <image-slot id="{{pc.imgId}}" shape="rect" placeholder="Conference photo" style="width:100%;height:140px;"></image-slot>
+          <div style="padding:14px 16px;">
+            <span style="font-size:13px;color:var(--symposium-blue);font-weight:600;">{{pc.year}} · {{pc.city}}</span>
+            <p style="margin:6px 0 0;font-size:15px;font-weight:600;color:var(--ink-900);">{{pc.title}}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--ink-900);color:var(--slate-400);padding:56px {{sectionPadH}} 28px;font-family:{{fontFamily}};">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:{{footerFlexDir}};justify-content:space-between;gap:32px;">
+    <div style="max-width:360px;">
+      <div style="color:#fff;font-weight:700;font-size:16px;margin-bottom:12px;">{{c.orgFull}}</div>
+      <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;font-size:14px;">
+        <i data-lucide="map-pin" style="width:16px;height:16px;flex-shrink:0;margin-top:2px;"></i>
+        <span>{{c.footerAddress}}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:14px;">
+        <i data-lucide="mail" style="width:16px;height:16px;flex-shrink:0;"></i>
+        <span>{{c.footerEmail}}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:14px;">
+        <i data-lucide="phone" style="width:16px;height:16px;flex-shrink:0;"></i>
+        <span>{{c.footerPhone}}</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:flex-start;">
+      <a href="#" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--slate-600);display:flex;align-items:center;justify-content:center;color:var(--slate-400);"><i data-lucide="linkedin" style="width:16px;height:16px;"></i></a>
+      <a href="#" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--slate-600);display:flex;align-items:center;justify-content:center;color:var(--slate-400);"><i data-lucide="twitter" style="width:16px;height:16px;"></i></a>
+      <a href="#" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--slate-600);display:flex;align-items:center;justify-content:center;color:var(--slate-400);"><i data-lucide="youtube" style="width:16px;height:16px;"></i></a>
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:32px auto 0;border-top:1px solid rgba(255,255,255,0.12);padding-top:18px;font-size:13px;color:var(--slate-600);">{{c.copyright}}</div>
+</footer>
+
+</div>
+</div>
+
+<div style="position:fixed;bottom:20px;right:20px;display:flex;gap:2px;background:var(--ink-900);border-radius:var(--radius-pill);padding:3px;box-shadow:var(--shadow-raised);z-index:100;">
+  <button onClick="{{setDesktop}}" style="{{viewportDesktopStyle}}">Desktop</button>
+  <button onClick="{{setMobile}}" style="{{viewportMobileStyle}}">Mobile</button>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CONTENT = {
+  en: {
+    orgShort: 'IFSS',
+    orgFull: 'International Federation for Simulation Science',
+    navItems: [
+      {label:'Home', href:'Homepage.dc.html'},
+      {label:'Organization', href:'Organization.dc.html'},
+      {label:'Conference Schedule', href:'ConferenceSchedule.dc.html'},
+      {label:'Call for Papers', href:'CallForPapers.dc.html'},
+      {label:'Past Conferences', href:'PastConferences.dc.html'}
+    ],
+    heroEyebrow: '12–16 October 2027 · Singapore',
+    heroTitle: 'Advancing Simulation Science, Worldwide',
+    heroSubtitle: 'A federation of national and regional societies advancing modeling, simulation, and computational science through research, education, and international collaboration.',
+    heroTagline: 'Connecting simulation scientists across 40 countries since 1987.',
+    heroCta1: 'View Schedule',
+    heroCta2: 'Submit Now',
+    bannerEyebrow: 'Featured Conference',
+    bannerTitle: '2027 World Congress on Simulation Science',
+    bannerDate: '12–16 October 2027 · Singapore',
+    bannerCountdownLabel: 'Days to Congress',
+    orgIntroTitle: 'About the Federation',
+    orgIntroBody: 'Founded in 1987, IFSS unites national and regional simulation societies across 40 countries. The federation coordinates a biennial world congress, publishes shared research standards, and supports early-career scientists through fellowships and training schools. Member societies retain full autonomy while collaborating on joint initiatives that advance the field globally.',
+    orgIntroLink: 'Learn more about IFSS',
+    videoAboutTitle: 'About IFSS',
+    videoAboutCaption: "An introduction to the federation's mission and members",
+    videoChairTitle: "Chairman's Welcome",
+    videoChairName: 'Prof. Michael Andersen',
+    videoChairRole: 'Chairman, IFSS Executive Board',
+    stats: [
+      {icon:'globe', value:'40', label:'Member Countries'},
+      {icon:'layers', value:'32', label:'Conferences Held'},
+      {icon:'users', value:'8,500+', label:'Attendees Worldwide'},
+      {icon:'landmark', value:'1987', label:'Founded'}
+    ],
+    updatesTitle: 'Latest Updates',
+    updates: [
+      {date:'20 Aug 2026', tag:'Call for Papers', title:'Call for Papers Now Open for the 2027 World Congress', excerpt:'Abstracts due 31 January 2027. Full guidelines and submission templates are now available.'},
+      {date:'05 Aug 2026', tag:'Announcement', title:'Keynote Speakers Confirmed for Singapore Congress', excerpt:'Three plenary keynotes will address digital twins, agent-based modeling, and simulation for public policy.'},
+      {date:'22 Jul 2026', tag:'Notice', title:'Regional Workshop Series Announced for Southeast Asia', excerpt:'The federation will host a series of regional workshops in early 2027 to support member societies in the region.'},
+      {date:'10 Jul 2026', tag:'Deadline', title:'Early Registration Rates Confirmed for 2027 Congress', excerpt:'Early registration opens in January 2027, with discounted rates available through 15 August 2027.'}
+    ],
+    pastTitle: 'Past Conferences',
+    pastConfs: [
+      {imgId:'past-1', year:'2025', city:'Berlin, Germany', title:'24th World Congress on Simulation Science'},
+      {imgId:'past-2', year:'2023', city:'Seoul, South Korea', title:'23rd World Congress on Simulation Science'},
+      {imgId:'past-3', year:'2021', city:'Vancouver, Canada (Virtual)', title:'22nd World Congress on Simulation Science'},
+      {imgId:'past-4', year:'2019', city:'Kyoto, Japan', title:'21st World Congress on Simulation Science'}
+    ],
+    footerAddress: 'Federation Secretariat · 12 Rue de Genève · 1201 Geneva · Switzerland',
+    footerEmail: 'info@ifss.org',
+    footerPhone: '+41 22 555 0134',
+    copyright: '© 2027 International Federation for Simulation Science'
+  },
+  zh: {
+    orgShort: 'IFSS',
+    orgFull: '国际仿真科学联合会',
+    navItems: [
+      {label:'首页', href:'Homepage.dc.html'},
+      {label:'组织机构', href:'Organization.dc.html'},
+      {label:'会议日程', href:'ConferenceSchedule.dc.html'},
+      {label:'征稿启事', href:'CallForPapers.dc.html'},
+      {label:'历届会议', href:'PastConferences.dc.html'}
+    ],
+    heroEyebrow: '2027年10月12日–16日 · 新加坡',
+    heroTitle: '推动全球仿真科学发展',
+    heroSubtitle: '国际仿真科学联合会汇聚各国及地区仿真科学学会，通过研究、教育与国际合作，共同推动建模、仿真与计算科学的发展。',
+    heroTagline: '自1987年起，联结40个国家的仿真科学研究者。',
+    heroCta1: '查看日程',
+    heroCta2: '立即投稿',
+    bannerEyebrow: '重点会议',
+    bannerTitle: '2027年仿真科学世界大会',
+    bannerDate: '2027年10月12日–16日 · 新加坡',
+    bannerCountdownLabel: '距大会开幕天数',
+    orgIntroTitle: '关于联合会',
+    orgIntroBody: '国际仿真科学联合会成立于1987年，联合来自40个国家的国家及地区仿真科学学会。联合会负责统筹两年一届的世界大会，制定共同的研究标准，并通过奖学金与培训项目支持青年学者。各会员学会保持自主运作，同时共同推进全球范围内的联合行动。',
+    orgIntroLink: '了解联合会详情',
+    videoAboutTitle: '关于联合会',
+    videoAboutCaption: '介绍联合会的使命与会员机构',
+    videoChairTitle: '主席致辞',
+    videoChairName: '迈克尔·安德森 教授',
+    videoChairRole: '国际仿真科学联合会执行委员会主席',
+    stats: [
+      {icon:'globe', value:'40', label:'会员国家'},
+      {icon:'layers', value:'32', label:'举办会议届数'},
+      {icon:'users', value:'8,500+', label:'全球参会人数'},
+      {icon:'landmark', value:'1987', label:'成立年份'}
+    ],
+    updatesTitle: '最新通知',
+    updates: [
+      {date:'2026年8月20日', tag:'征稿启事', title:'2027年世界大会征稿现已开放', excerpt:'摘要提交截止日期为2027年1月31日。完整指南与投稿模板现已发布。'},
+      {date:'2026年8月5日', tag:'公告', title:'新加坡大会主讲嘉宾确认', excerpt:'三场大会主题演讲将围绕数字孪生、基于主体建模与公共政策仿真展开。'},
+      {date:'2026年7月22日', tag:'通知', title:'东南亚区域研讨会系列公布', excerpt:'联合会将于2027年初在东南亚地区举办系列区域研讨会，以支持该地区的会员学会。'},
+      {date:'2026年7月10日', tag:'截止日期', title:'2027年大会早鸟注册费率确认', excerpt:'早鸟注册将于2027年1月开放，优惠费率截止日期为2027年8月15日。'}
+    ],
+    pastTitle: '历届会议',
+    pastConfs: [
+      {imgId:'past-1', year:'2025', city:'德国柏林', title:'第24届仿真科学世界大会'},
+      {imgId:'past-2', year:'2023', city:'韩国首尔', title:'第23届仿真科学世界大会'},
+      {imgId:'past-3', year:'2021', city:'加拿大温哥华（线上）', title:'第22届仿真科学世界大会'},
+      {imgId:'past-4', year:'2019', city:'日本京都', title:'第21届仿真科学世界大会'}
+    ],
+    footerAddress: '联合会秘书处 · 日内瓦Rue de Genève 12号 · 1201 · 瑞士',
+    footerEmail: 'info@ifss.org',
+    footerPhone: '+41 22 555 0134',
+    copyright: '© 2027 国际仿真科学联合会'
+  }
+};
+
+class Component extends DCLogic {
+  state = { lang: 'en', viewport: 'desktop', mobileMenuOpen: false };
+
+  componentDidMount() {
+    this._icons();
+  }
+  componentDidUpdate() {
+    this._icons();
+  }
+  _icons() {
+    if (window.lucide) window.lucide.createIcons();
+  }
+
+  renderVals() {
+    const lang = this.state.lang;
+    const isMobile = this.state.viewport === 'mobile';
+    const c = CONTENT[lang];
+
+    const eventDate = new Date('2027-10-12T00:00:00');
+    const daysLeft = Math.max(0, Math.ceil((eventDate - new Date()) / 86400000));
+
+    const pillBtn = (active) => ({
+      background: active ? '#fff' : 'transparent',
+      color: active ? 'var(--symposium-blue)' : 'var(--ink-700)',
+      border: 'none',
+      borderRadius: 'var(--radius-pill)',
+      padding: '6px 14px',
+      fontSize: '13px',
+      fontWeight: 600,
+      cursor: 'pointer'
+    });
+
+    const viewportBtn = (active) => ({
+      background: active ? 'var(--symposium-blue)' : 'transparent',
+      color: '#fff',
+      border: 'none',
+      borderRadius: 'var(--radius-pill)',
+      padding: '7px 14px',
+      fontSize: '12px',
+      fontWeight: 600,
+      cursor: 'pointer'
+    });
+
+    return {
+      c,
+      lang,
+      isMobile,
+      pageWidth: isMobile ? 390 : 1440,
+      frameShadow: isMobile ? 'var(--shadow-raised)' : 'none',
+      frameRadius: isMobile ? 'var(--radius-lg)' : '0',
+      fontFamily: lang === 'zh'
+        ? '"PingFang SC","Source Han Sans SC","Microsoft YaHei",var(--font-sans)'
+        : 'var(--font-sans)',
+      navPad: isMobile ? '14px 16px' : '18px 48px',
+      sectionPadH: isMobile ? '20px' : '64px',
+      sectionPadV: isMobile ? '40px' : '80px',
+      sectionPadVEnd: isMobile ? '40px' : '80px',
+      heroPadV: isMobile ? '32px' : '80px',
+      heroTitleSize: isMobile ? '2rem' : 'var(--text-h1)',
+      heroFlexDir: isMobile ? 'column' : 'row',
+      bannerFlexDir: isMobile ? 'column' : 'row',
+      videoFlexDir: isMobile ? 'column' : 'row',
+      footerFlexDir: isMobile ? 'column' : 'row',
+      updateItemDir: isMobile ? 'column' : 'row',
+      statsGridCols: isMobile ? 'repeat(2,1fr)' : 'repeat(4,1fr)',
+      navRowDisplay: isMobile ? 'none' : 'flex',
+      hamburgerDisplay: isMobile ? 'flex' : 'none',
+      hamburgerIconName: this.state.mobileMenuOpen ? 'x' : 'menu',
+      mobileMenuOpenAndMobile: isMobile && this.state.mobileMenuOpen,
+      daysLeft,
+      langEnStyle: pillBtn(lang === 'en'),
+      langZhStyle: pillBtn(lang === 'zh'),
+      viewportDesktopStyle: viewportBtn(!isMobile),
+      viewportMobileStyle: viewportBtn(isMobile),
+      setLangEn: () => this.setState({ lang: 'en' }),
+      setLangZh: () => this.setState({ lang: 'zh' }),
+      toggleMobileMenu: () => this.setState(s => ({ mobileMenuOpen: !s.mobileMenuOpen })),
+      setDesktop: () => this.setState({ viewport: 'desktop', mobileMenuOpen: false }),
+      setMobile: () => this.setState({ viewport: 'mobile' })
+    };
+  }
+}
+
+</script>
+</body>
+</html>

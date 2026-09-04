@@ -1,0 +1,26 @@
+# Production Backend Runner (Prebuilt Artifact)
+FROM node:20-alpine
+
+RUN apk add --no-cache vips-dev
+
+WORKDIR /opt/app
+
+# Copy prebuilt backend application
+COPY backend/package.json ./
+COPY backend/node_modules ./node_modules
+COPY backend/build ./build
+COPY backend/dist ./dist
+COPY backend/config ./config
+COPY backend/src ./src
+COPY backend/public ./public
+COPY backend/database ./database
+
+# Copy root .env if present
+COPY .env* ./
+
+ENV NODE_ENV=production
+ENV PATH=/opt/app/node_modules/.bin:$PATH
+
+EXPOSE 1337
+
+CMD ["npm", "run", "start"]
