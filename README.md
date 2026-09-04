@@ -19,10 +19,11 @@ GloSim/
 │   ├── index.html
 │   └── package.json
 │
-├── docker-compose.yml            # Multi-container orchestration (Backend + Frontend)
-├── Dockerfile.backend            # Lightweight prebuilt backend runtime
-├── Dockerfile.frontend           # Lightweight prebuilt Nginx web server
-├── nginx.conf                    # Nginx SPA and Gzip configuration
+├── docker/                       # Docker & VPS Deployment Files (moved to root in build artifact)
+│   ├── Dockerfile.backend        # Lightweight prebuilt backend runtime
+│   ├── Dockerfile.frontend       # Lightweight prebuilt Nginx web server
+│   ├── docker-compose.yml        # Multi-container orchestration (Backend + Frontend)
+│   └── nginx.conf                # Nginx SPA and Gzip configuration
 │
 ├── .github/                      # CI/CD Workflows
 │   └── workflows/
@@ -66,14 +67,14 @@ Or run full-stack debug in VS Code by pressing **`F5`**!
 
 ## 3. Production VPS Deployment (Prebuilt Artifacts)
 
-1. Download the prebuilt artifact (`glosim-deploy-bundle.zip`) directly from the latest GitHub **Pre-Release** or Actions artifact.
+1. Download the prebuilt artifact (`glosim.zip`) directly from the latest GitHub **Pre-Release** or Actions artifact.
 2. Extract the bundle on your VPS:
    ```bash
-   unzip glosim-deploy-bundle.zip -d /opt/glosim
+   unzip glosim.zip -d /opt/glosim
    cd /opt/glosim
    ```
 3. The bundle includes `.env` ready with **SQLite storage** by default! (To connect to external PostgreSQL instead, set `DATABASE_CLIENT=postgres` and your database credentials in `.env`).
-4. Launch containers:
+4. Launch containers (Docker files are conveniently in the root of the unzipped artifact):
    ```bash
    docker compose up -d --build
    ```

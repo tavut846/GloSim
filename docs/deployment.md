@@ -6,7 +6,7 @@ This guide details how to deploy the prebuilt artifacts (from GitHub Actions) on
 
 ## 1. Directory Structure in Deployment Package
 
-When you download and unzip `glosim-deploy-bundle.zip` on your VPS, all deployment files are conveniently at the root:
+When you download and unzip `glosim.zip` on your VPS, all deployment files are conveniently at the root:
 
 ```
 glosim-deploy/
@@ -32,9 +32,9 @@ glosim-deploy/
 ## 2. Deploying on VPS (Step-by-Step)
 
 ### Step 1: Download & Extract Prebuilt Artifact
-Download `glosim-deploy-bundle.zip` from the latest GitHub **Pre-Release** or Actions Artifact:
+Download `glosim.zip` from the latest GitHub **Pre-Release** or Actions Artifact:
 ```bash
-unzip glosim-deploy-bundle.zip -d /opt/glosim
+unzip glosim.zip -d /opt/glosim
 cd /opt/glosim
 ```
 
@@ -79,4 +79,4 @@ The GitHub Actions workflow at [`.github/workflows/build-deploy-artifact.yml`](.
 1. Builds both frontend and backend on every push.
 2. Packages production node_modules, built admin UI, static web bundle, and Docker files in the root folder.
 3. Uploads the folder directly to GitHub Actions Artifacts (no zip-in-zip when downloading).
-4. Publishes `glosim-deploy-bundle.zip` to GitHub **Pre-Releases** for immediate 1-click download.
+4. Publishes `glosim.zip` to GitHub **Pre-Releases** for immediate 1-click download.

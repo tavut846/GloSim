@@ -66,22 +66,19 @@ jobs:
           cp -r backend/database bundle/backend/ || true
           cp backend/package.json bundle/backend/
 
-          # Copy root Docker deployment files directly into bundle root
-          cp docker-compose.yml bundle/
-          cp Dockerfile.backend bundle/
-          cp Dockerfile.frontend bundle/
-          cp nginx.conf bundle/
+          # Copy Docker deployment files from docker/ directly into bundle root
+          cp docker/* bundle/
 
           # Copy env template and default deploy .env (with SQLite default storage)
           cp .env.example bundle/.env.example
           cp .env.example bundle/.env
           cp README.md bundle/
 
-      # 5. Upload GitHub Actions Artifact (Folder uploaded directly - fixes zip-in-zip problem)
+      # 5. Upload GitHub Actions Artifact (Folder uploaded directly as 'glosim' - downloads as glosim.zip without zip-in-zip)
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: glosim-deploy-bundle
+          name: glosim
           path: bundle/
           retention-days: 30
 
@@ -90,7 +87,7 @@ jobs:
         if: (github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')) || github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/')
         run: |
           cd bundle
-          zip -r ../glosim-deploy-bundle.zip .
+          zip -r ../glosim.zip .
           cd ..
 
       # 7. Upload Artifact to GitHub Pre-Release
@@ -102,7 +99,7 @@ jobs:
           name: "GloSim Pre-Release"
           prerelease: true
           make_latest: false
-          files: glosim-deploy-bundle.zip
+          files: glosim.zip
           body: |
             ## GloSim Pre-Release Deployment Bundle
 
@@ -115,7 +112,7 @@ jobs:
 
             ### Quick Deployment:
             ```bash
-            unzip glosim-deploy-bundle.zip -d /opt/glosim
+            unzip glosim.zip -d /opt/glosim
             cd /opt/glosim
             docker compose up -d --build
             ```

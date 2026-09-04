@@ -1,13 +1,18 @@
-# Graph Report - GloSim  (2026-08-25)
+# Graph Report - GloSim  (2026-09-04)
 
 ## Corpus Check
-- 78 files · ~42,839 words
+- 78 files · ~43,062 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
 - 467 nodes · 733 edges · 48 communities (43 shown, 5 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `08beb44e`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - App.tsx
@@ -115,7 +120,7 @@ Nodes (4): seedData, seedDatabase(), bootstrap(), { seedDatabase }
 
 ### Community 14 - "2. Deploying on VPS (Step-by-Step)"
 Cohesion: 0.22
-Nodes (8): 1. Directory Structure in Deployment Package, 2. Deploying on VPS (Step-by-Step), 3. GitHub Actions Continuous Integration, GloSim Deployment & VPS Architecture Guide, Step 1: Download & Extract Prebuilt Artifact, Step 2: Configure `.env`, Step 3: Launch Containers, Step 4: Verify Deployment
+Nodes (8): 1. Directory Structure in Deployment Package, 2. Deploying on VPS (Step-by-Step), 3. GitHub Actions Continuous Integration, GloSim Deployment & VPS Architecture Guide, Step 1: Download & Extract Prebuilt Artifact, Step 2: (Optional) Configure `.env`, Step 3: Launch Containers, Step 4: Verify Deployment
 
 ### Community 46 - "backend/package.json"
 Cohesion: 0.13
