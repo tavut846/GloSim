@@ -78,10 +78,7 @@ jobs:
 
           # Ensure strapi CLI wrapper in .bin is self-contained even if symlinks are dereferenced
           mkdir -p bundle/backend/node_modules/.bin
-          cat << 'EOF' > bundle/backend/node_modules/.bin/strapi
-#!/usr/bin/env node
-require('../@strapi/strapi/bin/strapi.js');
-EOF
+          printf '#!/usr/bin/env node\nrequire("../@strapi/strapi/bin/strapi.js");\n' > bundle/backend/node_modules/.bin/strapi
           chmod +x bundle/backend/node_modules/.bin/strapi
 
           # Copy Docker deployment files from docker/ directly into bundle root (excluding standalone glosim-deploy.sh)
