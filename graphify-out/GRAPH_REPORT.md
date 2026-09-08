@@ -1,7 +1,7 @@
 # Graph Report - GloSim  (2026-09-08)
 
 ## Corpus Check
-- 88 files · ~351,995 words
+- 88 files · ~352,101 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ac2e52c3`
+- Built from commit: `f1a8c235`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

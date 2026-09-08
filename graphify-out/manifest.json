@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "backend/src/api/home-page/content-types/home-page/schema.json": {
-    "mtime": 1787622707.294603,
-    "seen": 1787625533.3639503,
-    "ast_hash": "c7326f837041a175efaefe261a329361",
+    "mtime": 1788879521.1032493,
+    "seen": 1788879626.4535549,
+    "ast_hash": "e29c0d0c76d9afdb3334c1588b96ad84",
     "semantic_hash": ""
   },
   "backend/src/api/home-page/controllers/home-page.js": {
@@ -222,9 +222,9 @@
     "semantic_hash": ""
   },
   "backend/src/bootstrap-seed.js": {
-    "mtime": 1787625500.0966055,
-    "seen": 1787625533.3639953,
-    "ast_hash": "9f56c4b184cc234bbb41f3f748a6f5fd",
+    "mtime": 1788879529.5618672,
+    "seen": 1788879626.4536157,
+    "ast_hash": "1ca3bf501a3bb88d255615733d04b348",
     "semantic_hash": ""
   },
   "backend/src/components/conference/agenda-item.json": {
@@ -348,9 +348,9 @@
     "semantic_hash": ""
   },
   "frontend/src/pages/HomePage.tsx": {
-    "mtime": 1788843765.722437,
-    "seen": 1788844280.2018971,
-    "ast_hash": "ad8d6c6a56f6ec9ec47c54aefe3925ad",
+    "mtime": 1788879586.9891021,
+    "seen": 1788879626.453686,
+    "ast_hash": "7612cdf8a7e0fe730363f059b264b546",
     "semantic_hash": ""
   },
   "frontend/src/pages/PastConferencesPage.tsx": {
@@ -372,9 +372,9 @@
     "semantic_hash": ""
   },
   "frontend/src/types/index.ts": {
-    "mtime": 1787624715.3718987,
-    "seen": 1787625533.364087,
-    "ast_hash": "e24b59930d2d85c0448fec1486be5b9e",
+    "mtime": 1788879552.488547,
+    "seen": 1788879626.4536953,
+    "ast_hash": "d0b5d0e86342c9eaca9dde5c607f2665",
     "semantic_hash": ""
   },
   "frontend/src/vite-env.d.ts": {
@@ -492,33 +492,33 @@
     "semantic_hash": ""
   },
   "backend/.strapi-updater.json": {
-    "mtime": 1788836150.5736878,
-    "seen": 1788836351.9742057,
-    "ast_hash": "6497a3813100447f13c108159729efb8",
+    "mtime": 1788879545.000321,
+    "seen": 1788879626.4535072,
+    "ast_hash": "4ee138fa4d700e95520c22abe2cdaf60",
     "semantic_hash": ""
   },
   "backend/.strapi/client/app.js": {
-    "mtime": 1788836047.4272482,
-    "seen": 1788836351.974209,
+    "mtime": 1788879443.2465756,
+    "seen": 1788879626.4535112,
     "ast_hash": "b4f0f5fa3a9ca771e7f949db2689a5fd",
     "semantic_hash": ""
   },
   "backend/.strapi/client/index.html": {
-    "mtime": 1788836047.3397965,
-    "seen": 1788836351.974342,
+    "mtime": 1788879443.208083,
+    "seen": 1788879626.4537308,
     "ast_hash": "8d4f8a903974f41d475b82b819d9fec5",
     "semantic_hash": ""
   },
   "backend/types/generated/components.d.ts": {
-    "mtime": 1788836163.0271347,
-    "seen": 1788836351.9742846,
+    "mtime": 1788879549.003709,
+    "seen": 1788879626.4536338,
     "ast_hash": "85d846c2f1a9e4a14fbbb43a3d6a074a",
     "semantic_hash": ""
   },
   "backend/types/generated/contentTypes.d.ts": {
-    "mtime": 1788836163.0232184,
-    "seen": 1788836351.9742863,
-    "ast_hash": "e39a182fd281d482102b3321298c483b",
+    "mtime": 1788879549.0005033,
+    "seen": 1788879626.4536362,
+    "ast_hash": "b5115477a33b59a7f5bfbb30db401059",
     "semantic_hash": ""
   },
   "docker/docker-compose.yml": {
@@ -678,9 +678,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/ConferenceHero.tsx": {
-    "mtime": 1788843295.3079665,
-    "seen": 1788843539.11471,
-    "ast_hash": "2623395d2e78dbaccda7adec8c85c259",
+    "mtime": 1788879574.469104,
+    "seen": 1788879626.4536545,
+    "ast_hash": "77e03da2052b030791556b8e77b6f07c",
     "semantic_hash": ""
   },
   "frontend/public/hero-bg.jpg": {

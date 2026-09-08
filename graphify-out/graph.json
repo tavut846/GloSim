@@ -326,7 +326,7 @@
       "file_type": "code",
       "norm_label": "orgoverviewdata",
       "source_file": "frontend/src/types/index.ts",
-      "source_location": "L124"
+      "source_location": "L125"
     },
     {
       "id": "frontend_src_types_index_sociallink",
@@ -521,7 +521,7 @@
       "file_type": "code",
       "norm_label": "apileaderleader",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L661"
+      "source_location": "L667"
     },
     {
       "id": "backend_types_generated_contenttypes_d_apimemberinstitutionmemberinstitution",
@@ -534,7 +534,7 @@
       "file_type": "code",
       "norm_label": "apimemberinstitutionmemberinstitution",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L730"
+      "source_location": "L736"
     },
     {
       "id": "backend_types_generated_contenttypes_d_apinoticenotice",
@@ -547,7 +547,7 @@
       "file_type": "code",
       "norm_label": "apinoticenotice",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L795"
+      "source_location": "L801"
     },
     {
       "id": "backend_types_generated_contenttypes_d_apiorgovervieworgoverview",
@@ -560,7 +560,7 @@
       "file_type": "code",
       "norm_label": "apiorgovervieworgoverview",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L873"
+      "source_location": "L879"
     },
     {
       "id": "backend_types_generated_contenttypes_d_contenttypes",
@@ -573,7 +573,7 @@
       "file_type": "code",
       "norm_label": "contenttypes",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1366"
+      "source_location": "L1372"
     },
     {
       "id": "backend_types_generated_contenttypes_d_plugincontentreleasesrelease",
@@ -586,7 +586,7 @@
       "file_type": "code",
       "norm_label": "plugincontentreleasesrelease",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L938"
+      "source_location": "L944"
     },
     {
       "id": "backend_types_generated_contenttypes_d_plugincontentreleasesreleaseaction",
@@ -599,7 +599,7 @@
       "file_type": "code",
       "norm_label": "plugincontentreleasesreleaseaction",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L987"
+      "source_location": "L993"
     },
     {
       "id": "backend_types_generated_contenttypes_d_plugini18nlocale",
@@ -612,7 +612,7 @@
       "file_type": "code",
       "norm_label": "plugini18nlocale",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1037"
+      "source_location": "L1043"
     },
     {
       "id": "backend_types_generated_contenttypes_d_pluginuploadfile",
@@ -625,7 +625,7 @@
       "file_type": "code",
       "norm_label": "pluginuploadfile",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1084"
+      "source_location": "L1090"
     },
     {
       "id": "backend_types_generated_contenttypes_d_pluginuploadfolder",
@@ -638,7 +638,7 @@
       "file_type": "code",
       "norm_label": "pluginuploadfolder",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1148"
+      "source_location": "L1154"
     },
     {
       "id": "backend_types_generated_contenttypes_d_pluginuserspermissionspermission",
@@ -651,7 +651,7 @@
       "file_type": "code",
       "norm_label": "pluginuserspermissionspermission",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1213"
+      "source_location": "L1219"
     },
     {
       "id": "backend_types_generated_contenttypes_d_pluginuserspermissionsrole",
@@ -664,7 +664,7 @@
       "file_type": "code",
       "norm_label": "pluginuserspermissionsrole",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1255"
+      "source_location": "L1261"
     },
     {
       "id": "backend_types_generated_contenttypes_d_pluginuserspermissionsuser",
@@ -677,7 +677,7 @@
       "file_type": "code",
       "norm_label": "pluginuserspermissionsuser",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1307"
+      "source_location": "L1313"
     },
     {
       "id": "design_prototypes_image_slot_imageslot",
@@ -804,7 +804,7 @@
       "file_type": "code",
       "norm_label": "conferencehero()",
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L10"
+      "source_location": "L13"
     },
     {
       "id": "frontend_src_components_countdownbanner_countdownbanner",
@@ -2124,7 +2124,7 @@
       "file_type": "code",
       "norm_label": "seeddatabase()",
       "source_file": "backend/src/bootstrap-seed.js",
-      "source_location": "L134"
+      "source_location": "L135"
     },
     {
       "id": "backend_src_index_bootstrap",
@@ -2661,7 +2661,7 @@
       "file_type": "code",
       "norm_label": "hero",
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L202"
+      "source_location": "L225"
     },
     {
       "id": "frontend_src_components_countdownbanner",
@@ -3733,7 +3733,7 @@
       "file_type": "code",
       "norm_label": "shared",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1365"
+      "source_location": "L1371"
     },
     {
       "id": "backend_types_generated_contenttypes_d_strapi_types",
@@ -3744,7 +3744,7 @@
       "file_type": "code",
       "norm_label": "@strapi/types",
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1364"
+      "source_location": "L1370"
     },
     {
       "id": "backend_config_middlewares",
@@ -12510,7 +12510,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1037",
+      "source_location": "L1043",
       "weight": 1.0
     },
     {
@@ -12521,7 +12521,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1084",
+      "source_location": "L1090",
       "weight": 1.0
     },
     {
@@ -12543,7 +12543,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1148",
+      "source_location": "L1154",
       "weight": 1.0
     },
     {
@@ -12554,7 +12554,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1213",
+      "source_location": "L1219",
       "weight": 1.0
     },
     {
@@ -12565,7 +12565,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1255",
+      "source_location": "L1261",
       "weight": 1.0
     },
     {
@@ -12576,7 +12576,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1307",
+      "source_location": "L1313",
       "weight": 1.0
     },
     {
@@ -12587,7 +12587,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1364",
+      "source_location": "L1370",
       "weight": 1.0
     },
     {
@@ -12598,7 +12598,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1365",
+      "source_location": "L1371",
       "weight": 1.0
     },
     {
@@ -12609,7 +12609,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L1366",
+      "source_location": "L1372",
       "weight": 1.0
     },
     {
@@ -12719,7 +12719,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L661",
+      "source_location": "L667",
       "weight": 1.0
     },
     {
@@ -12730,7 +12730,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L730",
+      "source_location": "L736",
       "weight": 1.0
     },
     {
@@ -12741,7 +12741,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L795",
+      "source_location": "L801",
       "weight": 1.0
     },
     {
@@ -12752,7 +12752,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L873",
+      "source_location": "L879",
       "weight": 1.0
     },
     {
@@ -12763,7 +12763,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L938",
+      "source_location": "L944",
       "weight": 1.0
     },
     {
@@ -12774,7 +12774,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/types/generated/contentTypes.d.ts",
-      "source_location": "L987",
+      "source_location": "L993",
       "weight": 1.0
     },
     {
@@ -14468,7 +14468,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L10",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -14479,7 +14479,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L202",
+      "source_location": "L225",
       "weight": 1.0
     },
     {
@@ -14831,7 +14831,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/types/index.ts",
-      "source_location": "L124",
+      "source_location": "L125",
       "weight": 1.0
     },
     {
@@ -16717,7 +16717,7 @@
       "confidence_score": 0.85,
       "context": "collection",
       "source_file": "backend/src/bootstrap-seed.js",
-      "source_location": "L211",
+      "source_location": "L212",
       "weight": 1.0
     },
     {
@@ -16890,5 +16890,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ac2e52c33002e685e5772916f1a13ba1f7e92e61"
+  "built_at_commit": "f1a8c235ef9fec9b46f9600b6114c0b1304c1740"
 }

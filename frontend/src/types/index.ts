@@ -106,6 +106,7 @@ export interface HomePageData {
   heroEyebrow?: string;
   heroTitle: string;
   heroSubtitle?: string;
+  heroDescription?: string;
   heroTagline?: string;
   heroCtaPrimary?: string;
   heroCtaSecondary?: string;

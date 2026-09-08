@@ -591,6 +591,12 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
           localized: true;
         };
       }>;
+    heroDescription: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     heroEyebrow: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {

@@ -41,6 +41,14 @@
         }
       }
     },
+    "heroDescription": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "heroTagline": {
       "type": "string",
       "pluginOptions": {

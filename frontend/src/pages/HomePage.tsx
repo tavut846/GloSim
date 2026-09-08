@@ -48,8 +48,9 @@ export const HomePage: React.FC<HomePageProps> = ({
   };
 
   const heroEyebrow = data?.heroEyebrow || ui.home.heroEyebrowDefault;
-  const heroTitle = data?.heroTitle || (isZh ? '学术权威 · 严谨理性 · 汇聚全球青年学者' : 'Academic Authority · Analytical Rigor · Global Delegate Assembly');
-  const heroSubtitle = data?.heroSubtitle || (isZh ? '推动跨学科决策模拟、国际法理推演与全球治理多边协商的国际学术平台。' : 'An international consortium for empirical policy simulation and multilateral diplomatic foresight.');
+  const heroTitle = data?.heroTitle || (isZh ? '世界仿真大会' : 'GLOBAL SIMULATION CONFERENCE');
+  const heroSubtitle = data?.heroSubtitle || (isZh ? 'GLOBAL SIMULATION CONFERENCE' : '世界仿真大会');
+  const heroDescription = data?.heroDescription || (isZh ? 'AI驱动的全球仿真创新与协同治理' : 'AI-Driven Global Simulation Innovation & Collaborative Governance');
   const heroTagline = data?.heroTagline || (isZh ? '“在理性交锋与学术实证中，预见未来全球协同秩序。”' : '"Foreseeing resilient global coordination through rigorous analytical discourse."');
   const heroCtaPrimary = data?.heroCtaPrimary || ui.home.viewSchedule;
   const heroCtaSecondary = data?.heroCtaSecondary || ui.home.submitAbstract;
@@ -93,7 +94,12 @@ export const HomePage: React.FC<HomePageProps> = ({
     <div>
       {/* 1. Hero & Countdown Container (occupies exactly full screen below header) */}
       <div className="flex flex-col min-h-[calc(100vh-64px)] lg:min-h-[calc(80vh-52px)]">
-        <ConferenceHero locale={locale} />
+        <ConferenceHero
+          locale={locale}
+          title={heroTitle}
+          subtitle={heroSubtitle}
+          description={heroDescription}
+        />
         <CountdownBanner
           conference={activeConference}
           onViewSchedule={() => onNavigate('/schedule')}

@@ -18,8 +18,9 @@ const seedData = {
   },
   homePage: {
     heroEyebrow: '第十届全球多边政策模拟大会 · 2026',
-    heroTitle: '学术权威 · 严谨理性 · 汇聚全球青年学者',
-    heroSubtitle: '推动跨学科决策模拟、国际法理推演与全球治理多边协商的国际学术平台。',
+    heroTitle: '世界仿真大会',
+    heroSubtitle: 'GLOBAL SIMULATION CONFERENCE',
+    heroDescription: 'AI驱动的全球仿真创新与协同治理',
     heroTagline: '“在理性交锋与学术实证中，预见未来全球协同秩序。”',
     heroCtaPrimary: '查阅会议日程',
     heroCtaSecondary: '提交论文摘要',

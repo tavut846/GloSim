@@ -1,11 +1,11 @@
 # Graph Report - GloSim  (2026-09-08)
 
 ## Corpus Check
-- 87 files · ~350,480 words
+- 88 files · ~351,995 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 562 nodes · 879 edges · 57 communities (51 shown, 6 thin omitted)
+- 565 nodes · 888 edges · 56 communities (50 shown, 6 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
@@ -15,7 +15,7 @@
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- App.tsx
+- Locale
 - support.js
 - contentTypes.d.ts
 - ImageSlot
@@ -40,11 +40,10 @@
 - GloSim 0.0.1-pre-1
 - bump-version.js
 - backend/server.js
-- get
 - backend/package.json
 
 ## God Nodes (most connected - your core abstractions)
-1. `Locale` - 33 edges
+1. `Locale` - 35 edges
 2. `ImageSlot` - 27 edges
 3. `get()` - 23 edges
 4. `createRuntime()` - 22 edges
@@ -58,27 +57,27 @@
 ## Surprising Connections (you probably didn't know these)
 - `ConferenceHeroProps` --references--> `Locale`  [EXTRACTED]
   frontend/src/components/ConferenceHero.tsx → frontend/src/types/index.ts
+- `HeroHeaderProps` --references--> `Locale`  [EXTRACTED]
+  frontend/src/components/HeroHeader.tsx → frontend/src/types/index.ts
 - `RegisterModalProps` --references--> `Locale`  [EXTRACTED]
   frontend/src/components/RegisterModal.tsx → frontend/src/types/index.ts
 - `WelcomeAddressProps` --references--> `Locale`  [EXTRACTED]
   frontend/src/components/WelcomeAddress.tsx → frontend/src/types/index.ts
 - `bootstrap()` --calls--> `seedDatabase()`  [EXTRACTED]
   backend/src/index.js → backend/src/bootstrap-seed.js
-- `CountdownBannerProps` --references--> `Conference`  [EXTRACTED]
-  frontend/src/components/CountdownBanner.tsx → frontend/src/types/index.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (57 total, 6 thin omitted)
+## Communities (56 total, 6 thin omitted)
 
-### Community 0 - "App.tsx"
+### Community 0 - "Locale"
 Cohesion: 0.08
-Nodes (43): App(), ConferenceHero(), ConferenceHeroProps, Hero, CountdownBanner(), CountdownBannerProps, Footer(), FooterProps (+35 more)
+Nodes (45): App(), ConferenceHero(), ConferenceHeroProps, Hero, CountdownBanner(), CountdownBannerProps, Footer(), FooterProps (+37 more)
 
 ### Community 1 - "support.js"
-Cohesion: 0.09
-Nodes (36): cdnScriptFor(), collectProps(), compileAttr(), compileTemplate(), contentKey(), cssToObj(), dcNameFromPath(), encodeCamelAttrs() (+28 more)
+Cohesion: 0.06
+Nodes (75): boot(), bundledBlob(), cdnScriptFor(), collectProps(), compileAttr(), compileTemplate(), contentKey(), createComponentFactory() (+67 more)
 
 ### Community 2 - "contentTypes.d.ts"
 Cohesion: 0.08
@@ -148,10 +147,6 @@ Nodes (6): 📦 Artifact Highlights, GloSim 0.0.1-pre-1, 🔧 Maintenance & Docu
 Cohesion: 0.40
 Nodes (4): filesToUpdate, fs, path, rootDir
 
-### Community 52 - "get"
-Cohesion: 0.12
-Nodes (39): boot(), bundledBlob(), createComponentFactory(), getDC(), Dispatcher(), createExternalModules(), ensureBabel(), getError() (+31 more)
-
 ### Community 53 - "backend/package.json"
 Cohesion: 0.08
 Nodes (23): description, license, name, optionalDependencies, @img/sharp-libvips-linux-arm64, @img/sharp-libvips-linux-x64, @img/sharp-linux-arm64, @img/sharp-linux-x64 (+15 more)
@@ -166,15 +161,15 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `dependencies` to `backend/package.json`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
-- **Why does `createRuntime()` connect `get` to `support.js`?**
-  _High betweenness centrality (0.003) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `createRuntime()` (e.g. with `adoptParsed()` and `dcUpdate()`) actually correct?**
   _`createRuntime()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `path`, `path`, `dotenv` to the rest of the system?**
   _222 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `App.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.08028919330289193 - nodes in this community are weakly interconnected._
+- **Should `Locale` be split into smaller, more focused modules?**
+  _Cohesion score 0.07719298245614035 - nodes in this community are weakly interconnected._
 - **Should `support.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.09435707678075855 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.060678962844159315 - nodes in this community are weakly interconnected._
 - **Should `contentTypes.d.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
+- **Should `ImageSlot` be split into smaller, more focused modules?**
+  _Cohesion score 0.1319073083778966 - nodes in this community are weakly interconnected._

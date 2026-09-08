@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "frontend/src/App.tsx": {
-    "mtime": 1788841523.4295115,
-    "seen": 1788841785.5129218,
-    "ast_hash": "f19a072ff21c5ae00ab4f0f79d128ce2",
+    "mtime": 1788843957.627416,
+    "seen": 1788844280.2018495,
+    "ast_hash": "6db63b77fdf8635987dcdcf1e86bae1a",
     "semantic_hash": ""
   },
   "frontend/src/components/CountdownBanner.tsx": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/Footer.tsx": {
-    "mtime": 1788842705.407511,
-    "seen": 1788843059.8998764,
-    "ast_hash": "e0f3ad044a88c5f40c7b0c692c691ace",
+    "mtime": 1788844302.8535104,
+    "seen": 1788844355.7375472,
+    "ast_hash": "d7077925e3e4a0999c71fa1a3daed2f7",
     "semantic_hash": ""
   },
   "frontend/src/components/Header.tsx": {
@@ -336,33 +336,33 @@
     "semantic_hash": ""
   },
   "frontend/src/pages/AboutPage.tsx": {
-    "mtime": 1787624757.921749,
-    "seen": 1787625533.3640718,
-    "ast_hash": "39d0e6e8b9d7b1a6f1ae3426687d3d33",
+    "mtime": 1788843910.6693711,
+    "seen": 1788844280.2018917,
+    "ast_hash": "c9a9cd6c39092a99f450db360d6dcb52",
     "semantic_hash": ""
   },
   "frontend/src/pages/CallForPapersPage.tsx": {
-    "mtime": 1787624777.9910746,
-    "seen": 1787625533.3640745,
-    "ast_hash": "fedcd14a8a8702c77bcd6b58a35619b7",
+    "mtime": 1788843936.008557,
+    "seen": 1788844280.2018943,
+    "ast_hash": "a3df90d87873b99dd0150d58100ef78e",
     "semantic_hash": ""
   },
   "frontend/src/pages/HomePage.tsx": {
-    "mtime": 1788843396.8900054,
-    "seen": 1788843539.1147497,
-    "ast_hash": "dbfe6ba38b9b072e6a01bb612aa39eaf",
+    "mtime": 1788843765.722437,
+    "seen": 1788844280.2018971,
+    "ast_hash": "ad8d6c6a56f6ec9ec47c54aefe3925ad",
     "semantic_hash": ""
   },
   "frontend/src/pages/PastConferencesPage.tsx": {
-    "mtime": 1787624785.8422296,
-    "seen": 1787625533.3640795,
-    "ast_hash": "a4545e609cdf215000f5064a0c6eedf1",
+    "mtime": 1788843946.241361,
+    "seen": 1788844280.2019,
+    "ast_hash": "3e45844f4fbcde5d7e954d3d6689f98c",
     "semantic_hash": ""
   },
   "frontend/src/pages/SchedulePage.tsx": {
-    "mtime": 1787624768.3141177,
-    "seen": 1787625533.3640816,
-    "ast_hash": "8094d226de46aeba13c77d465922f371",
+    "mtime": 1788843791.9747863,
+    "seen": 1788844280.2019026,
+    "ast_hash": "e7023d1f657f9df9439d9424f058e78b",
     "semantic_hash": ""
   },
   "frontend/src/services/api.ts": {
@@ -717,6 +717,12 @@
     "mtime": 1788841393.0933902,
     "seen": 1788842033.728492,
     "ast_hash": "0549b915c3c9a5e039a508a3c336c21b",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/HeroHeader.tsx": {
+    "mtime": 1788843714.7299905,
+    "seen": 1788844280.2018688,
+    "ast_hash": "414ba15e6eeb4df4a9244d13823c83f0",
     "semantic_hash": ""
   }
 }

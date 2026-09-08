@@ -5,10 +5,25 @@ import heroBg from '../assets/background.jpg';
 interface ConferenceHeroProps {
   lang?: 'zh' | 'en';
   locale?: Locale;
+  title?: string;
+  subtitle?: string;
+  description?: string;
 }
 
-export function ConferenceHero({ lang, locale }: ConferenceHeroProps) {
+export function ConferenceHero({ lang, locale, title, subtitle, description }: ConferenceHeroProps) {
   const isZh = lang ? lang === 'zh' : locale !== 'en';
+
+  const defaultTitleZh = '世界仿真大会';
+  const defaultSubtitleZh = 'GLOBAL SIMULATION CONFERENCE';
+  const defaultDescZh = 'AI驱动的全球仿真创新与协同治理';
+
+  const defaultTitleEn = 'GLOBAL SIMULATION CONFERENCE';
+  const defaultSubtitleEn = '世界仿真大会';
+  const defaultDescEn = 'AI-Driven Global Simulation Innovation & Collaborative Governance';
+
+  const displayTitle = title || (isZh ? defaultTitleZh : defaultTitleEn);
+  const displaySubtitle = subtitle || (isZh ? defaultSubtitleZh : defaultSubtitleEn);
+  const displayDescription = description || (isZh ? defaultDescZh : defaultDescEn);
 
   const coOrganizersZh = [
     '中国仿真学会',
@@ -99,35 +114,43 @@ export function ConferenceHero({ lang, locale }: ConferenceHeroProps) {
                 <>
                   {/* Primary Title: 世界仿真大会 (Bold, 44px–52px, letter-spacing: 0.08em) */}
                   <h1 className="text-3xl sm:text-4xl md:text-[46px] lg:text-[50px] font-black tracking-[0.08em] text-white leading-tight drop-shadow-md">
-                    世界仿真大会
+                    {displayTitle}
                   </h1>
                   
-                  {/* Secondary English Title directly below: GLOBAL SIMULATION CONFERENCE (Bold, 18px–22px, uppercase, tracking: 0.06em, text-slate-200) */}
-                  <h2 className="text-base sm:text-lg md:text-xl lg:text-[20px] font-bold tracking-[0.06em] uppercase text-slate-200 mt-2 not-italic">
-                    GLOBAL SIMULATION CONFERENCE
-                  </h2>
+                  {/* Secondary English Title directly below: GLOBAL SIMULATION CONFERENCE */}
+                  {displaySubtitle && (
+                    <h2 className="text-base sm:text-lg md:text-xl lg:text-[20px] font-bold tracking-[0.06em] uppercase text-slate-200 mt-2 not-italic">
+                      {displaySubtitle}
+                    </h2>
+                  )}
                   
-                  {/* Slogan: AI驱动的全球仿真创新与协同治理 (Cyan #38bdf8, 14px–16px) */}
-                  <p className="text-sm sm:text-base font-medium text-[#38bdf8] mt-2 drop-shadow">
-                    AI驱动的全球仿真创新与协同治理
-                  </p>
+                  {/* Slogan / Description: AI驱动的全球仿真创新与协同治理 */}
+                  {displayDescription && (
+                    <p className="text-sm sm:text-base font-medium text-[#38bdf8] mt-2 drop-shadow">
+                      {displayDescription}
+                    </p>
+                  )}
                 </>
               ) : (
                 <>
                   {/* Primary Title: GLOBAL SIMULATION CONFERENCE */}
                   <h1 className="text-2xl sm:text-3xl md:text-[38px] lg:text-[42px] font-black tracking-[0.04em] uppercase text-white leading-tight drop-shadow-md not-italic">
-                    GLOBAL SIMULATION CONFERENCE
+                    {displayTitle}
                   </h1>
                   
                   {/* Secondary Title directly below: 世界仿真大会 */}
-                  <h2 className="text-base sm:text-lg md:text-xl lg:text-[20px] font-bold tracking-[0.06em] text-slate-200 mt-2">
-                    世界仿真大会
-                  </h2>
+                  {displaySubtitle && (
+                    <h2 className="text-base sm:text-lg md:text-xl lg:text-[20px] font-bold tracking-[0.06em] text-slate-200 mt-2">
+                      {displaySubtitle}
+                    </h2>
+                  )}
                   
-                  {/* Slogan */}
-                  <p className="text-sm sm:text-base font-medium text-[#38bdf8] mt-2 drop-shadow max-w-xl">
-                    AI-Driven Global Simulation Innovation &amp; Collaborative Governance
-                  </p>
+                  {/* Slogan / Description */}
+                  {displayDescription && (
+                    <p className="text-sm sm:text-base font-medium text-[#38bdf8] mt-2 drop-shadow max-w-xl">
+                      {displayDescription}
+                    </p>
+                  )}
                 </>
               )}
             </div>
