@@ -1,16 +1,16 @@
 # Graph Report - GloSim  (2026-09-08)
 
 ## Corpus Check
-- 88 files · ~352,101 words
+- 90 files · ~353,242 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 565 nodes · 888 edges · 56 communities (50 shown, 6 thin omitted)
+- 573 nodes · 903 edges · 56 communities (50 shown, 6 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f1a8c235`
+- Built from commit: `8a9e57d3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -43,7 +43,7 @@
 - backend/package.json
 
 ## God Nodes (most connected - your core abstractions)
-1. `Locale` - 35 edges
+1. `Locale` - 37 edges
 2. `ImageSlot` - 27 edges
 3. `get()` - 23 edges
 4. `createRuntime()` - 22 edges
@@ -72,8 +72,8 @@
 ## Communities (56 total, 6 thin omitted)
 
 ### Community 0 - "Locale"
-Cohesion: 0.08
-Nodes (45): App(), ConferenceHero(), ConferenceHeroProps, Hero, CountdownBanner(), CountdownBannerProps, Footer(), FooterProps (+37 more)
+Cohesion: 0.07
+Nodes (51): App(), ConferenceHero(), ConferenceHeroProps, Hero, CountdownBanner(), CountdownBannerProps, Footer(), FooterProps (+43 more)
 
 ### Community 1 - "support.js"
 Cohesion: 0.06
@@ -132,8 +132,8 @@ Cohesion: 0.39
 Nodes (15): add_glosim_command(), check_docker(), deploy_services(), download_and_extract_release(), error(), info(), remove_logs(), glosim-deploy.sh script (+7 more)
 
 ### Community 47 - "components.d.ts"
-Cohesion: 0.22
-Nodes (8): Components, ConferenceAgendaItem, ConferenceSpeakerItem, HomeHighlightItem, Shared, SharedNavItem, SharedSocialLink, @strapi/types
+Cohesion: 0.20
+Nodes (9): Components, ConferenceAgendaItem, ConferenceSpeakerItem, HomeGuestItem, HomeHighlightItem, Shared, SharedNavItem, SharedSocialLink (+1 more)
 
 ### Community 48 - "resolve-version.js"
 Cohesion: 0.15
@@ -152,7 +152,7 @@ Cohesion: 0.08
 Nodes (23): description, license, name, optionalDependencies, @img/sharp-libvips-linux-arm64, @img/sharp-libvips-linux-x64, @img/sharp-linux-arm64, @img/sharp-linux-x64 (+15 more)
 
 ## Knowledge Gaps
-- **222 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+217 more)
+- **225 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+220 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -160,13 +160,13 @@ Nodes (23): description, license, name, optionalDependencies, @img/sharp-libvips
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `dependencies` to `backend/package.json`?**
-  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+  _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `createRuntime()` (e.g. with `adoptParsed()` and `dcUpdate()`) actually correct?**
   _`createRuntime()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `path`, `path`, `dotenv` to the rest of the system?**
-  _222 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _225 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Locale` be split into smaller, more focused modules?**
-  _Cohesion score 0.07719298245614035 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06876285630326183 - nodes in this community are weakly interconnected._
 - **Should `support.js` be split into smaller, more focused modules?**
   _Cohesion score 0.060678962844159315 - nodes in this community are weakly interconnected._
 - **Should `contentTypes.d.ts` be split into smaller, more focused modules?**

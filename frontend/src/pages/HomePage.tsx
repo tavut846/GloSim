@@ -93,8 +93,8 @@ export const HomePage: React.FC<HomePageProps> = ({
 
   return (
     <div>
-      {/* 1. Hero & Countdown Container (occupies exactly full screen below header) */}
-      <div className="flex flex-col min-h-[calc(100vh-64px)] lg:min-h-[calc(80vh-52px)]">
+      {/* 1. Hero & Countdown Container */}
+      <div className={`flex flex-col ${isZh ? 'min-h-0' : 'min-h-[calc(100vh-64px)] lg:min-h-[calc(80vh-52px)]'}`}>
         <ConferenceHero
           locale={locale}
           title={heroTitle}

@@ -70,16 +70,20 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({
           <div className="lg:col-span-8 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
             
             {/* Table Title Bar */}
-            <div className="bg-[#00186b] text-white px-6 py-4 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <Calendar className="w-5 h-5 text-cyan-300" />
-                <h2 className="text-lg sm:text-xl font-bold tracking-wide">
-                  {isZh ? '2026世界仿真大会日程表' : 'GloSim 2026 Conference Agenda'}
-                </h2>
-              </div>
-              <span className="text-xs bg-white/15 text-cyan-200 px-2.5 py-1 rounded">
-                2026.11.13–16
-              </span>
+            <div className="bg-[#00186b] text-white px-6 py-4 flex flex-col items-center justify-center text-center">
+              <h2 className="text-lg sm:text-xl font-bold tracking-wide leading-snug">
+                {isZh ? (
+                  <>
+                    <div>2026世界仿真大会</div>
+                    <div>日程表</div>
+                  </>
+                ) : (
+                  <>
+                    <div>GloSim 2026 Conference</div>
+                    <div>Schedule & Agenda</div>
+                  </>
+                )}
+              </h2>
             </div>
 
             {/* Table Header */}
@@ -95,8 +99,8 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({
               </div>
             </div>
 
-            {/* Table Rows */}
-            <div className="divide-y divide-slate-200 text-slate-800 text-sm sm:text-[15px]">
+            {/* Table Rows (Light blue line between each day) */}
+            <div className="divide-y-2 divide-sky-200 text-slate-800 text-sm sm:text-[15px]">
               
               {/* Row 1: 11月13日 (周五) */}
               <div className="grid grid-cols-12 items-center hover:bg-slate-50/80 transition-colors">
@@ -252,18 +256,43 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({
           {/* Right Sidebar (lg:col-span-4) */}
           <aside className="lg:col-span-4 space-y-6">
             
-            {/* 1. Single Countdown Box (Fixed: Only ONE instance) */}
-            <div className="bg-gradient-to-br from-[#00186b] to-[#0f2d78] text-white p-6 rounded-xl shadow-sm text-center">
-              <div className="flex items-center justify-center gap-2 text-cyan-200 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2">
-                <Clock className="w-4 h-4" />
-                <span>{isZh ? '倒计时 · COUNTDOWN' : 'CONFERENCE COUNTDOWN'}</span>
+            {/* 1. Single Countdown Box (Optimized font, gradient and hierarchy) */}
+            <div 
+              className="rounded-2xl p-6 text-center relative overflow-hidden border border-cyan-400/35 shadow-xl"
+              style={{
+                background: 'linear-gradient(145deg, #020d2b 0%, #00186b 55%, #082b82 100%)',
+                color: '#ffffff'
+              }}
+            >
+              {/* Subtle background glow effect */}
+              <div className="absolute -top-10 -right-10 w-28 h-28 bg-cyan-400/15 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute -bottom-10 -left-10 w-28 h-28 bg-blue-500/15 rounded-full blur-2xl pointer-events-none" />
+
+              {/* Top Tag */}
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-400/15 border border-cyan-400/30 text-cyan-300 text-xs font-bold uppercase tracking-wider mb-2.5">
+                <Clock className="w-3.5 h-3.5 text-cyan-300" />
+                <span>{isZh ? '大会倒计时 · COUNTDOWN' : 'CONFERENCE COUNTDOWN'}</span>
               </div>
-              <div className="text-4xl sm:text-5xl font-black tracking-tight text-white my-2">
-                {daysLeft}
-                <span className="text-lg font-bold ml-1 text-cyan-300">{isZh ? '天' : 'Days'}</span>
-              </div>
-              <div className="text-xs sm:text-sm text-slate-200 mt-1">
+
+              {/* Lead-in Text */}
+              <div className="text-xs sm:text-sm text-slate-200 font-medium mb-2 tracking-wide">
                 {isZh ? '距离2026世界仿真大会开幕还有' : 'Remaining until GloSim 2026 Opening'}
+              </div>
+
+              {/* Digital Glass Display Plate */}
+              <div className="bg-black/30 border border-white/10 rounded-xl py-3 px-4 my-2 flex items-baseline justify-center gap-2 shadow-inner">
+                <span className="text-5xl sm:text-6xl font-black font-mono tracking-tight text-white drop-shadow-[0_2px_14px_rgba(56,189,248,0.45)]">
+                  {daysLeft}
+                </span>
+                <span className="text-xl sm:text-2xl font-bold text-cyan-300 font-sans">
+                  {isZh ? '天' : 'Days'}
+                </span>
+              </div>
+
+              {/* Bottom Date Anchor */}
+              <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-center gap-2 text-xs text-cyan-200/90 font-medium">
+                <Calendar className="w-3.5 h-3.5 text-cyan-300" />
+                <span>{isZh ? '2026.11.13–16 · 杭州' : 'Nov 13–16, 2026 · Hangzhou'}</span>
               </div>
             </div>
 

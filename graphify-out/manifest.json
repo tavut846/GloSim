@@ -288,9 +288,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/CountdownBanner.tsx": {
-    "mtime": 1788841114.7710397,
-    "seen": 1788841285.0810301,
-    "ast_hash": "b582ffd9347b383239f2a5bb0481412a",
+    "mtime": 1788881905.9861062,
+    "seen": 1788882300.7425582,
+    "ast_hash": "afafb265f4f4682f2f036caabe529ddb",
     "semantic_hash": ""
   },
   "frontend/src/components/Footer.tsx": {
@@ -336,9 +336,9 @@
     "semantic_hash": ""
   },
   "frontend/src/pages/AboutPage.tsx": {
-    "mtime": 1788843910.6693711,
-    "seen": 1788844280.2018917,
-    "ast_hash": "c9a9cd6c39092a99f450db360d6dcb52",
+    "mtime": 1788882489.3253798,
+    "seen": 1788882699.2137299,
+    "ast_hash": "612a0b73b39f7278155b1843c7dad1d1",
     "semantic_hash": ""
   },
   "frontend/src/pages/CallForPapersPage.tsx": {
@@ -348,9 +348,9 @@
     "semantic_hash": ""
   },
   "frontend/src/pages/HomePage.tsx": {
-    "mtime": 1788880648.4072585,
-    "seen": 1788880819.7479675,
-    "ast_hash": "cdd80e5f474db06c0b6f33e90267f1ec",
+    "mtime": 1788881435.0240993,
+    "seen": 1788881527.804016,
+    "ast_hash": "fc6b26f02295a4f9e91d2d308eeab86f",
     "semantic_hash": ""
   },
   "frontend/src/pages/PastConferencesPage.tsx": {
@@ -360,9 +360,9 @@
     "semantic_hash": ""
   },
   "frontend/src/pages/SchedulePage.tsx": {
-    "mtime": 1788843791.9747863,
-    "seen": 1788844280.2019026,
-    "ast_hash": "e7023d1f657f9df9439d9424f058e78b",
+    "mtime": 1788882867.8803627,
+    "seen": 1788882927.8340063,
+    "ast_hash": "4e43e23b8a505729ff37422fe88ff43d",
     "semantic_hash": ""
   },
   "frontend/src/services/api.ts": {
@@ -492,32 +492,32 @@
     "semantic_hash": ""
   },
   "backend/.strapi-updater.json": {
-    "mtime": 1788880619.2088065,
-    "seen": 1788880819.7476232,
+    "mtime": 1788882172.4512966,
+    "seen": 1788882300.742389,
     "ast_hash": "4ee138fa4d700e95520c22abe2cdaf60",
     "semantic_hash": ""
   },
   "backend/.strapi/client/app.js": {
-    "mtime": 1788879443.2465756,
-    "seen": 1788879626.4535112,
+    "mtime": 1788882108.24122,
+    "seen": 1788882300.7423942,
     "ast_hash": "b4f0f5fa3a9ca771e7f949db2689a5fd",
     "semantic_hash": ""
   },
   "backend/.strapi/client/index.html": {
-    "mtime": 1788879443.208083,
-    "seen": 1788879626.4537308,
+    "mtime": 1788882108.190738,
+    "seen": 1788882300.7426581,
     "ast_hash": "8d4f8a903974f41d475b82b819d9fec5",
     "semantic_hash": ""
   },
   "backend/types/generated/components.d.ts": {
-    "mtime": 1788880625.29108,
-    "seen": 1788880819.747856,
+    "mtime": 1788882180.2049868,
+    "seen": 1788882300.7425299,
     "ast_hash": "6d769edd4d93c165768d106f39a32056",
     "semantic_hash": ""
   },
   "backend/types/generated/contentTypes.d.ts": {
-    "mtime": 1788880625.2860746,
-    "seen": 1788880819.747861,
+    "mtime": 1788882180.1963036,
+    "seen": 1788882300.742533,
     "ast_hash": "cced57bfa36a5243c34031916f7e861a",
     "semantic_hash": ""
   },
@@ -678,9 +678,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/ConferenceHero.tsx": {
-    "mtime": 1788880056.0841346,
-    "seen": 1788880126.3843694,
-    "ast_hash": "69bc2c9838ec014077297da1a9c89fed",
+    "mtime": 1788882449.8914237,
+    "seen": 1788882699.213695,
+    "ast_hash": "638513d3a48a4329439a7ef5ca0639a5",
     "semantic_hash": ""
   },
   "frontend/public/hero-bg.jpg": {

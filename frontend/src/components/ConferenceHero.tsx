@@ -31,6 +31,7 @@ export function ConferenceHero({ lang, locale, title, subtitle, description }: C
     '韩国仿真学会',
     '新加坡仿真学会',
     '马来西亚仿真学会',
+    '国际建模与仿真学会',
     '欧洲仿真联盟',
     '虚拟现实技术与系统全国重点实验室',
     '可靠性与环境工程技术国家级重点实验室',
@@ -47,7 +48,8 @@ export function ConferenceHero({ lang, locale, title, subtitle, description }: C
     'Korea Society for Simulation',
     'Society of Simulation and Gaming of Singapore',
     'Malaysian Simulation Society',
-    'Federation of European Simulation',
+    'The Society for Modeling & Simulation International (SCS)',
+    'Federation of European Simulation Societies (EUROSIM)',
     'State Key Laboratory of Virtual Reality Technology and Systems',
     'National Key Laboratory of Reliability and Environmental Engineering',
     'Global SDGs and Leadership Development Center',
@@ -71,7 +73,9 @@ export function ConferenceHero({ lang, locale, title, subtitle, description }: C
 
   return (
     <section 
-      className="relative w-full flex-1 overflow-hidden text-white flex flex-col justify-center items-center px-4 sm:px-6 md:px-10 lg:px-16 py-4 sm:py-6 select-none"
+      className={`relative w-full overflow-hidden text-white flex flex-col justify-center items-center px-4 sm:px-6 md:px-10 lg:px-16 select-none ${
+        isZh ? 'py-10 sm:py-12 md:py-14' : 'flex-1 py-4 sm:py-6'
+      }`}
       style={{
         backgroundColor: '#02081a',
         backgroundImage: `radial-gradient(ellipse at 75% 20%, rgba(30, 110, 220, 0.22) 0%, transparent 55%), linear-gradient(180deg, rgba(2, 8, 26, 0.45) 0%, rgba(2, 8, 26, 0.25) 45%, rgba(2, 8, 26, 0.85) 100%), url(${heroBg})`,

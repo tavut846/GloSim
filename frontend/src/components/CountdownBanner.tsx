@@ -62,7 +62,7 @@ export const CountdownBanner: React.FC<CountdownBannerProps> = ({
     <section style={{
       backgroundColor: 'var(--symposium-blue)',
       color: 'var(--white)',
-      padding: '28px 0',
+      padding: '20px 0',
       borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
     }}>
       <div className="container" style={{
@@ -70,43 +70,43 @@ export const CountdownBanner: React.FC<CountdownBannerProps> = ({
         flexWrap: 'wrap',
         justifyContent: 'space-between',
         alignItems: 'center',
-        gap: '24px'
+        gap: '16px 24px'
       }}>
         {/* Info */}
         <div style={{ flex: '1 1 340px' }}>
           <span style={{
-            fontSize: 'var(--text-label-caps)',
+            fontSize: '11px',
             textTransform: 'uppercase',
-            letterSpacing: 'var(--tracking-caps)',
+            letterSpacing: '0.06em',
             color: 'rgba(255, 255, 255, 0.75)',
             fontWeight: 600
           }}>
             {eyebrow} · {edition}
           </span>
           <h3 style={{
-            margin: '6px 0 8px',
-            fontSize: 'var(--text-h3)',
-            fontWeight: 'var(--weight-bold)',
+            margin: '4px 0 6px',
+            fontSize: '1.25rem',
+            fontWeight: 700,
             color: 'var(--white)',
-            lineHeight: 1.25
+            lineHeight: 1.3
           }}>
             {title}
           </h3>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: 'var(--text-body-sm)', color: 'rgba(255, 255, 255, 0.85)' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', fontSize: '13px', color: 'rgba(255, 255, 255, 0.85)' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-              <Calendar size={15} /> {conference.startDate} ~ {conference.endDate}
+              <Calendar size={14} /> {conference.startDate} ~ {conference.endDate}
             </span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-              <MapPin size={15} /> {location} ({venue})
+              <MapPin size={14} /> {location} ({venue})
             </span>
           </div>
         </div>
 
         {/* Countdown counter + CTAs */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '28px', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
           <div style={{ textAlign: 'center', padding: '0 8px' }}>
             <div style={{
-              fontSize: '2.75rem',
+              fontSize: '2.4rem',
               fontWeight: 800,
               color: 'var(--white)',
               lineHeight: 1,
@@ -115,7 +115,7 @@ export const CountdownBanner: React.FC<CountdownBannerProps> = ({
               {daysLeft}
             </div>
             <div style={{
-              fontSize: '11px',
+              fontSize: '10.5px',
               color: 'rgba(255, 255, 255, 0.75)',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
@@ -129,16 +129,17 @@ export const CountdownBanner: React.FC<CountdownBannerProps> = ({
             <button
               onClick={onViewSchedule}
               className="btn-ghost-white"
+              style={{ padding: '8px 16px', fontSize: '13px' }}
             >
               {viewScheduleText}
             </button>
             <button
               onClick={onSubmitCfp}
               className="btn-warm"
-              style={{ padding: '11px 20px', fontSize: '14px' }}
+              style={{ padding: '8px 18px', fontSize: '13px' }}
             >
               <span>{submitCfpText}</span>
-              <ArrowRight size={15} />
+              <ArrowRight size={14} />
             </button>
           </div>
         </div>
