@@ -3,6 +3,7 @@ import { Play, ArrowRight, FileText, Globe, Landmark, Award } from 'lucide-react
 import { HomePageData, Conference, Notice, Locale } from '../types';
 import { ConferenceHero } from '../components/ConferenceHero';
 import { CountdownBanner } from '../components/CountdownBanner';
+import { WelcomeAddress } from '../components/WelcomeAddress';
 import { VideoModal } from '../components/VideoModal';
 import { zhUi } from '../locales/zh';
 import { enUi } from '../locales/en';
@@ -104,7 +105,10 @@ export const HomePage: React.FC<HomePageProps> = ({
         locale={locale}
       />
 
-      {/* 3. Organization Intro & Dual Video Section */}
+      {/* 3. Welcome Address */}
+      <WelcomeAddress locale={locale} />
+
+      {/* 4. Organization Intro & Dual Video Section */}
       <section style={{ padding: '64px 0', backgroundColor: 'var(--white)' }}>
         <div className="container">
           <div style={{ maxWidth: '800px', margin: '0 auto 48px', textAlign: 'center' }}>

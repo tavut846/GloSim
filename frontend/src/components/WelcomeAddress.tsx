@@ -1,5 +1,6 @@
 import React from 'react';
 import { Locale } from '../types';
+import signatureImg from '../assets/signature.png';
 
 interface WelcomeAddressProps {
   locale: Locale;
@@ -17,9 +18,6 @@ export const WelcomeAddress: React.FC<WelcomeAddressProps> = ({ locale }) => {
         
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12">
-          <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-[#1B3A6B] inline-block mb-2">
-            {isZh ? '大会致辞 · WELCOME ADDRESS' : 'OFFICIAL WELCOME ADDRESS'}
-          </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
             {isZh ? '欢迎致辞' : 'Welcome Address'}
           </h2>
@@ -62,10 +60,17 @@ export const WelcomeAddress: React.FC<WelcomeAddressProps> = ({ locale }) => {
 
               {/* Sign-off */}
               <div className="pt-8 sm:pt-10 mt-6 border-t border-slate-100 flex flex-col items-end text-right">
-                <div className="font-black text-lg sm:text-xl text-slate-900">
+                <div className="mb-2">
+                  <img 
+                    src={signatureImg} 
+                    alt="张霖 签名" 
+                    className="h-14 sm:h-16 w-auto object-contain"
+                  />
+                </div>
+                <div className="font-bold text-base sm:text-lg text-slate-900">
                   张霖
                 </div>
-                <div className="text-sm font-medium text-slate-600 mt-1">
+                <div className="text-sm font-medium text-slate-600 mt-0.5">
                   亚洲仿真联盟主席
                 </div>
                 <div className="text-xs text-slate-400 mt-0.5">
@@ -122,10 +127,17 @@ export const WelcomeAddress: React.FC<WelcomeAddressProps> = ({ locale }) => {
 
               {/* Sign-off */}
               <div className="pt-8 sm:pt-10 mt-6 border-t border-slate-100 flex flex-col items-end text-right">
-                <div className="font-black text-lg sm:text-xl text-slate-900">
+                <div className="mb-2">
+                  <img 
+                    src={signatureImg} 
+                    alt="Lin Zhang Signature" 
+                    className="h-14 sm:h-16 w-auto object-contain"
+                  />
+                </div>
+                <div className="font-bold text-base sm:text-lg text-slate-900">
                   Lin Zhang
                 </div>
-                <div className="text-sm font-medium text-slate-600 mt-1">
+                <div className="text-sm font-medium text-slate-600 mt-0.5">
                   President, Asia Simulation Federation (ASIASIM)
                 </div>
                 <div className="text-xs text-slate-400 mt-0.5">

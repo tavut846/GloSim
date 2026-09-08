@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "frontend/src/App.tsx": {
-    "mtime": 1788840629.4950771,
-    "seen": 1788840741.967406,
-    "ast_hash": "e57042342b7138cf0eca79d81d29de3e",
+    "mtime": 1788841523.4295115,
+    "seen": 1788841785.5129218,
+    "ast_hash": "f19a072ff21c5ae00ab4f0f79d128ce2",
     "semantic_hash": ""
   },
   "frontend/src/components/CountdownBanner.tsx": {
@@ -348,9 +348,9 @@
     "semantic_hash": ""
   },
   "frontend/src/pages/HomePage.tsx": {
-    "mtime": 1788841137.5017955,
-    "seen": 1788841285.0810604,
-    "ast_hash": "29aab667ccdbd9a86df040d55d131cc9",
+    "mtime": 1788841372.3324535,
+    "seen": 1788841785.5129693,
+    "ast_hash": "cd9f23123460cc815074749b4a78fe6a",
     "semantic_hash": ""
   },
   "frontend/src/pages/PastConferencesPage.tsx": {
@@ -699,6 +699,24 @@
     "mtime": 1788841000.4210756,
     "seen": 1788841285.0812361,
     "ast_hash": "369f227858862587a655b75a8c94315e",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/WelcomeAddress.tsx": {
+    "mtime": 1788842156.5230908,
+    "seen": 1788842291.6452715,
+    "ast_hash": "2a558a42294b28b6a209facdc1013d3a",
+    "semantic_hash": ""
+  },
+  "docs/Signature.png": {
+    "mtime": 1788841393.0933902,
+    "seen": 1788841785.5130544,
+    "ast_hash": "0549b915c3c9a5e039a508a3c336c21b",
+    "semantic_hash": ""
+  },
+  "frontend/src/assets/signature.png": {
+    "mtime": 1788841393.0933902,
+    "seen": 1788842033.728492,
+    "ast_hash": "0549b915c3c9a5e039a508a3c336c21b",
     "semantic_hash": ""
   }
 }

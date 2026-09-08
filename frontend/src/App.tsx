@@ -109,9 +109,15 @@ export const App: React.FC = () => {
     { label: ui.nav.cfp, href: '/call-for-papers' },
     { label: ui.nav.past, href: '/past-conferences' }
   ];
-  const navItems = (locale === 'zh-Hans' && global?.navLabels && global.navLabels.length > 0)
+  const rawNavItems = (locale === 'zh-Hans' && global?.navLabels && global.navLabels.length > 0)
     ? global.navLabels
     : defaultNav;
+  const navItems = rawNavItems.map(item => {
+    if (item.href === '/about' || item.label === '学会架构') {
+      return { ...item, label: ui.nav.about };
+    }
+    return item;
+  });
 
   const currentConf = conferences.find(c => c.status === 'upcoming' || c.status === 'current') || conferences[0];
   const pastConfs = conferences.filter(c => c.status === 'past');
