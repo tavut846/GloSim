@@ -10,12 +10,16 @@ set -e
 # Resolve script root directory
 if [ -n "${BASH_SOURCE[0]}" ] && [ -f "${BASH_SOURCE[0]}" ]; then
   PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" 2>/dev/null && pwd)"
+  # If run from repository's docker/ directory, resolve to project root
+  if [ "$(basename "$PROJECT_DIR")" = "docker" ] && [ -f "$PROJECT_DIR/../.env.example" ]; then
+    PROJECT_DIR="$(cd "$PROJECT_DIR/.." && pwd)"
+  fi
 else
   PROJECT_DIR="/opt/glosim"
 fi
 
 # If invoked in an empty directory or outside a GloSim installation, default to /opt/glosim
-if [ ! -f "$PROJECT_DIR/docker-compose.yml" ]; then
+if [ ! -f "$PROJECT_DIR/docker-compose.yml" ] && [ ! -f "$PROJECT_DIR/docker/docker-compose.yml" ]; then
   if [ -d "/opt/glosim" ] && [ -f "/opt/glosim/docker-compose.yml" ]; then
     PROJECT_DIR="/opt/glosim"
   elif [ "$PROJECT_DIR" = "/tmp" ] || [ "$PROJECT_DIR" = "$HOME" ] || [ "$PROJECT_DIR" = "/root" ]; then
@@ -136,6 +140,165 @@ get_version() {
 }
 
 # ------------------------------------------------------------------------------
+# Security Secret Generation & Management Helpers (Strapi Keys)
+# ------------------------------------------------------------------------------
+
+# Helper function to generate secure base64 secret string
+generate_random_secret() {
+  local length="${1:-32}"
+  if command -v openssl >/dev/null 2>&1; then
+    openssl rand -base64 "$length" | tr -d '\r\n'
+  else
+    head -c "$length" /dev/urandom | base64 | tr -d '\r\n'
+  fi
+}
+
+# Helper function to generate 4 comma-separated Strapi app keys
+generate_app_keys() {
+  local k1 k2 k3 k4
+  k1=$(generate_random_secret 16)
+  k2=$(generate_random_secret 16)
+  k3=$(generate_random_secret 16)
+  k4=$(generate_random_secret 16)
+  echo "${k1},${k2},${k3},${k4}"
+}
+
+# Function to set or replace key-value in .env file
+update_env_var() {
+  local key="$1"
+  local value="$2"
+  local env_file="${3:-.env}"
+
+  if grep -q "^${key}=" "$env_file" 2>/dev/null; then
+    # Escape special characters for sed replacement
+    local escaped_val
+    escaped_val=$(printf '%s\n' "$value" | sed -e 's/[\/&]/\\&/g')
+    sed -i "s|^${key}=.*|${key}=${escaped_val}|" "$env_file" 2>/dev/null || \
+    sed -i "s/^${key}=.*/${key}=${escaped_val}/" "$env_file"
+  else
+    echo "${key}=${value}" >> "$env_file"
+  fi
+}
+
+# Helper to check if a secret is missing, empty, or set to placeholder default
+needs_generation() {
+  local key="$1"
+  local default_val="$2"
+  local env_file="${3:-.env}"
+  local current_val
+  current_val=$(grep "^${key}=" "$env_file" 2>/dev/null | cut -d'=' -f2- | tr -d '\r\n' || true)
+
+  if [ -z "$current_val" ] || [ "$current_val" = "$default_val" ]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+# Verify and auto-generate fresh cryptographic secrets if missing or using default placeholders
+ensure_security_secrets() {
+  local env_file="${1:-.env}"
+  [ ! -f "$env_file" ] && return 0
+
+  info "Checking Strapi backend application security keys..."
+
+  # Check and generate APP_KEYS
+  if needs_generation "APP_KEYS" "Gl0S1mAppKeyAlpha,Gl0S1mAppKeyBeta,Gl0S1mAppKeyGamma,Gl0S1mAppKeyDelta" "$env_file"; then
+    local new_app_keys
+    new_app_keys=$(generate_app_keys)
+    update_env_var "APP_KEYS" "$new_app_keys" "$env_file"
+    success "Generated fresh, cryptographically secure APP_KEYS"
+  else
+    info "APP_KEYS already securely configured"
+  fi
+
+  # Check and generate API_TOKEN_SALT
+  if needs_generation "API_TOKEN_SALT" "glosim_api_token_salt_random_sec_key" "$env_file"; then
+    local new_salt
+    new_salt=$(generate_random_secret 16)
+    update_env_var "API_TOKEN_SALT" "$new_salt" "$env_file"
+    success "Generated fresh API_TOKEN_SALT"
+  else
+    info "API_TOKEN_SALT already securely configured"
+  fi
+
+  # Check and generate ADMIN_JWT_SECRET
+  if needs_generation "ADMIN_JWT_SECRET" "glosim_admin_jwt_secret_random_sec" "$env_file"; then
+    local new_admin_jwt
+    new_admin_jwt=$(generate_random_secret 32)
+    update_env_var "ADMIN_JWT_SECRET" "$new_admin_jwt" "$env_file"
+    success "Generated fresh ADMIN_JWT_SECRET"
+  else
+    info "ADMIN_JWT_SECRET already securely configured"
+  fi
+
+  # Check and generate TRANSFER_TOKEN_SALT
+  if needs_generation "TRANSFER_TOKEN_SALT" "glosim_transfer_salt_random_sec" "$env_file"; then
+    local new_transfer_salt
+    new_transfer_salt=$(generate_random_secret 16)
+    update_env_var "TRANSFER_TOKEN_SALT" "$new_transfer_salt" "$env_file"
+    success "Generated fresh TRANSFER_TOKEN_SALT"
+  else
+    info "TRANSFER_TOKEN_SALT already securely configured"
+  fi
+
+  # Check and generate JWT_SECRET
+  if needs_generation "JWT_SECRET" "glosim_main_jwt_secret_random_sec_123" "$env_file"; then
+    local new_jwt
+    new_jwt=$(generate_random_secret 32)
+    update_env_var "JWT_SECRET" "$new_jwt" "$env_file"
+    success "Generated fresh JWT_SECRET"
+  else
+    info "JWT_SECRET already securely configured"
+  fi
+
+  chmod 600 "$env_file" 2>/dev/null || true
+  success "Environment variables and security secrets verified in $env_file"
+}
+
+# Interactive configuration of Strapi security keys
+configure_security_keys() {
+  title "Configure Application Security Keys"
+  local env_file="${1:-.env}"
+  if [ ! -f "$env_file" ]; then
+    warn "No $env_file file found. Initializing from .env.example..."
+    [ -f ".env.example" ] && cp .env.example "$env_file" || touch "$env_file"
+  fi
+
+  echo "Strapi security keys can be automatically verified or regenerated:"
+  echo "  1) Check & replace only default/empty keys with secure random keys (Recommended)"
+  echo "  2) Force re-generate ALL Strapi security keys (Warning: will invalidate existing admin/user JWT sessions)"
+  echo "  0) Back / Cancel"
+  read -rp "Select option [1-2, 0 to cancel]: " key_choice
+
+  case "$key_choice" in
+    1)
+      ensure_security_secrets "$env_file"
+      ;;
+    2)
+      read -rp "Are you sure you want to regenerate all Strapi keys? [y/N]: " confirm_regen
+      if [[ "$confirm_regen" =~ ^[yY]([eE][sS])?$ ]]; then
+        update_env_var "APP_KEYS" "$(generate_app_keys)" "$env_file"
+        update_env_var "API_TOKEN_SALT" "$(generate_random_secret 16)" "$env_file"
+        update_env_var "ADMIN_JWT_SECRET" "$(generate_random_secret 32)" "$env_file"
+        update_env_var "TRANSFER_TOKEN_SALT" "$(generate_random_secret 16)" "$env_file"
+        update_env_var "JWT_SECRET" "$(generate_random_secret 32)" "$env_file"
+        chmod 600 "$env_file" 2>/dev/null || true
+        success "Force-regenerated all security keys in $env_file!"
+      else
+        info "Cancelled key regeneration."
+      fi
+      ;;
+    0)
+      info "Key configuration cancelled."
+      ;;
+    *)
+      warn "Invalid choice."
+      ;;
+  esac
+}
+
+# ------------------------------------------------------------------------------
 # 1. Add command 'glosim' to VPS
 # ------------------------------------------------------------------------------
 add_glosim_command() {
@@ -210,6 +373,9 @@ JWT_SECRET=glosim_main_jwt_secret_random_sec_123
 EOF
     fi
   fi
+
+  # Verify and replace default security keys with secure random values
+  ensure_security_secrets ".env"
 
   # Create storage directories
   mkdir -p backend/.tmp
@@ -359,6 +525,9 @@ update_services() {
 
       chmod +x glosim-deploy.sh 2>/dev/null || true
 
+      # Ensure secrets are secure in restored environment
+      ensure_security_secrets ".env"
+
       # 5. Rebuild and restart containers
       info "Rebuilding and restarting updated containers..."
       $DOCKER_COMPOSE up -d --build
@@ -374,6 +543,7 @@ update_services() {
       fi
       info "Pulling latest changes via git..."
       git pull
+      ensure_security_secrets ".env"
       info "Rebuilding and restarting containers..."
       $DOCKER_COMPOSE up -d --build
       success "Update complete via Git pull!"
@@ -472,9 +642,10 @@ show_menu() {
     echo -e " ${BOLD}4)${RESET} Clear Container Logs"
     echo -e " ${BOLD}5)${RESET} Update GloSim (Latest Pre-Release or Git Pull)"
     echo -e " ${BOLD}6)${RESET} View Platform & Container Status"
+    echo -e " ${BOLD}7)${RESET} Configure / Secure Strapi Application Keys"
     echo -e " ${BOLD}0)${RESET} Exit"
     echo -e "----------------------------------------------------"
-    read -rp "Please select an option [0-6]: " choice
+    read -rp "Please select an option [0-7]: " choice
 
     case "$choice" in
       1) add_glosim_command ;;
@@ -483,8 +654,9 @@ show_menu() {
       4) remove_logs ;;
       5) update_services ;;
       6) show_status ;;
+      7) configure_security_keys ;;
       0) echo "Goodbye!"; exit 0 ;;
-      *) warn "Invalid choice. Please select 0-6." ;;
+      *) warn "Invalid choice. Please select 0-7." ;;
     esac
 
     echo ""
@@ -513,6 +685,9 @@ case "$1" in
   status|ps)
     show_status
     ;;
+  secrets|gen-keys|security)
+    configure_security_keys "${2:-.env}"
+    ;;
   menu|"")
     show_menu
     ;;
@@ -526,6 +701,7 @@ case "$1" in
     echo "  clean-logs    Truncate container logs and local *.log files"
     echo "  update        Update to the latest release or pull from Git"
     echo "  status        Check container health, ports, and access URLs"
+    echo "  secrets       Verify and generate random Strapi security keys in .env"
     echo "  menu          Open the interactive menu (default when no arg provided)"
     ;;
   *)
