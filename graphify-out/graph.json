@@ -14,7 +14,7 @@
       "file_type": "code",
       "norm_label": "conferenceheroprops",
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L6"
+      "source_location": "L5"
     },
     {
       "id": "frontend_src_components_countdownbanner_countdownbannerprops",
@@ -778,7 +778,7 @@
       "file_type": "code",
       "norm_label": "conferencehero()",
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L11"
+      "source_location": "L10"
     },
     {
       "id": "frontend_src_components_countdownbanner_countdownbanner",
@@ -2611,7 +2611,7 @@
       "file_type": "code",
       "norm_label": "hero",
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L209"
+      "source_location": "L192"
     },
     {
       "id": "frontend_src_components_countdownbanner",
@@ -9575,7 +9575,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -14228,7 +14228,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -14239,7 +14239,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L209",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -14250,7 +14250,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -16606,5 +16606,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2ca344ea291466e0ff4bbbcb1a473883ee003a22"
+  "built_at_commit": "9991298e3c493a6048a031c310e8280b17f8a77a"
 }
