@@ -71,15 +71,17 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({
             
             {/* Table Title Bar */}
             <div className="bg-[#00186b] text-white px-6 py-4 flex flex-col items-center justify-center text-center">
-              <h2 className="text-lg sm:text-xl font-bold tracking-wide leading-snug">
+              <h2 className="text-lg sm:text-xl font-bold tracking-wide leading-snug flex flex-col items-center">
                 {isZh ? (
                   <>
                     <div>2026世界仿真大会</div>
+                    <span className="w-8 h-[2px] bg-[#38bdf8] rounded-full my-2 inline-block"></span>
                     <div>日程表</div>
                   </>
                 ) : (
                   <>
                     <div>GloSim 2026 Conference</div>
+                    <span className="w-8 h-[2px] bg-[#38bdf8] rounded-full my-2 inline-block"></span>
                     <div>Schedule & Agenda</div>
                   </>
                 )}

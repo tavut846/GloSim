@@ -336,9 +336,9 @@
     "semantic_hash": ""
   },
   "frontend/src/pages/AboutPage.tsx": {
-    "mtime": 1788843910.6693711,
-    "seen": 1788844280.2018917,
-    "ast_hash": "c9a9cd6c39092a99f450db360d6dcb52",
+    "mtime": 1788882489.3253798,
+    "seen": 1788882699.2137299,
+    "ast_hash": "612a0b73b39f7278155b1843c7dad1d1",
     "semantic_hash": ""
   },
   "frontend/src/pages/CallForPapersPage.tsx": {
@@ -360,9 +360,9 @@
     "semantic_hash": ""
   },
   "frontend/src/pages/SchedulePage.tsx": {
-    "mtime": 1788881946.892344,
-    "seen": 1788882300.742605,
-    "ast_hash": "9817fff983c8d8327f7e20f739eac998",
+    "mtime": 1788882867.8803627,
+    "seen": 1788882927.8340063,
+    "ast_hash": "4e43e23b8a505729ff37422fe88ff43d",
     "semantic_hash": ""
   },
   "frontend/src/services/api.ts": {
@@ -678,9 +678,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/ConferenceHero.tsx": {
-    "mtime": 1788881427.5387285,
-    "seen": 1788881527.803944,
-    "ast_hash": "50a2db07ed9e83642bbbf17aac682c14",
+    "mtime": 1788882449.8914237,
+    "seen": 1788882699.213695,
+    "ast_hash": "638513d3a48a4329439a7ef5ca0639a5",
     "semantic_hash": ""
   },
   "frontend/public/hero-bg.jpg": {

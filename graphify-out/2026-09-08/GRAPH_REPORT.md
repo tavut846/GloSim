@@ -1,11 +1,11 @@
 # Graph Report - GloSim  (2026-09-08)
 
 ## Corpus Check
-- 90 files · ~353,242 words
+- 90 files · ~354,833 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 573 nodes · 903 edges · 56 communities (50 shown, 6 thin omitted)
+- 573 nodes · 899 edges · 65 communities (52 shown, 13 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
@@ -40,7 +40,16 @@
 - GloSim 0.0.1-pre-1
 - bump-version.js
 - backend/server.js
+- optionalDependencies
 - backend/package.json
+- scripts
+- date-fns
+- date-fns-tz
+- dotenv
+- react
+- react-dom
+- @strapi/plugin-users-permissions
+- @strapi/strapi
 
 ## God Nodes (most connected - your core abstractions)
 1. `Locale` - 37 edges
@@ -69,7 +78,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (56 total, 6 thin omitted)
+## Communities (65 total, 13 thin omitted)
 
 ### Community 0 - "Locale"
 Cohesion: 0.07
@@ -100,8 +109,8 @@ Cohesion: 0.08
 Nodes (23): compilerOptions, allowImportingTsExtensions, isolatedModules, jsx, lib, module, moduleResolution, noEmit (+15 more)
 
 ### Community 7 - "dependencies"
-Cohesion: 0.07
-Nodes (29): ajv, dependencies, ajv, better-sqlite3, date-fns, date-fns-tz, dotenv, pg (+21 more)
+Cohesion: 0.13
+Nodes (15): ajv, dependencies, ajv, better-sqlite3, pg, react-router-dom, sharp, @strapi/plugin-i18n (+7 more)
 
 ### Community 8 - "scripts"
 Cohesion: 0.06
@@ -147,26 +156,34 @@ Nodes (6): 📦 Artifact Highlights, GloSim 0.0.1-pre-1, 🔧 Maintenance & Docu
 Cohesion: 0.40
 Nodes (4): filesToUpdate, fs, path, rootDir
 
+### Community 52 - "optionalDependencies"
+Cohesion: 0.22
+Nodes (9): optionalDependencies, @img/sharp-libvips-linux-arm64, @img/sharp-libvips-linux-x64, @img/sharp-linux-arm64, @img/sharp-linux-x64, @img/sharp-libvips-linux-arm64, @img/sharp-libvips-linux-x64, @img/sharp-linux-arm64 (+1 more)
+
 ### Community 53 - "backend/package.json"
-Cohesion: 0.08
-Nodes (23): description, license, name, optionalDependencies, @img/sharp-libvips-linux-arm64, @img/sharp-libvips-linux-x64, @img/sharp-linux-arm64, @img/sharp-linux-x64 (+15 more)
+Cohesion: 0.20
+Nodes (9): description, license, name, overrides, ajv, better-sqlite3, sharp, private (+1 more)
+
+### Community 57 - "scripts"
+Cohesion: 0.40
+Nodes (5): scripts, build, develop, start, strapi
 
 ## Knowledge Gaps
 - **225 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+220 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `backend/package.json`?**
+- **Why does `dependencies` connect `dependencies` to `@strapi/strapi`, `backend/package.json`, `date-fns`, `date-fns-tz`, `dotenv`, `react`, `react-dom`, `@strapi/plugin-users-permissions`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `createRuntime()` (e.g. with `adoptParsed()` and `dcUpdate()`) actually correct?**
   _`createRuntime()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `path`, `path`, `dotenv` to the rest of the system?**
   _225 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Locale` be split into smaller, more focused modules?**
-  _Cohesion score 0.06876285630326183 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06758742286218043 - nodes in this community are weakly interconnected._
 - **Should `support.js` be split into smaller, more focused modules?**
   _Cohesion score 0.060678962844159315 - nodes in this community are weakly interconnected._
 - **Should `contentTypes.d.ts` be split into smaller, more focused modules?**

@@ -1,7 +1,7 @@
 # Graph Report - GloSim  (2026-09-08)
 
 ## Corpus Check
-- 90 files · ~354,833 words
+- 90 files · ~354,846 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8a9e57d3`
+- Built from commit: `8845594b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -45,7 +45,7 @@
 - scripts
 - date-fns
 - date-fns-tz
-- dotenv
+- ajv
 - react
 - react-dom
 - @strapi/plugin-users-permissions
@@ -110,7 +110,7 @@ Nodes (23): compilerOptions, allowImportingTsExtensions, isolatedModules, jsx, l
 
 ### Community 7 - "dependencies"
 Cohesion: 0.13
-Nodes (15): ajv, dependencies, ajv, better-sqlite3, pg, react-router-dom, sharp, @strapi/plugin-i18n (+7 more)
+Nodes (15): dependencies, better-sqlite3, dotenv, pg, react-router-dom, sharp, @strapi/plugin-i18n, styled-components (+7 more)
 
 ### Community 8 - "scripts"
 Cohesion: 0.06
@@ -176,7 +176,7 @@ Nodes (5): scripts, build, develop, start, strapi
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `@strapi/strapi`, `backend/package.json`, `date-fns`, `date-fns-tz`, `dotenv`, `react`, `react-dom`, `@strapi/plugin-users-permissions`?**
+- **Why does `dependencies` connect `dependencies` to `@strapi/strapi`, `backend/package.json`, `date-fns`, `date-fns-tz`, `ajv`, `react`, `react-dom`, `@strapi/plugin-users-permissions`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `createRuntime()` (e.g. with `adoptParsed()` and `dcUpdate()`) actually correct?**
   _`createRuntime()` has 7 INFERRED edges - model-reasoned connections that need verification._

@@ -51,8 +51,17 @@
   "49": "GloSim 0.0.1-pre-1",
   "50": "bump-version.js",
   "51": "backend/server.js",
+  "52": "optionalDependencies",
   "53": "backend/package.json",
   "54": "postcss.config.js",
   "55": "tailwind.config.js",
-  "56": "tailwindcss"
+  "56": "tailwindcss",
+  "57": "scripts",
+  "58": "date-fns",
+  "59": "date-fns-tz",
+  "60": "dotenv",
+  "61": "react",
+  "62": "react-dom",
+  "63": "@strapi/plugin-users-permissions",
+  "64": "@strapi/strapi"
 }
