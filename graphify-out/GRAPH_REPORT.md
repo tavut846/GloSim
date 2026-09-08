@@ -1,16 +1,16 @@
 # Graph Report - GloSim  (2026-09-08)
 
 ## Corpus Check
-- 86 files · ~344,878 words
+- 86 files · ~345,173 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 559 nodes · 870 edges · 57 communities (51 shown, 6 thin omitted)
+- 559 nodes · 872 edges · 57 communities (51 shown, 6 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9991298e`
+- Built from commit: `21737ce5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -44,7 +44,7 @@
 - backend/package.json
 
 ## God Nodes (most connected - your core abstractions)
-1. `Locale` - 29 edges
+1. `Locale` - 31 edges
 2. `ImageSlot` - 27 edges
 3. `get()` - 23 edges
 4. `createRuntime()` - 22 edges
@@ -58,14 +58,14 @@
 ## Surprising Connections (you probably didn't know these)
 - `ConferenceHeroProps` --references--> `Locale`  [EXTRACTED]
   frontend/src/components/ConferenceHero.tsx → frontend/src/types/index.ts
-- `CountdownBannerProps` --references--> `Conference`  [EXTRACTED]
-  frontend/src/components/CountdownBanner.tsx → frontend/src/types/index.ts
 - `RegisterModalProps` --references--> `Locale`  [EXTRACTED]
   frontend/src/components/RegisterModal.tsx → frontend/src/types/index.ts
 - `bootstrap()` --calls--> `seedDatabase()`  [EXTRACTED]
   backend/src/index.js → backend/src/bootstrap-seed.js
-- `FooterProps` --references--> `GlobalSettings`  [EXTRACTED]
-  frontend/src/components/Footer.tsx → frontend/src/types/index.ts
+- `CountdownBannerProps` --references--> `Conference`  [EXTRACTED]
+  frontend/src/components/CountdownBanner.tsx → frontend/src/types/index.ts
+- `CountdownBannerProps` --references--> `Locale`  [EXTRACTED]
+  frontend/src/components/CountdownBanner.tsx → frontend/src/types/index.ts
 
 ## Import Cycles
 - None detected.
@@ -173,7 +173,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **What connects `path`, `path`, `dotenv` to the rest of the system?**
   _222 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `App.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.08364389233954451 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.084472049689441 - nodes in this community are weakly interconnected._
 - **Should `support.js` be split into smaller, more focused modules?**
   _Cohesion score 0.09435707678075855 - nodes in this community are weakly interconnected._
 - **Should `contentTypes.d.ts` be split into smaller, more focused modules?**

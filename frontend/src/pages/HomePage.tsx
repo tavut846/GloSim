@@ -70,23 +70,39 @@ export const HomePage: React.FC<HomePageProps> = ({
   ];
   const highlights = data?.highlights && data.highlights.length > 0 ? data.highlights : defaultHighlights;
 
+  const fallbackConf: Conference = {
+    id: 1,
+    title: isZh ? '第十届全球模拟大会（GloSim 2026）' : '10th Global Simulation Conference (GloSim 2026)',
+    edition: isZh ? '第十届年会' : '10th Annual Assembly',
+    year: 2026,
+    theme: isZh ? '多极化背景下的全球治理韧性与复杂系统博弈模拟' : 'Global Governance Resilience & Complex Multi-Agent Simulation Under Multipolarity',
+    startDate: '2026-10-18',
+    endDate: '2026-10-21',
+    location: isZh ? '中国 · 北京' : 'Beijing, China',
+    venue: isZh ? '国家会议中心 · 第三报告厅' : 'China National Convention Center · Auditorium 3',
+    status: 'upcoming',
+    summary: '',
+    description: '',
+    agendaItems: []
+  };
+  const activeConference = currentConference || fallbackConf;
+
   return (
     <div>
       {/* 1. Hero Section */}
       <ConferenceHero locale={locale} />
 
       {/* 2. Countdown Banner */}
-      {currentConference && (
-        <CountdownBanner
-          conference={currentConference}
-          onViewSchedule={() => onNavigate('/schedule')}
-          onSubmitCfp={() => onOpenRegister('paper')}
-          eyebrow={ui.home.countdownEyebrow}
-          countdownLabel={ui.home.countdownDaysLabel}
-          viewScheduleText={ui.home.viewSchedule}
-          submitCfpText={ui.home.submitAbstract}
-        />
-      )}
+      <CountdownBanner
+        conference={activeConference}
+        onViewSchedule={() => onNavigate('/schedule')}
+        onSubmitCfp={() => onOpenRegister('paper')}
+        eyebrow={ui.home.countdownEyebrow}
+        countdownLabel={ui.home.countdownDaysLabel}
+        viewScheduleText={ui.home.viewSchedule}
+        submitCfpText={ui.home.submitAbstract}
+        locale={locale}
+      />
 
       {/* 3. Organization Intro & Dual Video Section */}
       <section style={{ padding: '64px 0', backgroundColor: 'var(--white)' }}>

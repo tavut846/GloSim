@@ -2611,7 +2611,7 @@
       "file_type": "code",
       "norm_label": "hero",
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L173"
+      "source_location": "L202"
     },
     {
       "id": "frontend_src_components_countdownbanner",
@@ -14239,7 +14239,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L173",
+      "source_location": "L202",
       "weight": 1.0
     },
     {
@@ -16606,5 +16606,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9991298e3c493a6048a031c310e8280b17f8a77a"
+  "built_at_commit": "21737ce5e995780f594174dd2c2bb7f0d6302fc4"
 }

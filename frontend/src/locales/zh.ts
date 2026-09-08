@@ -4,7 +4,7 @@ export const zhUi = {
   retry: '重试连接',
   nav: {
     home: '首页',
-    about: '学会架构',
+    about: '组织机构',
     schedule: '会议日程',
     cfp: '论文征集',
     past: '往届会议'

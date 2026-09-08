@@ -109,7 +109,9 @@ export const App: React.FC = () => {
     { label: ui.nav.cfp, href: '/call-for-papers' },
     { label: ui.nav.past, href: '/past-conferences' }
   ];
-  const navItems = global?.navLabels && global.navLabels.length > 0 ? global.navLabels : defaultNav;
+  const navItems = (locale === 'zh-Hans' && global?.navLabels && global.navLabels.length > 0)
+    ? global.navLabels
+    : defaultNav;
 
   const currentConf = conferences.find(c => c.status === 'upcoming' || c.status === 'current') || conferences[0];
   const pastConfs = conferences.filter(c => c.status === 'past');

@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ global, locale, onNavigate }) =>
 
   const defaultNav = [
     { label: isZh ? '首页' : 'Home', href: '/' },
-    { label: isZh ? '学会架构' : 'Organization', href: '/about' },
+    { label: isZh ? '组织机构' : 'Organization', href: '/about' },
     { label: isZh ? '会议日程' : 'Conference Schedule', href: '/schedule' },
     { label: isZh ? '论文征集' : 'Call for Papers', href: '/call-for-papers' },
     { label: isZh ? '往届会议' : 'Past Conferences', href: '/past-conferences' }

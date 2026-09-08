@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "frontend/src/App.tsx": {
-    "mtime": 1788787781.4738386,
-    "seen": 1788787820.0598474,
-    "ast_hash": "9718e395365501c1f45d641ccf0a1859",
+    "mtime": 1788840629.4950771,
+    "seen": 1788840741.967406,
+    "ast_hash": "e57042342b7138cf0eca79d81d29de3e",
     "semantic_hash": ""
   },
   "frontend/src/components/CountdownBanner.tsx": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/Footer.tsx": {
-    "mtime": 1788787770.2818189,
-    "seen": 1788787820.0598545,
-    "ast_hash": "9ee6687a888d468561d026fd2594f328",
+    "mtime": 1788840523.836471,
+    "seen": 1788840741.9674194,
+    "ast_hash": "48bd7fcaab5bdc735ad88020db43e59a",
     "semantic_hash": ""
   },
   "frontend/src/components/Header.tsx": {
@@ -324,9 +324,9 @@
     "semantic_hash": ""
   },
   "frontend/src/locales/zh.ts": {
-    "mtime": 1787625488.741216,
-    "seen": 1787625533.3640676,
-    "ast_hash": "2be6ccc58febf2d83e7c66f971761f39",
+    "mtime": 1788840515.1215394,
+    "seen": 1788840741.9674392,
+    "ast_hash": "6bc8aed3e2f01e9cca7a1e06d53b88dd",
     "semantic_hash": ""
   },
   "frontend/src/main.tsx": {
@@ -678,9 +678,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/ConferenceHero.tsx": {
-    "mtime": 1788839907.0476875,
-    "seen": 1788840007.2914264,
-    "ast_hash": "8b921a857f17be26c1f2eddea35f5d8d",
+    "mtime": 1788840816.5676084,
+    "seen": 1788840923.1632607,
+    "ast_hash": "07ba807c995a306985345d8c84a76781",
     "semantic_hash": ""
   },
   "frontend/public/hero-bg.jpg": {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
-import { Conference } from '../types';
+import { Conference, Locale } from '../types';
 
 interface CountdownBannerProps {
   conference?: Conference;
@@ -10,6 +10,7 @@ interface CountdownBannerProps {
   countdownLabel: string;
   viewScheduleText: string;
   submitCfpText: string;
+  locale?: Locale;
 }
 
 export const CountdownBanner: React.FC<CountdownBannerProps> = ({
@@ -20,22 +21,42 @@ export const CountdownBanner: React.FC<CountdownBannerProps> = ({
   countdownLabel,
   viewScheduleText,
   submitCfpText,
+  locale = 'zh-Hans',
 }) => {
   if (!conference) return null;
 
+  const isEn = locale === 'en';
+
   // Calculate days left to target start date
-  const [daysLeft, setDaysLeft] = useState(54);
+  const [daysLeft, setDaysLeft] = useState(40);
 
   useEffect(() => {
     try {
       const target = new Date(conference.startDate).getTime();
       const now = new Date().getTime();
       const diff = Math.max(0, Math.ceil((target - now) / (1000 * 60 * 60 * 24)));
-      setDaysLeft(diff > 0 ? diff : 54);
+      setDaysLeft(diff > 0 ? diff : 40);
     } catch {
-      setDaysLeft(54);
+      setDaysLeft(40);
     }
   }, [conference.startDate]);
+
+  // Robust bilingual mapping
+  const edition = isEn
+    ? (conference.edition.includes('第十届') ? '10th Annual Assembly' : conference.edition)
+    : conference.edition;
+
+  const title = isEn
+    ? (conference.title.includes('第十届') ? '10th Global Simulation Conference (GloSim 2026)' : conference.title)
+    : conference.title;
+
+  const location = isEn
+    ? (conference.location.includes('北京') ? 'Beijing, China' : conference.location)
+    : conference.location;
+
+  const venue = isEn
+    ? (conference.venue.includes('国家会议中心') ? 'China National Convention Center · Auditorium 3' : conference.venue)
+    : conference.venue;
 
   return (
     <section style={{
@@ -60,7 +81,7 @@ export const CountdownBanner: React.FC<CountdownBannerProps> = ({
             color: 'rgba(255, 255, 255, 0.75)',
             fontWeight: 600
           }}>
-            {eyebrow} · {conference.edition}
+            {eyebrow} · {edition}
           </span>
           <h3 style={{
             margin: '6px 0 8px',
@@ -69,14 +90,14 @@ export const CountdownBanner: React.FC<CountdownBannerProps> = ({
             color: 'var(--white)',
             lineHeight: 1.25
           }}>
-            {conference.title}
+            {title}
           </h3>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: 'var(--text-body-sm)', color: 'rgba(255, 255, 255, 0.85)' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
               <Calendar size={15} /> {conference.startDate} ~ {conference.endDate}
             </span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-              <MapPin size={15} /> {conference.location} ({conference.venue})
+              <MapPin size={15} /> {location} ({venue})
             </span>
           </div>
         </div>

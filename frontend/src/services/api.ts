@@ -19,13 +19,29 @@ class ApiService {
         headers: { 'Content-Type': 'application/json' },
       });
 
-      if (!res.ok) {
-        console.warn(`[API] Failed to fetch ${url}: HTTP ${res.status}`);
-        return null;
+      if (res.ok) {
+        const json = await res.json();
+        // Return if data exists and is not an empty collection
+        if (json && json.data && (!Array.isArray(json.data) || json.data.length > 0)) {
+          return json;
+        }
       }
 
-      const json = await res.json();
-      return json;
+      // Fallback: If requested locale returned empty/null, try default locale=en
+      if (strapiLocale !== 'en') {
+        const fallbackUrl = `${this.baseUrl}/api/${endpoint}${sep}locale=en&populate=*`;
+        const fallbackRes = await fetch(fallbackUrl, {
+          headers: { 'Content-Type': 'application/json' },
+        });
+        if (fallbackRes.ok) {
+          const fallbackJson = await fallbackRes.json();
+          if (fallbackJson && fallbackJson.data) {
+            return fallbackJson;
+          }
+        }
+      }
+
+      return null;
     } catch (err) {
       console.warn(`[API] Network error fetching ${endpoint}:`, err);
       return null;
