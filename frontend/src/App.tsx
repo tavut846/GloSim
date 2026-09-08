@@ -11,6 +11,8 @@ import { CallForPapersPage } from './pages/CallForPapersPage';
 import { PastConferencesPage } from './pages/PastConferencesPage';
 import { zhUi } from './locales/zh';
 import { enUi } from './locales/en';
+import asiasimLogo from './assets/asiasim.png';
+import glosimLogo from './assets/glosim.png';
 
 export const App: React.FC = () => {
   const [locale, setLocale] = useState<Locale>('zh-Hans');
@@ -129,18 +131,25 @@ export const App: React.FC = () => {
           fontFamily: 'var(--font-sans)'
         }}>
           <div style={{
-            width: '44px',
-            height: '44px',
-            borderRadius: 'var(--radius-sm)',
-            backgroundColor: 'var(--symposium-blue)',
-            color: 'var(--white)',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 800,
-            fontSize: '16px'
+            gap: '8px',
+            backgroundColor: 'var(--symposium-blue)',
+            padding: '6px 12px',
+            borderRadius: 'var(--radius-sm)',
+            height: '44px',
+            boxSizing: 'border-box'
           }}>
-            IF
+            <img
+              src={asiasimLogo}
+              alt="AsiaSim"
+              style={{ height: '28px', width: 'auto', display: 'block', objectFit: 'contain' }}
+            />
+            <img
+              src={glosimLogo}
+              alt="GloSim"
+              style={{ height: '28px', width: 'auto', display: 'block', objectFit: 'contain' }}
+            />
           </div>
           <span style={{ fontSize: '14px', color: 'var(--slate-600)', letterSpacing: '0.05em' }}>
             {ui.loading}

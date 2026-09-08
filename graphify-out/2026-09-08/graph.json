@@ -14,7 +14,7 @@
       "file_type": "code",
       "norm_label": "conferenceheroprops",
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L6"
+      "source_location": "L7"
     },
     {
       "id": "frontend_src_components_countdownbanner_countdownbannerprops",
@@ -778,7 +778,7 @@
       "file_type": "code",
       "norm_label": "conferencehero()",
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L11"
+      "source_location": "L12"
     },
     {
       "id": "frontend_src_components_countdownbanner_countdownbanner",
@@ -2611,7 +2611,7 @@
       "file_type": "code",
       "norm_label": "hero",
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L209"
+      "source_location": "L223"
     },
     {
       "id": "frontend_src_components_countdownbanner",
@@ -9575,7 +9575,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -14228,7 +14228,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -14239,7 +14239,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L209",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -14250,7 +14250,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {

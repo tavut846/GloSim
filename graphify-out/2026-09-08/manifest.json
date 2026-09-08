@@ -678,9 +678,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/ConferenceHero.tsx": {
-    "mtime": 1788839792.9651747,
-    "seen": 1788839837.1962647,
-    "ast_hash": "100d792f352a380fe8d2f5245c6850b1",
+    "mtime": 1788839672.776644,
+    "seen": 1788839721.2256482,
+    "ast_hash": "3ea250cdf264ff190dee5209aba75f80",
     "semantic_hash": ""
   },
   "frontend/public/hero-bg.jpg": {

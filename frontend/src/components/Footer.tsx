@@ -1,6 +1,8 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Globe } from 'lucide-react';
 import { GlobalSettings, Locale } from '../types';
+import asiasimLogo from '../assets/asiasim.png';
+import glosimLogo from '../assets/glosim.png';
 
 interface FooterProps {
   global?: GlobalSettings | null;
@@ -46,18 +48,25 @@ export const Footer: React.FC<FooterProps> = ({ global, locale, onNavigate }) =>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
               <div style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: 'var(--radius-sm)',
-                backgroundColor: 'var(--symposium-blue)',
-                color: 'var(--white)',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                fontWeight: 800,
-                fontSize: '13px'
+                gap: '8px',
+                backgroundColor: 'var(--symposium-blue)',
+                padding: '4px 8px',
+                borderRadius: 'var(--radius-sm)',
+                height: '32px',
+                boxSizing: 'border-box'
               }}>
-                IF
+                <img
+                  src={asiasimLogo}
+                  alt="AsiaSim"
+                  style={{ height: '20px', width: 'auto', display: 'block', objectFit: 'contain' }}
+                />
+                <img
+                  src={glosimLogo}
+                  alt="GloSim"
+                  style={{ height: '20px', width: 'auto', display: 'block', objectFit: 'contain' }}
+                />
               </div>
               <span style={{ fontWeight: 'var(--weight-bold)', fontSize: '1.1rem', color: 'var(--white)' }}>
                 {siteName}

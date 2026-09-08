@@ -4,19 +4,6 @@
   "graph": {},
   "nodes": [
     {
-      "id": "frontend_src_components_conferencehero_conferenceheroprops",
-      "label": "ConferenceHeroProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "conferenceheroprops",
-      "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L6"
-    },
-    {
       "id": "frontend_src_components_countdownbanner_countdownbannerprops",
       "label": "CountdownBannerProps",
       "_callable": true,
@@ -53,7 +40,7 @@
       "file_type": "code",
       "norm_label": "headerprops",
       "source_file": "frontend/src/components/Header.tsx",
-      "source_location": "L8"
+      "source_location": "L7"
     },
     {
       "id": "frontend_src_components_registermodal_registermodalprops",
@@ -118,7 +105,7 @@
       "file_type": "code",
       "norm_label": "homepageprops",
       "source_file": "frontend/src/pages/HomePage.tsx",
-      "source_location": "L10"
+      "source_location": "L9"
     },
     {
       "id": "frontend_src_pages_pastconferencespage_pastconferencespageprops",
@@ -769,18 +756,6 @@
       "source_location": "L63"
     },
     {
-      "id": "frontend_src_components_conferencehero_conferencehero",
-      "label": "ConferenceHero()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "conferencehero()",
-      "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L11"
-    },
-    {
       "id": "frontend_src_components_countdownbanner_countdownbanner",
       "label": "CountdownBanner()",
       "_callable": true,
@@ -814,7 +789,7 @@
       "file_type": "code",
       "norm_label": "header()",
       "source_file": "frontend/src/components/Header.tsx",
-      "source_location": "L17"
+      "source_location": "L16"
     },
     {
       "id": "frontend_src_components_registermodal_registermodal",
@@ -874,7 +849,7 @@
       "file_type": "code",
       "norm_label": "homepage()",
       "source_file": "frontend/src/pages/HomePage.tsx",
-      "source_location": "L20"
+      "source_location": "L19"
     },
     {
       "id": "frontend_src_pages_pastconferencespage_pastconferencespage",
@@ -2592,28 +2567,6 @@
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_components_conferencehero",
-      "label": "ConferenceHero.tsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "conferencehero.tsx",
-      "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_components_conferencehero_hero",
-      "label": "Hero",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "hero",
-      "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L209"
-    },
-    {
       "id": "frontend_src_components_countdownbanner",
       "label": "CountdownBanner.tsx",
       "_origin": "ast",
@@ -3998,7 +3951,7 @@
       "label": "frontend/package.json",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "frontend/package.json",
       "source_file": "frontend/package.json",
@@ -4009,7 +3962,7 @@
       "label": "dependencies",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "dependencies",
       "source_file": "frontend/package.json",
@@ -4020,7 +3973,7 @@
       "label": "lucide-react",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "lucide-react",
       "source_file": "frontend/package.json",
@@ -4031,7 +3984,7 @@
       "label": "react",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "react",
       "source_file": "frontend/package.json",
@@ -4042,7 +3995,7 @@
       "label": "react-dom",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "react-dom",
       "source_file": "frontend/package.json",
@@ -4053,51 +4006,18 @@
       "label": "devDependencies",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "frontend/package.json",
       "source_location": "L16"
     },
     {
-      "id": "frontend_package_devdependencies_autoprefixer",
-      "label": "autoprefixer",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "autoprefixer",
-      "source_file": "frontend/package.json",
-      "source_location": "L20"
-    },
-    {
-      "id": "frontend_package_devdependencies_postcss",
-      "label": "postcss",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "postcss",
-      "source_file": "frontend/package.json",
-      "source_location": "L21"
-    },
-    {
-      "id": "frontend_package_devdependencies_tailwindcss",
-      "label": "tailwindcss",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "tailwindcss",
-      "source_file": "frontend/package.json",
-      "source_location": "L22"
-    },
-    {
       "id": "frontend_package_devdependencies_types_react",
       "label": "@types/react",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "@types/react",
       "source_file": "frontend/package.json",
@@ -4108,7 +4028,7 @@
       "label": "@types/react-dom",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "@types/react-dom",
       "source_file": "frontend/package.json",
@@ -4119,29 +4039,29 @@
       "label": "typescript",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "frontend/package.json",
-      "source_location": "L23"
+      "source_location": "L20"
     },
     {
       "id": "frontend_package_devdependencies_vite",
       "label": "vite",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "vite",
       "source_file": "frontend/package.json",
-      "source_location": "L24"
+      "source_location": "L21"
     },
     {
       "id": "frontend_package_devdependencies_vitejs_plugin_react",
       "label": "@vitejs/plugin-react",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "@vitejs/plugin-react",
       "source_file": "frontend/package.json",
@@ -4152,7 +4072,7 @@
       "label": "name",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "name",
       "source_file": "frontend/package.json",
@@ -4163,7 +4083,7 @@
       "label": "private",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "private",
       "source_file": "frontend/package.json",
@@ -4174,7 +4094,7 @@
       "label": "scripts",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "scripts",
       "source_file": "frontend/package.json",
@@ -4185,7 +4105,7 @@
       "label": "build",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "build",
       "source_file": "frontend/package.json",
@@ -4196,7 +4116,7 @@
       "label": "dev",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "dev",
       "source_file": "frontend/package.json",
@@ -4207,7 +4127,7 @@
       "label": "preview",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "preview",
       "source_file": "frontend/package.json",
@@ -4218,7 +4138,7 @@
       "label": "type",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "type",
       "source_file": "frontend/package.json",
@@ -4229,29 +4149,18 @@
       "label": "version",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "code",
       "norm_label": "version",
       "source_file": "frontend/package.json",
       "source_location": "L4"
     },
     {
-      "id": "autoprefixer",
-      "label": "autoprefixer",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "devDependencies",
-      "file_type": "concept",
-      "norm_label": "autoprefixer",
-      "source_file": "frontend/package.json",
-      "source_location": "L20"
-    },
-    {
       "id": "frontend_package_json_react",
       "label": "react",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "concept",
       "norm_label": "react",
       "source_file": "frontend/package.json",
@@ -4262,51 +4171,29 @@
       "label": "react-dom",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "concept",
       "norm_label": "react-dom",
       "source_file": "frontend/package.json",
       "source_location": "L14"
     },
     {
-      "id": "frontend_package_json_tailwindcss",
-      "label": "tailwindcss",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "devDependencies",
-      "file_type": "concept",
-      "norm_label": "tailwindcss",
-      "source_file": "frontend/package.json",
-      "source_location": "L22"
-    },
-    {
       "id": "lucide_react",
       "label": "lucide-react",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "concept",
       "norm_label": "lucide-react",
       "source_file": "frontend/package.json",
       "source_location": "L12"
     },
     {
-      "id": "postcss",
-      "label": "postcss",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "devDependencies",
-      "file_type": "concept",
-      "norm_label": "postcss",
-      "source_file": "frontend/package.json",
-      "source_location": "L21"
-    },
-    {
       "id": "types_react",
       "label": "@types/react",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "concept",
       "norm_label": "@types/react",
       "source_file": "frontend/package.json",
@@ -4317,7 +4204,7 @@
       "label": "@types/react-dom",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "concept",
       "norm_label": "@types/react-dom",
       "source_file": "frontend/package.json",
@@ -4328,29 +4215,29 @@
       "label": "typescript",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "frontend/package.json",
-      "source_location": "L23"
+      "source_location": "L20"
     },
     {
       "id": "vite",
       "label": "vite",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "concept",
       "norm_label": "vite",
       "source_file": "frontend/package.json",
-      "source_location": "L24"
+      "source_location": "L21"
     },
     {
       "id": "vitejs_plugin_react",
       "label": "@vitejs/plugin-react",
       "_origin": "ast",
       "community": 4,
-      "community_name": "devDependencies",
+      "community_name": "frontend/package.json",
       "file_type": "concept",
       "norm_label": "@vitejs/plugin-react",
       "source_file": "frontend/package.json",
@@ -5608,39 +5495,6 @@
       "norm_label": "@img/sharp-linux-x64",
       "source_file": "backend/package.json",
       "source_location": "L34"
-    },
-    {
-      "id": "frontend_postcss_config",
-      "label": "postcss.config.js",
-      "_origin": "ast",
-      "community": 54,
-      "community_name": "postcss.config.js",
-      "file_type": "code",
-      "norm_label": "postcss.config.js",
-      "source_file": "frontend/postcss.config.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_tailwind_config",
-      "label": "tailwind.config.js",
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "tailwind.config.js",
-      "file_type": "code",
-      "norm_label": "tailwind.config.js",
-      "source_file": "frontend/tailwind.config.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "tailwindcss_tailwindcss",
-      "label": "tailwindcss",
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "tailwindcss",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "tailwindcss",
-      "source_file": "tailwindcss"
     },
     {
       "id": "frontend_tsconfig",
@@ -9567,18 +9421,6 @@
       "weight": 1.0
     },
     {
-      "source": "frontend_src_components_conferencehero_conferenceheroprops",
-      "target": "frontend_src_types_index_locale",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L8",
-      "weight": 1.0
-    },
-    {
       "source": "frontend_src_components_countdownbanner_countdownbannerprops",
       "target": "frontend_src_types_index_conference",
       "relation": "references",
@@ -9623,7 +9465,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "frontend/src/components/Header.tsx",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -9635,7 +9477,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "frontend/src/components/Header.tsx",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -9731,7 +9573,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "frontend/src/pages/HomePage.tsx",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -9743,7 +9585,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "frontend/src/pages/HomePage.tsx",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -9755,7 +9597,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "frontend/src/pages/HomePage.tsx",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -9767,7 +9609,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "frontend/src/pages/HomePage.tsx",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -10263,42 +10105,6 @@
       "weight": 1.0
     },
     {
-      "source": "frontend_package_devdependencies_autoprefixer",
-      "target": "autoprefixer",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/package.json",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_package_devdependencies_postcss",
-      "target": "postcss",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/package.json",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_package_devdependencies_tailwindcss",
-      "target": "frontend_package_json_tailwindcss",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/package.json",
-      "source_location": "L22",
-      "weight": 1.0
-    },
-    {
       "source": "frontend_package_devdependencies_types_react",
       "target": "types_react",
       "relation": "imports",
@@ -10331,7 +10137,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/package.json",
-      "source_location": "L23",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -10343,7 +10149,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/package.json",
-      "source_location": "L24",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -10584,18 +10390,6 @@
       "context": "import",
       "source_file": "frontend/src/App.tsx",
       "source_location": "L9",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_components_conferencehero",
-      "target": "frontend_src_types_index_locale",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -10852,7 +10646,7 @@
     },
     {
       "source": "frontend_src_pages_homepage",
-      "target": "frontend_src_components_conferencehero_conferencehero",
+      "target": "frontend_src_components_countdownbanner_countdownbanner",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10864,7 +10658,7 @@
     },
     {
       "source": "frontend_src_pages_homepage",
-      "target": "frontend_src_components_countdownbanner_countdownbanner",
+      "target": "frontend_src_components_videomodal_videomodal",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10876,7 +10670,7 @@
     },
     {
       "source": "frontend_src_pages_homepage",
-      "target": "frontend_src_components_videomodal_videomodal",
+      "target": "frontend_src_locales_zh_zhui",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10888,18 +10682,6 @@
     },
     {
       "source": "frontend_src_pages_homepage",
-      "target": "frontend_src_locales_zh_zhui",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/pages/HomePage.tsx",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_pages_homepage",
       "target": "frontend_src_locales_en_enui",
       "relation": "imports",
       "_origin": "ast",
@@ -10907,7 +10689,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/pages/HomePage.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -11295,18 +11077,6 @@
       "weight": 1.0
     },
     {
-      "source": "frontend_src_components_conferencehero",
-      "target": "frontend_src_types_index",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
       "source": "frontend_src_components_countdownbanner",
       "target": "frontend_src_types_index",
       "relation": "imports_from",
@@ -11452,7 +11222,7 @@
     },
     {
       "source": "frontend_src_pages_homepage",
-      "target": "frontend_src_components_conferencehero",
+      "target": "frontend_src_components_countdownbanner",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11464,7 +11234,7 @@
     },
     {
       "source": "frontend_src_pages_homepage",
-      "target": "frontend_src_components_countdownbanner",
+      "target": "frontend_src_components_videomodal",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11476,7 +11246,7 @@
     },
     {
       "source": "frontend_src_pages_homepage",
-      "target": "frontend_src_components_videomodal",
+      "target": "frontend_src_locales_zh",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11488,18 +11258,6 @@
     },
     {
       "source": "frontend_src_pages_homepage",
-      "target": "frontend_src_locales_zh",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/pages/HomePage.tsx",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_pages_homepage",
       "target": "frontend_src_locales_en",
       "relation": "imports_from",
       "_origin": "ast",
@@ -11507,7 +11265,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/pages/HomePage.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -14123,7 +13881,7 @@
     },
     {
       "source": "frontend_package_devdependencies",
-      "target": "frontend_package_devdependencies_autoprefixer",
+      "target": "frontend_package_devdependencies_typescript",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14134,46 +13892,13 @@
     },
     {
       "source": "frontend_package_devdependencies",
-      "target": "frontend_package_devdependencies_postcss",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/package.json",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_package_devdependencies",
-      "target": "frontend_package_devdependencies_tailwindcss",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/package.json",
-      "source_location": "L22",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_package_devdependencies",
-      "target": "frontend_package_devdependencies_typescript",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/package.json",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_package_devdependencies",
       "target": "frontend_package_devdependencies_vite",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/package.json",
-      "source_location": "L24",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -14218,39 +13943,6 @@
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.tsx",
       "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_components_conferencehero",
-      "target": "frontend_src_components_conferencehero_conferencehero",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_components_conferencehero",
-      "target": "frontend_src_components_conferencehero_hero",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L209",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_components_conferencehero",
-      "target": "frontend_src_components_conferencehero_conferenceheroprops",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/src/components/ConferenceHero.tsx",
-      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -14305,7 +13997,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/components/Header.tsx",
-      "source_location": "L17",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -14316,7 +14008,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/components/Header.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -14431,24 +14123,24 @@
     },
     {
       "source": "frontend_src_pages_homepage",
-      "target": "frontend_src_pages_homepage_homepageprops",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/src/pages/HomePage.tsx",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_pages_homepage",
       "target": "frontend_src_pages_homepage_homepage",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/pages/HomePage.tsx",
-      "source_location": "L20",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_pages_homepage",
+      "target": "frontend_src_pages_homepage_homepageprops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/HomePage.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {

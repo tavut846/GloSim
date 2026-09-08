@@ -3,7 +3,7 @@
   "1": "support.js",
   "2": "contentTypes.d.ts",
   "3": "ImageSlot",
-  "4": "devDependencies",
+  "4": "frontend/package.json",
   "5": "Website Design Plan",
   "6": "compilerOptions",
   "7": "dependencies",
@@ -52,8 +52,5 @@
   "50": "bump-version.js",
   "51": "backend/server.js",
   "52": "get",
-  "53": "backend/package.json",
-  "54": "postcss.config.js",
-  "55": "tailwind.config.js",
-  "56": "tailwindcss"
+  "53": "backend/package.json"
 }

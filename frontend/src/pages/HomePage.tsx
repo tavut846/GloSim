@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Play, ArrowRight, FileText, Globe, Landmark, Award } from 'lucide-react';
 import { HomePageData, Conference, Notice, Locale } from '../types';
+import { ConferenceHero } from '../components/ConferenceHero';
 import { CountdownBanner } from '../components/CountdownBanner';
 import { VideoModal } from '../components/VideoModal';
 import { zhUi } from '../locales/zh';
@@ -72,100 +73,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   return (
     <div>
       {/* 1. Hero Section */}
-      <section style={{
-        padding: '64px 0 56px',
-        backgroundColor: 'var(--limestone)',
-        borderBottom: '1px solid var(--border-default)'
-      }} className="bg-network">
-        <div className="container" style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '48px',
-          alignItems: 'center'
-        }}>
-          {/* Left Column */}
-          <div>
-            <span className="badge-caps" style={{ color: 'var(--symposium-blue)', marginBottom: '12px' }}>
-              {heroEyebrow}
-            </span>
-            <h1 style={{
-              fontSize: 'var(--text-h1)',
-              fontWeight: 'var(--weight-extrabold)',
-              lineHeight: 'var(--leading-tight)',
-              color: 'var(--ink-900)',
-              margin: '12px 0 16px',
-              letterSpacing: '-0.02em'
-            }}>
-              {heroTitle}
-            </h1>
-            <p style={{
-              fontSize: 'var(--text-body-lg)',
-              color: 'var(--ink-700)',
-              lineHeight: 'var(--leading-body)',
-              marginBottom: '12px'
-            }}>
-              {heroSubtitle}
-            </p>
-            <p style={{
-              fontSize: 'var(--text-body-sm)',
-              color: 'var(--symposium-blue)',
-              fontStyle: 'italic',
-              marginBottom: '32px'
-            }}>
-              {heroTagline}
-            </p>
-            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-              <button
-                onClick={() => onNavigate('/schedule')}
-                className="btn-primary"
-              >
-                <span>{heroCtaPrimary}</span>
-                <ArrowRight size={16} />
-              </button>
-              <button
-                onClick={() => onOpenRegister('paper')}
-                className="btn-secondary"
-              >
-                <span>{heroCtaSecondary}</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Right Column */}
-          <div>
-            <div style={{
-              position: 'relative',
-              borderRadius: 'var(--radius-lg)',
-              overflow: 'hidden',
-              boxShadow: 'var(--shadow-raised)',
-              border: '1px solid var(--border-default)',
-              backgroundColor: 'var(--ink-900)'
-            }}>
-              <img
-                src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80"
-                alt="GloSim Plenary Hall"
-                style={{ width: '100%', height: '360px', objectFit: 'cover', opacity: 0.9 }}
-              />
-              <div style={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                padding: '20px 24px',
-                background: 'linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0) 100%)',
-                color: 'var(--white)'
-              }}>
-                <span className="badge-caps" style={{ color: '#93C5FD' }}>
-                  GloSim Assembly Venue
-                </span>
-                <p style={{ fontSize: '14px', fontWeight: 600, marginTop: '4px' }}>
-                  {currentConference?.title || 'Beijing National Convention Center'}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ConferenceHero locale={locale} />
 
       {/* 2. Countdown Banner */}
       {currentConference && (

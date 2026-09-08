@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Locale, NavItem } from '../types';
+import asiasimLogo from '../assets/asiasim.png';
+import glosimLogo from '../assets/glosim.png';
+import heroBgImg from '../assets/background.jpg';
 
 interface HeaderProps {
   currentPath: string;
@@ -44,32 +47,34 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Brand Logo & Title */}
         <div 
           onClick={() => handleNavClick('/')}
-          style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}
+          style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
         >
           <div style={{
-            width: '36px',
-            height: '36px',
-            borderRadius: 'var(--radius-sm)',
-            backgroundColor: 'var(--symposium-blue)',
-            color: 'var(--white)',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 800,
-            fontSize: '14px',
-            letterSpacing: '0.05em'
+            gap: '8px',
+            backgroundColor: '#030d22',
+            backgroundImage: `linear-gradient(to bottom, rgba(3, 13, 34, 0.35), rgba(3, 13, 34, 0.85)), url(${heroBgImg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            padding: '5px 12px',
+            borderRadius: 'var(--radius-sm)',
+            height: '38px',
+            boxSizing: 'border-box',
+            border: '1px solid rgba(56, 189, 248, 0.25)',
+            boxShadow: '0 2px 8px rgba(3, 13, 34, 0.25)'
           }}>
-            IF
+            <img
+              src={asiasimLogo}
+              alt="AsiaSim"
+              style={{ height: '24px', width: 'auto', display: 'block', objectFit: 'contain' }}
+            />
+            <img
+              src={glosimLogo}
+              alt="GloSim"
+              style={{ height: '24px', width: 'auto', display: 'block', objectFit: 'contain' }}
+            />
           </div>
-          <span style={{
-            fontWeight: 'var(--weight-bold)',
-            fontSize: '1.05rem',
-            color: 'var(--ink-900)',
-            whiteSpace: 'nowrap',
-            letterSpacing: '-0.01em'
-          }}>
-            {orgShort || (locale === 'zh-Hans' ? 'GloSim 学会' : 'GloSim Federation')}
-          </span>
         </div>
 
         {/* Desktop Navigation */}

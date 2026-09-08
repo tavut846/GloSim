@@ -1,11 +1,11 @@
-# Graph Report - GloSim  (2026-09-08)
+# Graph Report - GloSim  (2026-09-07)
 
 ## Corpus Check
-- 86 files · ~344,951 words
+- 83 files · ~106,243 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 559 nodes · 870 edges · 57 communities (51 shown, 6 thin omitted)
+- 546 nodes · 856 edges · 54 communities (48 shown, 6 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
@@ -19,7 +19,7 @@
 - support.js
 - contentTypes.d.ts
 - ImageSlot
-- devDependencies
+- frontend/package.json
 - Website Design Plan
 - compilerOptions
 - dependencies
@@ -44,8 +44,8 @@
 - backend/package.json
 
 ## God Nodes (most connected - your core abstractions)
-1. `Locale` - 29 edges
-2. `ImageSlot` - 27 edges
+1. `ImageSlot` - 27 edges
+2. `Locale` - 27 edges
 3. `get()` - 23 edges
 4. `createRuntime()` - 22 edges
 5. `compilerOptions` - 17 edges
@@ -56,8 +56,6 @@
 10. `deploy_services()` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `ConferenceHeroProps` --references--> `Locale`  [EXTRACTED]
-  frontend/src/components/ConferenceHero.tsx → frontend/src/types/index.ts
 - `CountdownBannerProps` --references--> `Conference`  [EXTRACTED]
   frontend/src/components/CountdownBanner.tsx → frontend/src/types/index.ts
 - `RegisterModalProps` --references--> `Locale`  [EXTRACTED]
@@ -66,15 +64,17 @@
   backend/src/index.js → backend/src/bootstrap-seed.js
 - `FooterProps` --references--> `GlobalSettings`  [EXTRACTED]
   frontend/src/components/Footer.tsx → frontend/src/types/index.ts
+- `FooterProps` --references--> `Locale`  [EXTRACTED]
+  frontend/src/components/Footer.tsx → frontend/src/types/index.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (57 total, 6 thin omitted)
+## Communities (54 total, 6 thin omitted)
 
 ### Community 0 - "App.tsx"
-Cohesion: 0.08
-Nodes (41): App(), ConferenceHero(), ConferenceHeroProps, Hero, CountdownBanner(), CountdownBannerProps, Footer(), FooterProps (+33 more)
+Cohesion: 0.09
+Nodes (38): App(), CountdownBanner(), CountdownBannerProps, Footer(), FooterProps, Header(), HeaderProps, RegisterModal() (+30 more)
 
 ### Community 1 - "support.js"
 Cohesion: 0.09
@@ -88,9 +88,9 @@ Nodes (25): AdminApiToken, AdminApiTokenPermission, AdminPermission, AdminRole, 
 Cohesion: 0.13
 Nodes (7): flushNow(), getSlot(), ImageSlot, load(), save(), setSlot(), toDataUrl()
 
-### Community 4 - "devDependencies"
-Cohesion: 0.06
-Nodes (32): autoprefixer, dependencies, lucide-react, react, react-dom, devDependencies, autoprefixer, postcss (+24 more)
+### Community 4 - "frontend/package.json"
+Cohesion: 0.07
+Nodes (26): dependencies, lucide-react, react, react-dom, devDependencies, @types/react, @types/react-dom, typescript (+18 more)
 
 ### Community 5 - "Website Design Plan"
 Cohesion: 0.08
@@ -157,7 +157,7 @@ Cohesion: 0.08
 Nodes (23): description, license, name, optionalDependencies, @img/sharp-libvips-linux-arm64, @img/sharp-libvips-linux-x64, @img/sharp-linux-arm64, @img/sharp-linux-x64 (+15 more)
 
 ## Knowledge Gaps
-- **222 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+217 more)
+- **218 isolated node(s):** `path`, `path`, `dotenv`, `name`, `version` (+213 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -171,9 +171,9 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 7 inferred relationships involving `createRuntime()` (e.g. with `adoptParsed()` and `dcUpdate()`) actually correct?**
   _`createRuntime()` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `path`, `path`, `dotenv` to the rest of the system?**
-  _222 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _218 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `App.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.08364389233954451 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09044289044289044 - nodes in this community are weakly interconnected._
 - **Should `support.js` be split into smaller, more focused modules?**
   _Cohesion score 0.09435707678075855 - nodes in this community are weakly interconnected._
 - **Should `contentTypes.d.ts` be split into smaller, more focused modules?**

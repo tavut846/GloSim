@@ -25,3 +25,5 @@ export default defineConfig(({ mode }) => {
     },
   };
 });
+// Vite config reload trigger
+

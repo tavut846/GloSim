@@ -1,7 +1,7 @@
 # Graph Report - GloSim  (2026-09-08)
 
 ## Corpus Check
-- 86 files · ~344,951 words
+- 86 files · ~345,001 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
