@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "backend/src/api/home-page/content-types/home-page/schema.json": {
-    "mtime": 1788879521.1032493,
-    "seen": 1788879626.4535549,
-    "ast_hash": "e29c0d0c76d9afdb3334c1588b96ad84",
+    "mtime": 1788880587.1006808,
+    "seen": 1788880819.7477148,
+    "ast_hash": "62390cae260b4601f74970221a257b9f",
     "semantic_hash": ""
   },
   "backend/src/api/home-page/controllers/home-page.js": {
@@ -222,9 +222,9 @@
     "semantic_hash": ""
   },
   "backend/src/bootstrap-seed.js": {
-    "mtime": 1788879529.5618672,
-    "seen": 1788879626.4536157,
-    "ast_hash": "1ca3bf501a3bb88d255615733d04b348",
+    "mtime": 1788880598.737854,
+    "seen": 1788880819.7478147,
+    "ast_hash": "561063d2f4c6c52e0bc609d1a161b796",
     "semantic_hash": ""
   },
   "backend/src/components/conference/agenda-item.json": {
@@ -348,9 +348,9 @@
     "semantic_hash": ""
   },
   "frontend/src/pages/HomePage.tsx": {
-    "mtime": 1788879586.9891021,
-    "seen": 1788879626.453686,
-    "ast_hash": "7612cdf8a7e0fe730363f059b264b546",
+    "mtime": 1788880648.4072585,
+    "seen": 1788880819.7479675,
+    "ast_hash": "cdd80e5f474db06c0b6f33e90267f1ec",
     "semantic_hash": ""
   },
   "frontend/src/pages/PastConferencesPage.tsx": {
@@ -366,15 +366,15 @@
     "semantic_hash": ""
   },
   "frontend/src/services/api.ts": {
-    "mtime": 1788841084.9369097,
-    "seen": 1788841285.0810697,
-    "ast_hash": "7d84d037248250359fc15c322d2680ff",
+    "mtime": 1788880614.843619,
+    "seen": 1788880819.7479815,
+    "ast_hash": "6ea3295273f528314e4e51158382b5c2",
     "semantic_hash": ""
   },
   "frontend/src/types/index.ts": {
-    "mtime": 1788879552.488547,
-    "seen": 1788879626.4536953,
-    "ast_hash": "d0b5d0e86342c9eaca9dde5c607f2665",
+    "mtime": 1788880606.4493923,
+    "seen": 1788880819.7479863,
+    "ast_hash": "38bc57cab2990726bbaa172ef8243d13",
     "semantic_hash": ""
   },
   "frontend/src/vite-env.d.ts": {
@@ -492,8 +492,8 @@
     "semantic_hash": ""
   },
   "backend/.strapi-updater.json": {
-    "mtime": 1788879545.000321,
-    "seen": 1788879626.4535072,
+    "mtime": 1788880619.2088065,
+    "seen": 1788880819.7476232,
     "ast_hash": "4ee138fa4d700e95520c22abe2cdaf60",
     "semantic_hash": ""
   },
@@ -510,15 +510,15 @@
     "semantic_hash": ""
   },
   "backend/types/generated/components.d.ts": {
-    "mtime": 1788879549.003709,
-    "seen": 1788879626.4536338,
-    "ast_hash": "85d846c2f1a9e4a14fbbb43a3d6a074a",
+    "mtime": 1788880625.29108,
+    "seen": 1788880819.747856,
+    "ast_hash": "6d769edd4d93c165768d106f39a32056",
     "semantic_hash": ""
   },
   "backend/types/generated/contentTypes.d.ts": {
-    "mtime": 1788879549.0005033,
-    "seen": 1788879626.4536362,
-    "ast_hash": "b5115477a33b59a7f5bfbb30db401059",
+    "mtime": 1788880625.2860746,
+    "seen": 1788880819.747861,
+    "ast_hash": "cced57bfa36a5243c34031916f7e861a",
     "semantic_hash": ""
   },
   "docker/docker-compose.yml": {
@@ -678,9 +678,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/ConferenceHero.tsx": {
-    "mtime": 1788879574.469104,
-    "seen": 1788879626.4536545,
-    "ast_hash": "77e03da2052b030791556b8e77b6f07c",
+    "mtime": 1788880056.0841346,
+    "seen": 1788880126.3843694,
+    "ast_hash": "69bc2c9838ec014077297da1a9c89fed",
     "semantic_hash": ""
   },
   "frontend/public/hero-bg.jpg": {
@@ -723,6 +723,18 @@
     "mtime": 1788843714.7299905,
     "seen": 1788844280.2018688,
     "ast_hash": "414ba15e6eeb4df4a9244d13823c83f0",
+    "semantic_hash": ""
+  },
+  "backend/src/components/home/guest-item.json": {
+    "mtime": 1788880577.0482204,
+    "seen": 1788880819.7478297,
+    "ast_hash": "179cd018db17c252edf18faa7bfa66f1",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/GuestMarqueeSlider.tsx": {
+    "mtime": 1788880629.155115,
+    "seen": 1788880819.7479122,
+    "ast_hash": "a1d2762ce2d1205816872c0212737c7a",
     "semantic_hash": ""
   }
 }

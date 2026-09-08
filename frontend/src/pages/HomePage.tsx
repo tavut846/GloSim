@@ -5,6 +5,7 @@ import { ConferenceHero } from '../components/ConferenceHero';
 import { CountdownBanner } from '../components/CountdownBanner';
 import { WelcomeAddress } from '../components/WelcomeAddress';
 import { VideoModal } from '../components/VideoModal';
+import { GuestMarqueeSlider } from '../components/GuestMarqueeSlider';
 import { zhUi } from '../locales/zh';
 import { enUi } from '../locales/en';
 
@@ -349,6 +350,14 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
       </section>
+
+      {/* Spotlight on Guests: 2025 International Simulation Conference */}
+      <GuestMarqueeSlider
+        locale={locale}
+        title={data?.spotlightTitle}
+        subtitle={data?.spotlightSubtitle}
+        guests={data?.spotlightGuests}
+      />
 
       {/* 5. Latest Notices (CFP) */}
       <section style={{ padding: '64px 0', backgroundColor: 'var(--white)' }}>

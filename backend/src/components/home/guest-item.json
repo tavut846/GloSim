@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_home_guest_items",
+  "info": {
+    "displayName": "GuestItem",
+    "icon": "user",
+    "description": "Guest speaker or dignitary spotlight item"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "affiliation": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "photoUrl": {
+      "type": "string"
+    }
+  }
+}

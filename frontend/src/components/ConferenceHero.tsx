@@ -112,21 +112,21 @@ export function ConferenceHero({ lang, locale, title, subtitle, description }: C
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
               {isZh ? (
                 <>
-                  {/* Primary Title: 世界仿真大会 (Bold, 44px–52px, letter-spacing: 0.08em) */}
-                  <h1 className="text-3xl sm:text-4xl md:text-[46px] lg:text-[50px] font-black tracking-[0.08em] text-white leading-tight drop-shadow-md">
+                  {/* Primary Title: 世界仿真大会 (Unified with EN size) */}
+                  <h1 className="text-2xl sm:text-3xl md:text-[38px] lg:text-[42px] font-black tracking-[0.06em] text-white leading-tight drop-shadow-md">
                     {displayTitle}
                   </h1>
                   
                   {/* Secondary English Title directly below: GLOBAL SIMULATION CONFERENCE */}
                   {displaySubtitle && (
-                    <h2 className="text-base sm:text-lg md:text-xl lg:text-[20px] font-bold tracking-[0.06em] uppercase text-slate-200 mt-2 not-italic">
+                    <h2 className="text-base sm:text-lg md:text-xl lg:text-[20px] font-bold tracking-[0.06em] uppercase text-slate-200 mt-1.5 not-italic">
                       {displaySubtitle}
                     </h2>
                   )}
                   
                   {/* Slogan / Description: AI驱动的全球仿真创新与协同治理 */}
                   {displayDescription && (
-                    <p className="text-sm sm:text-base font-medium text-[#38bdf8] mt-2 drop-shadow">
+                    <p className="text-sm sm:text-base font-medium text-[#38bdf8] mt-1.5 drop-shadow max-w-xl">
                       {displayDescription}
                     </p>
                   )}
@@ -140,14 +140,14 @@ export function ConferenceHero({ lang, locale, title, subtitle, description }: C
                   
                   {/* Secondary Title directly below: 世界仿真大会 */}
                   {displaySubtitle && (
-                    <h2 className="text-base sm:text-lg md:text-xl lg:text-[20px] font-bold tracking-[0.06em] text-slate-200 mt-2">
+                    <h2 className="text-base sm:text-lg md:text-xl lg:text-[20px] font-bold tracking-[0.06em] text-slate-200 mt-1.5">
                       {displaySubtitle}
                     </h2>
                   )}
                   
                   {/* Slogan / Description */}
                   {displayDescription && (
-                    <p className="text-sm sm:text-base font-medium text-[#38bdf8] mt-2 drop-shadow max-w-xl">
+                    <p className="text-sm sm:text-base font-medium text-[#38bdf8] mt-1.5 drop-shadow max-w-xl">
                       {displayDescription}
                     </p>
                   )}
@@ -172,8 +172,8 @@ export function ConferenceHero({ lang, locale, title, subtitle, description }: C
         </div>
 
         {/* Academic Conference Organization Credits */}
-        <div className="w-full mt-6 sm:mt-8 pt-4 border-t border-white/15 text-white/80 text-[11px] sm:text-xs">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+        <div className="w-full mt-4 sm:mt-6 pt-3.5 border-t border-white/15 text-white/80 text-[11px] sm:text-xs">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 lg:gap-7">
             
             {/* 1. Host */}
             <div className="md:col-span-3 flex flex-col gap-1">
@@ -190,7 +190,7 @@ export function ConferenceHero({ lang, locale, title, subtitle, description }: C
               <div className="font-bold tracking-wider uppercase text-xs sm:text-[13px] text-cyan-200/90">
                 {isZh ? '承办单位' : 'ORGANIZERS'}
               </div>
-              <div className="flex flex-col gap-1.5 mt-1 text-white/95 font-medium leading-snug text-[11px] sm:text-xs">
+              <div className="flex flex-col gap-1 mt-1 text-white/95 font-medium leading-snug text-[11px] sm:text-xs">
                 {(isZh ? organizersZh : organizersEn).map((org, idx) => (
                   <div key={idx}>{org}</div>
                 ))}
@@ -202,7 +202,7 @@ export function ConferenceHero({ lang, locale, title, subtitle, description }: C
               <div className="font-bold tracking-wider uppercase text-xs sm:text-[13px] text-cyan-200/90">
                 {isZh ? '协办单位' : 'CO-ORGANIZERS'}
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 mt-1 text-[10px] sm:text-[11px] text-slate-300 leading-snug">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 mt-1 text-[10px] sm:text-[11px] text-slate-300 leading-tight">
                 {(isZh ? coOrganizersZh : coOrganizersEn).map((item, idx) => (
                   <div 
                     key={idx} 

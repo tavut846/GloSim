@@ -33,6 +33,58 @@ const seedData = {
       { number: '140+', label: '顶尖理事院校', icon: 'landmark' },
       { number: '9 届', label: '已成功举办年会', icon: 'award' },
       { number: '3,200+', label: '发表高水平模拟成果', icon: 'file-text' }
+    ],
+    spotlightTitle: '重磅嘉宾回顾 · 2025世界仿真大会',
+    spotlightSubtitle: '汇聚全球顶尖仿真科学家、知名学者与国际组织代表，共同见证仿真科技范式跃迁',
+    spotlightGuests: [
+      {
+        name: '张霖 教授',
+        title: '大会总主席 · 亚洲仿真联盟主席',
+        affiliation: '北京航空航天大学',
+        photoUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        name: 'Dr. Eleanor Vance',
+        title: '特邀主旨演讲嘉宾',
+        affiliation: '牛津大学 纳菲尔德学院',
+        photoUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        name: '李承载 教授',
+        title: '计算决策分论坛主席',
+        affiliation: '新加坡国立大学 李光耀公共政策学院',
+        photoUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        name: 'Prof. Takao Terano',
+        title: '国际学术顾问委员会委员',
+        affiliation: '东京工业大学 / 日本仿真学会 (JSST)',
+        photoUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        name: 'Prof. Agostino Bruzzone',
+        title: '复杂系统仿真先锋',
+        affiliation: '热那亚大学 / 欧洲仿真联盟 (EUROSIM)',
+        photoUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        name: 'Dr. Marcus Thorne',
+        title: '生成式数字孪生实验室主任',
+        affiliation: 'MIT Media Lab / SCS Fellow',
+        photoUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        name: '王军平 教授',
+        title: '虚拟仿真与沉浸交互首席科学家',
+        affiliation: '虚拟现实技术与系统全国重点实验室',
+        photoUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        name: 'Dr. Sophie Laurent',
+        title: '多边协商推演分会主席',
+        affiliation: '巴黎政治大学 (Sciences Po)',
+        photoUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80'
+      }
     ]
   },
   orgOverview: {

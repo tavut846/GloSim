@@ -654,6 +654,24 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
           localized: true;
         };
       }>;
+    spotlightGuests: Attribute.Component<'home.guest-item', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    spotlightSubtitle: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    spotlightTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<
       'api::home-page.home-page',

@@ -74,6 +74,38 @@ export interface ConferenceSpeakerItem extends Schema.Component {
   };
 }
 
+export interface HomeGuestItem extends Schema.Component {
+  collectionName: 'components_home_guest_items';
+  info: {
+    description: 'Guest speaker or dignitary spotlight item';
+    displayName: 'GuestItem';
+    icon: 'user';
+  };
+  attributes: {
+    affiliation: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    photo: Attribute.Media<'images'>;
+    photoUrl: Attribute.String;
+    title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
 export interface HomeHighlightItem extends Schema.Component {
   collectionName: 'components_home_highlight_items';
   info: {
@@ -129,6 +161,7 @@ declare module '@strapi/types' {
     export interface Components {
       'conference.agenda-item': ConferenceAgendaItem;
       'conference.speaker-item': ConferenceSpeakerItem;
+      'home.guest-item': HomeGuestItem;
       'home.highlight-item': HomeHighlightItem;
       'shared.nav-item': SharedNavItem;
       'shared.social-link': SharedSocialLink;

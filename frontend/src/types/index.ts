@@ -102,6 +102,15 @@ export interface GlobalSettings {
   logo?: any;
 }
 
+export interface GuestItem {
+  id?: string | number;
+  name: string;
+  title?: string;
+  affiliation?: string;
+  photo?: any;
+  photoUrl?: string;
+}
+
 export interface HomePageData {
   heroEyebrow?: string;
   heroTitle: string;
@@ -120,6 +129,9 @@ export interface HomePageData {
   chairmanVideo?: any;
   chairmanVideoUrl?: string;
   highlights?: HighlightStat[];
+  spotlightTitle?: string;
+  spotlightSubtitle?: string;
+  spotlightGuests?: GuestItem[];
 }
 
 export interface OrgOverviewData {

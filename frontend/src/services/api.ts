@@ -70,7 +70,7 @@ class ApiService {
 
   // 2. Home Page Data
   async getHomePage(locale: Locale): Promise<HomePageData | null> {
-    const res = await this.get('home-page', locale);
+    const res = await this.get('home-page?populate[spotlightGuests][populate]=*', locale);
     return this.unwrapSingle<HomePageData>(res);
   }
 

@@ -137,6 +137,32 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::conference.conference"
+    },
+    "spotlightTitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "spotlightSubtitle": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "spotlightGuests": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.guest-item",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
