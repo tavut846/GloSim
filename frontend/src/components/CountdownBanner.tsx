@@ -27,36 +27,63 @@ export const CountdownBanner: React.FC<CountdownBannerProps> = ({
 
   const isEn = locale === 'en';
 
-  // Calculate days left to target start date
-  const [daysLeft, setDaysLeft] = useState(40);
+  // Calculate days left to target start date from backend conference
+  const [daysLeft, setDaysLeft] = useState<number>(() => {
+    if (!conference?.startDate) return 0;
+    try {
+      const target = new Date(`${conference.startDate}T09:00:00+08:00`).getTime();
+      const now = Date.now();
+      const diff = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
+      return Math.max(0, diff);
+    } catch {
+      return 0;
+    }
+  });
 
   useEffect(() => {
+    if (!conference?.startDate) return;
     try {
-      const target = new Date(conference.startDate).getTime();
-      const now = new Date().getTime();
-      const diff = Math.max(0, Math.ceil((target - now) / (1000 * 60 * 60 * 24)));
-      setDaysLeft(diff > 0 ? diff : 40);
+      const target = new Date(`${conference.startDate}T09:00:00+08:00`).getTime();
+      const now = Date.now();
+      const diff = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
+      setDaysLeft(Math.max(0, diff));
     } catch {
-      setDaysLeft(40);
+      setDaysLeft(0);
     }
-  }, [conference.startDate]);
+  }, [conference?.startDate]);
 
-  // Robust bilingual mapping
+  // Robust dynamic conference data mapping from backend
+  const defaultEditionZh = '第十届年会';
+  const defaultEditionEn = '10th Annual Assembly';
+  const rawEdition = conference.edition || (isEn ? defaultEditionEn : defaultEditionZh);
   const edition = isEn
-    ? (conference.edition.includes('第十届') ? '10th Annual Assembly' : conference.edition)
-    : conference.edition;
+    ? (rawEdition.includes('第十届') ? '10th Annual Assembly' : rawEdition)
+    : rawEdition;
 
+  const defaultTitleZh = '世界仿真大会（GloSim 2026）';
+  const defaultTitleEn = '10th Global Simulation Conference (GloSim 2026)';
+  const rawTitle = conference.title || (isEn ? defaultTitleEn : defaultTitleZh);
   const title = isEn
-    ? (conference.title.includes('第十届') ? '10th Global Simulation Conference (GloSim 2026)' : conference.title)
-    : conference.title;
+    ? (/[\u4e00-\u9fa5]/.test(rawTitle) ? '10th Global Simulation Conference (GloSim 2026)' : rawTitle)
+    : rawTitle;
 
+  const defaultLocationZh = '中国 · 杭州';
+  const defaultLocationEn = 'Hangzhou, China';
+  const rawLocation = conference.location || (isEn ? defaultLocationEn : defaultLocationZh);
   const location = isEn
-    ? (conference.location.includes('北京') ? 'Beijing, China' : conference.location)
-    : conference.location;
+    ? (/[\u4e00-\u9fa5]/.test(rawLocation) 
+        ? (rawLocation.includes('杭州') ? 'Hangzhou, China' : (rawLocation.includes('北京') ? 'Beijing, China' : 'Hangzhou, China')) 
+        : rawLocation)
+    : rawLocation;
 
+  const defaultVenueZh = '杭州市北京航空航天大学国际创新研究院';
+  const defaultVenueEn = 'Hangzhou International Innovation Institute of Beihang University';
+  const rawVenue = conference.venue || (isEn ? defaultVenueEn : defaultVenueZh);
   const venue = isEn
-    ? (conference.venue.includes('国家会议中心') ? 'China National Convention Center · Auditorium 3' : conference.venue)
-    : conference.venue;
+    ? (/[\u4e00-\u9fa5]/.test(rawVenue) 
+        ? (rawVenue.includes('创新研究院') || rawVenue.includes('北航') ? 'Hangzhou International Innovation Institute of Beihang University' : (rawVenue.includes('国家会议中心') ? 'China National Convention Center · Auditorium 3' : rawVenue)) 
+        : rawVenue)
+    : rawVenue;
 
   return (
     <section style={{
@@ -81,7 +108,7 @@ export const CountdownBanner: React.FC<CountdownBannerProps> = ({
             color: 'rgba(255, 255, 255, 0.75)',
             fontWeight: 600
           }}>
-            {eyebrow} · {edition}
+            {eyebrow}{edition ? ` · ${edition}` : ''}
           </span>
           <h3 style={{
             margin: '4px 0 6px',

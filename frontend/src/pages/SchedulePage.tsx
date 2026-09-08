@@ -11,17 +11,50 @@ interface SchedulePageProps {
 
 export const SchedulePage: React.FC<SchedulePageProps> = ({
   locale,
+  conference,
   onOpenRegister
 }) => {
   const isZh = locale === 'zh-Hans';
 
-  // Calculate days remaining to conference opening (2026-11-13)
+  // Calculate days remaining to conference opening dynamically from backend conference
   const daysLeft = useMemo(() => {
-    const target = new Date('2026-11-13T09:00:00+08:00').getTime();
-    const now = new Date().getTime();
-    const diff = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
-    return diff > 0 ? diff : 0;
-  }, []);
+    const dateStr = conference?.startDate || '2026-11-13';
+    try {
+      const target = new Date(`${dateStr}T09:00:00+08:00`).getTime();
+      const now = Date.now();
+      const diff = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
+      return Math.max(0, diff);
+    } catch {
+      return 0;
+    }
+  }, [conference?.startDate]);
+
+  // Dynamic conference info from backend
+  const confTitle = conference?.title || (isZh ? '2026世界仿真大会' : 'GloSim 2026 Conference');
+  const confStartDate = conference?.startDate || '2026-11-13';
+  const confEndDate = conference?.endDate || '2026-11-16';
+  const confLocation = conference?.location || (isZh ? '中国 · 杭州' : 'Hangzhou, China');
+
+  // Format date range e.g. "2026.11.13–16 · 杭州" or "Nov 13–16, 2026 · Hangzhou"
+  const formattedDateAndCity = useMemo(() => {
+    try {
+      const startParts = confStartDate.split('-');
+      const endParts = confEndDate.split('-');
+      const city = isZh 
+        ? confLocation.replace(/^中国\s*·\s*/, '') 
+        : (confLocation.includes('Hangzhou') ? 'Hangzhou' : confLocation);
+
+      if (isZh) {
+        return `${startParts[0]}.${startParts[1]}.${startParts[2]}–${endParts[2]} · ${city}`;
+      } else {
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const m = months[parseInt(startParts[1], 10) - 1] || 'Nov';
+        return `${m} ${startParts[2]}–${endParts[2]}, ${startParts[0]} · ${city}`;
+      }
+    } catch {
+      return isZh ? '2026.11.13–16 · 杭州' : 'Nov 13–16, 2026 · Hangzhou';
+    }
+  }, [confStartDate, confEndDate, confLocation, isZh]);
 
   const parallelForumsZh = [
     '1. 物理AI、智能仿真与数据治理专题论坛',
@@ -278,7 +311,7 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({
 
               {/* Lead-in Text */}
               <div className="text-xs sm:text-sm text-slate-200 font-medium mb-2 tracking-wide">
-                {isZh ? '距离2026世界仿真大会开幕还有' : 'Remaining until GloSim 2026 Opening'}
+                {isZh ? `距离${confTitle}开幕还有` : `Remaining until ${confTitle} Opening`}
               </div>
 
               {/* Digital Glass Display Plate */}
@@ -294,7 +327,7 @@ export const SchedulePage: React.FC<SchedulePageProps> = ({
               {/* Bottom Date Anchor */}
               <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-center gap-2 text-xs text-cyan-200/90 font-medium">
                 <Calendar className="w-3.5 h-3.5 text-cyan-300" />
-                <span>{isZh ? '2026.11.13–16 · 杭州' : 'Nov 13–16, 2026 · Hangzhou'}</span>
+                <span>{formattedDateAndCity}</span>
               </div>
             </div>
 

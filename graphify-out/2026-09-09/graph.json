@@ -5514,92 +5514,103 @@
       "source_location": "L1"
     },
     {
-      "id": "scripts_update_db_conference",
-      "label": "update_db_conference.js",
+      "id": "backend_package_optionaldependencies",
+      "label": "optionalDependencies",
       "_origin": "ast",
       "community": 52,
-      "community_name": "update_db_conference.js",
+      "community_name": "optionalDependencies",
       "file_type": "code",
-      "norm_label": "update_db_conference.js",
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L1"
+      "norm_label": "optionaldependencies",
+      "source_file": "backend/package.json",
+      "source_location": "L33"
     },
     {
-      "id": "scripts_update_db_conference_database",
-      "label": "Database",
+      "id": "backend_package_optionaldependencies_img_sharp_libvips_linux_arm64",
+      "label": "@img/sharp-libvips-linux-arm64",
       "_origin": "ast",
       "community": 52,
-      "community_name": "update_db_conference.js",
+      "community_name": "optionalDependencies",
       "file_type": "code",
-      "norm_label": "database",
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L1"
+      "norm_label": "@img/sharp-libvips-linux-arm64",
+      "source_file": "backend/package.json",
+      "source_location": "L37"
     },
     {
-      "id": "scripts_update_db_conference_db",
-      "label": "db",
+      "id": "backend_package_optionaldependencies_img_sharp_libvips_linux_x64",
+      "label": "@img/sharp-libvips-linux-x64",
       "_origin": "ast",
       "community": 52,
-      "community_name": "update_db_conference.js",
+      "community_name": "optionalDependencies",
       "file_type": "code",
-      "norm_label": "db",
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L5"
+      "norm_label": "@img/sharp-libvips-linux-x64",
+      "source_file": "backend/package.json",
+      "source_location": "L36"
     },
     {
-      "id": "scripts_update_db_conference_dbpath",
-      "label": "dbPath",
+      "id": "backend_package_optionaldependencies_img_sharp_linux_arm64",
+      "label": "@img/sharp-linux-arm64",
       "_origin": "ast",
       "community": 52,
-      "community_name": "update_db_conference.js",
+      "community_name": "optionalDependencies",
       "file_type": "code",
-      "norm_label": "dbpath",
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L4"
+      "norm_label": "@img/sharp-linux-arm64",
+      "source_file": "backend/package.json",
+      "source_location": "L35"
     },
     {
-      "id": "scripts_update_db_conference_info",
-      "label": "info",
+      "id": "backend_package_optionaldependencies_img_sharp_linux_x64",
+      "label": "@img/sharp-linux-x64",
       "_origin": "ast",
       "community": 52,
-      "community_name": "update_db_conference.js",
+      "community_name": "optionalDependencies",
       "file_type": "code",
-      "norm_label": "info",
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L17"
+      "norm_label": "@img/sharp-linux-x64",
+      "source_file": "backend/package.json",
+      "source_location": "L34"
     },
     {
-      "id": "scripts_update_db_conference_path",
-      "label": "path",
+      "id": "img_sharp_libvips_linux_arm64",
+      "label": "@img/sharp-libvips-linux-arm64",
       "_origin": "ast",
       "community": 52,
-      "community_name": "update_db_conference.js",
-      "file_type": "code",
-      "norm_label": "path",
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L2"
+      "community_name": "optionalDependencies",
+      "file_type": "concept",
+      "norm_label": "@img/sharp-libvips-linux-arm64",
+      "source_file": "backend/package.json",
+      "source_location": "L37"
     },
     {
-      "id": "scripts_update_db_conference_row",
-      "label": "row",
+      "id": "img_sharp_libvips_linux_x64",
+      "label": "@img/sharp-libvips-linux-x64",
       "_origin": "ast",
       "community": 52,
-      "community_name": "update_db_conference.js",
-      "file_type": "code",
-      "norm_label": "row",
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L20"
+      "community_name": "optionalDependencies",
+      "file_type": "concept",
+      "norm_label": "@img/sharp-libvips-linux-x64",
+      "source_file": "backend/package.json",
+      "source_location": "L36"
     },
     {
-      "id": "scripts_update_db_conference_stmt",
-      "label": "stmt",
+      "id": "img_sharp_linux_arm64",
+      "label": "@img/sharp-linux-arm64",
       "_origin": "ast",
       "community": 52,
-      "community_name": "update_db_conference.js",
-      "file_type": "code",
-      "norm_label": "stmt",
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L7"
+      "community_name": "optionalDependencies",
+      "file_type": "concept",
+      "norm_label": "@img/sharp-linux-arm64",
+      "source_file": "backend/package.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "img_sharp_linux_x64",
+      "label": "@img/sharp-linux-x64",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "optionalDependencies",
+      "file_type": "concept",
+      "norm_label": "@img/sharp-linux-x64",
+      "source_file": "backend/package.json",
+      "source_location": "L34"
     },
     {
       "id": "backend_package",
@@ -5644,61 +5655,6 @@
       "norm_label": "name",
       "source_file": "backend/package.json",
       "source_location": "L2"
-    },
-    {
-      "id": "backend_package_optionaldependencies",
-      "label": "optionalDependencies",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "code",
-      "norm_label": "optionaldependencies",
-      "source_file": "backend/package.json",
-      "source_location": "L33"
-    },
-    {
-      "id": "backend_package_optionaldependencies_img_sharp_libvips_linux_arm64",
-      "label": "@img/sharp-libvips-linux-arm64",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "code",
-      "norm_label": "@img/sharp-libvips-linux-arm64",
-      "source_file": "backend/package.json",
-      "source_location": "L37"
-    },
-    {
-      "id": "backend_package_optionaldependencies_img_sharp_libvips_linux_x64",
-      "label": "@img/sharp-libvips-linux-x64",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "code",
-      "norm_label": "@img/sharp-libvips-linux-x64",
-      "source_file": "backend/package.json",
-      "source_location": "L36"
-    },
-    {
-      "id": "backend_package_optionaldependencies_img_sharp_linux_arm64",
-      "label": "@img/sharp-linux-arm64",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "code",
-      "norm_label": "@img/sharp-linux-arm64",
-      "source_file": "backend/package.json",
-      "source_location": "L35"
-    },
-    {
-      "id": "backend_package_optionaldependencies_img_sharp_linux_x64",
-      "label": "@img/sharp-linux-x64",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "code",
-      "norm_label": "@img/sharp-linux-x64",
-      "source_file": "backend/package.json",
-      "source_location": "L34"
     },
     {
       "id": "backend_package_overrides",
@@ -5756,61 +5712,6 @@
       "source_location": "L4"
     },
     {
-      "id": "backend_package_scripts",
-      "label": "scripts",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "code",
-      "norm_label": "scripts",
-      "source_file": "backend/package.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "backend_package_scripts_build",
-      "label": "build",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "code",
-      "norm_label": "build",
-      "source_file": "backend/package.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "backend_package_scripts_develop",
-      "label": "develop",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "code",
-      "norm_label": "develop",
-      "source_file": "backend/package.json",
-      "source_location": "L7"
-    },
-    {
-      "id": "backend_package_scripts_start",
-      "label": "start",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "code",
-      "norm_label": "start",
-      "source_file": "backend/package.json",
-      "source_location": "L8"
-    },
-    {
-      "id": "backend_package_scripts_strapi",
-      "label": "strapi",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "code",
-      "norm_label": "strapi",
-      "source_file": "backend/package.json",
-      "source_location": "L10"
-    },
-    {
       "id": "backend_package_version",
       "label": "version",
       "_origin": "ast",
@@ -5820,50 +5721,6 @@
       "norm_label": "version",
       "source_file": "backend/package.json",
       "source_location": "L3"
-    },
-    {
-      "id": "img_sharp_libvips_linux_arm64",
-      "label": "@img/sharp-libvips-linux-arm64",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "concept",
-      "norm_label": "@img/sharp-libvips-linux-arm64",
-      "source_file": "backend/package.json",
-      "source_location": "L37"
-    },
-    {
-      "id": "img_sharp_libvips_linux_x64",
-      "label": "@img/sharp-libvips-linux-x64",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "concept",
-      "norm_label": "@img/sharp-libvips-linux-x64",
-      "source_file": "backend/package.json",
-      "source_location": "L36"
-    },
-    {
-      "id": "img_sharp_linux_arm64",
-      "label": "@img/sharp-linux-arm64",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "concept",
-      "norm_label": "@img/sharp-linux-arm64",
-      "source_file": "backend/package.json",
-      "source_location": "L35"
-    },
-    {
-      "id": "img_sharp_linux_x64",
-      "label": "@img/sharp-linux-x64",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "backend/package.json",
-      "file_type": "concept",
-      "norm_label": "@img/sharp-linux-x64",
-      "source_file": "backend/package.json",
-      "source_location": "L34"
     },
     {
       "id": "frontend_postcss_config",
@@ -5897,6 +5754,105 @@
       "file_type": "code",
       "norm_label": "tailwindcss",
       "source_file": "tailwindcss"
+    },
+    {
+      "id": "backend_package_scripts",
+      "label": "scripts",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "scripts",
+      "file_type": "code",
+      "norm_label": "scripts",
+      "source_file": "backend/package.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "backend_package_scripts_build",
+      "label": "build",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "scripts",
+      "file_type": "code",
+      "norm_label": "build",
+      "source_file": "backend/package.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "backend_package_scripts_develop",
+      "label": "develop",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "scripts",
+      "file_type": "code",
+      "norm_label": "develop",
+      "source_file": "backend/package.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "backend_package_scripts_start",
+      "label": "start",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "scripts",
+      "file_type": "code",
+      "norm_label": "start",
+      "source_file": "backend/package.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "backend_package_scripts_strapi",
+      "label": "strapi",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "scripts",
+      "file_type": "code",
+      "norm_label": "strapi",
+      "source_file": "backend/package.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "backend_package_dependencies_date_fns",
+      "label": "date-fns",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "date-fns",
+      "file_type": "code",
+      "norm_label": "date-fns",
+      "source_file": "backend/package.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "backend_package_json_date_fns",
+      "label": "date-fns",
+      "_origin": "ast",
+      "community": 58,
+      "community_name": "date-fns",
+      "file_type": "concept",
+      "norm_label": "date-fns",
+      "source_file": "backend/package.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "backend_package_dependencies_date_fns_tz",
+      "label": "date-fns-tz",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "date-fns-tz",
+      "file_type": "code",
+      "norm_label": "date-fns-tz",
+      "source_file": "backend/package.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "backend_package_json_date_fns_tz",
+      "label": "date-fns-tz",
+      "_origin": "ast",
+      "community": 59,
+      "community_name": "date-fns-tz",
+      "file_type": "concept",
+      "norm_label": "date-fns-tz",
+      "source_file": "backend/package.json",
+      "source_location": "L19"
     },
     {
       "id": "frontend_tsconfig",
@@ -6163,6 +6119,116 @@
       "source_location": "L18"
     },
     {
+      "id": "backend_package_dependencies_ajv",
+      "label": "ajv",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "ajv",
+      "file_type": "code",
+      "norm_label": "ajv",
+      "source_file": "backend/package.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "ajv",
+      "label": "ajv",
+      "_origin": "ast",
+      "community": 60,
+      "community_name": "ajv",
+      "file_type": "concept",
+      "norm_label": "ajv",
+      "source_file": "backend/package.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "backend_package_dependencies_react",
+      "label": "react",
+      "_origin": "ast",
+      "community": 61,
+      "community_name": "react",
+      "file_type": "code",
+      "norm_label": "react",
+      "source_file": "backend/package.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "backend_package_json_react",
+      "label": "react",
+      "_origin": "ast",
+      "community": 61,
+      "community_name": "react",
+      "file_type": "concept",
+      "norm_label": "react",
+      "source_file": "backend/package.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "backend_package_dependencies_react_dom",
+      "label": "react-dom",
+      "_origin": "ast",
+      "community": 62,
+      "community_name": "react-dom",
+      "file_type": "code",
+      "norm_label": "react-dom",
+      "source_file": "backend/package.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "backend_package_json_react_dom",
+      "label": "react-dom",
+      "_origin": "ast",
+      "community": 62,
+      "community_name": "react-dom",
+      "file_type": "concept",
+      "norm_label": "react-dom",
+      "source_file": "backend/package.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "backend_package_dependencies_strapi_plugin_users_permissions",
+      "label": "@strapi/plugin-users-permissions",
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "@strapi/plugin-users-permissions",
+      "file_type": "code",
+      "norm_label": "@strapi/plugin-users-permissions",
+      "source_file": "backend/package.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "strapi_plugin_users_permissions",
+      "label": "@strapi/plugin-users-permissions",
+      "_origin": "ast",
+      "community": 63,
+      "community_name": "@strapi/plugin-users-permissions",
+      "file_type": "concept",
+      "norm_label": "@strapi/plugin-users-permissions",
+      "source_file": "backend/package.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "backend_package_dependencies_strapi_strapi",
+      "label": "@strapi/strapi",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "@strapi/strapi",
+      "file_type": "code",
+      "norm_label": "@strapi/strapi",
+      "source_file": "backend/package.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "strapi_strapi",
+      "label": "@strapi/strapi",
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "@strapi/strapi",
+      "file_type": "concept",
+      "norm_label": "@strapi/strapi",
+      "source_file": "backend/package.json",
+      "source_location": "L15"
+    },
+    {
       "id": "backend_package_dependencies",
       "label": "dependencies",
       "_origin": "ast",
@@ -6174,17 +6240,6 @@
       "source_location": "L12"
     },
     {
-      "id": "backend_package_dependencies_ajv",
-      "label": "ajv",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "ajv",
-      "source_file": "backend/package.json",
-      "source_location": "L16"
-    },
-    {
       "id": "backend_package_dependencies_better_sqlite3",
       "label": "better-sqlite3",
       "_origin": "ast",
@@ -6194,28 +6249,6 @@
       "norm_label": "better-sqlite3",
       "source_file": "backend/package.json",
       "source_location": "L17"
-    },
-    {
-      "id": "backend_package_dependencies_date_fns",
-      "label": "date-fns",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "date-fns",
-      "source_file": "backend/package.json",
-      "source_location": "L18"
-    },
-    {
-      "id": "backend_package_dependencies_date_fns_tz",
-      "label": "date-fns-tz",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "date-fns-tz",
-      "source_file": "backend/package.json",
-      "source_location": "L19"
     },
     {
       "id": "backend_package_dependencies_dotenv",
@@ -6238,28 +6271,6 @@
       "norm_label": "pg",
       "source_file": "backend/package.json",
       "source_location": "L21"
-    },
-    {
-      "id": "backend_package_dependencies_react",
-      "label": "react",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "react",
-      "source_file": "backend/package.json",
-      "source_location": "L22"
-    },
-    {
-      "id": "backend_package_dependencies_react_dom",
-      "label": "react-dom",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "react-dom",
-      "source_file": "backend/package.json",
-      "source_location": "L23"
     },
     {
       "id": "backend_package_dependencies_react_router_dom",
@@ -6295,28 +6306,6 @@
       "source_location": "L13"
     },
     {
-      "id": "backend_package_dependencies_strapi_plugin_users_permissions",
-      "label": "@strapi/plugin-users-permissions",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "@strapi/plugin-users-permissions",
-      "source_file": "backend/package.json",
-      "source_location": "L14"
-    },
-    {
-      "id": "backend_package_dependencies_strapi_strapi",
-      "label": "@strapi/strapi",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "@strapi/strapi",
-      "source_file": "backend/package.json",
-      "source_location": "L15"
-    },
-    {
       "id": "backend_package_dependencies_styled_components",
       "label": "styled-components",
       "_origin": "ast",
@@ -6326,61 +6315,6 @@
       "norm_label": "styled-components",
       "source_file": "backend/package.json",
       "source_location": "L26"
-    },
-    {
-      "id": "ajv",
-      "label": "ajv",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "concept",
-      "norm_label": "ajv",
-      "source_file": "backend/package.json",
-      "source_location": "L16"
-    },
-    {
-      "id": "backend_package_json_date_fns",
-      "label": "date-fns",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "concept",
-      "norm_label": "date-fns",
-      "source_file": "backend/package.json",
-      "source_location": "L18"
-    },
-    {
-      "id": "backend_package_json_date_fns_tz",
-      "label": "date-fns-tz",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "concept",
-      "norm_label": "date-fns-tz",
-      "source_file": "backend/package.json",
-      "source_location": "L19"
-    },
-    {
-      "id": "backend_package_json_react",
-      "label": "react",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "concept",
-      "norm_label": "react",
-      "source_file": "backend/package.json",
-      "source_location": "L22"
-    },
-    {
-      "id": "backend_package_json_react_dom",
-      "label": "react-dom",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "concept",
-      "norm_label": "react-dom",
-      "source_file": "backend/package.json",
-      "source_location": "L23"
     },
     {
       "id": "better_sqlite3",
@@ -6447,28 +6381,6 @@
       "norm_label": "@strapi/plugin-i18n",
       "source_file": "backend/package.json",
       "source_location": "L13"
-    },
-    {
-      "id": "strapi_plugin_users_permissions",
-      "label": "@strapi/plugin-users-permissions",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "concept",
-      "norm_label": "@strapi/plugin-users-permissions",
-      "source_file": "backend/package.json",
-      "source_location": "L14"
-    },
-    {
-      "id": "strapi_strapi",
-      "label": "@strapi/strapi",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "dependencies",
-      "file_type": "concept",
-      "norm_label": "@strapi/strapi",
-      "source_file": "backend/package.json",
-      "source_location": "L15"
     },
     {
       "id": "styled_components",
@@ -16376,83 +16288,6 @@
       "weight": 1.0
     },
     {
-      "source": "scripts_update_db_conference",
-      "target": "scripts_update_db_conference_database",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_update_db_conference",
-      "target": "scripts_update_db_conference_info",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_update_db_conference",
-      "target": "scripts_update_db_conference_path",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_update_db_conference",
-      "target": "scripts_update_db_conference_row",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_update_db_conference",
-      "target": "scripts_update_db_conference_dbpath",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_update_db_conference",
-      "target": "scripts_update_db_conference_db",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "scripts_update_db_conference",
-      "target": "scripts_update_db_conference_stmt",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "scripts/update_db_conference.js",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
       "source": "docker_glosim_deploy",
       "target": "docker_glosim_deploy_check_docker",
       "relation": "defines",
@@ -17276,5 +17111,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f8aaf5fb0b5a98d7d1c940258efe5e9e3ecfcd01"
+  "built_at_commit": "8845594be5796f82b78d12a89a6412039e50020f"
 }
