@@ -64,7 +64,7 @@ export const WelcomeAddress: React.FC<WelcomeAddressProps> = ({ locale }) => {
                   <img 
                     src={signatureImg} 
                     alt="张霖 签名" 
-                    className="h-14 sm:h-16 w-auto object-contain"
+                    className="h-[70px] sm:h-20 w-auto object-contain"
                   />
                 </div>
                 <div className="font-bold text-base sm:text-lg text-slate-900">
@@ -131,7 +131,7 @@ export const WelcomeAddress: React.FC<WelcomeAddressProps> = ({ locale }) => {
                   <img 
                     src={signatureImg} 
                     alt="Lin Zhang Signature" 
-                    className="h-14 sm:h-16 w-auto object-contain"
+                    className="h-[70px] sm:h-20 w-auto object-contain"
                   />
                 </div>
                 <div className="font-bold text-base sm:text-lg text-slate-900">

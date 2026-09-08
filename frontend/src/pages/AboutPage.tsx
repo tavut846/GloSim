@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Landmark } from 'lucide-react';
 import { OrgOverviewData, Leader, MemberInstitution, Locale } from '../types';
+import { HeroHeader } from '../components/HeroHeader';
 import { zhUi } from '../locales/zh';
 import { enUi } from '../locales/en';
 
@@ -45,32 +46,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({
   return (
     <div style={{ backgroundColor: 'var(--white)' }}>
       {/* Header Banner */}
-      <section style={{
-        padding: '56px 0 48px',
-        backgroundColor: 'var(--limestone)',
-        borderBottom: '1px solid var(--border-default)'
-      }} className="bg-network">
-        <div className="container" style={{ maxWidth: '900px', textAlign: 'center' }}>
-          <span className="badge-caps" style={{ color: 'var(--symposium-blue)', marginBottom: '8px' }}>
-            {ui.about.eyebrow}
-          </span>
-          <h1 style={{
-            fontSize: 'var(--text-h1)',
-            fontWeight: 'var(--weight-extrabold)',
-            color: 'var(--ink-900)',
-            margin: '12px 0 16px'
-          }}>
-            {title}
-          </h1>
-          <p style={{
-            fontSize: 'var(--text-body-lg)',
-            color: 'var(--ink-700)',
-            lineHeight: 'var(--leading-body)'
-          }}>
-            {subtitle}
-          </p>
-        </div>
-      </section>
+      <HeroHeader
+        locale={locale}
+        activePageTitle={isZh ? '组织机构' : 'Organization'}
+        compact={true}
+      />
 
       {/* 1. Overview & Charter */}
       <section style={{ padding: '64px 0', borderBottom: '1px solid var(--border-default)' }}>

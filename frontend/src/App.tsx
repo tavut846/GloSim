@@ -192,7 +192,7 @@ export const App: React.FC = () => {
             onOpenRegister={(type) => setRegisterModal({ isOpen: true, type })}
           />
         )}
-        {currentPath === '/about' && (
+        {(currentPath === '/about' || currentPath === '/organization') && (
           <AboutPage
             data={orgOverview}
             locale={locale}

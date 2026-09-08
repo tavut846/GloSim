@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FileText, Download, ArrowRight } from 'lucide-react';
 import { Notice, Locale } from '../types';
+import { HeroHeader } from '../components/HeroHeader';
 import { zhUi } from '../locales/zh';
 import { enUi } from '../locales/en';
 
@@ -36,41 +37,11 @@ export const CallForPapersPage: React.FC<CallForPapersPageProps> = ({
   return (
     <div style={{ backgroundColor: 'var(--white)' }}>
       {/* Header Banner */}
-      <section style={{
-        padding: '56px 0 48px',
-        backgroundColor: 'var(--limestone)',
-        borderBottom: '1px solid var(--border-default)'
-      }} className="bg-network">
-        <div className="container" style={{ maxWidth: '900px', textAlign: 'center' }}>
-          <span className="badge-caps" style={{ color: 'var(--symposium-blue)', marginBottom: '8px' }}>
-            {ui.cfp.eyebrow}
-          </span>
-          <h1 style={{
-            fontSize: 'var(--text-h1)',
-            fontWeight: 'var(--weight-extrabold)',
-            color: 'var(--ink-900)',
-            margin: '12px 0 16px'
-          }}>
-            {ui.cfp.title}
-          </h1>
-          <p style={{
-            fontSize: 'var(--text-body-lg)',
-            color: 'var(--ink-700)',
-            lineHeight: 'var(--leading-body)',
-            marginBottom: '24px'
-          }}>
-            {ui.cfp.subtitle}
-          </p>
-          <button
-            onClick={() => onOpenRegister('paper')}
-            className="btn-primary"
-            style={{ padding: '12px 28px' }}
-          >
-            <span>{ui.cfp.submitCta}</span>
-            <ArrowRight size={16} />
-          </button>
-        </div>
-      </section>
+      <HeroHeader
+        locale={locale}
+        activePageTitle={isZh ? '论文征集' : 'Call for Papers'}
+        compact={true}
+      />
 
       {/* Main Content */}
       <section style={{ padding: '56px 0 72px' }}>
@@ -202,6 +173,15 @@ export const CallForPapersPage: React.FC<CallForPapersPageProps> = ({
                     </div>
                   </div>
                 )}
+
+                <button
+                  onClick={() => onOpenRegister('paper')}
+                  className="btn-primary"
+                  style={{ width: '100%', padding: '12px 24px', justifyContent: 'center' }}
+                >
+                  <span>{ui.cfp.submitCta}</span>
+                  <ArrowRight size={16} />
+                </button>
               </div>
 
               {/* Guidelines Box */}

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Globe } from 'lucide-react';
+import { Mail, Phone, ExternalLink } from 'lucide-react';
 import { GlobalSettings, Locale } from '../types';
 import asiasimLogo from '../assets/asiasim.png';
-import glosimLogo from '../assets/glosim.png';
 
 interface FooterProps {
   global?: GlobalSettings | null;
@@ -10,7 +9,7 @@ interface FooterProps {
   onNavigate: (path: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ global, locale, onNavigate }) => {
+export const Footer: React.FC<FooterProps> = ({ locale, onNavigate }) => {
   const isZh = locale === 'zh-Hans';
 
   const defaultNav = [
@@ -21,82 +20,112 @@ export const Footer: React.FC<FooterProps> = ({ global, locale, onNavigate }) =>
     { label: isZh ? '往届会议' : 'Past Conferences', href: '/past-conferences' }
   ];
 
-  const navLabels = global?.navLabels && global.navLabels.length > 0 ? global.navLabels : defaultNav;
-  const siteName = global?.siteName || (isZh ? '国际模拟学术联合会' : 'International Federation for Global Simulation');
-  const footerAbout = global?.footerAbout || (isZh ? '国际模拟学术联合会（GloSim）是致力于推动多边学术模拟、国际政策研讨与全球青年学者交流的非营利性学术联合组织。' : 'The International Federation for Global Simulation (GloSim) is a non-profit academic consortium dedicated to advancing multilateral negotiation simulations and policy research.');
-  const contactEmail = global?.contactEmail || 'secretariat@glosim-conference.org';
-  const contactPhone = global?.contactPhone || '+86 (010) 8832-7600';
-  const address = global?.address || (isZh ? '北京市海淀区中关村南大街1号 · 国际学术交流中心 602室' : 'Room 602, International Academic Exchange Center, Beijing');
-
   return (
     <footer style={{
-      backgroundColor: 'var(--ink-900)',
+      backgroundColor: '#050c1e',
       color: '#D1D5DB',
-      paddingTop: 'var(--space-3xl)',
-      paddingBottom: 'var(--space-2xl)',
+      paddingTop: '48px',
+      paddingBottom: '32px',
       marginTop: 'auto',
-      borderTop: '3px solid var(--symposium-blue)'
+      borderTop: '3px solid #1B3A6B'
     }}>
       <div className="container">
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: 'var(--space-2xl)',
-          marginBottom: 'var(--space-2xl)'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gap: '40px',
+          marginBottom: '40px'
         }}>
-          {/* Col 1: About */}
+          {/* Col 1: 主办单位 / Host */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                backgroundColor: 'var(--symposium-blue)',
-                padding: '4px 8px',
-                borderRadius: 'var(--radius-sm)',
-                height: '32px',
-                boxSizing: 'border-box'
-              }}>
-                <img
-                  src={asiasimLogo}
-                  alt="AsiaSim"
-                  style={{ height: '20px', width: 'auto', display: 'block', objectFit: 'contain' }}
-                />
-                <img
-                  src={glosimLogo}
-                  alt="GloSim"
-                  style={{ height: '20px', width: 'auto', display: 'block', objectFit: 'contain' }}
-                />
-              </div>
-              <span style={{ fontWeight: 'var(--weight-bold)', fontSize: '1.1rem', color: 'var(--white)' }}>
-                {siteName}
-              </span>
-            </div>
-            <p style={{ fontSize: 'var(--text-body-sm)', lineHeight: 1.7, color: '#9CA3AF', marginBottom: '16px' }}>
-              {footerAbout}
-            </p>
-            <div style={{
-              display: 'inline-flex',
+            <h4 style={{ 
+              color: '#FFFFFF', 
+              fontSize: '1rem', 
+              fontWeight: 700, 
+              letterSpacing: '0.04em', 
+              marginBottom: '16px',
+              display: 'flex',
               alignItems: 'center',
-              gap: '6px',
-              backgroundColor: 'rgba(255, 255, 255, 0.08)',
-              padding: '6px 12px',
-              borderRadius: 'var(--radius-pill)',
-              fontSize: '12px',
-              color: '#E5E7EB'
+              gap: '8px'
             }}>
-              <Globe size={14} color="#60A5FA" />
-              <span>{isZh ? '140+ 全球成员院校' : '140+ Global Member Institutions'}</span>
+              <span style={{ width: '4px', height: '16px', backgroundColor: '#38bdf8', borderRadius: '2px', display: 'inline-block' }} />
+              {isZh ? '主办单位' : 'Host'}
+            </h4>
+            
+            <a
+              href="http://www.asiasim.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '6px 12px',
+                backgroundColor: '#020817',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+                borderRadius: '6px',
+                marginBottom: '14px',
+                textDecoration: 'none',
+                transition: 'border-color 0.2s ease'
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#38bdf8')}
+              onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.12)')}
+              title={isZh ? '访问亚洲仿真联盟官网' : 'Visit Asia Simulation Federation Website'}
+            >
+              <img
+                src={asiasimLogo}
+                alt="ASIASIM 亚洲仿真联盟"
+                style={{ height: '32px', width: 'auto', display: 'block', objectFit: 'contain' }}
+              />
+            </a>
+            
+            <div style={{ marginBottom: '6px' }}>
+              <a
+                href="http://www.asiasim.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontSize: '0.95rem',
+                  fontWeight: 700,
+                  color: '#38bdf8',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  transition: 'color 0.15s ease'
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#7dd3fc')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#38bdf8')}
+              >
+                <span>{isZh ? '亚洲仿真联盟 (ASIASIM)' : 'Asia Simulation Federation (ASIASIM)'}</span>
+                <ExternalLink size={14} />
+              </a>
             </div>
+
+            <p style={{ fontSize: '0.825rem', color: '#9CA3AF', lineHeight: 1.6, margin: 0 }}>
+              {isZh 
+                ? '以“开放、创新、协同、包容、共赢”为理念，致力于促进全球仿真技术进步与产业交流。' 
+                : 'Guided by "Openness, Innovation, Collaboration, Inclusiveness, and Mutual Benefit" to advance global simulation technologies.'}
+            </p>
           </div>
 
-          {/* Col 2: Quick Navigation */}
+          {/* Col 2: 菜单 / Menu */}
           <div>
-            <h4 style={{ color: 'var(--white)', fontSize: '0.95rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '16px' }}>
-              Sections
+            <h4 style={{ 
+              color: '#FFFFFF', 
+              fontSize: '1rem', 
+              fontWeight: 700, 
+              letterSpacing: '0.04em', 
+              marginBottom: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}>
+              <span style={{ width: '4px', height: '16px', backgroundColor: '#38bdf8', borderRadius: '2px', display: 'inline-block' }} />
+              {isZh ? '菜单' : 'Menu'}
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {navLabels.map((item) => (
+            
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              {defaultNav.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
@@ -106,13 +135,13 @@ export const Footer: React.FC<FooterProps> = ({ global, locale, onNavigate }) =>
                     }}
                     style={{
                       color: '#9CA3AF',
-                      fontSize: 'var(--text-body-sm)',
+                      fontSize: '0.875rem',
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '4px',
-                      transition: 'color var(--duration-fast)'
+                      transition: 'color 0.15s ease'
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--white)')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = '#9CA3AF')}
                   >
                     {item.label}
@@ -122,25 +151,45 @@ export const Footer: React.FC<FooterProps> = ({ global, locale, onNavigate }) =>
             </ul>
           </div>
 
-          {/* Col 3: Contact & Secretarial Office */}
+          {/* Col 3: 联系我们 / Contact us */}
           <div>
-            <h4 style={{ color: 'var(--white)', fontSize: '0.95rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '16px' }}>
-              Secretariat
+            <h4 style={{ 
+              color: '#FFFFFF', 
+              fontSize: '1rem', 
+              fontWeight: 700, 
+              letterSpacing: '0.04em', 
+              marginBottom: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}>
+              <span style={{ width: '4px', height: '16px', backgroundColor: '#38bdf8', borderRadius: '2px', display: 'inline-block' }} />
+              {isZh ? '联系我们' : 'Contact us'}
             </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: 'var(--text-body-sm)', color: '#9CA3AF' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                <MapPin size={16} style={{ marginTop: '3px', flexShrink: 0, color: '#60A5FA' }} />
-                <span>{address}</span>
-              </div>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.9rem', color: '#E5E7EB' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Mail size={16} style={{ flexShrink: 0, color: '#60A5FA' }} />
-                <a href={`mailto:${contactEmail}`} style={{ color: '#E5E7EB' }}>
-                  {contactEmail}
-                </a>
+                <Phone size={16} style={{ flexShrink: 0, color: '#38bdf8' }} />
+                <span>
+                  <strong style={{ color: '#F3F4F6' }}>{isZh ? '孙老师' : 'Teacher Sun'}:</strong> +86-13588210860
+                </span>
               </div>
+              
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Phone size={16} style={{ flexShrink: 0, color: '#60A5FA' }} />
-                <span>{contactPhone}</span>
+                <Phone size={16} style={{ flexShrink: 0, color: '#38bdf8' }} />
+                <span>
+                  <strong style={{ color: '#F3F4F6' }}>{isZh ? '赵老师' : 'Teacher Zhao'}:</strong> +86-15540158851
+                </span>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <Mail size={16} style={{ flexShrink: 0, color: '#38bdf8' }} />
+                <span>
+                  <strong style={{ color: '#F3F4F6' }}>{isZh ? '邮箱' : 'Email'}:</strong>{' '}
+                  <a href="mailto:asiasim0106@163.com" style={{ color: '#38bdf8', textDecoration: 'none' }}>
+                    asiasim0106@163.com
+                  </a>
+                </span>
               </div>
             </div>
           </div>
@@ -148,7 +197,7 @@ export const Footer: React.FC<FooterProps> = ({ global, locale, onNavigate }) =>
 
         {/* Bottom copyright line */}
         <div style={{
-          paddingTop: 'var(--space-lg)',
+          paddingTop: '24px',
           borderTop: '1px solid rgba(255, 255, 255, 0.1)',
           display: 'flex',
           flexWrap: 'wrap',
@@ -159,22 +208,11 @@ export const Footer: React.FC<FooterProps> = ({ global, locale, onNavigate }) =>
           color: '#6B7280'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-            <span>© {new Date().getFullYear()} {siteName} (GloSim). All rights reserved. Academic Non-Profit Organization.</span>
-            <span style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              padding: '2px 8px',
-              borderRadius: '4px',
-              fontSize: '11px',
-              fontWeight: 500,
-              color: '#9CA3AF'
-            }}>
-              v{import.meta.env.VITE_APP_VERSION || '0.0.1'}
-            </span>
+            <span>© {new Date().getFullYear()} {isZh ? '亚洲仿真联盟 (ASIASIM) · 2026世界仿真大会 (GloSim 2026)' : 'Asia Simulation Federation (ASIASIM) · 2026 Global Simulation Conference (GloSim 2026)'}. All rights reserved.</span>
           </div>
           <div style={{ display: 'flex', gap: '16px' }}>
-            <span>Privacy Policy</span>
-            <span>Academic Code of Conduct</span>
-            <span>ICP备20260825号</span>
+            <span>Hangzhou, China</span>
+            <span>2026.11.13–16</span>
           </div>
         </div>
       </div>

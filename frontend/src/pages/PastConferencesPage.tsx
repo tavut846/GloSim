@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Download, FileText } from 'lucide-react';
 import { Conference, Locale } from '../types';
+import { HeroHeader } from '../components/HeroHeader';
 import { zhUi } from '../locales/zh';
 import { enUi } from '../locales/en';
 
@@ -14,6 +15,7 @@ export const PastConferencesPage: React.FC<PastConferencesPageProps> = ({
   pastConferences
 }) => {
   const ui = locale === 'zh-Hans' ? zhUi : enUi;
+  const isZh = locale === 'zh-Hans';
   const [activeConfId, setActiveConfId] = useState<string | number>(pastConferences[0]?.id || '');
 
   const selectedConf = pastConferences.find(c => c.id === activeConfId) || pastConferences[0];
@@ -21,32 +23,11 @@ export const PastConferencesPage: React.FC<PastConferencesPageProps> = ({
   return (
     <div style={{ backgroundColor: 'var(--white)' }}>
       {/* Header Banner */}
-      <section style={{
-        padding: '56px 0 48px',
-        backgroundColor: 'var(--limestone)',
-        borderBottom: '1px solid var(--border-default)'
-      }} className="bg-network">
-        <div className="container" style={{ maxWidth: '900px', textAlign: 'center' }}>
-          <span className="badge-caps" style={{ color: 'var(--symposium-blue)', marginBottom: '8px' }}>
-            {ui.past.eyebrow}
-          </span>
-          <h1 style={{
-            fontSize: 'var(--text-h1)',
-            fontWeight: 'var(--weight-extrabold)',
-            color: 'var(--ink-900)',
-            margin: '12px 0 16px'
-          }}>
-            {ui.past.title}
-          </h1>
-          <p style={{
-            fontSize: 'var(--text-body-lg)',
-            color: 'var(--ink-700)',
-            lineHeight: 'var(--leading-body)'
-          }}>
-            {ui.past.subtitle}
-          </p>
-        </div>
-      </section>
+      <HeroHeader
+        locale={locale}
+        activePageTitle={isZh ? '往届会议' : 'Past Conferences'}
+        compact={true}
+      />
 
       {/* Main Content */}
       <section style={{ padding: '56px 0 72px' }}>

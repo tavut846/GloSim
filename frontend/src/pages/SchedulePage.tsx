@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { Calendar, MapPin, Clock, User } from 'lucide-react';
+import React, { useMemo } from 'react';
+import { Calendar, Clock, MapPin } from 'lucide-react';
 import { Conference, Locale } from '../types';
-import { zhUi } from '../locales/zh';
-import { enUi } from '../locales/en';
+import { HeroHeader } from '../components/HeroHeader';
 
 interface SchedulePageProps {
   locale: Locale;
@@ -12,280 +11,317 @@ interface SchedulePageProps {
 
 export const SchedulePage: React.FC<SchedulePageProps> = ({
   locale,
-  conference,
   onOpenRegister
 }) => {
-  const ui = locale === 'zh-Hans' ? zhUi : enUi;
-  const [activeDay, setActiveDay] = useState<string>('Day 1');
+  const isZh = locale === 'zh-Hans';
 
-  if (!conference) {
-    return (
-      <div className="container" style={{ padding: '64px 0', textAlign: 'center' }}>
-        <p style={{ fontSize: '1.1rem', color: 'var(--slate-600)' }}>
-          {ui.schedule.noSchedule}
-        </p>
-      </div>
-    );
-  }
+  // Calculate days remaining to conference opening (2026-11-13)
+  const daysLeft = useMemo(() => {
+    const target = new Date('2026-11-13T09:00:00+08:00').getTime();
+    const now = new Date().getTime();
+    const diff = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
+    return diff > 0 ? diff : 0;
+  }, []);
 
-  const agendaItems = conference.agendaItems || [];
-  const days = Array.from(new Set(agendaItems.map(item => item.day)));
+  const parallelForumsZh = [
+    '1. 物理AI、智能仿真与数据治理专题论坛',
+    '2. 航空航天、汽车与运载装备仿真专题论坛',
+    '3. 工业仿真软件与工业大模型专题论坛',
+    '4. 具身智能、机器人和AI玩具专题论坛',
+    '5. 虚拟实验仿真与产教融合专题论坛',
+    '6. 智慧医疗仿真与脑机接口专题论坛',
+    '7. 先进EDA、多物理场仿真专题论坛',
+    '8. 低空交通技术与可靠性专题论坛',
+    '9. 社会环境与数字经济专题论坛',
+    '10. 青年创新发展专题论坛'
+  ];
 
-  const filteredAgenda = activeDay === 'ALL'
-    ? agendaItems
-    : agendaItems.filter(item => item.day === activeDay);
+  const parallelForumsEn = [
+    '1. Physical AI, Intelligent Simulation & Data Governance',
+    '2. Aerospace, Automotive & Transportation Equipment Simulation',
+    '3. Industrial Simulation Software & Industrial Foundation Models',
+    '4. Embodied Intelligence, Robotics & AI Toys',
+    '5. Virtual Experimental Simulation & Industry-Education Integration',
+    '6. Smart Healthcare Simulation & Brain-Computer Interfaces',
+    '7. Advanced EDA & Multiphysics Simulation',
+    '8. Low-Altitude Transportation Technologies & Reliability',
+    '9. Social Environments & Digital Economy',
+    '10. Youth Innovation & Academic Development'
+  ];
 
-  const getTagStyle = (tag?: string) => {
-    switch (tag) {
-      case 'PLENARY': return { bg: '#E0E7FF', text: '#3730A3' };
-      case 'SIMULATION': return { bg: '#FEE2E2', text: '#991B1B' };
-      case 'NEGOTIATION': return { bg: '#FEF3C7', text: '#92400E' };
-      case 'PANEL': return { bg: '#ECFDF5', text: '#065F46' };
-      default: return { bg: 'var(--limestone)', text: 'var(--ink-700)' };
-    }
-  };
+  const venueText = isZh 
+    ? '浙江省杭州市 北京航空航天大学 杭州创新研究院'
+    : 'Hangzhou International Innovation Institute of Beihang University, Hangzhou, China';
 
   return (
-    <div style={{ backgroundColor: 'var(--white)' }}>
-      {/* Header Banner */}
-      <section style={{
-        padding: '56px 0 48px',
-        backgroundColor: 'var(--limestone)',
-        borderBottom: '1px solid var(--border-default)'
-      }} className="bg-network">
-        <div className="container" style={{ maxWidth: '960px' }}>
-          <span className="badge-caps" style={{ color: 'var(--symposium-blue)', marginBottom: '8px' }}>
-            {ui.schedule.eyebrow} · {conference.edition}
-          </span>
-          <h1 style={{
-            fontSize: 'var(--text-h1)',
-            fontWeight: 'var(--weight-extrabold)',
-            color: 'var(--ink-900)',
-            margin: '10px 0 16px',
-            lineHeight: 1.2
-          }}>
-            {conference.title}
-          </h1>
+    <div className="bg-[#f8fafc] min-h-screen">
+      {/* 1. Header Banner */}
+      <HeroHeader 
+        locale={locale} 
+        activePageTitle={isZh ? '会议日程' : 'Conference Schedule'} 
+        compact={true} 
+      />
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '16px',
-            backgroundColor: 'var(--white)',
-            padding: '20px 24px',
-            borderRadius: 'var(--radius-md)',
-            border: '1px solid var(--border-default)',
-            boxShadow: 'var(--shadow-card)',
-            marginTop: '24px'
-          }}>
-            <div>
-              <span className="badge-caps" style={{ color: 'var(--slate-600)' }}>{ui.schedule.dateLabel}</span>
-              <p style={{ fontWeight: 600, color: 'var(--ink-900)', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <Calendar size={16} color="var(--symposium-blue)" />
-                <span>{conference.startDate} ~ {conference.endDate}</span>
-              </p>
-            </div>
-            <div>
-              <span className="badge-caps" style={{ color: 'var(--slate-600)' }}>{ui.schedule.venueLabel}</span>
-              <p style={{ fontWeight: 600, color: 'var(--ink-900)', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <MapPin size={16} color="var(--symposium-blue)" />
-                <span>{conference.location} {conference.venue && `(${conference.venue})`}</span>
-              </p>
-            </div>
-            <div>
-              <span className="badge-caps" style={{ color: 'var(--slate-600)' }}>{ui.schedule.themeLabel}</span>
-              <p style={{ fontWeight: 600, color: 'var(--symposium-blue)', marginTop: '4px' }}>
-                {conference.theme}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Agenda Timeline */}
-      <section style={{ padding: '56px 0 72px' }}>
-        <div className="container" style={{ maxWidth: '960px' }}>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '16px',
-            borderBottom: '2px solid var(--slate-200)',
-            paddingBottom: '16px',
-            marginBottom: '32px'
-          }}>
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-              {days.map((day) => (
-                <button
-                  key={day}
-                  onClick={() => setActiveDay(day)}
-                  style={{
-                    padding: '10px 22px',
-                    fontSize: '15px',
-                    fontWeight: activeDay === day ? 700 : 500,
-                    backgroundColor: activeDay === day ? 'var(--symposium-blue)' : 'var(--limestone)',
-                    color: activeDay === day ? 'var(--white)' : 'var(--ink-700)',
-                    borderRadius: 'var(--radius-sm)',
-                    border: '1px solid',
-                    borderColor: activeDay === day ? 'var(--symposium-blue)' : 'var(--border-default)'
-                  }}
-                >
-                  {day}
-                </button>
-              ))}
-              <button
-                onClick={() => setActiveDay('ALL')}
-                style={{
-                  padding: '10px 22px',
-                  fontSize: '15px',
-                  fontWeight: activeDay === 'ALL' ? 700 : 500,
-                  backgroundColor: activeDay === 'ALL' ? 'var(--symposium-blue)' : 'var(--limestone)',
-                  color: activeDay === 'ALL' ? 'var(--white)' : 'var(--ink-700)',
-                  borderRadius: 'var(--radius-sm)',
-                  border: '1px solid',
-                  borderColor: activeDay === 'ALL' ? 'var(--symposium-blue)' : 'var(--border-default)'
-                }}
-              >
-                {ui.schedule.filterAllDays}
-              </button>
+      {/* 2. Main Content Grid */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Main Agenda Table (lg:col-span-8) */}
+          <div className="lg:col-span-8 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            
+            {/* Table Title Bar */}
+            <div className="bg-[#00186b] text-white px-6 py-4 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Calendar className="w-5 h-5 text-cyan-300" />
+                <h2 className="text-lg sm:text-xl font-bold tracking-wide">
+                  {isZh ? '2026世界仿真大会日程表' : 'GloSim 2026 Conference Agenda'}
+                </h2>
+              </div>
+              <span className="text-xs bg-white/15 text-cyan-200 px-2.5 py-1 rounded">
+                2026.11.13–16
+              </span>
             </div>
 
-            <div style={{ display: 'flex', gap: '10px' }}>
-              <button
-                onClick={() => onOpenRegister('delegate')}
-                className="btn-warm"
-                style={{ padding: '10px 20px', fontSize: '14px' }}
-              >
-                {ui.schedule.registerCta}
-              </button>
+            {/* Table Header */}
+            <div className="grid grid-cols-12 bg-[#0f2d78] text-white font-bold py-3 text-center text-sm sm:text-base border-b border-blue-900">
+              <div className="col-span-3 sm:col-span-2 border-r border-blue-800/80 px-2">
+                {isZh ? '日期' : 'Date'}
+              </div>
+              <div className="col-span-6 sm:col-span-7 border-r border-blue-800/80 px-4">
+                {isZh ? '内容' : 'Content'}
+              </div>
+              <div className="col-span-3 sm:col-span-3 px-2">
+                {isZh ? '会议地点' : 'Venue'}
+              </div>
             </div>
-          </div>
 
-          {/* Agenda Items List */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            {filteredAgenda.map((item, idx) => {
-              const tagStyle = getTagStyle(item.tag);
-              return (
-                <div
-                  key={idx}
-                  className="card-academic"
-                  style={{
-                    padding: '24px',
-                    display: 'grid',
-                    gridTemplateColumns: '180px 1fr',
-                    gap: '24px',
-                    alignItems: 'flex-start'
-                  }}
-                >
+            {/* Table Rows */}
+            <div className="divide-y divide-slate-200 text-slate-800 text-sm sm:text-[15px]">
+              
+              {/* Row 1: 11月13日 (周五) */}
+              <div className="grid grid-cols-12 items-center hover:bg-slate-50/80 transition-colors">
+                <div className="col-span-3 sm:col-span-2 p-3 sm:p-4 text-center font-bold text-[#00186b] border-r border-slate-200 bg-slate-50/50">
+                  <div>{isZh ? '11月13日' : 'Nov 13'}</div>
+                  <div className="text-xs text-slate-500 font-medium">{isZh ? '周五' : 'Friday'}</div>
+                </div>
+                <div className="col-span-6 sm:col-span-7 p-3 sm:p-4 border-r border-slate-200">
+                  <span className="inline-block bg-blue-50 text-[#00186b] font-bold px-3 py-1 rounded text-sm sm:text-base">
+                    {isZh ? '代表报到' : 'Delegate Registration'}
+                  </span>
+                </div>
+                <div className="col-span-3 sm:col-span-3 p-3 sm:p-4 text-xs sm:text-sm text-slate-600 text-center sm:text-left leading-relaxed">
+                  {venueText}
+                </div>
+              </div>
+
+              {/* Row 2: 11月14日 (周六) */}
+              <div className="grid grid-cols-12 items-center hover:bg-slate-50/80 transition-colors">
+                <div className="col-span-3 sm:col-span-2 p-3 sm:p-4 text-center font-bold text-[#00186b] border-r border-slate-200 bg-slate-50/50 self-stretch flex flex-col justify-center">
+                  <div>{isZh ? '11月14日' : 'Nov 14'}</div>
+                  <div className="text-xs text-slate-500 font-medium">{isZh ? '周六' : 'Saturday'}</div>
+                </div>
+                <div className="col-span-6 sm:col-span-7 p-3 sm:p-4 border-r border-slate-200 space-y-4">
+                  
+                  {/* Group 1: 开幕式 */}
                   <div>
-                    <div style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '1rem',
-                      fontWeight: 700,
-                      color: 'var(--symposium-blue)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '6px'
-                    }}>
-                      <Clock size={16} />
-                      <span>{item.time}</span>
+                    <div className="font-bold text-[#00186b] text-base mb-1.5 flex items-center gap-1.5">
+                      <span className="w-1.5 h-4 bg-[#0f2d78] rounded-full inline-block" />
+                      {isZh ? '开幕式' : 'Opening Ceremony'}
                     </div>
-                    <span style={{
-                      display: 'inline-block',
-                      marginTop: '6px',
-                      fontSize: '12px',
-                      color: 'var(--slate-600)',
-                      fontWeight: 500
-                    }}>
-                      {item.day} {item.date && `· ${item.date}`}
-                    </span>
+                    <ul className="list-disc list-inside space-y-1 text-slate-700 text-xs sm:text-sm pl-1">
+                      <li>{isZh ? '领导/嘉宾致辞' : 'Opening Remarks by Leaders and Distinguished Guests'}</li>
+                      <li>{isZh ? '《仿真科学与技术十大前沿问题进展2026》发布' : 'Release of "2026 Advances in Top 10 Frontier Issues in Simulation Science & Technology"'}</li>
+                      <li>{isZh ? '新标准新产品新技术发布会' : 'New Standards, Products & Technologies Launch Event'}</li>
+                      <li>{isZh ? '优秀国际仿真案例发布' : 'Outstanding International Simulation Cases Presentation'}</li>
+                      <li>{isZh ? '仿真艺术设计大赛颁奖仪式' : 'Simulation Art & Design Competition Awards Ceremony'}</li>
+                      <li>{isZh ? '2026国际仿真创新大赛颁奖仪式' : '2026 International Simulation Innovation Competition Awards'}</li>
+                      <li>{isZh ? '合作签约仪式' : 'Strategic Cooperation Agreement Signing Ceremony'}</li>
+                    </ul>
                   </div>
 
-                  <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', marginBottom: '8px' }}>
-                      <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--ink-900)', lineHeight: 1.3 }}>
-                        {item.title}
-                      </h3>
-                      {item.tag && (
-                        <span style={{
-                          backgroundColor: tagStyle.bg,
-                          color: tagStyle.text,
-                          padding: '3px 8px',
-                          borderRadius: 'var(--radius-xs)',
-                          fontSize: '11px',
-                          fontWeight: 700,
-                          letterSpacing: '0.04em',
-                          flexShrink: 0
-                        }}>
-                          {item.tag}
-                        </span>
-                      )}
+                  {/* Group 2: 主论坛 */}
+                  <div className="pt-3 border-t border-slate-100">
+                    <div className="font-bold text-[#00186b] text-base mb-1.5 flex items-center gap-1.5">
+                      <span className="w-1.5 h-4 bg-[#0f2d78] rounded-full inline-block" />
+                      {isZh ? '主论坛' : 'Plenary Forum'}
                     </div>
+                    <ul className="list-disc list-inside space-y-1 text-slate-700 text-xs sm:text-sm pl-1">
+                      <li>{isZh ? '诺贝尔奖/院士/专家论坛' : 'Nobel Laureates, Academicians & Distinguished Experts Forum'}</li>
+                      <li>{isZh ? '特邀主旨报告' : 'Keynote Speeches'}</li>
+                      <li>{isZh ? '高端对话：AI驱动的全球仿真创新与协同治理' : 'High-Level Dialogue: AI-Driven Global Simulation Innovation & Collaborative Governance'}</li>
+                    </ul>
+                  </div>
 
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', fontSize: '13px', color: 'var(--slate-600)', marginTop: '8px' }}>
-                      {item.speaker && (
-                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                          <User size={14} color="var(--symposium-blue)" />
-                          <strong style={{ color: 'var(--ink-900)' }}>{item.speaker}</strong>
-                        </span>
-                      )}
-                      {item.location && (
-                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                          <MapPin size={14} color="var(--warm-accent)" />
-                          <span>{item.location}</span>
-                        </span>
-                      )}
+                  {/* Group 3: 洽谈活动 */}
+                  <div className="pt-3 border-t border-slate-100">
+                    <div className="font-bold text-[#00186b] text-base mb-1.5 flex items-center gap-1.5">
+                      <span className="w-1.5 h-4 bg-[#0f2d78] rounded-full inline-block" />
+                      {isZh ? '洽谈活动' : 'Business Matchmaking'}
                     </div>
+                    <ul className="list-disc list-inside space-y-1 text-slate-700 text-xs sm:text-sm pl-1">
+                      <li>{isZh ? '“出海”亚洲新机遇对接洽谈活动' : '"Going Global" Asian Market Opportunities Matchmaking'}</li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div className="col-span-3 sm:col-span-3 p-3 sm:p-4 text-xs sm:text-sm text-slate-600 text-center sm:text-left leading-relaxed">
+                  {venueText}
+                </div>
+              </div>
+
+              {/* Row 3: 11月15日 (周日) */}
+              <div className="grid grid-cols-12 items-center hover:bg-slate-50/80 transition-colors">
+                <div className="col-span-3 sm:col-span-2 p-3 sm:p-4 text-center font-bold text-[#00186b] border-r border-slate-200 bg-slate-50/50 self-stretch flex flex-col justify-center">
+                  <div>{isZh ? '11月15日' : 'Nov 15'}</div>
+                  <div className="text-xs text-slate-500 font-medium">{isZh ? '周日' : 'Sunday'}</div>
+                </div>
+                <div className="col-span-6 sm:col-span-7 p-3 sm:p-4 border-r border-slate-200">
+                  <div className="font-bold text-[#00186b] text-base mb-2.5 flex items-center gap-1.5">
+                    <span className="w-1.5 h-4 bg-[#0f2d78] rounded-full inline-block" />
+                    {isZh ? '平行分论坛' : 'Parallel Thematic Sessions'}
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700 font-medium">
+                    {(isZh ? parallelForumsZh : parallelForumsEn).map((forum, idx) => (
+                      <div key={idx} className="bg-slate-50 hover:bg-blue-50/60 p-2 rounded border border-slate-100 transition-colors">
+                        {forum}
+                      </div>
+                    ))}
                   </div>
                 </div>
-              );
-            })}
+                <div className="col-span-3 sm:col-span-3 p-3 sm:p-4 text-xs sm:text-sm text-slate-600 text-center sm:text-left leading-relaxed">
+                  {venueText}
+                </div>
+              </div>
+
+              {/* Row 4: 11月14日-15日 */}
+              <div className="grid grid-cols-12 items-center hover:bg-slate-50/80 transition-colors">
+                <div className="col-span-3 sm:col-span-2 p-3 sm:p-4 text-center font-bold text-[#00186b] border-r border-slate-200 bg-slate-50/50">
+                  <div>{isZh ? '11月14日-15日' : 'Nov 14–15'}</div>
+                  <div className="text-xs text-slate-500 font-medium">{isZh ? '全天' : 'All Day'}</div>
+                </div>
+                <div className="col-span-6 sm:col-span-7 p-3 sm:p-4 border-r border-slate-200">
+                  <div className="flex items-center gap-2">
+                    <span className="bg-amber-100 text-amber-900 font-bold px-2.5 py-0.5 rounded text-xs">
+                      {isZh ? '展览' : 'Exhibition'}
+                    </span>
+                    <span className="font-bold text-slate-900 text-sm sm:text-base">
+                      {isZh ? '2026国际仿真科技展' : '2026 International Simulation Science & Technology Exhibition'}
+                    </span>
+                  </div>
+                </div>
+                <div className="col-span-3 sm:col-span-3 p-3 sm:p-4 text-xs sm:text-sm text-slate-600 text-center sm:text-left leading-relaxed">
+                  {venueText}
+                </div>
+              </div>
+
+              {/* Row 5: 11月16日 (周一) */}
+              <div className="grid grid-cols-12 items-center hover:bg-slate-50/80 transition-colors">
+                <div className="col-span-3 sm:col-span-2 p-3 sm:p-4 text-center font-bold text-[#00186b] border-r border-slate-200 bg-slate-50/50">
+                  <div>{isZh ? '11月16日' : 'Nov 16'}</div>
+                  <div className="text-xs text-slate-500 font-medium">{isZh ? '周一' : 'Monday'}</div>
+                </div>
+                <div className="col-span-6 sm:col-span-7 p-3 sm:p-4 border-r border-slate-200">
+                  <div className="flex items-center gap-2">
+                    <span className="bg-emerald-100 text-emerald-900 font-bold px-2.5 py-0.5 rounded text-xs">
+                      {isZh ? '参访交流' : 'Site Visit'}
+                    </span>
+                    <span className="font-bold text-slate-900 text-sm sm:text-base">
+                      {isZh ? '标杆企业参观' : 'Benchmark Enterprise Technical Tour'}
+                    </span>
+                  </div>
+                </div>
+                <div className="col-span-3 sm:col-span-3 p-3 sm:p-4 text-xs sm:text-sm text-slate-600 text-center sm:text-left leading-relaxed">
+                  {venueText}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Footer Ribbon */}
+            <div className="bg-[#0f2d78] text-white text-center py-3.5 px-4 text-xs sm:text-sm font-semibold rounded-b-lg flex items-center justify-center gap-2">
+              <MapPin size={16} className="text-cyan-300 shrink-0" />
+              <span>
+                {isZh 
+                  ? '会议地点：浙江省杭州市北京航空航天大学杭州创新研究院' 
+                  : 'Conference Venue: Hangzhou International Innovation Institute of Beihang University, Hangzhou, China'}
+              </span>
+            </div>
+
           </div>
 
-          {/* Keynote Speakers */}
-          {conference.speakers && conference.speakers.length > 0 && (
-            <div style={{ marginTop: '64px', paddingTop: '48px', borderTop: '1px solid var(--border-default)' }}>
-              <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 36px' }}>
-                <span className="badge-caps" style={{ color: 'var(--symposium-blue)' }}>
-                  DISTINGUISHED FACULTY
-                </span>
-                <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 'var(--weight-bold)', color: 'var(--ink-900)', marginTop: '4px' }}>
-                  {ui.schedule.speakersTitle}
-                </h2>
-                <p style={{ fontSize: 'var(--text-body-md)', color: 'var(--slate-600)' }}>
-                  {ui.schedule.speakersSubtitle}
-                </p>
+          {/* Right Sidebar (lg:col-span-4) */}
+          <aside className="lg:col-span-4 space-y-6">
+            
+            {/* 1. Single Countdown Box (Fixed: Only ONE instance) */}
+            <div className="bg-gradient-to-br from-[#00186b] to-[#0f2d78] text-white p-6 rounded-xl shadow-sm text-center">
+              <div className="flex items-center justify-center gap-2 text-cyan-200 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2">
+                <Clock className="w-4 h-4" />
+                <span>{isZh ? '倒计时 · COUNTDOWN' : 'CONFERENCE COUNTDOWN'}</span>
               </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
-                {conference.speakers.map((spk, idx) => (
-                  <div key={idx} className="card-academic" style={{ padding: '24px', textAlign: 'center' }}>
-                    <div style={{
-                      width: '64px',
-                      height: '64px',
-                      borderRadius: '50%',
-                      backgroundColor: 'var(--symposium-blue)',
-                      color: '#FFF',
-                      fontSize: '20px',
-                      fontWeight: 700,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      margin: '0 auto 16px'
-                    }}>
-                      {spk.name.slice(0, 1)}
-                    </div>
-                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--ink-900)' }}>{spk.name}</h3>
-                    <p style={{ fontSize: '13px', color: 'var(--symposium-blue)', fontWeight: 600, marginTop: '2px' }}>{spk.title}</p>
-                    <p style={{ fontSize: '12px', color: 'var(--slate-600)', marginTop: '2px' }}>{spk.affiliation}</p>
-                  </div>
-                ))}
+              <div className="text-4xl sm:text-5xl font-black tracking-tight text-white my-2">
+                {daysLeft}
+                <span className="text-lg font-bold ml-1 text-cyan-300">{isZh ? '天' : 'Days'}</span>
+              </div>
+              <div className="text-xs sm:text-sm text-slate-200 mt-1">
+                {isZh ? '距离2026世界仿真大会开幕还有' : 'Remaining until GloSim 2026 Opening'}
               </div>
             </div>
-          )}
+
+            {/* 2. Conference Registration Button */}
+            <button
+              type="button"
+              onClick={() => onOpenRegister('delegate')}
+              className="bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold py-3.5 px-4 rounded-lg w-full text-center block shadow-md text-base sm:text-lg transition-all hover:shadow-lg cursor-pointer"
+            >
+              {isZh ? '会议注册 · 参会报名' : 'Conference Registration'}
+            </button>
+
+            {/* 3. 主办单位 Card */}
+            <div className="bg-white rounded-xl p-5 shadow-sm border border-slate-200">
+              <h3 className="text-base font-bold text-[#00186b] mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+                <span className="w-1.5 h-4 bg-[#00186b] rounded-full inline-block" />
+                {isZh ? '主办单位' : 'Host & Organizer'}
+              </h3>
+              <p className="font-semibold text-slate-800 text-sm">
+                {isZh ? '亚洲仿真联盟 (ASIASIM)' : 'Asia Simulation Federation (ASIASIM)'}
+              </p>
+              <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                {isZh 
+                  ? '亚洲仿真联盟以“开放、创新、协同、包容、共赢”为理念，致力于构建高质量国际交流平台。' 
+                  : 'ASIASIM is dedicated to advancing simulation science, international collaboration, and high-quality global exchange.'}
+              </p>
+            </div>
+
+            {/* 4. 重要日期 Card */}
+            <div className="bg-white rounded-xl p-5 shadow-sm border border-slate-200">
+              <h3 className="text-base font-bold text-[#00186b] mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+                <span className="w-1.5 h-4 bg-[#00186b] rounded-full inline-block" />
+                {isZh ? '重要日期' : 'Important Dates'}
+              </h3>
+              <div className="space-y-3 text-xs sm:text-sm">
+                <div className="flex justify-between items-center py-1 border-b border-slate-50">
+                  <span className="font-medium text-slate-700">{isZh ? '大会报到' : 'Registration'}:</span>
+                  <span className="font-bold text-[#00186b]">{isZh ? '11月13日' : 'Nov 13, 2026'}</span>
+                </div>
+                <div className="flex justify-between items-center py-1 border-b border-slate-50">
+                  <span className="font-medium text-slate-700">{isZh ? '开幕及主论坛' : 'Opening & Plenary'}:</span>
+                  <span className="font-bold text-[#00186b]">{isZh ? '11月14日' : 'Nov 14, 2026'}</span>
+                </div>
+                <div className="flex justify-between items-center py-1 border-b border-slate-50">
+                  <span className="font-medium text-slate-700">{isZh ? '特色分论坛' : 'Thematic Sessions'}:</span>
+                  <span className="font-bold text-[#00186b]">{isZh ? '11月15日' : 'Nov 15, 2026'}</span>
+                </div>
+                <div className="flex justify-between items-center py-1">
+                  <span className="font-medium text-slate-700">{isZh ? '标杆企业参访' : 'Site Visit'}:</span>
+                  <span className="font-bold text-[#00186b]">{isZh ? '11月16日上午' : 'Nov 16 (Morning)'}</span>
+                </div>
+              </div>
+            </div>
+
+          </aside>
+
         </div>
-      </section>
+      </main>
     </div>
   );
 };

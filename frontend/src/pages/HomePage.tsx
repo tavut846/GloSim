@@ -35,6 +35,7 @@ export const HomePage: React.FC<HomePageProps> = ({
     title: '',
     url: ''
   });
+  const [activeActivityTab, setActiveActivityTab] = useState<number>(0);
 
   const getIcon = (iconName?: string) => {
     switch (iconName) {
@@ -90,20 +91,20 @@ export const HomePage: React.FC<HomePageProps> = ({
 
   return (
     <div>
-      {/* 1. Hero Section */}
-      <ConferenceHero locale={locale} />
-
-      {/* 2. Countdown Banner */}
-      <CountdownBanner
-        conference={activeConference}
-        onViewSchedule={() => onNavigate('/schedule')}
-        onSubmitCfp={() => onOpenRegister('paper')}
-        eyebrow={ui.home.countdownEyebrow}
-        countdownLabel={ui.home.countdownDaysLabel}
-        viewScheduleText={ui.home.viewSchedule}
-        submitCfpText={ui.home.submitAbstract}
-        locale={locale}
-      />
+      {/* 1. Hero & Countdown Container (occupies exactly full screen below header) */}
+      <div className="flex flex-col min-h-[calc(100vh-64px)] lg:min-h-[calc(80vh-52px)]">
+        <ConferenceHero locale={locale} />
+        <CountdownBanner
+          conference={activeConference}
+          onViewSchedule={() => onNavigate('/schedule')}
+          onSubmitCfp={() => onOpenRegister('paper')}
+          eyebrow={ui.home.countdownEyebrow}
+          countdownLabel={ui.home.countdownDaysLabel}
+          viewScheduleText={ui.home.viewSchedule}
+          submitCfpText={ui.home.submitAbstract}
+          locale={locale}
+        />
+      </div>
 
       {/* 3. Welcome Address */}
       <WelcomeAddress locale={locale} />
@@ -151,16 +152,12 @@ export const HomePage: React.FC<HomePageProps> = ({
             </a>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '28px'
-          }}>
-            {/* Video 1 */}
+          {/* Single Video Card */}
+          <div style={{ maxWidth: '680px', margin: '0 auto' }}>
             <div className="card-academic" style={{ overflow: 'hidden' }}>
               <div 
                 onClick={() => setVideoModalData({ isOpen: true, title: orgVideoCaption, url: orgVideoUrl })}
-                style={{ position: 'relative', cursor: 'pointer', height: '240px', backgroundColor: 'var(--ink-900)' }}
+                style={{ position: 'relative', cursor: 'pointer', height: '300px', backgroundColor: 'var(--ink-900)' }}
               >
                 <img
                   src={orgVideoPoster}
@@ -172,62 +169,24 @@ export const HomePage: React.FC<HomePageProps> = ({
                   top: '50%',
                   left: '50%',
                   transform: 'translate(-50%, -50%)',
-                  width: '56px',
-                  height: '56px',
+                  width: '64px',
+                  height: '64px',
                   borderRadius: '50%',
                   backgroundColor: 'rgba(27, 58, 107, 0.9)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.35)'
                 }}>
-                  <Play size={24} color="#FFF" style={{ marginLeft: '3px' }} />
+                  <Play size={28} color="#FFF" style={{ marginLeft: '3px' }} />
                 </div>
               </div>
-              <div style={{ padding: '16px 20px' }}>
-                <span className="badge-caps" style={{ color: 'var(--slate-600)' }}>
+              <div style={{ padding: '16px 24px', textAlign: 'center' }}>
+                <span className="badge-caps" style={{ color: 'var(--symposium-blue)' }}>
                   DOCUMENTARY
                 </span>
-                <h4 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--ink-900)', marginTop: '4px' }}>
+                <h4 style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--ink-900)', marginTop: '4px' }}>
                   {orgVideoCaption}
-                </h4>
-              </div>
-            </div>
-
-            {/* Video 2 */}
-            <div className="card-academic" style={{ overflow: 'hidden' }}>
-              <div 
-                onClick={() => setVideoModalData({ isOpen: true, title: chairmanVideoCaption, url: chairmanVideoUrl })}
-                style={{ position: 'relative', cursor: 'pointer', height: '240px', backgroundColor: 'var(--ink-900)' }}
-              >
-                <img
-                  src={chairmanVideoPoster}
-                  alt={chairmanVideoCaption}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.85 }}
-                />
-                <div style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  width: '56px',
-                  height: '56px',
-                  borderRadius: '50%',
-                  backgroundColor: 'rgba(181, 101, 46, 0.9)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
-                }}>
-                  <Play size={24} color="#FFF" style={{ marginLeft: '3px' }} />
-                </div>
-              </div>
-              <div style={{ padding: '16px 20px' }}>
-                <span className="badge-caps" style={{ color: 'var(--warm-accent)' }}>
-                  KEYNOTE ADDRESS
-                </span>
-                <h4 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--ink-900)', marginTop: '4px' }}>
-                  {chairmanVideoCaption}
                 </h4>
               </div>
             </div>
@@ -235,50 +194,152 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 4. Highlights Stats Bar */}
-      <section style={{
-        padding: '48px 0',
-        backgroundColor: 'var(--limestone)',
-        borderTop: '1px solid var(--border-default)',
-        borderBottom: '1px solid var(--border-default)'
-      }}>
-        <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '24px'
-          }}>
-            {highlights.map((item, idx) => (
-              <div key={idx} style={{
-                textAlign: 'center',
-                padding: '16px',
-                backgroundColor: 'var(--white)',
-                borderRadius: 'var(--radius-md)',
-                border: '1px solid var(--border-default)',
-                boxShadow: 'var(--shadow-card)'
-              }}>
-                <div style={{ marginBottom: '8px', display: 'flex', justifyContent: 'center' }}>
-                  {getIcon(item.icon)}
+      {/* 4. Featured Activities & Important Dates */}
+      <section className="bg-[#f8fafc] py-12 border-t border-b border-slate-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            {/* Left Column: 重点活动 (lg:col-span-8) */}
+            <div className="lg:col-span-8">
+              <h3 className="text-2xl font-bold text-[#00186b] mb-6 flex items-center gap-2.5">
+                <span className="w-1.5 h-6 bg-[#00186b] rounded-full inline-block" />
+                {isZh ? '重点活动' : 'Featured Activities'}
+              </h3>
+
+              <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-6">
+                {/* 3 Tab Navigation */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setActiveActivityTab(0)}
+                    className={
+                      activeActivityTab === 0
+                        ? 'bg-[#0f1d6b] text-white font-semibold py-3 px-6 text-center cursor-pointer transition-colors rounded-lg shadow-sm'
+                        : 'bg-[#eef2ff] text-slate-700 hover:bg-[#e0e7ff] py-3 px-6 text-center cursor-pointer transition-colors rounded-lg font-medium'
+                    }
+                  >
+                    {isZh ? '主论坛日程' : 'Plenary Forum'}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveActivityTab(1)}
+                    className={
+                      activeActivityTab === 1
+                        ? 'bg-[#0f1d6b] text-white font-semibold py-3 px-6 text-center cursor-pointer transition-colors rounded-lg shadow-sm'
+                        : 'bg-[#eef2ff] text-slate-700 hover:bg-[#e0e7ff] py-3 px-6 text-center cursor-pointer transition-colors rounded-lg font-medium'
+                    }
+                  >
+                    {isZh ? '特色主题分论坛日程' : 'Thematic Sub-Forums'}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveActivityTab(2)}
+                    className={
+                      activeActivityTab === 2
+                        ? 'bg-[#0f1d6b] text-white font-semibold py-3 px-6 text-center cursor-pointer transition-colors rounded-lg shadow-sm'
+                        : 'bg-[#eef2ff] text-slate-700 hover:bg-[#e0e7ff] py-3 px-6 text-center cursor-pointer transition-colors rounded-lg font-medium'
+                    }
+                  >
+                    {isZh ? '论文征集' : 'Call for Papers'}
+                  </button>
                 </div>
-                <div style={{
-                  fontSize: '2rem',
-                  fontWeight: 800,
-                  color: 'var(--ink-900)',
-                  lineHeight: 1.1,
-                  fontFamily: 'var(--font-mono)'
-                }}>
-                  {item.number}
+
+                {/* Tab Content States */}
+                {activeActivityTab === 0 && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    <div className="bg-[#0f1d6b] text-white p-6 rounded-lg text-center font-bold flex flex-col justify-center min-h-[140px] shadow-sm">
+                      <div className="text-xl mb-2">{isZh ? '开幕式日程' : 'Opening Ceremony'}</div>
+                      <div className="text-cyan-200 text-sm font-normal">{isZh ? '11月14日 (星期六) 上午' : 'Nov 14 (Saturday) Morning'}</div>
+                    </div>
+                    <div className="bg-[#0f1d6b] text-white p-6 rounded-lg text-center font-bold flex flex-col justify-center min-h-[140px] shadow-sm">
+                      <div className="text-xl mb-2">{isZh ? '主论坛日程' : 'Plenary Forum Schedule'}</div>
+                      <div className="text-cyan-200 text-sm font-normal">{isZh ? '11月14日 (星期六) 下午' : 'Nov 14 (Saturday) Afternoon'}</div>
+                    </div>
+                  </div>
+                )}
+
+                {activeActivityTab === 1 && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    <div className="bg-[#0f1d6b] text-white p-6 rounded-lg text-center font-bold flex flex-col justify-center min-h-[140px] shadow-sm">
+                      <div className="text-xl mb-2">{isZh ? '特色主题分论坛日程' : 'Thematic Sub-Forums'}</div>
+                      <div className="text-cyan-200 text-sm font-normal">{isZh ? '11月15日 (星期日) 上午' : 'Nov 15 (Sunday) Morning'}</div>
+                    </div>
+                    <div className="bg-[#0f1d6b] text-white p-6 rounded-lg text-center font-bold flex flex-col justify-center min-h-[140px] shadow-sm">
+                      <div className="text-xl mb-2">{isZh ? '特色主题分论坛日程' : 'Thematic Sub-Forums'}</div>
+                      <div className="text-cyan-200 text-sm font-normal">{isZh ? '11月15日 (星期日) 下午' : 'Nov 15 (Sunday) Afternoon'}</div>
+                    </div>
+                  </div>
+                )}
+
+                {activeActivityTab === 2 && (
+                  <div className="mt-6">
+                    <p className="text-slate-700 leading-relaxed text-[15px]">
+                      {isZh 
+                        ? '仿真技术已成为破解全球复杂系统难题、推动可持续发展的关键支撑，“仿真赋能全球协同创新”已成为国际社会的广泛共识。为深化全球仿真领域科技治理，推动该领域学术交流与产业协作，加速前沿技术从实验室走向规模化落地，引领仿真科技向更高精度、更广维度、更深融合方向发展，2026世界仿真大会（2026 Global Simulation Conference, GloSim 2026）拟定于11月13日（星期五）至16日（星期一）在浙江省杭州市举行（11月13日报到，11月16日参观），同期举办第二届国际仿真科技展览。'
+                        : 'Simulation technology has become a vital support in addressing global complex-system challenges and advancing sustainable development. To strengthen global governance in simulation science and technology, promote academic exchange and industrial collaboration, and accelerate the transition of cutting-edge research to scale applications, the 2026 Global Simulation Conference (GloSim 2026) is scheduled to convene from November 13 to 16, 2026 in Hangzhou, Zhejiang Province, China, accompanied by the 2nd International Simulation Science & Technology Exhibition.'}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => onNavigate('/call-for-papers')}
+                      className="w-full mt-6 py-3.5 bg-[#0f1d6b] hover:bg-[#1a2d96] text-white font-bold text-center rounded-lg block transition-colors shadow-sm"
+                    >
+                      {isZh ? '查看征文通知' : 'View Call for Papers'}
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Right Column: 重要日期 (lg:col-span-4) */}
+            <div className="lg:col-span-4">
+              <h3 className="text-2xl font-bold text-[#00186b] mb-6 flex items-center gap-2.5">
+                <span className="w-1.5 h-6 bg-[#00186b] rounded-full inline-block" />
+                {isZh ? '重要日期' : 'Important Dates'}
+              </h3>
+
+              <div className="space-y-4">
+                {/* Card 1 */}
+                <div className="bg-white rounded-xl p-5 shadow-sm border border-slate-100 hover:border-blue-200 transition-all">
+                  <div className="font-bold text-slate-800 text-base">
+                    {isZh ? '大会报到日期' : 'Delegate Registration Date'}
+                  </div>
+                  <div className="text-sm text-slate-500 mt-1">
+                    {isZh ? '2026年11月13日' : 'November 13, 2026'}
+                  </div>
                 </div>
-                <div style={{
-                  fontSize: 'var(--text-body-sm)',
-                  color: 'var(--slate-600)',
-                  fontWeight: 500,
-                  marginTop: '6px'
-                }}>
-                  {item.label}
+
+                {/* Card 2 */}
+                <div className="bg-white rounded-xl p-5 shadow-sm border border-slate-100 hover:border-blue-200 transition-all">
+                  <div className="font-bold text-slate-800 text-base">
+                    {isZh ? '开幕式及主论坛' : 'Opening Ceremony & Plenary Forum'}
+                  </div>
+                  <div className="text-sm text-slate-500 mt-1">
+                    {isZh ? '2026年11月14日全天' : 'November 14, 2026 (All Day)'}
+                  </div>
+                </div>
+
+                {/* Card 3 */}
+                <div className="bg-white rounded-xl p-5 shadow-sm border border-slate-100 hover:border-blue-200 transition-all">
+                  <div className="font-bold text-slate-800 text-base">
+                    {isZh ? '特色分论坛' : 'Thematic Sub-Forums'}
+                  </div>
+                  <div className="text-sm text-slate-500 mt-1">
+                    {isZh ? '2026年11月15日全天' : 'November 15, 2026 (All Day)'}
+                  </div>
+                </div>
+
+                {/* Card 4 */}
+                <div className="bg-white rounded-xl p-5 shadow-sm border border-slate-100 hover:border-blue-200 transition-all">
+                  <div className="font-bold text-slate-800 text-base">
+                    {isZh ? '参访' : 'Site Visit & Technical Tour'}
+                  </div>
+                  <div className="text-sm text-slate-500 mt-1">
+                    {isZh ? '2026年11月16日上午' : 'November 16, 2026 (Morning)'}
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
+
           </div>
         </div>
       </section>

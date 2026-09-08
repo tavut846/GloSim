@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/Footer.tsx": {
-    "mtime": 1788840523.836471,
-    "seen": 1788840741.9674194,
-    "ast_hash": "48bd7fcaab5bdc735ad88020db43e59a",
+    "mtime": 1788842705.407511,
+    "seen": 1788843059.8998764,
+    "ast_hash": "e0f3ad044a88c5f40c7b0c692c691ace",
     "semantic_hash": ""
   },
   "frontend/src/components/Header.tsx": {
@@ -348,9 +348,9 @@
     "semantic_hash": ""
   },
   "frontend/src/pages/HomePage.tsx": {
-    "mtime": 1788841372.3324535,
-    "seen": 1788841785.5129693,
-    "ast_hash": "cd9f23123460cc815074749b4a78fe6a",
+    "mtime": 1788843396.8900054,
+    "seen": 1788843539.1147497,
+    "ast_hash": "dbfe6ba38b9b072e6a01bb612aa39eaf",
     "semantic_hash": ""
   },
   "frontend/src/pages/PastConferencesPage.tsx": {
@@ -678,9 +678,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/ConferenceHero.tsx": {
-    "mtime": 1788840816.5676084,
-    "seen": 1788840923.1632607,
-    "ast_hash": "07ba807c995a306985345d8c84a76781",
+    "mtime": 1788843295.3079665,
+    "seen": 1788843539.11471,
+    "ast_hash": "2623395d2e78dbaccda7adec8c85c259",
     "semantic_hash": ""
   },
   "frontend/public/hero-bg.jpg": {
@@ -702,14 +702,20 @@
     "semantic_hash": ""
   },
   "frontend/src/components/WelcomeAddress.tsx": {
-    "mtime": 1788841335.678141,
-    "seen": 1788841785.5129478,
-    "ast_hash": "862813c90c1770289e1af742677c40a5",
+    "mtime": 1788842614.496811,
+    "seen": 1788843059.899884,
+    "ast_hash": "dd53ed336eb7a484b5c5f7094a99c1c3",
     "semantic_hash": ""
   },
   "docs/Signature.png": {
     "mtime": 1788841393.0933902,
     "seen": 1788841785.5130544,
+    "ast_hash": "0549b915c3c9a5e039a508a3c336c21b",
+    "semantic_hash": ""
+  },
+  "frontend/src/assets/signature.png": {
+    "mtime": 1788841393.0933902,
+    "seen": 1788842033.728492,
     "ast_hash": "0549b915c3c9a5e039a508a3c336c21b",
     "semantic_hash": ""
   }

@@ -1,5 +1,5 @@
 {
-  "0": "App.tsx",
+  "0": "Locale",
   "1": "support.js",
   "2": "contentTypes.d.ts",
   "3": "ImageSlot",
@@ -51,7 +51,6 @@
   "49": "GloSim 0.0.1-pre-1",
   "50": "bump-version.js",
   "51": "backend/server.js",
-  "52": "get",
   "53": "backend/package.json",
   "54": "postcss.config.js",
   "55": "tailwind.config.js",

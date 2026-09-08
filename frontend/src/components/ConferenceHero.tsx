@@ -56,7 +56,7 @@ export function ConferenceHero({ lang, locale }: ConferenceHeroProps) {
 
   return (
     <section 
-      className="relative w-full overflow-hidden text-white flex flex-col justify-center items-center px-4 sm:px-6 md:px-10 lg:px-16 pt-10 pb-12 sm:pt-12 sm:pb-16 lg:pt-16 lg:pb-20 select-none"
+      className="relative w-full flex-1 overflow-hidden text-white flex flex-col justify-center items-center px-4 sm:px-6 md:px-10 lg:px-16 py-4 sm:py-6 select-none"
       style={{
         backgroundColor: '#02081a',
         backgroundImage: `radial-gradient(ellipse at 75% 20%, rgba(30, 110, 220, 0.22) 0%, transparent 55%), linear-gradient(180deg, rgba(2, 8, 26, 0.45) 0%, rgba(2, 8, 26, 0.25) 45%, rgba(2, 8, 26, 0.85) 100%), url(${heroBg})`,
@@ -149,7 +149,7 @@ export function ConferenceHero({ lang, locale }: ConferenceHeroProps) {
         </div>
 
         {/* Academic Conference Organization Credits */}
-        <div className="w-full mt-10 sm:mt-14 pt-6 border-t border-white/15 text-white/80 text-[11px] sm:text-xs">
+        <div className="w-full mt-6 sm:mt-8 pt-4 border-t border-white/15 text-white/80 text-[11px] sm:text-xs">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
             
             {/* 1. Host */}
