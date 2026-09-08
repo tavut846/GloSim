@@ -40,7 +40,7 @@ jobs:
       # 2. Install & Build Frontend
       - name: Install & Build Frontend
         run: |
-          npm ci --prefer-offline --prefix frontend
+          npm ci --prefer-offline --prefix frontend || npm install --prefer-offline --prefix frontend
           npm run build --prefix frontend
         env:
           VITE_STRAPI_URL: ${{ vars.VITE_STRAPI_URL || 'http://localhost:1337' }}
